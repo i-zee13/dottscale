@@ -1,0 +1,9 @@
+{
+  "name": "dottscale",
+  "private": true,
+  "description": "Local visual clone of allomate.com for restyling later.",
+  "scripts": {
+    "start": "python3 server.py",
+    "dev": "python3 server.py"
+  }
+}
