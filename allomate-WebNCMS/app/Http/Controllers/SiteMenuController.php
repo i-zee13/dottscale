@@ -31,10 +31,7 @@ class SiteMenuController extends Controller
             (object)['title' => 'Privacy Policy', 'url' => '/privacy-prolicy']
         ];
         $record             =   $this->getData();
-        $new_pages_cat      =   DB::table('pagebuilder__pages')
-                                        ->join('pagebuilder__page_translations', 'pagebuilder__page_translations.page_id', '=', 'pagebuilder__pages.id')
-                                        ->select('pagebuilder__pages.name as title', 'pagebuilder__page_translations.route as url')
-                                        ->get();
+        $new_pages_cat      =   collect();
 
         return view('admin.website-menu.left',  compact('record', 'pages', 'new_pages_cat'));
     }
@@ -45,19 +42,7 @@ class SiteMenuController extends Controller
             (object)['title' => 'Privacy Policy', 'url' => '/privacy-prolicy']
         ];
         $record             =   $this->getRightMenuData();
-        $new_pages_cat      =   DB::table('pagebuilder__pages')
-                                        ->join('pagebuilder__page_translations', 'pagebuilder__page_translations.page_id', '=', 'pagebuilder__pages.id')
-                                        ->select('pagebuilder__pages.name as title', 'pagebuilder__page_translations.route as url','pagebuilder__pages.page_type')
-                                        ->get();
-           $menuArray = [];
-        foreach ($new_pages_cat as $menuItem) {
-            $page = ($menuItem->page_type == 1 ? 'Home Pages' : ($menuItem->page_type == 2 ? 'Portfolio Pages' : ($menuItem->page_type == 3 ? 'General Pages' : 'Offer Pages')));
-            $menuArray[$page][] = [  
-                'title'             => $menuItem->title,
-                'url'               => $menuItem->url, 
-            ];
-        }                      
-        $new_pages_cat = $menuArray;
+        $new_pages_cat      =   [];
         return view('admin.website-menu.right',  compact('record', 'pages', 'new_pages_cat'));
     }
     public function getRightMenuData()
@@ -125,10 +110,7 @@ class SiteMenuController extends Controller
             $title           =   $menuItem['tier_one_title'] ?? '';
             $url             =   $menuItem['tier_one_url'] ?? '';
             $_blank          =   $menuItem['new_window_tier_one'] ?? '';
-            $page_id         =   DB::table('pagebuilder__page_translations')
-                ->select('page_id')
-                ->where('route', $url)
-                ->value('page_id');
+            $page_id         =   null;
             if ($title  && $url) {
                 $mainWebMenu                =   new MainWebMenu();
                 $mainWebMenu->page_id       =   $page_id;
@@ -146,10 +128,7 @@ class SiteMenuController extends Controller
                     $title          =   $subMenu['title'];
                     $url            =   $subMenu['url'];
                     $_blank         =   $subMenu['new_window'] ?? 0;
-                    $page_id        =   DB::table('pagebuilder__page_translations')
-                        ->select('page_id')
-                        ->where('route', $url)
-                        ->value('page_id');
+                    $page_id        =   null;
                     $subWebMenu                =   new SubWebMenu();
                     $subWebMenu->page_id       =   $page_id;
                     $subWebMenu->title         =   $title;
@@ -167,10 +146,7 @@ class SiteMenuController extends Controller
                             $title          =   $sub_SubMenu['title'];
                             $url            =   $sub_SubMenu['url'];
                             $_blank         =   $sub_SubMenu['new_window'] ?? 0;
-                            $page_id        =   DB::table('pagebuilder__page_translations')
-                                ->select('page_id')
-                                ->where('route', $url)
-                                ->value('page_id');
+                            $page_id        =   null;
 
                             $subSecondaryMenu                =   new SubSecondaryWebMenu();
                             $subSecondaryMenu->page_id       =   $page_id;
@@ -205,13 +181,7 @@ class SiteMenuController extends Controller
             (object)['title' => 'Terms of Use',     'url'    => 'terms-of-use'],
             (object)['title' => 'Privacy Policy',   'url'    => 'privacy-prolicy']
         ];
-        $page_builder_pages = DB::table('pagebuilder__pages')
-            ->join('pagebuilder__page_translations', 'pagebuilder__page_translations.page_id', '=', 'pagebuilder__pages.id')
-            ->select(
-                'pagebuilder__pages.name as title',
-                'pagebuilder__page_translations.route as url'
-            )
-            ->get()->toArray();
+        $page_builder_pages = [];
         $data['webPages']         = $pages;
         $data['pageBuilderPages'] = $page_builder_pages;
         $base_url       =   FacadesURL::to('/') . '/';
@@ -264,10 +234,7 @@ class SiteMenuController extends Controller
                     $title          =   $subMenu['title'];
                     $url            =   $subMenu['url'];
                     $_blank         =   $subMenu['new_window'] ?? 0;
-                    $page_id        =   DB::table('pagebuilder__page_translations')
-                                                ->select('page_id')
-                                                ->where('route', $url)
-                                                ->value('page_id');
+                    $page_id        =   null;
                     $subWebMenu                =   new RightWebMenu();
                     $subWebMenu->page_id       =   $page_id;
                     $subWebMenu->title         =   $title;

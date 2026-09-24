@@ -20,7 +20,7 @@ class FaqsController extends Controller
      */
     public function index()
     {   //page status 2 = Publish
-        $pages = DB::table('pagebuilder__pages')->where('page_status', 2)->select('id', 'name')->get();
+        $pages = collect();
         return view('admin.faqs', compact('pages'));
     }
     /**

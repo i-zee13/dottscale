@@ -150,16 +150,7 @@ if (!function_exists('genrateSiteMap')) {
         $route_names['pages'] = array_merge($route_names['pages'], $pages->map(function ($page) {
                                         return ['name' => $page->title, 'slug' => $page->slug];
                                     })->toArray());
-        // Builder pages with other routes
-        $pages       =   DB::table('pagebuilder__pages')->where('page_status', '=', '2')
-                            ->join('pagebuilder__page_translations', 'pagebuilder__page_translations.page_id', '=', 'pagebuilder__pages.id')
-                            ->where('pagebuilder__page_translations.is_indexable',1)
-                            ->pluck('pagebuilder__page_translations.route')->toArray();
-        if (count($pages) > 0) {
-            foreach ($pages as $key => $value) {
-                $route_names['pages'][]  = ['slug' => str_replace( '/', '', $value) , 'name' => ucfirst(str_replace('-' , ' ', str_replace( '/', '', $value))) ] ;
-            }
-        }
+        $pages = [];
         //Careers
         $careers        =   DB::table('careers')->where('status',1)->whereRaw("JSON_EXTRACT(page_meta_tags, '$.is_indexable') = '1'")->pluck("slug")->toArray();
 

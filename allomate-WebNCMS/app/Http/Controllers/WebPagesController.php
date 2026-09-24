@@ -44,21 +44,7 @@ class WebPagesController extends Controller
                 return redirect(route('index'));
             }
         }
-        $landing_page = DB::table('pagebuilder__pages')
-            ->selectRaw("pagebuilder__page_translations.route")
-            ->join("pagebuilder__page_translations", "pagebuilder__page_translations.page_id", "=", "pagebuilder__pages.id")
-            ->where('page_status', 2)->where('page_type', 1)->where('landing_page_status', 1)->first();
-
-        if ($landing_page) {
-            $query =    "select * from `pagebuilder__page_translations` inner join `pagebuilder__pages` on `pagebuilder__pages`.`id` = `pagebuilder__page_translations`.`page_id` where pagebuilder__page_translations.route = '{$landing_page->route}'";
-            $data   =   DB::select($query);
-            $data   =   collect($data)->first();
-
-            $data =  json_decode($data->data, true);
-            return view('dynamic-page', compact('data'));
-        } else {
-            return view("home");
-        }
+        return view('frontend.home');
     }
 
     public function getFrontEndAboutusPage()
@@ -317,13 +303,7 @@ class WebPagesController extends Controller
             (object)['title' => 'Privacy Policy', 'url' => '/privacy-policy'],
             (object)['title' => 'Investor Login', 'url' => env('INVESTOR_URL','https://investor.demo.allomate.solutions/investor-login')]
         ];
-        $new_pages_cat = DB::table('pagebuilder__pages')
-            ->join('pagebuilder__page_translations', 'pagebuilder__page_translations.page_id', '=', 'pagebuilder__pages.id')
-            ->select(
-                'pagebuilder__pages.name as title',
-                'pagebuilder__page_translations.route as url'
-            )
-            ->get();
+        $new_pages_cat = collect();
 
             $record = FooterPageContent::all();
             $record = $record->sortBy('id')->values()->all();
@@ -503,28 +483,7 @@ class WebPagesController extends Controller
     }
     public function getServices($limit = null)
     {
-        if($limit){
-            $limitClause = "LIMIT 3";
-        } else {
-            $limitClause = "";
-        }
-        $services = DB::select(DB::raw("
-            SELECT
-                main_services.service_name,
-                main_services.description,
-                main_services.icon,
-                pagebuilder__page_translations.route
-            FROM
-                pagebuilder__pages
-            LEFT JOIN
-                pagebuilder__page_translations ON pagebuilder__page_translations.page_id = pagebuilder__pages.id
-            LEFT JOIN
-                main_services ON main_services.id = pagebuilder__pages.primary_service_id
-            WHERE
-                pagebuilder__pages.page_type = 2 AND pagebuilder__pages.page_status = 2 AND pagebuilder__pages.data IS NOT NULL
-            $limitClause
-        "));
-        return response()->json(['status' => 'success', 'services' => $services]);
+        return response()->json(['status' => 'success', 'services' => []]);
     }
     public function getCareersPositions()
     {
@@ -545,36 +504,7 @@ class WebPagesController extends Controller
         return view('career-detail', compact('career', 'latest_blogs'));
     }
     public function getFrontEndPortfolios($isLimit = null){
-
-        $limit = '';
-        if($isLimit != null){
-            $limit = 'Limit 4';
-        }
-        $data = DB::select(DB::raw("
-            SELECT
-                portfolios.portfolio_name,
-                portfolios.portfolio_categories,
-                portfolios.id,
-                (
-                    SELECT GROUP_CONCAT(pr.service_name)
-                    FROM portfolio_categories pr
-                    WHERE FIND_IN_SET(pr.id,portfolios.portfolio_categories)
-                ) as category_names,
-                portfolios.thumbnail,
-                pagebuilder__page_translations.route
-            FROM
-                pagebuilder__pages
-            LEFT JOIN
-                pagebuilder__page_translations ON pagebuilder__page_translations.page_id = pagebuilder__pages.id
-            LEFT JOIN
-                portfolios ON portfolios.id = pagebuilder__pages.portfolio_id
-            WHERE
-                pagebuilder__pages.page_type = 2 AND pagebuilder__pages.page_status = 2 AND pagebuilder__pages.data IS NOT NULL AND portfolios.is_slider_show = 1
-            $limit
-            ORDER BY
-            portfolios.id DESC
-        "));
-    return response()->json(["status"=> "success","data"=> $data]);
+    return response()->json(["status"=> "success","data"=> []]);
     }
 
 }

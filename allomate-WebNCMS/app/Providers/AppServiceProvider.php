@@ -23,8 +23,6 @@ use Artesaos\SEOTools\Facades\JsonLd;
 use Artesaos\SEOTools\Facades\JsonLdMulti;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB as FacadesDB;
-use Illuminate\Support\Facades\Schema;
-use PHPageBuilder\PHPageBuilder;
 use stdClass;
 
 class AppServiceProvider extends ServiceProvider
@@ -49,12 +47,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $general_pages = DB::table('pagebuilder__pages')
-            ->where('pagebuilder__pages.page_status', 2)
-            ->whereRaw("pagebuilder__pages.page_type IN (1,3)")
-            ->leftjoin('pagebuilder__page_translations', 'pagebuilder__page_translations.page_id', '=', 'pagebuilder__pages.id')
-            ->get();
-        $isPageBuilderPage = false;
+        if ($this->app->runningInConsole()) {
+            return;
+        }
+
+        $general_pages = collect();
 
         $organization = Organization::first();
         $page_meta = null;
@@ -110,9 +107,7 @@ class AppServiceProvider extends ServiceProvider
             if ($current_route == "") {
                 $route = "/home";
             }
-            $webdata = DB::table('pagebuilder__page_translations')
-                ->where('route', $route)
-                ->first(['title', 'page_meta_tags', 'meta_og_image', 'is_followable', 'is_indexable']);
+            $webdata = null;
             $page_meta_array = json_decode(@$webdata->page_meta_tags, true);
             $page_meta = is_array($page_meta_array) && count($page_meta_array) > 0 ? (object) $page_meta_array[0] : (object) [];
             if ($page_meta) {

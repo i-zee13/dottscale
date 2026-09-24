@@ -65,16 +65,6 @@ class ThemeCssController extends AccessRightsAuth
         if($save->save()){
             if($request->content_type == 1){ //basic config css
                 $CSSFilePath    =   public_path('css/frontend/theme_config.css');
-                $builderCssPath =   base_path('themes/demo/public/css/style.css');
-                $builderPCssPath=   public_path('themes/demo/css/style.css');
-                if (file_exists($builderCssPath)) {
-                    unlink($builderCssPath);
-                }
-                file_put_contents($builderCssPath, $request->content);
-                if (file_exists($builderPCssPath)) {
-                    unlink($builderPCssPath);
-                }
-                file_put_contents($builderPCssPath, $request->content);
             }elseif($request->content_type == 2){ //menu css
                 $CSSFilePath    =   public_path('css/frontend/menu.css');
             }elseif($request->content_type == 3){ //footer css

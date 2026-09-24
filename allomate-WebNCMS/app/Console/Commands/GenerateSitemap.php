@@ -57,10 +57,7 @@ class GenerateSitemap extends Command
         });
         $blogs          =   DB::table('blogs')->where('published',1)->whereRaw("JSON_EXTRACT(page_meta_tags, '$.is_indexable') = '1'")->pluck("slug")->toArray();
         $careers        =   DB::table('careers')->where('status',1)->whereRaw("JSON_EXTRACT(page_meta_tags, '$.is_indexable') = '1'")->pluck("slug")->toArray();
-        $pages          =   DB::table('pagebuilder__pages')->where('page_status', '=', '2')
-                                                            ->join('pagebuilder__page_translations', 'pagebuilder__page_translations.page_id', '=', 'pagebuilder__pages.id')
-                                                            ->where('pagebuilder__page_translations.is_indexable',1)
-                                                            ->pluck('pagebuilder__page_translations.route')->toArray();
+        $pages          =   [];
     
         if (count($pages) > 0) {
             foreach ($pages as $key => $value) {

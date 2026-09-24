@@ -230,28 +230,11 @@ Route::get('/get-portfolio-category/{catId}', [App\Http\Controllers\admin\Portfo
   Route::post('/update-user-password', [App\Http\Controllers\admin\ProfileController::class, 'update_user_password'])->name('admin.update-user-password');
 
   Route::post('/update-user-profile-pic', [App\Http\Controllers\admin\ProfileController::class, 'update_user_profile_pic'])->name('admin.update-user-profile-pic');
-  Route::get('/listPages', [App\Http\Controllers\admin\PageBuilderController::class, 'listPages'])->name('admin.listPages');
-  Route::post('/save-page', [App\Http\Controllers\admin\PageBuilderController::class, 'save_page'])->name('admin.save-page');
-  Route::get('/edit-page/{id}', [App\Http\Controllers\admin\PageBuilderController::class, 'edit_page'])->name('admin.edit-page');
-  Route::get('/all-list-pages', [App\Http\Controllers\admin\PageBuilderController::class, 'all_list_pages'])->name('admin.all-list-pages');
-  Route::post('/save-page-with-status/{id}', [App\Http\Controllers\admin\PageBuilderController::class, 'savePageWithStatus'])->name('admin.update-page-status');
-  Route::post('/land-page-status', [App\Http\Controllers\admin\PageBuilderController::class, 'changeLandPageStatus'])->name('admin.land-page-status');
-  Route::get('/page-slug/{id}', [App\Http\Controllers\admin\PageBuilderController::class, 'pageSlug'])->name('admin.page-slug');
-
-  // Page Builder Blocks
-  Route::get('/blocks-list', [App\Http\Controllers\admin\PageBuilderController::class, 'blocksList'])->name('admin.blocks-list');
-  Route::get('/all-blocks-list', [App\Http\Controllers\admin\PageBuilderController::class, 'getBlocksList'])->name('admin.all-blocks-list');
-  Route::post('/save-pagebuilder-block', [App\Http\Controllers\admin\PageBuilderController::class, 'saveBlocks'])->name('admin.save-pagebuilder-block');
-  Route::post('/delete-pagebuilder-block', [App\Http\Controllers\admin\PageBuilderController::class, 'deleteBlock'])->name('admin.delete-pagebuilder-block');
-  // END Page Builder Blocks
-
   Route::get('/clients', [ClientLogoController::class, 'index'])->name('admin.clients');
   Route::get('/all-client-list', [ClientLogoController::class, 'getAllClientsList'])->name('admin.all-client-list');
   Route::post('/save-client', [ClientLogoController::class, 'store'])->name('admin.save-client');
   Route::post('/delete-client', [ClientLogoController::class, 'deleteClient'])->name('admin.delete-client');
 
-
-  Route::any('/pages/{id}/{slug?}', [App\Http\Controllers\admin\PageBuilderController::class, 'build'])->name('pagebuilder.build');
 
   // Theme CSS
   Route::get('/theme-config-css', [App\Http\Controllers\admin\ThemeCssController::class, 'index'])->name('admin.theme-config-css');
@@ -351,4 +334,4 @@ Route::get('/career/{slug}', [App\Http\Controllers\WebPagesController::class, 'g
 Route::get('/get-client-reviews', [App\Http\Controllers\WebPagesController::class, 'getTestimonials'])->name('get-client-reviews');
 Route::get('/get-client-logos', [App\Http\Controllers\WebPagesController::class, 'getClientsLogo'])->name('get-client-logos');
 Route::get('/get-services/{limit?}', [App\Http\Controllers\WebPagesController::class, 'getServices'])->name('get-services');
-Route::any('/{any}', [App\Http\Controllers\admin\PageBuilderController::class, 'slug'])->where('any', '.*')->middleware('custom.auth');
+// Page-builder catch-all removed. Public pages are in routes/frontend.php.

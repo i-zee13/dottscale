@@ -315,11 +315,6 @@
                         src="{{ asset('images/add-teacher.svg') }}" alt="" />
                     <h2 class="HD-title">Add <span class="f-light">Job</span></h2>
                 </a> </div>
-            <div class="col-4"><a href="{{ route('admin.listPages') }}"><img
-                        src="{{ asset('images/complaint-list.svg') }}" alt="" />
-                    <h2 class="HD-title">List <span class="f-light">Web Pages</span></h2>
-                </a> </div>
-             
             <div class="col-4"><a href="{{ route('admin.applications') }}"><img
                         src="{{ asset('images/campaign-list.svg') }}" alt="" />
                     <h2 class="HD-title">Applicants <span class="f-light"> list </span></h2>

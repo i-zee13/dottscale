@@ -160,12 +160,6 @@
                 $('#content-wrapper').addClass('blur-div');
                 $('body').addClass('no-scroll')
             });
-            $('#open-side-pagebuilder').on('click', function() {
-                $('.overlay-blure').click();
-                $('.open-side-pagebuilder').addClass('active');
-                $('#content-wrapper').addClass('blur-div');
-                $('body').addClass('no-scroll')
-            });
             $('#open-side-webpages').on('click', function() {
                 $('.overlay-blure').click();
                 $('.open-side-webpages').addClass('active');

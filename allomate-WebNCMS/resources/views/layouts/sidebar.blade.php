@@ -20,11 +20,6 @@
                 <!-- <li><a><img src="{{ url('/admin/images/mth-setting-icon.svg') }}" alt="" /> Site Settings</a></li> -->
                 <li><a id="open-side-leads"><img src="{{ url('/admin/images/mth-setting-icon.svg') }}"
                             alt="" /> Leads</a></li>
-                <li><a id="open-side-pagebuilder"><img src="{{ url('/admin/images/mth-setting-icon.svg') }}"
-                  alt="" /> Page Builder</a></li>
-                {{-- <li><a href="{{ route('admin.listPages') }}"><img
-                            src="{{ url('/admin/images/mth-setting-icon.svg') }}" alt="" /> Page builder</a>
-                </li> --}}
                 <li><a id="open-side-webpages"><img src="{{ url('/admin/images/dashboard-icon.svg') }}"
                             alt="" /> Website Pages</a></li>
                 <li><a id="open-side-career"><img src="{{ url('/admin/images/mth-setting-icon.svg') }}"
@@ -103,17 +98,6 @@
                         alt="" />Demo Requests </a></li>
             <li><a href="{{ route('admin.subscriptions') }}"><img src="{{ url('/admin/images/activity-icon.svg') }}"
                         alt="" />Subscriptions</a></li>
-        </ul>
-    </div>
-</div>
-<div id="_subNav-id" class="open-side-pagebuilder hide-leads-menu">
-    <div class="_subNav"> <a id="SN-close" class="SN-close-btn"><i class="fa fa-arrow-left"></i></a>
-        <h2>Page Builder</h2>
-        <ul>
-          <li><a href="{{ route('admin.blocks-list') }}"><img src="{{ url('/admin/images/activity-icon.svg') }}"
-                      alt="" />Blocks </a></li>
-          <li><a href="{{ route('admin.listPages') }}"><img src="{{ url('/admin/images/activity-icon.svg') }}"
-                      alt="" />Pages </a></li>
         </ul>
     </div>
 </div>

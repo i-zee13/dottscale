@@ -9,7 +9,6 @@
         "artesaos/seotools": "^1.2",
         "fruitcake/laravel-cors": "^2.2",
         "guzzlehttp/guzzle": "^7.8",
-        "hansschouten/laravel-pagebuilder": "^0.21.0",
         "laravel/framework": "^8.83",
         "laravel/sanctum": "^2.15",
         "laravel/tinker": "^2.9",

@@ -84,13 +84,7 @@ class ServiceController extends Controller
   public function loadPortfolios()
   {
     $primary_services = Portfolio::get();
-    $page             = DB::table('pagebuilder__pages')
-                            ->where('pagebuilder__pages.page_type', 2)
-                            ->WhereRaw('(pagebuilder__pages.secondary_service_id IS NULL || pagebuilder__pages.secondary_service_id = 0)')
-                            ->WhereRaw('(pagebuilder__pages.sub_secondary_service_id IS NULL || pagebuilder__pages.sub_secondary_service_id = 0)')
-                            ->join('pagebuilder__page_translations', 'pagebuilder__page_translations.page_id', '=', 'pagebuilder__pages.id')
-                            ->select('pagebuilder__pages.*', 'pagebuilder__page_translations.route as route')
-                            ->get();
+    $page             = collect();
 
     $primary_services = collect($primary_services)->map(function ($x) use ($page) {
                             $x->page = collect($page)->where('portfolio_id', $x->id);

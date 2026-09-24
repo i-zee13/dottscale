@@ -12,7 +12,6 @@ class WebsiteController extends Controller
  */
     public function uri()
     {
-        $pageBuilder = app()->make('phpPageBuilder');
-        $pageBuilder->handlePublicRequest();
+        abort(404);
     }
 }
