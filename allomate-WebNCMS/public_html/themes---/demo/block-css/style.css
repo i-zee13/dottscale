@@ -1,0 +1,226 @@
+.MainHeader2 {
+    color: #fff !important;
+    width: 100% !important;
+    height: 100vh !important;
+    background-image: url(images/main-bg-2.jpg) !important;
+    background-repeat: no-repeat !important;
+    background-position: top center !important;
+    background-size: 100% !important;
+    background-color: #000 !important;
+    position: relative !important;
+}
+.MainHeader2 .header-content2 {
+    position: absolute !important;
+    bottom: 50% !important;
+    left: 0 !important;
+    transform: translate(0, 50%) !important;
+    -webkit-box-align: left !important;
+    -ms-flex-align: left !important;
+    align-items: left !important;
+    text-align: left !important;
+    display: table !important;
+    z-index: 5 !important;
+    padding-left: 20px !important;
+    width: 793px !important;
+}
+.MainHeader2 .header-content2 h1 {
+    font-size: 70px !important;
+    line-height: 1 !important;
+    position: relative !important;
+}
+.MainHeader2 .header-content2 h1::before {
+    display: inline-block !important;
+    content: "" !important;
+    width: 200px !important;
+    height: 68px !important;
+    background-color: #0038ba !important;
+    position: absolute !important;
+    /* bottom: 0; */
+    left: -35px !important;
+    z-index: -1 !important;
+    top: 3px !important;
+}
+.MainHeader2 .header-content2 h2 {
+    font-size: 42px !important;
+    font-weight: 300 !important;
+}
+.MainHeader2 .header-content2 p {
+    font-size: 18px !important;
+    font-weight: 300 !important;
+}
+.MainHeader2 .R-scrolldown {
+    right: 35px !important;
+    left: auto !important;
+}
+
+.MainHeader2 .btn-primary {
+    padding: 7px 25px !important;
+    font-size: 16px !important;
+    letter-spacing: 1px !important;
+    font-weight: 500 !important;
+    border: solid 1px #0038ba !important;
+    background: linear-gradient(90deg, #1e54d3 0, #0038ba 100%) !important;
+    color: #fff !important;
+    margin-top: 10px !important;
+    -webkit-transition: all .4s ease-in-out !important;
+    -moz-transition: all .4s ease-in-out !important;
+    -o-transition: all .4s ease-in-out !important;
+    -ms-transition: all .4s ease-in-out !important;
+    transition: all .4s ease-in-out !important;
+    cursor: pointer !important;
+    border-radius: 24px !important;
+    width: fit-content !important;
+}
+
+.MainHeader2 .btn-primary:hover,
+.MainHeader2 .btn-primary:focus {
+    color: #fff !important;
+    background: linear-gradient(90deg, #1e54d3 0, #0038ba 100%) !important;
+    border: solid 1px #0038ba !important;
+    text-decoration: none !important;
+}
+
+@media (max-width:1440px) {
+    .MainHeader2 .header-content2 h1 {
+        font-size: 62px !important;
+    }
+    .MainHeader2 .header-content2 h1::before {
+        width: 180px !important;
+        height: 61px !important;
+    }
+    .MainHeader2 .header-content2 h2 {
+        font-size: 36px !important;
+    }
+    .MainHeader2 .header-content2 p {
+        font-size: 16px !important;
+    }
+    .MainHeader2 .header-content2 {
+        width: 720px !important;
+    }
+}
+
+@media (max-width:1280px) {
+    .MainHeader2 .header-content2 h1 {
+        font-size: 56px !important;
+    }
+
+    .MainHeader2 .header-content2 {
+        width: 645px !important;
+    }
+
+    .MainHeader2 .header-content2 h1::before {
+        width: 165px !important;
+        height: 55px !important;
+    }
+
+    .MainHeader2 .header-content2 h2 {
+        font-size: 34px !important;
+    }
+
+    .MainHeader2 .btn-primary {
+        padding: 5px 20px !important;
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width:1024px) {
+
+    .MainHeader2 .header-content2 h1 {
+        font-size: 50px !important;
+    }
+
+    .MainHeader2 .header-content2 h1::before {
+        width: 153px !important;
+        height: 49px !important;
+    }
+
+    .MainHeader2 .header-content2 h2 {
+        font-size: 30px !important;
+    }
+
+    .MainHeader2 .header-content2 {
+        width: 585px !important;
+    }
+}
+
+@media (max-width:800px) {
+    .MainHeader2 .header-content2 h1 {
+        font-size: 42px !important;
+    }
+
+    .MainHeader2 .header-content2 h1::before {
+        width: 130px !important;
+        height: 39px !important;
+    }
+
+    .MainHeader2 .header-content2 h2 {
+        font-size: 28px !important;
+    }
+
+    .MainHeader2 .btn-primary {
+        margin: 0 !important;
+    }
+
+    .MainHeader2 .header-content2 {
+        width: 545px !important;
+    }
+}
+
+@media (max-width:768px) {}
+
+@media (max-width:767px) {
+    .MainHeader2 .header-content2 h1 {
+        font-size: 35px !important;
+    }
+
+    .MainHeader2 .header-content2 {
+        width: 485px !important;
+    }
+
+    .MainHeader2 .header-content2 h1::before {
+        width: 121px !important;
+        height: 32px !important;
+    }
+
+    .MainHeader2 .header-content2 h2 {
+        font-size: 26px !important;
+    }
+}
+
+@media (max-width:480px) {
+    .MainHeader2 {
+        min-height: 100vh !important;
+        background-image: url(images/main-bg-2-xsm.jpg) !important;
+        background-size: 100% !important;
+    }
+
+    .MainHeader2 .header-content2 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        transform: translate(0, 0) !important;
+        bottom: 80px !important;
+    }
+
+    .MainHeader2 .header-content2 p {
+        font-size: 14px !important;
+    }
+
+    .MainHeader2 .header-content2 {
+        width: 100% !important;
+    }
+}
+
+@media (max-width:425px) {
+    .MainHeader2 .header-content2 h1 {
+        font-size: 32px !important;
+    }
+
+    .MainHeader2 .header-content2 h2 {
+        font-size: 24px !important;
+    }
+
+    .MainHeader2 .header-content2 h1::before {
+        width: 113px !important;
+        height: 29px !important;
+    }
+}

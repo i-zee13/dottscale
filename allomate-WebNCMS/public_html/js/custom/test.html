@@ -1,0 +1,132 @@
+<div class="collapse" id="collapsePOCdetail01">
+    <div class="addPackagingOption">
+        <div class="row">
+            <div class="col-12 position-relative PB-20">
+                <div class="row m-0">
+                    <div class="col mt-auto mb-auto pl-0">
+                        <strong class="font16"> Submenu</strong>
+                    </div>
+                    <div class="col-auto"><button type="submit"
+                            class="btn btn-primary add-sub-m"><i
+                                class="fa fa-plus"></i></button></div>
+                </div>
+                <div class="sortable-moves">
+                    <div class="col-12"> 
+                        <div class="PackagingOption mb-0 delete_row_${uniqueKey}" 
+                            style="background-color: #ebebeb;">
+                            <div class="row">
+                                <div class="col-4 pr-0">
+                                    <select class="custom-select custom-select-sm" id="menu_${uniqueKey}">
+                                        <option value="">Select Menu</option>
+                                        ${pages.map(page => `
+                                        <option value="${page.url}"  >${page.title}</option>
+                                    `).join('')}
+                                    ${pages_cat_data.map(page => `
+                                    <option value="${page.url}"  >${page.title}</option>
+                                `).join('')}
+                                    </select>
+
+                                </div>
+                                <div class="col pr-0">
+                                    <input type="text" class="form-control input-style " id="title_${uniqueKey}"
+                                        placeholder="title here">
+                                </div>
+                                <div class="col pr-0"><input type="text"
+                                        class="form-control input-style"
+                                        placeholder="url here.."></div>
+                                <div class="col-3" style="padding-top:5px">
+                                    <div
+                                        class="custom-control custom-checkbox mr-sm-2 PageCheckbox font13">
+                                        <input type="checkbox" name="0001" 
+                                            class="custom-control-input" value="1"
+                                            id="newWindow_${uniqueKey}" checked="">
+                                        <label class="custom-control-label"
+                                            for="newWindow_${uniqueKey}">New Window test?</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-auto position-relative">
+                                    <button type="button" id="${uniqueKey}" is_new="0" class="btn delListPO delete_row"
+                                        title="Delete"><i
+                                            class="fa fa-trash-alt"></i></button>
+                                    <button type="button" class="btn editListPO"
+                                        data-toggle="collapse"
+                                        data-target="#collapsePOCdetail02"
+                                        aria-expanded="false"
+                                        aria-controls="collapsePOCdetail02"
+                                        title=""><i
+                                            class="fa fa-angle-down"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="collapse" id="collapsePOCdetail02">
+                            <div class="addPackagingOption"
+                                style="border: solid 1px #e0e0e0;">
+                                <div class="row">
+                                    <div class="col-12 position-relative">
+
+                                        <div class="row m-0">
+                                            <div class="col mt-auto mb-auto pl-0">
+                                                <strong class="font16"> Submenu 3</strong>
+                                            </div>
+                                            <div class="col-auto"><button type="submit"
+                                                    class="btn btn-primary add-sub-m"><i
+                                                        class="fa fa-plus"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="sortable-moves">
+                                            <div class="col-12">
+                                                <div class="PackagingOption mb-0 delete_row_${uniqueKey}">
+                                                    <div class="row">
+                                                        <div class="col-4 pr-0">
+                                                            <select
+                                                                class="custom-select custom-select-sm">
+                                                                <option value="">Select Menu</option>
+                                                                ${pages.map(page => `
+                                                                <option value="${page.url}"  >${page.title}</option>
+                                                            `).join('')}
+                                                            ${pages_cat_data.map(page => `
+                                                            <option value="${page.url}"  >${page.title}</option>
+                                                        `).join('')}
+                                                            </select>
+                                                        </div>
+                                                        <div class="col pr-0">
+                                                            <input type="text"
+                                                                class="form-control input-style "
+                                                                placeholder="title here">
+                                                        </div>
+                                                        <div class="col pr-0"><input
+                                                                type="text"
+                                                                class="form-control input-style"
+                                                                placeholder="url here..">
+                                                        </div>
+                                                        <div class="col-3"
+                                                            style="padding-top:5px">
+                                                            <div
+                                                                class="custom-control custom-checkbox mr-sm-2 PageCheckbox font13">
+                                                                <input type="checkbox"
+                                                                    name="0001"
+                                                                    class="custom-control-input"
+                                                                    value="1"
+                                                                    id="0001"
+                                                                    checked="">
+                                                                <label
+                                                                    class="custom-control-label"
+                                                                    for="0001">New
+                                                                    Window?</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

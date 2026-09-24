@@ -1,0 +1,11 @@
+node_modules/
+.DS_Store
+allomate-WebNCMS/.env
+allomate-WebNCMS/vendor/
+allomate-WebNCMS/node_modules/
+allomate-WebNCMS/storage/logs/
+allomate-WebNCMS/storage/framework/cache/
+allomate-WebNCMS/storage/framework/sessions/
+allomate-WebNCMS/storage/framework/views/
+allomate-WebNCMS/bootstrap/cache/*
+allomate-WebNCMS/public_html/storage

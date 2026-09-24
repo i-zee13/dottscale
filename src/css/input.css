@@ -1,0 +1,36 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "./legacy/menu.css";
+@import "./legacy/theme.css";
+
+@layer components {
+  #notifDiv {
+    @apply fixed left-[69%] top-[80%] z-[10000] hidden w-[350px] bg-red-600 px-5 py-2.5 text-[15px] font-normal text-white max-md:bottom-[15px] max-md:left-[15px] max-md:top-auto max-md:p-2.5 max-md:text-sm;
+  }
+
+  .disabled-link {
+    @apply pointer-events-none;
+  }
+}
+
+@layer base {
+  :root {
+    --bs-font-sans-serif: "Geist", sans-serif;
+    --bs-body-font-family: "Geist", sans-serif;
+    --primary-font-weight: 600;
+    --bs-primary: #212529;
+    --bs-secondary: #FFB237;
+    --bs-white: #f6f6f6;
+    --bs-body-bg: #f6f6f6;
+  }
+
+  html,
+  body {
+    font-family: Geist, sans-serif;
+  }
+
+  body {
+    background-color: #212529;
+  }
+}

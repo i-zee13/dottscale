@@ -1,20 +1,29 @@
 # Allomate visual clone
 
-Local recreation of [allomate.com](https://allomate.com/) so we can restyle colors later.
+Local recreation of [allomate.com](https://allomate.com/), styled with **Tailwind CSS**.
 
 ## Run
 
 ```bash
-python3 server.py
+npm run dev
 ```
 
 Then open [http://127.0.0.1:5173](http://127.0.0.1:5173).
 
-Click the hamburger in the top-right corner to open the fullscreen overlay menu (same layout as the live site).
+That watches Tailwind and serves the site. For a one-off build:
 
-Brand colors live in:
+```bash
+npm start
+```
 
-- `site/css/frontend/theme_config.css`
-- `site/css/frontend/menu.css`
+Click the hamburger in the top-right for the fullscreen overlay menu.
 
-`--bs-primary` is navy `#001e35`. `--bs-secondary` is vermilion `#f12300`.
+## Colors
+
+Edit `tailwind.config.js`:
+
+- `primary`: `#FFB237`
+- `secondary`: vermilion `#f12300`
+- `bodybg`: off-white `#f6f6f6`
+
+The built stylesheet is `site/css/app.css` (generated). Source is `src/css/input.css`.

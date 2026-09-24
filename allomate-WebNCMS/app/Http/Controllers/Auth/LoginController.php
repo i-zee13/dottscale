@@ -1,0 +1,112 @@
+<?php
+
+namespace App\Http\Controllers\Auth;
+
+use Auth;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use DB;
+use Hash;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
+use Illuminate\Support\Facades\DB as FacadesDB;
+use Illuminate\Support\Facades\Hash as FacadesHash;
+use Illuminate\Support\Facades\Session;
+
+class LoginController extends Controller
+{
+    /*
+    |--------------------------------------------------------------------------
+    | Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
+    |
+    */
+
+    use AuthenticatesUsers;
+
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/admin/index';
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        if (!in_array($_SERVER['HTTP_HOST'], ['localhost', '127.0.0.1', '127.0.0.1:8001']) && !in_array($_SERVER['HTTP_HOST'], [env('ADMIN_URL', 'demo.crm.allomate.solutions')])) {
+            return abort(404);
+        }
+    }
+
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
+
+    public function login(Request $request)
+    {
+        $this->validate($request, [
+            'username'  =>  'required',
+            'password'  =>  'required',
+        ]);
+        $credentials    =   $request->only('username', 'password');
+        $webGuard       =   FacadesAuth::guard('web');
+        if ($webGuard->attempt($credentials)) {
+            return redirect()->route('index');
+        }
+        return $this->sendFailedLoginResponse($request);
+    }
+
+    public function change_password()
+    {
+        return view('auth.change_password');
+    }
+
+    public function ChangeUserPassword(Request $request)
+    {
+        $user_data = FacadesDB::table('users')->whereRaw('username = "' . $request->pass_username . '"')->first();
+        if (FacadesHash::check($request->old_pass, $user_data->password)) {
+            if (FacadesHash::check($request->new_password, $user_data->password)) {
+                echo json_encode(101);
+            } else {
+                $update = FacadesDB::table('users')->whereRaw('username = "' . $request->pass_username . '"')->update([
+                    'password' => bcrypt($request->new_password),
+                    'password_changed' => 1
+                ]);
+                if ($update) {
+                    echo json_encode(200);
+                } else {
+                    echo json_encode(202);
+                }
+            }
+        } else {
+            echo json_encode(201);
+        }
+    }
+
+    //    public function __construct()
+    //    {
+    //        $this->middleware('guest')->except('logout');
+    //    }
+
+    public function logout(Request $request)
+    {
+        FacadesAuth::guard('web')->logout();
+        Session::flush();
+        return redirect()->route('login');
+    }
+
+    public function username()
+    {
+        return 'username';
+    }
+}

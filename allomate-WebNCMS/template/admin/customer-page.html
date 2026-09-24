@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title></title>
+
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,700,800" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+	<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" type="text/css" href="css/datatables.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="css/select2-bootstrap4.css">
+	<link href="css/datepicker.css" rel="stylesheet">
+	<link href="css/jquery.mCustomScrollbar.css" rel="stylesheet">
+	<link href="css/dropify.min.css" rel="stylesheet" type="text/css"/>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
+	<link rel="stylesheet" type="text/css" href="css/product.css">
+
+
+</head>
+
+<body id="page-top">
+
+	<style>
+		.nav-pills .nav-link.active ._cus-val,
+		.nav-tabs .nav-link.active ._cus-val {
+			color: #fff;
+			background-color: #040827;
+		}
+		.profile-center .nav-pills .nav-link.active,
+		._report-Head .nav-pills .nav-link.active {
+			color: #040827;
+		}
+		.nav-pills .nav-link ._cus-val,
+		.nav-tabs .nav-link ._cus-val {
+			background-color: #e2e9fb;
+			color: #7f8998;
+			font-size: 10px;
+			padding: 3px 4px 2px 4px;
+			height: 16px;
+			margin-top: 3px;
+			margin-left: 5px;
+			font-family: proximanova-light, sans-serif;
+			border-radius: 5px;
+			display: inline-block;
+			line-height: 1;
+		}
+		.target-tab {
+			height: 50px;
+			margin-top: 15px;
+			padding-top: 5px;
+			background-color: #fff;
+			position: relative;
+		}
+  		.dataTable td,
+		.modal-body table td {
+			padding: 5px 5px;
+			vertical-align: middle;
+		}
+		.add_button {
+			z-index: 15;
+			right: 10px;
+			top: -3px;
+		}
+		.table th {
+			letter-spacing: normal;
+		}
+		.pocPROFILE .infoDiv {padding: 5px 8px;}
+		.pocPROFILE .fa {color: #fff;}
+		.cnicCardimg {width: 500px; height: auto; display: block; margin: 15px auto;}
+ 
+	</style>
+
+	<div id="product-cl-sec"> <a href="javascript:void(0);" id="pl-close" class="close-btn-pl"></a>
+		<div class="pro-header-text ml-0">New <span>Address </span></div>
+		<div class="pc-cartlist">
+			<div class="overflow-plist">
+				<div class="plist-content">
+					<div class="_left-filter">		 
+						<div class="container">
+							<div class="row">
+								<div class="col-12">
+
+									<div id="floating-label" class="card p-20 top_border">
+										<h2 class="_head03">Address <span>Detail</span></h2>
+
+
+										<div class="form-wrap p-0"> 
+
+											<div class="row"> 
+												<div class="col-md-6">
+													<label class="font11 mb-0">Select Type</label>
+													<select class="custom-select custom-select-sm">
+														<option>Type</option>
+														<option>Business</option>
+														<option selected>Residential</option> 
+													</select>
+												</div> 
+	 
+												<div class="col-md-12 PT-15">
+													<div class="form-group">
+														<label class="control-label mb-10">Address</label>
+														<input type="text" class="form-control">
+													</div>
+												</div>
+	 
+											</div>
+
+											<br>
+											<br>
+											----------------
+											<br>
+											<br>		 
+											
+
+											<div class="row">
+												<div class="col-md-12 mt-20">
+													<h2 class="_head03">Employment <span>Information</span></h2>
+												</div>
+												<div class="col-md-6">
+													<div class="form-s2">
+														<label class="font11 mb-0">Occupation</label>
+														<select class="form-control formselect"
+															placeholder="select Country">
+															<option selected>Select Occupation</option>
+															<option>Occupation</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-md-6 pt-5">
+													<div class="form-group">
+														<label class="control-label mb-10">Company Name</label>
+														<input type="text" class="form-control">
+													</div>
+												</div>
+												<div class="col-md-6 pt-5">
+													<div class="form-group">
+														<label class="control-label mb-10">Phone Number</label>
+														<input type="text" class="form-control">
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-s2">
+														<label class="font11 mb-0">Job Title</label>
+														<select class="form-control formselect"
+															placeholder="select Country">
+															<option selected>Select Job Title</option>
+															<option>Job Title</option>
+														</select>
+													</div>
+												</div> 
+												<div class="col-md-6 pt-5">
+													<div class="form-group">
+														<label class="control-label mb-10">Address</label>
+														<input type="text" class="form-control">
+													</div>
+												</div>
+												<div class="col-md-6 pt-5">
+													<div class="form-group">
+														<label class="control-label mb-10">Official Email</label>
+														<input type="text" class="form-control">
+													</div>
+												</div> 
+											</div>
+
+											<br>
+											<br>
+											----------------
+											<br>
+											<br>
+
+											<div class="row">
+												<div class="col-md-12 mt-20">
+													<h2 class="_head03">Marital  <span>Status</span></h2>
+												</div>
+												<div class="col-md-6">
+													<div class="form-s2">
+														<label class="font11 mb-0">Marital Status</label>
+														<select class="form-control formselect"
+															placeholder="select Marital Status">
+															<option selected>Select Marital Status</option>
+															<option>Marital Status</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-md-6 pt-5">
+													<div class="form-group">
+														<label class="control-label mb-10">Spouse / Partner First Name</label>
+														<input type="text" class="form-control">
+													</div>
+												</div>
+												<div class="col-md-6 pt-5">
+													<div class="form-group">
+														<label class="control-label mb-10">Spouse / Partner Middle Name</label>
+														<input type="text" class="form-control">
+													</div>
+												</div>
+												<div class="col-md-6 pt-5">
+													<div class="form-group">
+														<label class="control-label mb-10">Spouse/ Partner Last Name</label>
+														<input type="text" class="form-control">
+													</div>
+												</div>
+
+												<div class="col-md-6">
+													<label class="font11 mb-0">Select Gender</label>
+													<select class="custom-select custom-select-sm">
+														<option selected>Select Gender</option>
+														<option>Male</option>
+														<option>Female</option> 
+													</select>
+												</div> 
+
+												<div class="col-md-6 PT-5">
+													<div class="form-group">
+														<label class="control-label mb-10">Email</label>
+														<input type="text" class="form-control">
+													</div>
+												</div> 
+
+ 
+												<div class="col-md-6 PT-5">
+													<div class="form-group">
+														<label class="control-label mb-10">Home Phone Number</label>
+														<input type="text" class="form-control">
+													</div>
+												</div>
+
+												<div class="col-md-6 PT-5">
+													<div class="form-group">
+														<label class="control-label mb-10">Cell Phone Number</label>
+														<input type="text" class="form-control">
+													</div>
+												</div>
+
+											</div>
+
+											<br>
+											<br>
+											----------------
+											<br>
+											<br>
+
+											<div class="row">
+												<div class="col-md-12 mt-20">
+													<h2 class="_head03">Client <span>Identification Documents</span></h2>
+												</div>
+												<div class="col-md-6">
+													<div class="form-s2">
+														<label class="font11 mb-0">Document Type</label>
+														<select class="form-control formselect"
+															placeholder="select Document Type">
+															<option selected>Select Document Type</option>
+															<option>Document Type</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-md-6 pt-5">
+													<div class="form-group">
+														<label class="control-label mb-10">Document Number</label>
+														<input type="text" class="form-control">
+													</div>
+												</div>
+												<div class="col-md-6">
+													<label class="font12 mb-0">Document Issuance Date</label>
+													<div class="form-group" style="height: auto">
+													  <input autocomplete="off" type="text" id="datepicker" class="form-control" placeholder="">
+													</div>
+												</div>
+												<div class="col-md-6">
+													<label class="font12 m-0">Document Expiry Date</label>
+													<div class="form-group" style="height: auto">
+													  <input autocomplete="off" type="text" id="datepicker" class="form-control" placeholder="">
+													</div>
+												</div> 
+
+												<div class="col-md-6">
+													<div class="form-wrap p-0">
+													  <label class="font11 mb-5">Document Front Image</label>
+													  <div class="upload-pic"></div>
+													  <input type="file" id="input-file-now" data-default-file="" class="dropify " />
+													</div>
+												  </div>
+												  <div class="col-md-6">
+													<div class="form-wrap p-0">
+													  <label class="font11 mb-5">Document Back Image</label>
+													  <div class="upload-pic"></div>
+													  <input type="file" id="input-file-now" data-default-file="" class="dropify" />
+													</div>
+  											   </div>	
+
+											</div>
+
+
+											<br>
+											<br>
+											----------------
+											<br>
+											<br>
+
+											
+											<div class="row">
+												<div class="col-md-12 mt-20">
+													<h2 class="_head03">Add <span>Relatives</span></h2>
+												</div>
+												<div class="col-md-6">
+													<div class="form-s2">
+														<label class="font11 mb-0">Relation Ship Type</label>
+														<select class="form-control formselect"
+															placeholder="Select Relation Ship Type">
+															<option selected>Select Relation Ship Type</option>
+															<option>Relation Ship Type</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-md-6 pt-5">
+													<div class="form-group">
+														<label class="control-label mb-10">Relative First Name</label>
+														<input type="text" class="form-control">
+													</div>
+												</div>
+												<div class="col-md-6 pt-5">
+													<div class="form-group">
+														<label class="control-label mb-10">Relative  Partner Middle Name</label>
+														<input type="text" class="form-control">
+													</div>
+												</div>
+												<div class="col-md-6 pt-5">
+													<div class="form-group">
+														<label class="control-label mb-10">Relative Partner Last Name</label>
+														<input type="text" class="form-control">
+													</div>
+												</div>
+
+												<div class="col-md-6">
+													<label class="font11 mb-0">Select Gender</label>
+													<select class="custom-select custom-select-sm">
+														<option selected>Select Gender</option>
+														<option>Male</option>
+														<option>Female</option> 
+													</select>
+												</div> 
+
+												<div class="col-md-6 PT-5">
+													<div class="form-group">
+														<label class="control-label mb-10">Email</label>
+														<input type="text" class="form-control">
+													</div>
+												</div> 
+
+ 
+												<div class="col-md-6 PT-5">
+													<div class="form-group">
+														<label class="control-label mb-10">Home Phone Number</label>
+														<input type="text" class="form-control">
+													</div>
+												</div>
+
+												<div class="col-md-6 PT-5">
+													<div class="form-group">
+														<label class="control-label mb-10">Cell Phone Number</label>
+														<input type="text" class="form-control">
+													</div>
+												</div>
+
+											</div>
+
+
+
+										</div>
+
+
+
+									</div>
+
+ 
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="_cl-bottom">
+			<button type="submit" class="btn btn-primary mr-2" data-toggle="modal"
+				data-target=".bd-example-modal-lg">Save</button>
+			<button id="pl-close" type="submit" class="btn btn-cancel mr-2">Cancel</button>
+		</div>
+	</div>
+
+	<div class="modal fade" id="ViewCNICimg" tabindex="-1" role="dialog" aria-labelledby="DetailModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+		  <div class="modal-content top_border">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="DetailModalLabel">Document <span>  Front Image</span></h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+			</div>
+			<div class="modal-body">
+			  <div class="col-md-12"> 
+				<img class="cnicCardimg" src="images/c-card-front.jpg" alt=""/>  
+			  </div>
+			</div>
+			<div class="modal-footer border-0 p-10">
+			  <button type="submit" class="btn btn-cancel" data-dismiss="modal" aria-label="Close">Close</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	
+
+	  <div class="sidebarblue">
+		<div class="aside-primary">
+		  <div class="sell360"><a href="index.html"><img alt="Khan LLP" src="images/khan-law.png"></a></div>
+		  <div class="main-links">
+			<ul>
+			  <li><a><img src="images/search-icon.svg" alt="" /> Search</a></li>
+			  <li><a><img src="images/add-pluse-icon.svg" alt="" /> Create New</a></li>
+			  <li><a><img src="images/icon-dash-board.svg" alt="" /> Dashboard</a></li>
+			  <hr>
+			  <li><a><img src="images/emp-icon.svg" alt="" /> Organization</a></li>
+			  <li><a><img src="images/customer-list-icon.svg" alt="" /> Clients</a></li>
+			  <li><a><img src="images/correspondence-icon-2.svg" alt="" /> Business Contacts</a></li>
+			  <li><a><img src="images/correspondence-icon.svg" alt="" /> Service Areas</a></li>
+			  <li><a><img src="images/api-icon.svg" alt="" /> Integrations</a></li>
+			  <li><a><img src="images/mth-setting-icon.svg" alt="" /> Site Settings</a></li>
+			  <li><a id="sidebar-menu"><img src="images/dashboard-icon.svg" alt="" /> Website Pages</a></li>
+			</ul>
+		  </div>
+		  <div class="_user-nav"> <a href="javascript:void(0);"><img src="images/bell-icon-2.svg" alt="Notification"
+				title="Notification" /><span class="badge">4</span></a> <a href="javascript:void(0);" class="userIMG"><img
+				src="images/avatar.svg" alt="" /></a> <a href="javascript:void(0);" class="float-right"><img src="images/setting-icon.svg"
+				alt="Setting" title="Setting" /></a> </div>
+		  <div class="sidebar-BL">
+			<ul>          
+			  <li><a href="javascript:void(0);"><img src="images/logout-icon.svg" alt="Employee" /> Logout</a></li>
+			</ul>
+		  </div>
+		</div>
+	  </div>
+	  <div id="_subNav-id">
+		<div class="_subNav"> <a id="SN-close" class="SN-close-btn"><i class="fa fa-arrow-left"></i></a>
+		  <h2>Creat New</h2>
+		  <ul>
+			<li><a href="services-sections-page-001.html"><img src="images/create-page-icon.svg" alt="" />Create Page </a></li>
+			<li><a href="home-page.html"><img src="images/activity-icon.svg" alt="" />Home Page</a></li>
+			<li><a href="about-page.html"><img src="images/activity-icon.svg" alt="" />About Us</a></li>
+			<li><a href="contact-page.html"><img src="images/activity-icon.svg" alt="" />Contact Us</a></li>
+			<li><a href="the-difference__testimonial-page.html"><img src="images/activity-icon.svg" alt="" />Testimonial</a></li> 
+			<li><a href="faqs.html"><img src="images/activity-icon.svg" alt="" />FAQs</a></li> 
+			<li><a href="blog-list-page.html"><img src="images/activity-icon.svg" alt="" />Blogs List</a></li> 
+		  </ul>
+		</div>
+	  </div>
+	
+
+	<div id="wrapper">
+
+
+
+		<div id="content-wrapper">
+			<div class="overlay-blure"></div>
+			<div id="blureEffct" class="container">
+
+				<div class="row mt-2 mb-3">
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<h2 class="_head01">Client:<span> Latika Yasmin</span></h2>
+					</div>
+
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<ol class="breadcrumb">
+							<li><a href="javascript:void(0);"><span>Client</span></a></li>
+							<li><span>Detail</span></li>
+						</ol>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12 mb-30">
+						<div class="card PB-20">
+							<div class="body pocPROFILE pb-0">
+								<div class="row">
+									<div class="col-12">
+										<div class="header pt-0">
+											<h2>Client <span>Definition</span></h2> 
+											<button class="btn add_button" style="top:-6px; right:0;"><i class="fa fa-pencil-alt"></i> <span> Edit</span></button>
+										</div>
+									</div>
+									<div class="col-12 PB-10">
+										<div class="form-wrap p-0">
+											<div class="row">
+												<div class="col-md-4 p-col-L">
+													<div class="infoDiv">
+														<label class="control-label">Contact Type</label>
+														<p><strong>Contact Type</strong></p>
+													</div>
+												</div>
+												<div class="col-md-4 p-col-R p-col-L">
+													<div class="infoDiv">
+														<label class="control-label">Acquisition Source</label>
+														<p><strong>Acquisition Source</strong></p>
+													</div>
+												</div> 
+												<div class="col-md-4 p-col-R">
+													<div class="infoDiv">
+														<label class="control-label">Life Cycle Stage</label>
+														<p><strong>Life Cycle Stage</strong></p>
+													</div>
+												</div> 
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="row">
+									<div class="col-12">
+										<div class="header pt-0">
+											<h2>Basic  <span>Information</span></h2> 
+										</div>
+									</div>
+									
+									<div class="col-12 PB-10">
+										<div class="form-wrap p-0">
+											<div class="row">
+												<div class="col-md-4 p-col-L">
+													<div class="infoDiv">
+														<label class="control-label">Frist Name</label>
+														<p><strong>Frist Name</strong></p>
+													</div>
+												</div>
+												<div class="col-md-4 p-col-R p-col-L">
+													<div class="infoDiv">
+														<label class="control-label">Middle Name</label>
+														<p><strong>Middle Name</strong></p>
+													</div>
+												</div> 
+												<div class="col-md-4 p-col-R">
+													<div class="infoDiv">
+														<label class="control-label">Last Name</label>
+														<p><strong>Last Name</strong></p>
+													</div>
+												</div> 
+												<div class="col-md-4 p-col-L">
+													<div class="infoDiv">
+														<label class="control-label">Date of Birth</label>
+														<p><strong>Date of Birth</strong></p>
+													</div>
+												</div>
+												<div class="col-md-4 p-col-R p-col-L">
+													<div class="infoDiv">
+														<label class="control-label">Gender</label>
+														<p><strong>Gender</strong></p>
+													</div>
+												</div> 
+												<div class="col-md-4 p-col-R">
+													<div class="infoDiv">
+														<label class="control-label">Residency Status</label>
+														<p><strong>Residency Status</strong></p>
+													</div>
+												</div> 
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="row">
+									<div class="col-12">
+										<div class="header pt-0">
+											<h2>Primary <span>Contact Info</span></h2> 
+										</div>
+									</div>
+									
+									<div class="col-12">
+										<div class="form-wrap p-0">
+											<div class="row">
+												<div class="col-md-4 p-col-L">
+													<div class="infoDiv">
+														<label class="control-label">Home Phone Number</label>
+														<p><strong>Home Phone Number</strong></p>
+													</div>
+												</div>
+												<div class="col-md-4 p-col-R p-col-L">
+													<div class="infoDiv">
+														<label class="control-label">Cell Phone Number</label>
+														<p><strong>Cell Phone Number</strong></p>
+													</div>
+												</div> 
+												<div class="col-md-4 p-col-R">
+													<div class="infoDiv">
+														<label class="control-label">email</label>
+														<p><strong>email</strong></p>
+													</div>
+												</div>  
+												<div class="col-md-8 p-col-L">
+													<div class="infoDiv">
+														<label class="control-label">Home Address</label>
+														<p><strong>Home Address</strong></p>
+													</div>
+												</div>
+												<div class="col-md-4 p-col-R">
+													<div class="infoDiv">
+														<label class="control-label">Country</label>
+														<p><strong>Country</strong></p>
+													</div>
+												</div> 
+												<div class="col-md-4 p-col-L">
+													<div class="infoDiv">
+														<label class="control-label">State/Province</label>
+														<p><strong>State/Province</strong></p>
+													</div>
+												</div>  
+												<div class="col-md-4 p-col-L p-col-R">
+													<div class="infoDiv">
+														<label class="control-label">City</label>
+														<p><strong>City</strong></p>
+													</div>
+												</div>
+												<div class="col-md-4 p-col-R">
+													<div class="infoDiv">
+														<label class="control-label">Postal Code</label>
+														<p><strong>Postal Code</strong></p>
+													</div>
+												</div>   
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+
+							<div class="col-12">
+								<div class="_report-Head target-tab">
+									<ul class="nav nav-pills mb-3 mt-0" id="pills-tab2" role="tablist">
+										<li class="nav-item">
+											<a class="nav-link active" id="pills-target-p" data-toggle="pill"
+												href="#target-p" role="tab" aria-controls="-target-p"
+												aria-selected="true">Addresses <span class="_cus-val"> 4
+												</span></a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" id="pills-product-tab2" data-toggle="pill"
+												href="#pills-product2" role="tab" aria-controls="pills-product2"
+												aria-selected="true">Employment Info <span class="_cus-val"> 18
+												</span></a>
+										</li>
+
+										<!-- <li class="nav-item">
+											<a class="nav-link" id="pills-brands2-tab" data-toggle="pill"
+												href="#pills-brands2" role="tab" aria-controls="pills-brands2"
+												aria-selected="false">Marital Status<span class="_cus-val"> 18
+												</span></a>
+										</li> -->
+
+										<li class="nav-item">
+											<a class="nav-link" id="pills-channels2-tab" data-toggle="pill"
+												href="#pills-channels2" role="tab" aria-controls="pills-channels2"
+												aria-selected="false">Documents<span class="_cus-val"> 18 </span></a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" id="pills-otherkpi2-tab" data-toggle="pill"
+												href="#pills-otherkpi2" role="tab" aria-controls="pills-otherkpi2"
+												aria-selected="false">Relatives <span class="_cus-val"> 18 </span></a>
+										</li>
+									</ul>
+								</div>
+
+
+								<div class="tab-content" id="pills-tabContent2">
+
+									<div class="tab-pane fade show active" id="target-p" role="tabpanel"
+										aria-labelledby="target-p-tab">
+										<div class="col-12 pl-0 pr-0 PT-20 PB-10">
+											<div class="header pt-0">
+												<h2>Address <span>List</span></h2>
+												<button id="productlist01" class="btn add_button"><i
+														class="fa fa-plus"></i> <span> Add New
+													</span></button>
+											</div>
+										</div>
+										<div>
+											<table class="table table-hover dt-responsive nowrap" id="example"
+												style="width:100%">
+												<thead>
+													<tr>
+														<th>Type</th>
+														<th>Address</th>
+														<th>Action</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Office</td>
+														<td>Address here.....</td>
+														<td><button class="btn btn-default btn-line">Edit</button>
+															<button class="btn btn-default red-bg">Delete</button>
+														</td>
+													</tr>
+													<tr>
+														<td>Office</td>
+														<td>Address here.....</td>
+														<td><button class="btn btn-default btn-line">Edit</button>
+															<button class="btn btn-default red-bg">Delete</button>
+														</td>
+													</tr>
+													<tr>
+														<td>Office</td>
+														<td>Address here.....</td>
+														<td><button class="btn btn-default btn-line">Edit</button>
+															<button class="btn btn-default red-bg">Delete</button>
+														</td>
+													</tr>
+													<tr>
+														<td>Office</td>
+														<td>Address here.....</td>
+														<td><button class="btn btn-default btn-line">Edit</button>
+															<button class="btn btn-default red-bg">Delete</button>
+														</td>
+													</tr>
+
+												</tbody>
+											</table>
+										</div>
+
+
+									</div>
+
+									<div class="tab-pane fade show" id="pills-product2" role="tabpanel"
+										aria-labelledby="pills-product2-tab">
+										<div class="col-12 pl-0 pr-0 PT-20 PB-10">
+											<div class="header pt-0">
+												<h2>Employment <span>Information</span></h2>
+												<button id="productlist01" class="btn add_button"><i
+														class="fa fa-plus"></i> <span> Add New
+													</span></button>
+											</div>
+										</div>
+
+										<table class="table table-hover dt-responsive nowrap" id="example2"
+											style="width:100%">
+											<thead>
+												<tr>
+													<th>Occupation</th>
+													<th>Company Name</th>
+													<th>Phone Number</th>
+													<th>Job Title</th>
+													<th>Address</th>
+													<th>Official Email</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Occupation</td>
+													<td>Company Name here.....</td>
+													<td>03214587452</td>
+													<td>Title here...</td>
+													<td>Address here.....</td>
+													<td>email@email.com</td>
+													<td><button class="btn btn-default btn-line">Edit</button>
+														<button class="btn btn-default red-bg">Delete</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Occupation</td>
+													<td>Company Name here.....</td>
+													<td>03214587452</td>
+													<td>Title here...</td>
+													<td>Address here.....</td>
+													<td>email@email.com</td>
+													<td><button class="btn btn-default btn-line">Edit</button>
+														<button class="btn btn-default red-bg">Delete</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Occupation</td>
+													<td>Company Name here.....</td>
+													<td>03214587452</td>
+													<td>Title here...</td>
+													<td>Address here.....</td>
+													<td>email@email.com</td>
+													<td><button class="btn btn-default btn-line">Edit</button>
+														<button class="btn btn-default red-bg">Delete</button>
+													</td>
+												</tr>
+												<tr>
+													<td>Occupation</td>
+													<td>Company Name here.....</td>
+													<td>03214587452</td>
+													<td>Title here...</td>
+													<td>Address here.....</td>
+													<td>email@email.com</td>
+													<td><button class="btn btn-default btn-line">Edit</button>
+														<button class="btn btn-default red-bg">Delete</button>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+
+										<!-- <div class="body pocPROFILE p-0">
+											<div class="row">
+											  <div class="col-12">
+												<div class="form-wrap p-0">
+												  <div class="row">
+													<div class="col-md-6 p-col-L">
+													  <div class="infoDiv">
+														<label class="control-label mb-5">Occupation</label>
+														<p><strong>Occupation</strong></p>
+													  </div>
+													</div>
+													<div class="col-md-6 p-col-R">
+													  <div class="infoDiv">
+														<label class="control-label mb-5">Company Name</label>
+														<p><strong>Company Name</strong></p>
+													  </div>
+													</div>
+												  </div>
+												  <div class="row">
+													<div class="col-md-6 p-col-L">
+													  <div class="infoDiv">
+														<label class="control-label mb-5">Phone Number</label>
+														<p><strong>Phone Number</strong></p>
+													  </div>
+													</div>
+													<div class="col-md-6 p-col-R">
+													  <div class="infoDiv">
+														<label class="control-label mb-5">Job Title</label>
+														<p><strong>Job Title</strong></p>
+													  </div>
+													</div>
+												  </div>
+												  <div class="row">
+													<div class="col-md-6 p-col-L">
+													  <div class="infoDiv">
+														<label class="control-label mb-5">Address</label>
+														<p><strong>Address</strong></p>
+													  </div>
+													</div>
+													<div class="col-md-6 p-col-R">
+													  <div class="infoDiv">
+														<label class="control-label mb-5">Official Email</label>
+														<p><strong>Official Email</strong></p>
+													  </div>
+													</div>
+												  </div>
+												 
+							    
+							   
+												</div>
+											  </div> 
+							   
+						  
+											</div>
+										  </div> -->
+
+									</div>
+
+									<!-- <div class="tab-pane fade" id="pills-brands2" role="tabpanel"
+										aria-labelledby="pills-brands2-tab">
+
+										<div class="col-12 pl-0 pr-0 PT-20 PB-10">
+											<div class="header pt-0">
+												<h2>Spouse/Partner <span>Name</span></h2>
+												<button id="productlist01" class="btn add_button"><i
+														class="fa fa-plus"></i> <span> Add New
+													</span></button>
+											</div>
+										</div>
+
+										<table class="table table-hover dt-responsive nowrap" id="example3"
+											style="width:100%">
+											<thead>
+												<tr>
+													<th>Marital Status</th>
+													<th>Partner First Name</th>
+													<th>Partner Middle Name</th>
+													<th>Partner Last Name</th>
+													<th>Gender</th>
+													<th>Email</th>
+													<th>Home Phone</th>
+													<th>Cell Phone</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td><button class="btn btn-default btn-line">Edit</button>
+														<button class="btn btn-default red-bg">Delete</button>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>									 
+
+									</div> -->
+
+									<div class="tab-pane fade" id="pills-channels2" role="tabpanel"
+										aria-labelledby="pills-channels-tab2">
+										<div class="col-12 pl-0 pr-0 PT-20 PB-10">
+											<div class="header pt-0">
+												<h2>Client <span>Identification Documents</span></h2>
+												<button id="productlist01" class="btn add_button"><i
+														class="fa fa-plus"></i> <span> Add New
+													</span></button>
+											</div>
+										</div>
+										<table class="table table-hover dt-responsive nowrap" id="example4"
+											style="width:100%">
+											<thead>
+												<tr>
+													<th>Document Type</th>
+													<th>Document No.</th>
+													<th>Document Issuance Date</th>
+													<th>Document Expiry Date</th>
+													<th>Document Front Image</th>
+													<th>Document Back Image</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>54542154</td>
+													<td>05/17/2020</td>
+													<td>Document Type</td>
+													<td>05/17/2020</td>
+													<td><a data-toggle="modal" data-target="#ViewCNICimg" class="btn p-0">
+														<img style="width:54px; height:35px" src="images/c-card-front.jpg" alt="">
+													    </a>
+												    </td>
+													<td><a data-toggle="modal" data-target="#ViewCNICimg" class="btn p-0">
+														<img style="width:54px; height:35px" src="images/c-card-back.jpg" alt="">
+													    </a>
+												    </td>
+													<td style="width:80px;"><button
+															class="btn btn-default btn-line">Edit</button>
+														<button class="btn btn-default red-bg">Delete</button>
+													</td>
+												</tr>
+												<tr>
+													<td>54542154</td>
+													<td>05/17/2020</td>
+													<td>Document Type</td>
+													<td>05/17/2020</td>
+													<td><a data-toggle="modal" data-target="#ViewCNICimg" class="btn p-0">														
+														<img style="width:54px; height:35px" src="images/front-s.jpg" alt="">
+													    </a>
+													</td>
+													<td><a data-toggle="modal" data-target="#ViewCNICimg" class="btn p-0">														
+														<img style="width:54px; height:35px" src="images/back.jpg" alt="">
+													    </a>
+													</td>
+		 
+													<td><button class="btn btn-default btn-line">Edit</button>
+														<button class="btn btn-default red-bg">Delete</button>
+													</td>
+												</tr>
+												<tr>
+													<td>54542154</td>
+													<td>05/17/2020</td>
+													<td>Document Type</td>
+													<td>05/17/2020</td>
+													<td><a data-toggle="modal" data-target="#ViewCNICimg" class="btn p-0">														
+														<img style="width:54px; height:35px" src="images/front-s.jpg" alt="">
+													    </a>
+													</td>
+													<td><a data-toggle="modal" data-target="#ViewCNICimg" class="btn p-0">														
+														<img style="width:54px; height:35px" src="images/back.jpg" alt="">
+													    </a>
+													</td>
+													<td><button class="btn btn-default btn-line">Edit</button>
+														<button class="btn btn-default red-bg">Delete</button>
+													</td>
+												</tr>
+												<tr>
+													<td>54542154</td>
+													<td>05/17/2020</td>
+													<td>Document Type</td>
+													<td>05/17/2020</td>
+													<td><a data-toggle="modal" data-target="#ViewCNICimg" class="btn p-0">														
+														<img style="width:54px; height:35px" src="images/front-s.jpg" alt="">
+													    </a>
+													</td>
+													<td><a data-toggle="modal" data-target="#ViewCNICimg" class="btn p-0">														
+														<img style="width:54px; height:35px" src="images/back.jpg" alt="">
+													    </a>
+													</td>
+													<td><button class="btn btn-default btn-line">Edit</button>
+														<button class="btn btn-default red-bg">Delete</button>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+
+									</div>
+
+									<div class="tab-pane fade" id="pills-otherkpi2" role="tabpanel"
+										aria-labelledby="pills-otherkpi2-tab">
+
+										<div class="col-12 pl-0 pr-0 PT-20 PB-10">
+											<div class="header pt-0">
+												<h2>Relatives<span></span></h2>
+												<button id="productlist01" class="btn add_button"><i
+														class="fa fa-plus"></i> <span> Add New
+													</span></button>
+											</div>
+										</div>
+
+										<table class="table table-hover dt-responsive nowrap" id="example5"
+											style="width:100%">
+											<thead>
+												<tr>
+													<th>Relation Ship Type</th>
+													<th>First Name</th>
+													<th>Partner Middle Name</th>
+													<th>Partner Last Name</th>
+													<th>Gender</th>
+													<th>Email</th>
+													<th>Home Phone</th>
+													<th>Cell Phone</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td style="width:80px;"><button
+															class="btn btn-default btn-line">Edit</button>
+														<button class="btn btn-default red-bg">Delete</button>
+													</td>
+												</tr>
+												<tr>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td><button class="btn btn-default btn-line">Edit</button>
+														<button class="btn btn-default red-bg">Delete</button>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+
+
+										<!-- <div class="body pocPROFILE p-0">
+											<div class="row">
+											  <div class="col-12">
+												<div class="form-wrap p-0">
+												  <div class="row">
+													<div class="col-md-6 p-col-L">
+													  <div class="infoDiv">
+														<label class="control-label mb-5">Relation Ship Type</label>
+														<p><strong>Relation Ship Type</strong></p>
+													  </div>
+													</div>
+													<div class="col-md-6 p-col-R">
+													  <div class="infoDiv">
+														<label class="control-label mb-5">Relative First Name</label>
+														<p><strong>First Name</strong></p>
+													  </div>
+													</div>
+												  </div>
+												  <div class="row">
+													<div class="col-md-6 p-col-L">
+													  <div class="infoDiv">
+														<label class="control-label mb-5">Relative  Partner Middle Name</label>
+														<p><strong>Middle Name</strong></p>
+													  </div>
+													</div>
+													<div class="col-md-6 p-col-R">
+													  <div class="infoDiv">
+														<label class="control-label mb-5">Relative Partner Last Name</label>
+														<p><strong>Last Name</strong></p>
+													  </div>
+													</div>
+												  </div>
+
+												  <div class="row">
+													<div class="col-md-6 p-col-L">
+													  <div class="infoDiv">
+														<label class="control-label mb-5">Gender</label>
+														<p><strong>Male</strong></p>
+													  </div>
+													</div>
+													<div class="col-md-6 p-col-R">
+													  <div class="infoDiv">
+														<label class="control-label mb-5">Email</label>
+														<p><strong>Email</strong></p>
+													  </div>
+													</div>
+												  </div>
+
+												  <div class="row">
+													<div class="col-md-6 p-col-L">
+													  <div class="infoDiv">
+														<label class="control-label mb-5">Home Phone Number</label>
+														<p><strong>Home Phone Number</strong></p>
+													  </div>
+													</div>
+													<div class="col-md-6 p-col-R">
+													  <div class="infoDiv">
+														<label class="control-label mb-5">Cell Phone Number</label>
+														<p><strong>Cell Phone Number</strong></p>
+													  </div>
+													</div>
+												  </div>
+												 
+							    
+							   
+												</div>
+											  </div> 
+							   
+						  
+											</div>
+										  </div> -->
+
+									</div>
+
+
+								</div>
+							</div>
+
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<footer class="sticky-footer">
+				<div class="container my-auto">
+					<div class="copyright text-center my-auto">
+						2019 Sell3sixty All rights reserved
+					</div>
+				</div>
+			</footer>
+
+		</div>
+
+
+	</div>
+
+
+
+
+
+	<script src="js/jquery-3.3.1.slim.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/datatables.min.js"></script>
+	<script src="js/select2.min.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/jquery.mCustomScrollbar.min.js"></script>
+	<script src="js/dropzone-data.js"></script> 
+	<script src="js/dropify.min.js"></script> 
+	<script src="js/form-file-upload-data.js"></script> 
+	<script src="js/custom.js"></script>
+	<script src="js/meter-d3.min.js"></script>
+	<script>
+
+
+$('#datepicker, #datepicker2').datepicker({
+       autoclose: true,
+    todayHighlight: true,
+    toggleActive: true,
+}).on('changeDate', function (ev) {
+    $(this).datepicker('hide');
+});
+
+
+
+		$('.form-control').on('focus blur', function (e) {
+			$(this).parents('.form-group').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
+		})
+			.trigger('blur');
+
+		$(document).ready(function () {
+			$('#SN-close, .overlay-blure').on('click', function () {
+				$('#_subNav-id').removeClass('active');
+				$('#blureEffct').removeClass('blur-div');
+				$('body').removeClass('no-scroll')
+			});
+			$('#sidebar-menu').on('click', function () {
+				$('#_subNav-id').addClass('active');
+				$('#blureEffct').addClass('blur-div');
+				$('body').addClass('no-scroll')
+			});
+
+
+			$('#modalClose').on('click', function () {
+				$('#modalWindow').removeClass('modalShow');
+			});
+			$('#modalShow').on('click', function () {
+				$('#modalWindow').addClass('modalShow');
+			});
+
+			$('#modalExpand-btn').click(function () {
+				$("#modalWindow").toggleClass("modalExpand");
+				$('i').toggleClass('fa-expand fa-compress');
+			});
+
+			$('#pl-close, .overlay-blure').on('click', function () {
+				$('#product-cl-sec').removeClass('active');
+				$('#blureEffct').removeClass('blur-div');
+				$('body').toggleClass('no-scroll');
+				$('i').toggleClass('fa-arrow-left  fa-arrow-right')
+			});
+
+			$('#productlist01').on('click', function () {
+				$('#product-cl-sec').addClass('active');
+				$('#blureEffct').addClass('blur-div');
+				$('body').toggleClass('no-scroll');
+				$('i').toggleClass('fa-arrow-left  fa-arrow-right')
+
+			});
+
+		});
+
+		$(".formselect").select2();
+
+		$(document).ready(function () {
+			$('#example, #example2, #example3, #example4, #example5').DataTable();
+		});
+
+
+
+
+
+
+	</script>
+
+
+
+
+
+</body>
+
+</html>

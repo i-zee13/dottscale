@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Khan LLP</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/select2-bootstrap4.css">
+    <link href="css/dropzone.css" rel="stylesheet" type="text/css" />
+    <link href="css/dropify.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+</head>
+
+<body id="page-top">
+    <style>
+        .pocPROFILE {
+            font-size: 14px;
+            padding: 15px 20px;
+            line-height: 22px
+        }
+
+        .pocPROFILE h3 {
+            font-size: 18px;
+            margin: 0
+        }
+
+        .pocPROFILE h2 {
+            font-size: 15px
+        }
+
+        .pocPROFILE .form-control,
+        .pocPROFILE .custom-select-sm,
+        .pocPROFILE .form-s2 .select2-container .select2-selection--single {
+            box-shadow: none;
+            height: 33px;
+            background-color: #fff;
+            border: solid 1px #e5e5e5;
+            border-radius: 0;
+            font-size: 13px;
+        }
+
+        .pocPROFILE .infoDiv {
+            background-color: #f9f9f9;
+            padding: 5px;
+            margin-bottom: 8px;
+        }
+
+        .pocPROFILE .infoDiv .control-label {
+            font-size: 14px;
+            color: #7d7d7d !important;
+            line-height: normal;
+            margin-bottom: 0
+        }
+
+        .pocPROFILE .infoDiv strong {
+            font-size: 16px;
+            color: #282828;
+            line-height: normal;
+            margin-bottom: 0
+        }
+
+        .pocPROFILE .p-col-L {
+            padding-right: 4px
+        }
+
+        .pocPROFILE .p-col-R {
+            padding-left: 4px
+        }
+
+
+        .pocPROFILE .btn-primary,
+        .pocPROFILE .btn-cancel {
+            font-size: 13px
+        }
+
+
+        .btn-edit-p {
+            padding: 6px 14px 6px 14px;
+            letter-spacing: 1px;
+            font-size: 13px;
+            line-height: 1;
+            margin-top: -5px;
+            float: right;
+            margin-left: 10px
+        }
+
+        .btn-edit-line {
+            color: #040725;
+            background: #fff;
+            border: 1px solid #040725;
+        }
+
+
+        .btn-primary {
+            letter-spacing: 1px
+        }
+
+
+
+        .Witness-div {
+            padding-bottom: 20px;
+        }
+
+        .Witness-div .alert {
+            color: #282828;
+            background-color: #f4f4f4;
+            border-color: #f0f0f1;
+            font-size: 14px;
+            line-height: 1;
+            padding: 6px;
+            border-radius: 0;
+            display: inline-block;
+            padding-right: 25px;
+            width: 100% !important;
+            margin-bottom: 12px;
+        }
+
+        .Witness-div .alert strong {
+            padding-right: 10px;
+        }
+
+        .Witness-div .alert button {
+            position: absolute;
+            top: -4px;
+            right: 3px;
+        }
+    </style>
+
+
+    <div id="product-cl-sec">
+        <a href="javascript:void(0);" id="pl-close" class="close-btn-pl"></a>
+        <div class="pro-header-text">Add <span>Witness</span></div>
+
+        <div class="pc-cartlist">
+
+            <div class="overflow-plist">
+
+                <div class="plist-content">
+
+                    <div class="_left-filter">
+
+                        <div class="container">
+
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <div id="floating-label" class="card p-20 top_border mb-3">
+
+                                        <h2 class="_head03">Witness <span>Details</span></h2>
+
+                                        <div class="form-wrap p-0 PT-10">
+
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label mb-10">Name</label>
+                                                        <input type="text" id="" class="form-control" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label class="control-label mb-10">Address</label>
+                                                        <input type="text" id="" class="form-control" placeholder="">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="_cl-bottom">
+            <button type="submit" class="btn btn-primary mr-2">Save</button>
+            <button id="pl-close" type="submit" class="btn btn-cancel mr-2">Cancel</button>
+        </div>
+
+
+    </div>
+
+
+    <div class="overlay"></div>
+    <div class="sidebarblue">
+        <div class="aside-primary">
+            <div class="sell360"><a href="index.html"><img alt="Khan LLP" src="images/khan-law.png"></a></div>
+            <div class="main-links">
+                <ul>
+                    <li><a><img src="images/search-icon.svg" alt="" /> Search</a></li>
+                    <li><a><img src="images/add-pluse-icon.svg" alt="" /> Create New</a></li>
+                    <li><a><img src="images/dashboard-icon.svg" alt="" /> Dashboard</a></li>
+                    <hr>
+
+                    <li><a><img src="images/emp-icon.svg" alt="" /> Users</a></li>
+                    <li><a><img src="images/customer-icon.svg" alt="" /> Contacts</a></li>
+                    <li><a><img src="images/performa-icon.svg" alt="" /> Services</a></li>
+                    <li><a><img src="images/order-icon.svg" alt="" /> Case Files</a></li>
+                    <li><a><img src="images/shope-channel-icon.svg" alt="" /> Properties</a></li>
+                </ul>
+            </div>
+            <div class="_user-nav"> <a href="javascript:void(0);"><img src="images/bell-icon-2.svg" alt="Notification"
+                        title="Notification" /><span class="badge">4</span></a> <a href="javascript:void(0);" class="userIMG"><img
+                        src="images/avatar.svg" alt="" /></a> <a href="javascript:void(0);" class="float-right"><img
+                        src="images/setting-icon.svg" alt="Setting" title="Setting" /></a> </div>
+            <div class="sidebar-BL">
+                <ul>
+                    <!-- <li><a href="javascript:void(0);"><img src="images/task-icon.svg" alt=""/> Tasks <span class="badge">13</span></a></li> -->
+                    <li><a href="javascript:void(0);"><img src="images/activity-icon.svg" alt="Employee" /> Activities <span
+                                class="badge">4</span></a></li>
+                    <li><a href="javascript:void(0);"><img src="images/logout-icon.svg" alt="Employee" /> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="_subNav-id">
+  <div class="_subNav"> <a id="SN-close" class="SN-close-btn"><i class="fa fa-arrow-left"></i></a>
+    <h2>Creat New</h2>
+    <ul>
+      <li><a href="javascript:void(0);"><img src="images/task-icon.svg" alt=""/>Task</a></li>
+      <li><a href="javascript:void(0);"><img src="images/order-icon.svg" alt=""/>Order</a></li>
+      <li><a href="javascript:void(0);"><img src="images/emp-icon.svg" alt=""/>Emplyee</a></li>
+      <li><a href="javascript:void(0);"><img src="images/customer-icon.svg" alt=""/>Customer</a></li>
+      <li><a href="javascript:void(0);"><img src="images/product-icon.svg" alt=""/>Product</a></li>
+      <li><a href="javascript:void(0);"><img src="images/shippers-icon.svg" alt=""/>Shippers</a></li>
+      <li><a href="javascript:void(0);"><img src="images/supplier-icon.svg" alt=""/>Supplier</a></li>
+      <li><a href="javascript:void(0);"><img src="images/payment-icon.svg" alt=""/>Payment</a></li>
+      <li><a href="javascript:void(0);"><img src="images/invoice-icon.svg" alt=""/>Invoices</a></li>
+    </ul>
+  </div>
+</div> -->
+
+    <div id="wrapper">
+        <div id="content-wrapper">
+            <div class="overlay-blure"></div>
+            <div class="container">
+                <div class="row mt-2 mb-2">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <h2 class="_head01">POA CARE<span></span></h2>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <button id="productlist01" data-toggle="modal" data-target="#exampleModal"
+                            class="btn btn-primary btn-edit-p"><i class="fa fa-plus"></i> Add Witness</button>
+                    </div>
+                </div>
+                <div class="row">
+
+
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="body pocPROFILE">
+                                <div class="row">
+
+                                    <div class="col-12">
+                                        <div class="form-wrap p-0">
+                                            <div class="row">
+                                                <div class="col-md-3 p-col-L">
+                                                    <div class="infoDiv">
+                                                        <label class="control-label mb-5">Client Name</label>
+                                                        <p><strong>Latika</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 p-col-R p-col-L">
+                                                    <div class="infoDiv">
+                                                        <label class="control-label mb-5">Client ID</label>
+                                                        <p><strong>542154</strong></p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-3 p-col-L p-col-R">
+                                                    <div class="infoDiv">
+                                                        <label class="control-label mb-5">Last Name</label>
+                                                        <p><strong>Khan</strong></p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 p-col-R">
+                                                    <div class="infoDiv">
+                                                        <label class="control-label mb-5">Gender</label>
+                                                        <p><strong>Female</strong></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-12 PT-15">
+                                        <div class="header">
+                                            <h2>POWER OF ATTORNEY FOR PERSONAL CARE <span></span></h2>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 PT-15">
+                                        <div style="height:450px; background-color: #f1f1f1; text-align: center;">text
+                                            editor</div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="header pt-0 mb-10">
+                                        <h2>Witness List<span></span></h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12  Witness-div">
+
+                                <div class="alert" role="alert">
+                                    <div class="row">
+                                        <div class="col-4"><strong>Name:</strong> Atif</div>
+                                        <div class="col-8"><strong>Address:</strong> Address Here....
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="alert" role="alert">
+                                    <div class="row">
+                                        <div class="col-4"><strong>Name:</strong> Atif</div>
+                                        <div class="col-8"><strong>Address:</strong> Address Here....
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-md-12 text-right PB-15">
+                                <button data-toggle="modal" data-target="#exampleModal" type="submit"
+                                    class="btn btn-primary mr-2">Save</button>
+                                <button type="submit" class="btn btn-cancel">Cancel</button>
+                            </div>
+
+
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+                <footer class="sticky-footer">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto"> 2019 Sell3sixty All rights reserved </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="js/jquery-3.3.1.slim.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/datatables.min.js"></script>
+        <script src="js/select2.min.js"></script>
+        <script src="js/bootstrap-datepicker.js"></script>
+        <script src="js/dropzone.js"></script>
+        <script src="js/dropzone-data.js"></script>
+        <script src="js/dropify.min.js"></script>
+        <script src="js/form-file-upload-data.js"></script>
+        <script src="js/custom.js"></script>
+        <script>$(document).ready(function () {
+                $('#example').DataTable();
+            });
+
+
+            $(document).ready(function () {
+
+                $('#pl-close, .overlay').on('click', function () {
+                    $('#product-cl-sec').removeClass('active');
+                    $('.overlay').removeClass('active');
+                    $('body').toggleClass('no-scroll')
+                });
+
+                $('#productlist01').on('click', function () {
+                    $('#product-cl-sec').addClass('active');
+                    $('.overlay').addClass('active');
+                    $('.collapse.in').toggleClass('in');
+                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                    $('body').toggleClass('no-scroll')
+                });
+
+            });
+
+
+
+
+            $(document).ready(function () {
+                $('#SN-close, .overlay-blure').on('click', function () {
+                    $('#_subNav-id').removeClass('active');
+                    $('#content-wrapper').removeClass('blur-div');
+                    $('body').removeClass('no-scroll')
+                });
+                $('#sidebar-menu').on('click', function () {
+                    $('#_subNav-id').addClass('active');
+                    $('#content-wrapper').addClass('blur-div');
+                    $('body').addClass('no-scroll')
+                });
+            });
+
+
+            $('.form-control').on('focus blur', function (e) {
+                $(this).parents('.form-group').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
+            })
+                .trigger('blur');
+            $(".formselect").select2();
+
+            $('.sd-type').select2({
+                createTag: function (params) {
+                    var term = $.trim(params.term);
+
+                    if (term === '') {
+                        return null;
+                    }
+
+                    return {
+                        id: term,
+                        text: term,
+                        newTag: true // add additional parameters
+                    }
+                }
+            });
+
+            $('.datepicker').datepicker({
+                format: 'mm-dd-yyyy'
+            });
+
+
+
+
+
+
+
+
+        </script>
+</body>
+
+</html>

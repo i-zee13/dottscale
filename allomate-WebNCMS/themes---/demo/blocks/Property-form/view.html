@@ -1,0 +1,92 @@
+<section class="section-padding-set">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="form-property">
+                    <h2 class="text-center">List your <span>property</span></h2>
+                    <p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen
+                        book.</p>
+
+                        <form id="propertForm">
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="firstName" class="form-label">First Name*</label>
+                                    <input type="text" class="form-control pr-form-required" name="first_name" id="firstName" placeholder="Enter First Name">
+                                    <div class="invalid-feedback firstName-error">Please provide a valid first name.</div>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="lastName" class="form-label">Last Name*</label>
+                                    <input type="text" class="form-control pr-form-required" name="last_name" id="lastName" placeholder="Enter Last Name">
+                                    <div class="invalid-feedback lastName-error">Please provide a valid last name.</div>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="phone" class="form-label">Phone Number*</label>
+                                    <input type="tel" class="form-control pr-form-required" name="phone" id="phone" placeholder="Enter Phone Number">
+                                    <div class="invalid-feedback phone-error">Please provide a valid phone number.</div>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="email" class="form-label">Email Address*</label>
+                                    <input type="email" class="form-control pr-form-required" name="email" id="email" placeholder="example@gmail.com">
+                                    <div class="invalid-feedback email-error">Please provide a valid email address.</div>
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <label for="streetAddress" class="form-label">Street Address*</label>
+                                    <input type="text" class="form-control pr-form-required" name="street_address" id="streetAddress"
+                                        placeholder="Enter Street Address">
+                                    <div class="invalid-feedback streetAddress-error">Please provide a valid street address.</div>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="state" class="form-label">State*</label>
+                                    <select class="form-select formselect pr-form-required" name="state_id" id="pr-form-state" aria-label="Select State">
+                                        <option selected value="">Select State</option>
+                                    </select>
+                                    <div class="invalid-feedback pr-form-state-error">Please select a state.</div>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="city" class="form-label">City Name*</label>
+                                    <input type="text" class="form-control pr-form-required" name="city_name" id="pr-form-city" placeholder="Enter City Name">
+                                    <div class="invalid-feedback pr-form-city-error">Please provide a valid city name.</div>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="zipCode" class="form-label">Zip Code*</label>
+                                    <input type="text" class="form-control pr-form-required" name="zip_code" id="zipCode" placeholder="Enter Zip Code" required>
+                                    <div class="invalid-feedback zipCode-error">Please provide a valid zip code.</div>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="askingPrice" class="form-label">Asking Price</label>
+                                    <input type="text" class="form-control" id="askingPrice" name="asking_price" placeholder="Enter Asking Price in Digits">
+                                    <div class="invalid-feedback askingPrice-error">Please provide a valid asking price.</div>
+                                </div>
+
+                                <div class="col-md-12 form-group">
+                                    <label for="description" class="form-label">Notes*</label>
+                                    <textarea class="form-control pr-form-required" name="notes" id="description"
+                                        placeholder="Please include any relevant information about your property."></textarea>
+                                    <div class="invalid-feedback description-error">Please provide a note.</div>
+                                </div>
+
+
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="pr-form-checkbox">
+                                        <label class="form-check-label" for="pr-form-checkbox">
+                                            By submitting this form, you agree to receive electronic communications from
+                                            us, such as marketing emails. You can opt out at any time.
+                                        </label>
+                                        <div class="invalid-feedback pr-form-checkbox-error">Please agree to the terms and conditions before submitting the form.</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 form-group pt-3 m-0">
+                                    <button type="button" class="btn btn-primary pr-form-submit" title="Submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

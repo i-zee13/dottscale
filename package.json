@@ -1,9 +1,19 @@
 {
   "name": "dottscale",
   "private": true,
-  "description": "Local visual clone of allomate.com for restyling later.",
+  "description": "DottScale marketing site, built on the Allomate visual template with Tailwind CSS.",
   "scripts": {
-    "start": "python3 server.py",
-    "dev": "python3 server.py"
+    "dev": "concurrently -k \"npm run dev:css\" \"npm run dev:server\"",
+    "dev:css": "tailwindcss -i src/css/input.css -o allomate-WebNCMS/public_html/css/frontend/dottscale.css --watch",
+    "dev:server": "php allomate-WebNCMS/artisan serve --host=127.0.0.1 --port=8001",
+    "build:css": "tailwindcss -i src/css/input.css -o allomate-WebNCMS/public_html/css/frontend/dottscale.css --minify",
+    "start": "npm run build:css && npm run dev:server"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.6.1",
+    "concurrently": "^10.0.5",
+    "postcss": "^8.5.28",
+    "postcss-import": "^17.0.0",
+    "tailwindcss": "^3.4.17"
   }
 }

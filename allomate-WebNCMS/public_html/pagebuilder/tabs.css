@@ -1,0 +1,157 @@
+.section-nav-tabs {
+          padding: 30px 0 10px 0;
+          font-size: 16px;
+          color: #282828;
+        }
+        .section-nav-tabs .section-tab-title {
+          margin-bottom: 30px;
+          text-align: center;
+        }
+        .section-nav-tabs .section-tab-title h2 {
+          font-size: 45px;
+          margin-bottom: 0;
+          text-transform: capitalize;
+          line-height: 1;
+        }
+        .section-nav-tabs .nav-tabs .nav-link {
+          align-items: center;
+          padding: 12px 35px;
+          border: none;
+          border-bottom: 3px solid #e7edf6;
+          color: #282828;
+          font-family: var(--font-primary);
+          font-size: 18px;
+          line-height: 1;
+          font-weight: 500;
+          text-align: center;
+          text-wrap: nowrap;
+        }
+        .section-nav-tabs .nav-tabs .nav-link img {
+          width: 32px;
+          height: 32px;
+          display: block;
+          margin: 0 auto 15px auto;
+          filter: grayscale(1);
+          opacity: 0.6;
+        }
+        .section-nav-tabs .nav-tabs .nav-item.show .nav-link,
+        .section-nav-tabs .nav-tabs .nav-link.active {
+          color: #0038ba;
+          border-bottom: 3px solid #0038ba;
+        }
+        .section-nav-tabs .nav-tabs .nav-link.active img {
+          filter: none;
+          opacity: 1;
+        }
+        .section-nav-tabs .nav-tabs {
+          border-bottom: none;
+          overflow-y: hidden;
+          overflow-x: auto;
+          display: flex;
+          flex-wrap: unset;
+          padding-bottom: 12px;
+        }
+        .section-nav-tabs .tab-content {
+          padding: 30px 0;
+        }
+        .section-nav-tabs .content-icon {
+          margin-bottom: 2px;
+        }
+        .section-nav-tabs .content-icon h3 {
+          margin-bottom: 10px;
+          font-size: 22px;
+        }
+        .section-nav-tabs .content-icon .tab-img-icon img {
+          width: 32px;
+          height: 32px;
+        }
+        .section-nav-tabs .tab-col-img img {
+          width: 100%;
+        }
+        .section-nav-tabs .tab-content .btn-primary {
+          padding: 6px 25px;
+          font-size: 14px;
+          letter-spacing: 1px;
+          font-weight: 500;
+          border: solid 1px #0038ba;
+          background: linear-gradient(90deg, #1e54d3 0, #0038ba 100%);
+          color: #fff;
+          margin-top: 10px;
+          -webkit-transition: all .4s ease-in-out;
+          -moz-transition: all .4s ease-in-out;
+          -o-transition: all .4s ease-in-out;
+          -ms-transition: all .4s ease-in-out;
+          transition: all .4s ease-in-out;
+          cursor: pointer;
+          border-radius: 24px;
+          width: fit-content;
+        }
+        .section-nav-tabs .tab-content .btn-primary:hover,
+        .section-nav-tabs .tab-content .btn-primary:focus {
+          color: #fff;
+          background: linear-gradient(90deg, #1e54d3 0, #0038ba 100%);
+          border: solid 1px #0038ba;
+          text-decoration: none;
+        }
+        @media (max-width:1024px) {
+          .section-nav-tabs .nav-tabs .nav-link {
+              padding: 10px 28px;
+              font-size: 16px;
+          }
+        }
+        @media (max-width:991px) {
+          .section-nav-tabs .nav-tabs .nav-link {
+              padding: 10px 12px;
+              font-size: 16px;
+          }
+        
+          .column-reverse {
+              flex-direction: column-reverse;
+          }
+        
+          .section-nav-tabs .tab-col-img {
+              padding: 0 35px;
+              text-align: center;
+          }
+        
+          .section-nav-tabs .tab-col-img img {
+              width: 75%;
+              display: block;
+              margin: 0 auto 30px auto;
+          }
+        }
+        @media (max-width:767px) {
+          .section-nav-tabs .section-tab-title h2 {
+              font-size: 32px;
+          }
+        
+          .section-nav-tabs .content-icon h3 {
+              font-size: 20px;
+          }
+        
+          .section-nav-tabs {
+              font-size: 14px;
+          }
+        
+          .section-nav-tabs .nav-tabs .nav-link img {
+              width: 28px;
+              height: 28px;
+              margin: 0 auto 10px auto;
+          }
+        
+          .section-nav-tabs .tab-content {
+              padding: 20px 0;
+          }
+        }
+        @media (max-width:480px) {
+          .section-nav-tabs .tab-col-img {
+              padding: 0 15px;
+              text-align: center;
+          }
+        
+          .section-nav-tabs .tab-col-img img {
+              width: 100%;
+              display: block;
+              margin: 0 auto 30px auto;
+          }
+        }
