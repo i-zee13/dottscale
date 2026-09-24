@@ -1,5 +1,11 @@
 node_modules/
 .DS_Store
+
+# Scraped HTML is local design reference only. Live app is allomate-WebNCMS.
+site/
+site-source/
+server.py
+
 allomate-WebNCMS/.env
 allomate-WebNCMS/vendor/
 allomate-WebNCMS/node_modules/
