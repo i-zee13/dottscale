@@ -23,6 +23,7 @@ use Artesaos\SEOTools\Facades\JsonLd;
 use Artesaos\SEOTools\Facades\JsonLdMulti;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB as FacadesDB;
+use Illuminate\Support\Facades\Schema;
 use stdClass;
 
 class AppServiceProvider extends ServiceProvider
@@ -225,53 +226,59 @@ class AppServiceProvider extends ServiceProvider
         SEOTools::opengraph()->addProperty('image:alt', 'DottScale');
         SEOTools::opengraph()->addProperty('image:type', 'image/' . $extension);
 
-        if (in_array($_SERVER['HTTP_HOST'], ['localhost', '127.0.0.1', '127.0.0.1:8001']) || in_array($_SERVER['HTTP_HOST'], [env('ADMIN_URL', 'demo.crm.allomate.solutions'), 'www.demo.crm.allomate.solutions'])) {
-            app('view')->composer('layouts.app', function ($view) {
-                $action = app('request')->route()->getAction();
-
-
-                $controller = class_basename($action['controller']);
+        app('view')->composer('layouts.app', function ($view) {
+            $action = app('request')->route() ? app('request')->route()->getAction() : ['controller' => 'HomeController@index'];
+            $controller = class_basename($action['controller'] ?? 'HomeController@index');
+            if (str_contains($controller, '@')) {
                 list($controller, $action) = explode('@', $controller);
-                $userPermissions = array();
-                $allControllers = ControllersList::orderBy('parent_module_priority')->get();
-                $loginId = GetActiveGuardDetail()->id;
+            } else {
+                $action = 'index';
+            }
 
-                if (Auth::guard('web')->check()) {
-                    $userPermissions[] = 'admin/index';
-                    $userPermissions[] = 'admin/profile';
-                    if (GetActiveGuardDetail()->super == 1) {
-                        foreach ($allControllers as $controllers) {
-                            if ($controllers->controller != 'index') {
-                                $userPermissions[] = 'admin/' . $controllers->controller;
-                            }
-                        }
-                    } else {
-                        $objects = FacadesDB::table('access_rights')->select('controller_right')->where('admin_id', $loginId)->get();
-                        foreach ($objects as $object) {
-                            $userPermissions[] = 'admin/' . $object->controller_right;
+            $userPermissions = ['admin/index', 'admin/profile'];
+            $allControllers = Schema::hasTable('controllers')
+                ? ControllersList::orderBy('parent_module_priority')->get()
+                : collect();
+            $guard = GetActiveGuardDetail();
+            $loginId = $guard->id ?? null;
+
+            if (Auth::guard('web')->check()) {
+                if (($guard->super ?? 0) == 1) {
+                    foreach ($allControllers as $controllers) {
+                        if ($controllers->controller != 'index') {
+                            $userPermissions[] = 'admin/' . $controllers->controller;
                         }
                     }
+                } elseif ($loginId) {
+                    $objects = FacadesDB::table('access_rights')->select('controller_right')->where('admin_id', $loginId)->get();
+                    foreach ($objects as $object) {
+                        $userPermissions[] = 'admin/' . $object->controller_right;
+                    }
                 }
-                $isWeb = GetActiveGuardDetail()->is_web;
-                $view->with(compact(
-                    'controller',
-                    'action',
-                    'userPermissions',
-                    'notif_data',
-                    'all_notifications',
-                    'allControllers',
-                    'primary_services',
-                    'organization',
-                    'home_blade_data',
-                    'general_pages',
-                    'page_meta',
-                    'webdata',
-                    'customersFromProvider',
-                    'empsForCentralizedTask',
-                    'isWeb',
-                ));
-            });
-        } elseif (in_array($_SERVER['HTTP_HOST'], ['localhost', '127.0.0.1', '127.0.0.1:8000']) || in_array($_SERVER['HTTP_HOST'], [env('WEB_URL', 'demo.demo.allomate.solutions'), env('WEB_URL', 'demo.allomate.solutions'), 'www.demo.allomate.solutions'])) {
+            }
+
+            $isWeb = $guard->is_web ?? 1;
+            $view->with(compact(
+                'controller',
+                'action',
+                'userPermissions',
+                'allControllers',
+                'organization',
+                'general_pages',
+                'page_meta',
+                'webdata',
+                'isWeb',
+            ) + [
+                'notif_data' => $notif_data ?? collect(),
+                'all_notifications' => $all_notifications ?? collect(),
+                'primary_services' => $primary_services ?? collect(),
+                'home_blade_data' => $home_blade_data ?? null,
+                'customersFromProvider' => $customersFromProvider ?? collect(),
+                'empsForCentralizedTask' => $empsForCentralizedTask ?? collect(),
+            ]);
+        });
+
+        if (in_array($_SERVER['HTTP_HOST'] ?? '', ['localhost', '127.0.0.1', '127.0.0.1:8000']) || in_array($_SERVER['HTTP_HOST'] ?? '', [env('WEB_URL', 'demo.demo.allomate.solutions'), env('WEB_URL', 'demo.allomate.solutions'), 'www.demo.allomate.solutions'])) {
             $tagManager = DB::table('gateways')->whereRaw("section = 'tag_manager' AND type = 'googleTag' AND status = 'active'")->first();
             $tagManagerHeader = "";
             $tagManagerBody = "";

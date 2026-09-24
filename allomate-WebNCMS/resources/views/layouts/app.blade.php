@@ -107,10 +107,9 @@
         let dateTimeFormat = "yyyy-mm-dd hh:ii";
         let dateFormat = "yyyy-mm-dd";
         let timeFormat = "hh:ii";
-        var allControllersData = JSON.parse('{!! json_encode($allControllers) !!}');
-
-        var rightsGiven = JSON.parse('{!! json_encode($userPermissions) !!}');
-        var isWeb = {{ json_encode($isWeb) }};
+        var allControllersData = {!! json_encode($allControllers ?? []) !!};
+        var rightsGiven = {!! json_encode($userPermissions ?? ['admin/index', 'admin/profile']) !!};
+        var isWeb = {{ json_encode($isWeb ?? 1) }};
 
         var currentSegment = '{!! Request::segment(1) !!}';
         var csrfToken = $('[name="csrf_token"]').attr('content');
