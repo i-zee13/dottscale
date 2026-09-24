@@ -5,14 +5,14 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^7.0|^8.0",
+        "php": "^8.1",
         "artesaos/seotools": "^1.2",
-        "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
+        "fruitcake/laravel-cors": "^2.2",
+        "guzzlehttp/guzzle": "^7.8",
         "hansschouten/laravel-pagebuilder": "^0.21.0",
-        "laravel/framework": "^8.75",
-        "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5",
+        "laravel/framework": "^8.83",
+        "laravel/sanctum": "^2.15",
+        "laravel/tinker": "^2.9",
         "laravel/ui": "^3.4",
         "spatie/laravel-sitemap": "^6.4"
     },
@@ -62,8 +62,22 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true
+        },
+        "platform": {
+            "php": "8.1.29"
+        },
+        "audit": {
+            "block-insecure": false
+        },
+        "policy": {
+            "advisories": {
+                "block": false
+            }
+        }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
