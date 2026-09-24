@@ -9,6 +9,9 @@ class CreateMissingAllomateTables extends Migration
 {
     public function up()
     {
+        $this->ensureAutoIncrementPrimaryKey('migrations');
+        $this->ensureAutoIncrementPrimaryKey('organization');
+
         if (!Schema::hasTable('reports_types')) {
             Schema::create('reports_types', function (Blueprint $table) {
                 $table->increments('id');
@@ -93,6 +96,20 @@ class CreateMissingAllomateTables extends Migration
 
             DB::table('organization')->update($payload);
         }
+    }
+
+    private function ensureAutoIncrementPrimaryKey(string $table): void
+    {
+        if (!Schema::hasTable($table) || !Schema::hasColumn($table, 'id')) {
+            return;
+        }
+
+        $hasPrimary = collect(DB::select("SHOW KEYS FROM `{$table}` WHERE Key_name = 'PRIMARY'"))->isNotEmpty();
+        if (!$hasPrimary) {
+            DB::statement("ALTER TABLE `{$table}` ADD PRIMARY KEY (`id`)");
+        }
+
+        DB::statement("ALTER TABLE `{$table}` MODIFY `id` INT UNSIGNED NOT NULL AUTO_INCREMENT");
     }
 
     public function down()
