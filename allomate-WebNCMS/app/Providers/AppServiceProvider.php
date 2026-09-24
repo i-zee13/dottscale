@@ -120,7 +120,7 @@ class AppServiceProvider extends ServiceProvider
         $default_tags = json_decode(@$organization->page_meta_tags);
         $og_image = isset($page_meta->meta_og_image) && $page_meta->meta_og_image != ''
             ? url('/storage/' . $page_meta->meta_og_image)
-            : ($default_tags->meta_og_image ? $default_tags->meta_og_image : '/images/allomate-logo-w.svg');
+            : ($default_tags->meta_og_image ? $default_tags->meta_og_image : '/images/dottscale-logo-alt.png');
 
         OpenGraph::addImage($og_image, ['height' => 1000, 'width' => 1000]);
         $meta_structure_tags = $page_meta->meta_structure_tags;
@@ -129,14 +129,14 @@ class AppServiceProvider extends ServiceProvider
                 ? $page_meta->meta_og_description
                 : (isset($default_tags->meta_og_description)
                     ? $default_tags->meta_og_description
-                    : 'Allomate Solutions')
+                    : 'DottScale helps businesses move forward with enterprise software, web & mobile apps, AI, automation, and dedicated teams. Results, not buzzwords.')
         );
 
         SEOMeta::setDescription(
             $page_meta->meta_description ??
             $page_meta->meta_content_description ??
             $default_tags->meta_description ??
-            'Allomate Solutions'
+            'DottScale builds enterprise software, web & mobile apps, MVPs, AI and automation. Driving growth, efficiency, and digital transformation.'
         )->addKeyword(
             $page_meta->meta_keywords ??
             $page_meta->meta_content_keywords ??
@@ -173,20 +173,20 @@ class AppServiceProvider extends ServiceProvider
         SEOTools::opengraph()->addProperty('type', 'website');
         if ($current_route != '' && $blog_title == '') {
             $page_title = ucwords(str_replace(['-'], ' ', $current_route));
-            $title = $webdata->title ?? ($current_route ? $page_title : 'Allomate Solutions');
+            $title = $webdata->title ?? ($current_route ? $page_title : 'DottScale | Business Transformation Through Tech');
             SEOMeta::setTitle($title);
         } else if (!$blog_title == '') {
             $blog_title = ucwords(str_replace(['-'], ' ', $blog_title));
             SEOMeta::setTitle($blog_title);
         } else {
             $page_title = ucwords(str_replace('-', ' ', $current_route));
-            SEOMeta::setTitle($webdata->title ? $webdata->title : ($current_route ? $page_title : 'Allomate Solutions'));
+            SEOMeta::setTitle($webdata->title ? $webdata->title : ($current_route ? $page_title : 'DottScale | Business Transformation Through Tech'));
         }
 
         TwitterCard::setTitle(
             $webdata->title != '' && $webdata->title
                 ? $webdata->title
-                : ($current_route ? $current_route : 'Allomate Solutions')
+                : ($current_route ? $current_route : 'DottScale | Business Transformation Through Tech')
         );
 
         TwitterCard::setDescription(
@@ -194,7 +194,7 @@ class AppServiceProvider extends ServiceProvider
                 ? $page_meta->meta_og_description
                 : ($default_tags && $default_tags->meta_content_description
                     ? $default_tags->meta_og_description
-                    : 'Allomate Solutions')
+                    : 'DottScale helps businesses move forward with enterprise software, web & mobile apps, AI, automation, and dedicated teams. Results, not buzzwords.')
         );
 
         if ($organization->twitter_link) {
@@ -207,7 +207,7 @@ class AppServiceProvider extends ServiceProvider
                 ? url('/storage/' . $page_meta->meta_og_image)
                 : ($default_tags->meta_og_image
                     ? url('/storage/' . $default_tags->meta_og_image)
-                    : url('/images/allomate-logo-w.svg'))
+                    : url('/images/dottscale-logo-alt.png'))
         );
 
         TwitterCard::addValue('label1', 'Time to read');
@@ -217,12 +217,12 @@ class AppServiceProvider extends ServiceProvider
             ? url('/storage/' . $page_meta->meta_og_image)
             : ($default_tags->meta_og_image
                 ? url('/storage/' . $default_tags->meta_og_image)
-                : url('/images/allomate-logo-w.svg'));
+                : url('/images/dottscale-logo-alt.png'));
 
         $imageInfo = pathinfo($imagePath);
         $extension = isset($imageInfo['extension']) ? $imageInfo['extension'] : 'png';
 
-        SEOTools::opengraph()->addProperty('image:alt', 'Allomate Solutions');
+        SEOTools::opengraph()->addProperty('image:alt', 'DottScale');
         SEOTools::opengraph()->addProperty('image:type', 'image/' . $extension);
 
         if (in_array($_SERVER['HTTP_HOST'], ['localhost', '127.0.0.1', '127.0.0.1:8001']) || in_array($_SERVER['HTTP_HOST'], [env('ADMIN_URL', 'demo.crm.allomate.solutions'), 'www.demo.crm.allomate.solutions'])) {

@@ -11,6 +11,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Support\Facades\Schema;
 
 class HomeController extends Controller
 {
@@ -22,7 +23,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        if(in_array($_SERVER['HTTP_HOST'], ['localhost', '127.0.0.1', '127.0.0.1:8001']) ||  in_array($_SERVER['HTTP_HOST'], [env('ADMIN_URL', 'demo.crm.allomate.solutions'),'www.demo.crm.allomate.solutions'])){
+        if ($this->isAdminHost()) {
             $current_time = Carbon::now();
             $message = '';
 
@@ -32,14 +33,42 @@ class HomeController extends Controller
                 $message = 'Good Afternoon';
             } else {
                 $message = 'Good Evening';
-            } 
-            $todayApplicants        =     DB::table('application_forms')->whereDate('created_at',Carbon::today())->count();
-            $todayInquiries         =     DB::table('contact_us_forms')->whereDate('created_at',Carbon::today())->count();
-            return view('admin.index',compact('message','todayInquiries','todayApplicants','todaySFRForms'));
-        }else{
-            $categories     =   DB::table('reports_types')->where('status',1)->get();
-            return view('investor.index',compact('categories'));
+            }
+            $todayApplicants = Schema::hasTable('application_forms')
+                ? DB::table('application_forms')->whereDate('created_at', Carbon::today())->count()
+                : 0;
+            $todayInquiries = Schema::hasTable('contact_us_forms')
+                ? DB::table('contact_us_forms')->whereDate('created_at', Carbon::today())->count()
+                : 0;
+            $todaySFRForms = 0;
+            return view('admin.index', compact('message', 'todayInquiries', 'todayApplicants', 'todaySFRForms'));
         }
+
+        $categories = Schema::hasTable('reports_types')
+            ? DB::table('reports_types')->where('status', 1)->get()
+            : collect();
+        return view('investor.index', compact('categories'));
+    }
+
+    private function isAdminHost(): bool
+    {
+        $host = $_SERVER['HTTP_HOST'] ?? '';
+        $allowed = ['localhost', '127.0.0.1', '127.0.0.1:8001', 'staging.dottscale.com', 'www.demo.crm.allomate.solutions'];
+
+        foreach ([env('ADMIN_URL', 'demo.crm.allomate.solutions'), env('APP_URL')] as $url) {
+            if (!$url) {
+                continue;
+            }
+            $parsed = parse_url(str_contains($url, '://') ? $url : 'http://' . $url);
+            if (!empty($parsed['host'])) {
+                $allowed[] = $parsed['host'];
+                if (!empty($parsed['port'])) {
+                    $allowed[] = $parsed['host'] . ':' . $parsed['port'];
+                }
+            }
+        }
+
+        return in_array($host, array_unique($allowed), true);
     }
 
     public function GetAboutUsPage()

@@ -77,7 +77,8 @@ class GenerateSitemap extends Command
         if (file_exists(public_path('sitemap.xml'))) {
             unlink(public_path('sitemap.xml'));
         }
-        $sitemap    =   Sitemap::create()->add(Url::create('https://demo.allomate.solutions'));
+        $siteUrl    =   rtrim(env('APP_URL', 'https://dottscale.com'), '/');
+        $sitemap    =   Sitemap::create()->add(Url::create($siteUrl));
 
         $robotsTxtContent    =   "User-agent: *\n";
         $robotsTxtContent   .=  "Disallow: /admin/\n";
@@ -85,12 +86,12 @@ class GenerateSitemap extends Command
 
         if (count($route_names) > 0) {
             foreach ($route_names as $key => $value) {
-                $sitemap->add(Url::create('https://demo.allomate.solutions/'.$value));
-                $robotsTxtContent   .=  "Allow: /$value/\n";  
+                $sitemap->add(Url::create($siteUrl.'/'.$value));
+                $robotsTxtContent   .=  "Allow: /$value/\n";
             }
         }
         $sitemap->writeToFile(public_path('sitemap.xml'));
-        $robotsTxtContent   .=  "Sitemap: https://demo.allomate.solutions/sitemap.xml"; 
+        $robotsTxtContent   .=  "Sitemap: ".$siteUrl."/sitemap.xml"; 
         $robotsTxtFilePath  =   public_path('robots.txt');
         if (file_exists($robotsTxtFilePath)) {
             unlink($robotsTxtFilePath);

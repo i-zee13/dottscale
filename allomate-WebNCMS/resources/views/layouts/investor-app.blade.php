@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="csrf_token" content="{{ csrf_token() }}">
-    <title>Allomate Solutions</title>
+    <title>DottScale</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,700,800" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/investor/css/bootstrap.min.css">
     <link href="/investor/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

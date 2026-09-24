@@ -5,7 +5,7 @@ Sitemap
 @endsection
 
 @section('meta_description')
-DottScale
+DottScale builds enterprise software, web & mobile apps, MVPs, AI and automation. Driving growth, efficiency, and digital transformation.
 @endsection
 
 @section('meta_keywords')
@@ -13,7 +13,7 @@ DottScale
 @endsection
 
 @section('og_description')
-DottScale
+DottScale helps businesses move forward with enterprise software, web & mobile apps, AI, automation, and dedicated teams. Results, not buzzwords.
 @endsection
 
 @section('content')

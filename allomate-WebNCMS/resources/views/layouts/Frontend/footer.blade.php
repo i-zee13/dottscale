@@ -53,7 +53,7 @@
         </div>
         <div class="row copyright">
             <div class="col-lg-6 col-md-6 col-sm-12 text-start">
-                © Allomate Solutions {{date('Y')}}. All rights reserved
+                © DottScale {{date('Y')}}. All rights reserved
             </div>
         </div>
     </div>

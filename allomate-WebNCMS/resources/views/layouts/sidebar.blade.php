@@ -1,7 +1,7 @@
 <div class="sidebarblue">
     <div class="aside-primary">
-        <div class="sell360"><a href="{{ route('admin.index') }}"><img alt="Allomate"
-                    src="{{ url('/admin/images/allomate-logow.svg') }}"></a></div>
+        <div class="sell360"><a href="{{ route('admin.index') }}"><img alt="DottScale"
+                    src="{{ url('/images/dottscale-logo-alt.png') }}"></a></div>
         <div class="main-links">
             <ul>
                 <li><a><img src="{{ url('/admin/images/search-icon.svg') }}" alt="" /> Search</a></li>

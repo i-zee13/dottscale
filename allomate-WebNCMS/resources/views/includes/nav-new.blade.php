@@ -1,7 +1,7 @@
 <div class="sidebarblue" id="sidebarblue">
     <div class="aside-primary">
         <div class="sell360">
-            <a href="/admin/index"><img alt="Allomate Solutions" src="{{ url('/admin/images/allomate-logow.svg') }}"></a>
+            <a href="/admin/index"><img alt="DottScale" src="{{ url('/images/dottscale-logo-alt.png') }}"></a>
         </div>
         <div class="main-links">
             <ul id="parentModulesUl">

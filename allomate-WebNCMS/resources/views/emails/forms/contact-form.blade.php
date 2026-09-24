@@ -127,7 +127,7 @@
 										<tbody>
 											<tr>
 												<td>
-													<img src="{{asset('images/allomate-logo-w.svg')}}" alt="" width="110">
+													<img src="{{asset('images/dottscale-logo-alt.png')}}" alt="DottScale" width="110">
 												</td>
 
 												<td mc:edit="text1203" width="50%" align="right" style="color: #000; font-size:14px;font-weight:normal; font-family:'Open Sans', sans-serif; mso-line-height-rule: exactly;">

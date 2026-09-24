@@ -1,5 +1,5 @@
 <div class="mil-menu-frame">
-    <a href="/home" title="Allomate Solutions" class="mil-logo">
+    <a href="/home" title="DottScale" class="mil-logo">
 
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1399.52px" height="376.502px" viewBox="0 0 1399.52 376.502" enable-background="new 0 0 1399.52 376.502" xml:space="preserve">
             <g>
@@ -261,7 +261,7 @@ c-0.975,0.549-2.025,0.953-3.152,1.215c-1.125,0.262-2.291,0.393-3.496,0.393C1358.
 
                 </div>
                 <div class="col-12 Copyright">
-                    Copyright © {{date('Y')}} Allomate Solutions.
+                    Copyright © {{date('Y')}} DottScale.
                 </div>
             </div>
         </div>
@@ -270,7 +270,7 @@ c-0.975,0.549-2.025,0.953-3.152,1.215c-1.125,0.262-2.291,0.393-3.496,0.393C1358.
 
 <header id="top-header" class="header">
     <div class="mil-frame-top">
-        <a href="/home" title="Allomate Solutions" class="mil-logo">
+        <a href="/home" title="DottScale" class="mil-logo">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1399.52px" height="376.502px" viewBox="0 0 1399.52 376.502" enable-background="new 0 0 1399.52 376.502" xml:space="preserve">
                 <g>
                     <defs>

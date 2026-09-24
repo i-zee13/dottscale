@@ -191,8 +191,8 @@ class WebPagesController extends Controller
                     'note'              =>  $request->message,
                 ],
                 function ($message) use($receiverEmail) {
-                    $message->from('info@allomate.solutions', 'Allomate Solutions');
-                    $message->to($receiverEmail, 'Allomate Solutions')->subject('New Contact Form Submission - '.date('d-m-Y'));
+                    $message->from(env('MAIL_FROM_ADDRESS', 'contact@dottscale.com'), 'DottScale');
+                    $message->to($receiverEmail, 'DottScale')->subject('New Contact Form Submission - '.date('d-m-Y'));
                 });
             }
         }
@@ -456,8 +456,8 @@ class WebPagesController extends Controller
                     'notes'             =>  $request->notes,
                 ],
                 function ($message) use($receiverEmail) {
-                    $message->from('info@demo.allomate.solutions', 'Allomate Solutions');
-                    $message->to($receiverEmail, 'Allomate Solutions')->subject('New SFR Property Listing Request - '.date('d-m-Y'));
+                    $message->from(env('MAIL_FROM_ADDRESS', 'contact@dottscale.com'), 'DottScale');
+                    $message->to($receiverEmail, 'DottScale')->subject('New SFR Property Listing Request - '.date('d-m-Y'));
                 });
             }
         }
