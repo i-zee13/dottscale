@@ -42,8 +42,24 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        if (!in_array($_SERVER['HTTP_HOST'], ['localhost', '127.0.0.1', '127.0.0.1:8001']) && !in_array($_SERVER['HTTP_HOST'], [env('ADMIN_URL', 'demo.crm.allomate.solutions')])) {
-            return abort(404);
+        $host = $_SERVER['HTTP_HOST'] ?? '';
+        $allowed = ['localhost', '127.0.0.1', '127.0.0.1:8001', 'staging.dottscale.com'];
+
+        foreach ([env('ADMIN_URL', 'demo.crm.allomate.solutions'), env('APP_URL')] as $url) {
+            if (!$url) {
+                continue;
+            }
+            $parsed = parse_url(str_contains($url, '://') ? $url : 'http://' . $url);
+            if (!empty($parsed['host'])) {
+                $allowed[] = $parsed['host'];
+                if (!empty($parsed['port'])) {
+                    $allowed[] = $parsed['host'] . ':' . $parsed['port'];
+                }
+            }
+        }
+
+        if (!in_array($host, array_unique($allowed), true)) {
+            abort(404);
         }
     }
 
