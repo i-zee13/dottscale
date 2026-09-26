@@ -116,45 +116,53 @@ header img {
     opacity: 0.7;
 }
 
+/* Mobile/tablet: normal stack. Sticky overlap breaks on small viewports (e.g. iPhone 8). */
 .stick-tab {
-    position: sticky;
-    top: 140px;
+    position: relative;
+    top: auto;
 }
 
-.stick-tab:nth-child(2) {
-    top: 150px;
-}
+@media (min-width: 1024px) {
+    .stick-tab {
+        position: sticky;
+        top: 140px;
+    }
 
-.stick-tab:nth-child(3) {
-    top: 160px;
-}
+    .stick-tab:nth-child(2) {
+        top: 150px;
+    }
 
-.stick-tab:nth-child(4) {
-    top: 170px;
-}
+    .stick-tab:nth-child(3) {
+        top: 160px;
+    }
 
-.stick-tab:nth-child(5) {
-    top: 180px;
-}
+    .stick-tab:nth-child(4) {
+        top: 170px;
+    }
 
-.stick-tab:nth-child(6) {
-    top: 190px;
-}
+    .stick-tab:nth-child(5) {
+        top: 180px;
+    }
 
-.stick-tab:nth-child(7) {
-    top: 200px;
-}
+    .stick-tab:nth-child(6) {
+        top: 190px;
+    }
 
-.stick-tab:nth-child(8) {
-    top: 210px;
-}
+    .stick-tab:nth-child(7) {
+        top: 200px;
+    }
 
-.stick-tab:nth-child(9) {
-    top: 220px;
-}
+    .stick-tab:nth-child(8) {
+        top: 210px;
+    }
 
-.stick-tab:nth-child(10) {
-    top: 230px;
+    .stick-tab:nth-child(9) {
+        top: 220px;
+    }
+
+    .stick-tab:nth-child(10) {
+        top: 230px;
+    }
 }
 
 .relative.group.transition.duration-500 .award-tab-div {
@@ -1271,35 +1279,51 @@ img.w-\[16px\].md\:w-\[18px\].h-\[16px\].md\:h-\[18px\].opacity-50.mr-2 {
     margin-bottom: 8px;
 }
 .featured-project-stick-tab {
-    position: sticky;
-    top: 150px;
+    position: relative;
+    top: auto;
 }
-.featured-project-stick-tab:nth-child(2) {
-    top: 180px;
-}
-.featured-project-stick-tab:nth-child(3) {
-    top: 210px;
-}
-.featured-project-stick-tab:nth-child(4) {
-    top: 240px;
-}
-.featured-project-stick-tab:nth-child(5) {
-    top: 270px;
-}
-.featured-project-stick-tab:nth-child(6) {
-    top: 300px;
-}
-.featured-project-stick-tab:nth-child(7) {
-    top: 330px;
-}
-.featured-project-stick-tab:nth-child(8) {
-    top: 360px;
-}
-.featured-project-stick-tab:nth-child(9) {
-    top: 390px;
-}
-.featured-project-stick-tab:nth-child(10) {
-    top: 420px;
+
+@media (min-width: 1024px) {
+    .featured-project-stick-tab {
+        position: sticky;
+        top: 150px;
+    }
+
+    .featured-project-stick-tab:nth-child(2) {
+        top: 180px;
+    }
+
+    .featured-project-stick-tab:nth-child(3) {
+        top: 210px;
+    }
+
+    .featured-project-stick-tab:nth-child(4) {
+        top: 240px;
+    }
+
+    .featured-project-stick-tab:nth-child(5) {
+        top: 270px;
+    }
+
+    .featured-project-stick-tab:nth-child(6) {
+        top: 300px;
+    }
+
+    .featured-project-stick-tab:nth-child(7) {
+        top: 330px;
+    }
+
+    .featured-project-stick-tab:nth-child(8) {
+        top: 360px;
+    }
+
+    .featured-project-stick-tab:nth-child(9) {
+        top: 390px;
+    }
+
+    .featured-project-stick-tab:nth-child(10) {
+        top: 420px;
+    }
 }
 .about-section-div img {
     opacity: 1 !important;
