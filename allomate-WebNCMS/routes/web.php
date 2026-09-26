@@ -147,6 +147,8 @@ Route::group(['prefix' => 'admin',  'middleware' => ['custom.auth', 'is_route_as
 
 
   Route::get('/site_settings', [App\Http\Controllers\Core\Admin::class, 'index'])->name('admin.site_settings');
+  // Alias: controllers table often has controller="Admin" → /admin/Admin (was 404)
+  Route::get('/Admin', [App\Http\Controllers\Core\Admin::class, 'index'])->name('admin.Admin');
   Route::get('/', [App\Http\Controllers\admin\HomeController::class, 'index'])->name('admin.index');
 
   Route::get('/home', [App\Http\Controllers\admin\HomeController::class, 'GetHomePage'])->name('admin.home');
