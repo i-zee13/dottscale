@@ -11,12 +11,16 @@ use DB;
  
 use App\Models\SubSecondaryServices;
 use Auth;
+use Illuminate\Support\Facades\Schema;
 
 class ServiceController extends Controller
 {
   public function portfolios()
-  { $categories = PortfolioCategory::select('id','service_name')->where('publish',1)->get();
-    return view('admin.portfolios',compact('categories'));
+  {
+    $categories = Schema::hasTable('portfolio_categories')
+      ? PortfolioCategory::select('id', 'service_name')->where('publish', 1)->get()
+      : collect();
+    return view('admin.portfolios', compact('categories'));
   }
   public function getBlogsCategories()
   {
@@ -83,7 +87,7 @@ class ServiceController extends Controller
   } 
   public function loadPortfolios()
   {
-    $primary_services = Portfolio::get();
+    $primary_services = Schema::hasTable('portfolios') ? Portfolio::get() : collect();
     $page             = collect();
 
     $primary_services = collect($primary_services)->map(function ($x) use ($page) {
