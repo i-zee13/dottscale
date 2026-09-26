@@ -69,10 +69,10 @@ class CreateMissingAllomateTables extends Migration
 
             if (Schema::hasColumn('organization', 'page_meta_tags')) {
                 $payload['page_meta_tags'] = json_encode([
-                    'page_title' => 'DottScale | Business Transformation Through Tech',
-                    'meta_description' => 'DottScale builds enterprise software, web & mobile apps, MVPs, AI and automation. Driving growth, efficiency, and digital transformation.',
-                    'meta_og_title' => 'DottScale | Business Transformation Through Tech',
-                    'meta_og_description' => 'DottScale helps businesses move forward with enterprise software, web & mobile apps, AI, automation, and dedicated teams. Results, not buzzwords.',
+                    'page_title' => 'DottScale | Boost Your Digital Impact',
+                    'meta_description' => 'DottScale helps local businesses get found on Google and grow with SEO, Google Ads, websites, and social media marketing.',
+                    'meta_og_title' => 'DottScale | Boost Your Digital Impact',
+                    'meta_og_description' => 'Your technology success partner for local SEO, paid ads, web design, and digital marketing that drives real leads.',
                     'meta_og_image' => '/images/dottscale-logo-alt.png',
                     'is_indexable' => '1',
                     'is_followable' => '1',

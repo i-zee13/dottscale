@@ -5,7 +5,7 @@ Privacy Policy
 @endsection
 
 @section('meta_description')
-DottScale builds enterprise software, web & mobile apps, MVPs, AI and automation. Driving growth, efficiency, and digital transformation.
+DottScale helps local businesses get found on Google and grow with SEO, Google Ads, websites, and social media marketing.
 @endsection
 
 @section('meta_keywords')
@@ -13,7 +13,7 @@ DottScale builds enterprise software, web & mobile apps, MVPs, AI and automation
 @endsection
 
 @section('og_description')
-DottScale helps businesses move forward with enterprise software, web & mobile apps, AI, automation, and dedicated teams. Results, not buzzwords.
+Your technology success partner for local SEO, paid ads, web design, and digital marketing that drives real leads.
 @endsection
 
 @section('content')

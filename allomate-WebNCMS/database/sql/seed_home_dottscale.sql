@@ -31,7 +31,7 @@ INSERT INTO `home` (
     'We are not here to sell code. We are here to solve problems that matter. Since 2017, we have built systems that fuel growth, improve efficiency, and redefine how businesses operate across FMCG, PropTech, eCommerce, and law.',
     'Learn More About Us',
     '/images/testimonials-img.png',
-    '[{"meta_name_author":"author","meta_name_keywords":"keyword","meta_name_description":"description","meta_content_author":"DottScale","meta_content_keywords":"enterprise software, web development, mobile apps, MVP, AI, automation, DottScale","meta_content_description":"DottScale builds enterprise software, web & mobile apps, MVPs, AI and automation. Driving growth, efficiency, and digital transformation.","meta_og_title":"DottScale | Business Transformation Through Tech","meta_og_description":"DottScale helps businesses move forward with enterprise software, web & mobile apps, AI, automation, and dedicated teams. Results, not buzzwords."}]',
+    '[{"meta_name_author":"author","meta_name_keywords":"keyword","meta_name_description":"description","meta_content_author":"DottScale","meta_content_keywords":"DottScale, local SEO, Google Ads, digital marketing, web development, social media marketing, reputation management","meta_content_description":"DottScale helps local businesses get found on Google and grow with SEO, Google Ads, websites, and social media marketing.","meta_og_title":"DottScale | Boost Your Digital Impact","meta_og_description":"Your technology success partner for local SEO, paid ads, web design, and digital marketing that drives real leads."}]',
     NULL,
     1,
     1,

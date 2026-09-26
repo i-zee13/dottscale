@@ -130,14 +130,14 @@ class AppServiceProvider extends ServiceProvider
                 ? $page_meta->meta_og_description
                 : (isset($default_tags->meta_og_description)
                     ? $default_tags->meta_og_description
-                    : 'DottScale helps businesses move forward with enterprise software, web & mobile apps, AI, automation, and dedicated teams. Results, not buzzwords.')
+                    : 'Your technology success partner for local SEO, paid ads, web design, and digital marketing that drives real leads.')
         );
 
         SEOMeta::setDescription(
             $page_meta->meta_description ??
             $page_meta->meta_content_description ??
             $default_tags->meta_description ??
-            'DottScale builds enterprise software, web & mobile apps, MVPs, AI and automation. Driving growth, efficiency, and digital transformation.'
+            'DottScale helps local businesses get found on Google and grow with SEO, Google Ads, websites, and social media marketing.'
         )->addKeyword(
             $page_meta->meta_keywords ??
             $page_meta->meta_content_keywords ??
@@ -174,20 +174,20 @@ class AppServiceProvider extends ServiceProvider
         SEOTools::opengraph()->addProperty('type', 'website');
         if ($current_route != '' && $blog_title == '') {
             $page_title = ucwords(str_replace(['-'], ' ', $current_route));
-            $title = $webdata->title ?? ($current_route ? $page_title : 'DottScale | Business Transformation Through Tech');
+            $title = $webdata->title ?? ($current_route ? $page_title : 'DottScale | Boost Your Digital Impact');
             SEOMeta::setTitle($title);
         } else if (!$blog_title == '') {
             $blog_title = ucwords(str_replace(['-'], ' ', $blog_title));
             SEOMeta::setTitle($blog_title);
         } else {
             $page_title = ucwords(str_replace('-', ' ', $current_route));
-            SEOMeta::setTitle($webdata->title ? $webdata->title : ($current_route ? $page_title : 'DottScale | Business Transformation Through Tech'));
+            SEOMeta::setTitle($webdata->title ? $webdata->title : ($current_route ? $page_title : 'DottScale | Boost Your Digital Impact'));
         }
 
         TwitterCard::setTitle(
             $webdata->title != '' && $webdata->title
                 ? $webdata->title
-                : ($current_route ? $current_route : 'DottScale | Business Transformation Through Tech')
+                : ($current_route ? $current_route : 'DottScale | Boost Your Digital Impact')
         );
 
         TwitterCard::setDescription(
@@ -195,7 +195,7 @@ class AppServiceProvider extends ServiceProvider
                 ? $page_meta->meta_og_description
                 : ($default_tags && $default_tags->meta_content_description
                     ? $default_tags->meta_og_description
-                    : 'DottScale helps businesses move forward with enterprise software, web & mobile apps, AI, automation, and dedicated teams. Results, not buzzwords.')
+                    : 'Your technology success partner for local SEO, paid ads, web design, and digital marketing that drives real leads.')
         );
 
         if ($organization->twitter_link) {
