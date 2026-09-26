@@ -83,14 +83,19 @@ class HomeController extends Controller
         $meta_og_title              = '';
         $meta_og_description        = '';
         $data = Home::first();
-        $page_meta  =   json_decode($data->page_meta_tags);
-        if ($page_meta != '') {
-            foreach ($page_meta as $meta) {
-                $meta_content_author        = $meta->meta_content_author;
-                $meta_content_keywords      = $meta->meta_content_keywords;
-                $meta_content_description   = $meta->meta_content_description;
-                $meta_og_title              = $meta->meta_og_title;
-                $meta_og_description        = $meta->meta_og_description;
+        if ($data && !empty($data->page_meta_tags)) {
+            $page_meta = is_string($data->page_meta_tags)
+                ? json_decode($data->page_meta_tags)
+                : $data->page_meta_tags;
+            if (is_array($page_meta) || is_object($page_meta)) {
+                foreach ($page_meta as $meta) {
+                    $meta = (object) $meta;
+                    $meta_content_author      = $meta->meta_content_author ?? '';
+                    $meta_content_keywords    = $meta->meta_content_keywords ?? '';
+                    $meta_content_description = $meta->meta_content_description ?? '';
+                    $meta_og_title            = $meta->meta_og_title ?? '';
+                    $meta_og_description      = $meta->meta_og_description ?? '';
+                }
             }
         }
         return view('admin.home', compact(
@@ -104,84 +109,60 @@ class HomeController extends Controller
     }
     public function store(Request $request)
     {
-        $data       =   $request->validate([
+        $request->validate([
             'heading_1'      => 'required',
             'heading_2'      => 'required',
             'large_heading'  => 'required',
             'paragraph'      => 'required',
             'award_heading'  => 'required',
-
-
         ]);
-        if ($request->id != '') {
-            $about      =   Home::find($request->id);
-        } else {
-            $about    =  new  Home();
-        }
-        $about->heading_1          =   $request->heading_1;
-        $about->heading_2          =   $request->heading_2;
-        if ($request->hasFile('desktop_img')) {
-            $about->desktop_img    =   $request->desktop_img->store('images', 'public');
-        } else {
-            $about->desktop_img    =    $request->hidden_desktop_img;
-            if ($request->hidden_desktop_img == '') {
-                return response()->json([
-                    'status'    =>  'error',
-                    'msg'       =>  "Image Should Not be Empty",
-                ]);
-            }
-        }
-        if ($request->hasFile('tab_img')) {
-            $about->tab_img        =   $request->tab_img->store('images', 'public');
-        } else {
-            $about->tab_img        =    $request->hidden_tab_img;
-            if ($request->hidden_tab_img == '') {
-                return response()->json([
-                    'status'    =>  'error',
-                    'msg'       =>  "Image Should Not be Empty",
-                ]);
-            }
-        }
-        if ($request->hasFile('mobile_img')) {
-            $about->mobile_img     =   $request->mobile_img->store('images', 'public');
-        } else {
-            $about->mobile_img     =    $request->hidden_mobile_img;
-            if ($request->hidden_mobile_img == '') {
 
-                return response()->json([
-                    'status'    =>  'error',
-                    'msg'       =>  "Image Should Not be Empty",
-                ]);
+        $about = $request->id != '' ? Home::find($request->id) : new Home();
+        if (!$about) {
+            $about = new Home();
+        }
+
+        $about->heading_1 = $request->heading_1;
+        $about->heading_2 = $request->heading_2;
+
+        foreach (['desktop_img', 'tab_img', 'mobile_img', 'award_img'] as $field) {
+            $hidden = 'hidden_' . $field;
+            if ($request->hasFile($field)) {
+                $about->{$field} = $request->{$field}->store('images', 'public');
+            } else {
+                $about->{$field} = $request->{$hidden};
+                if ($request->{$hidden} == '') {
+                    return response()->json([
+                        'status' => 'error',
+                        'msg'    => 'Image Should Not be Empty',
+                    ]);
+                }
             }
         }
-        if ($request->hasFile('award_img')) {
-            $about->award_img        =   $request->award_img->store('images', 'public');
+
+        if ($request->hasFile('meta_og_image')) {
+            $meta_og_image = $request->meta_og_image->store('og-images', 'public');
         } else {
-            $about->award_img        =    $request->hidden_award_img;
-            if ($request->hidden_award_img == '') {
-                return response()->json([
-                    'status'    =>  'error',
-                    'msg'       =>  "Image Should Not be Empty",
-                ]);
-            }
+            $meta_og_image = $request->hidden_og_image ?: $request->hidden_og_img;
         }
-        if ($request->hasfile('meta_og_image')) {
-            $meta_og_image    =   $request->meta_og_image->store('og-images', 'public');
-        } else {
-            $meta_og_image    =   $request->hidden_og_img;
+
+        $metaArray = $request->meta_array;
+        if (is_array($metaArray)) {
+            $metaArray = json_encode($metaArray);
         }
-        $about->large_heading           =   $request->large_heading;
-        $about->award_heading           =   $request->award_heading;
-        $about->paragraph               =   $request->paragraph;
-        $about->page_meta_tags          =   $request->meta_array;
-        $about->meta_og_image           =   $meta_og_image;
-        $about->created_by              =    Auth::user()->id;
-        $about->updated_by              =    Auth::user()->id;
+
+        $about->large_heading  = $request->large_heading;
+        $about->award_heading  = $request->award_heading;
+        $about->paragraph      = $request->paragraph;
+        $about->page_meta_tags = $metaArray;
+        $about->meta_og_image  = $meta_og_image;
+        $about->created_by     = $about->created_by ?: Auth::user()->id;
+        $about->updated_by     = Auth::user()->id;
         $about->save();
-        return response()->json([
-            'status'    =>  'success',
-            'msg'       =>  "Data Has been Added",
 
+        return response()->json([
+            'status' => 'success',
+            'msg'    => 'Data Has been Added',
         ]);
     }
 

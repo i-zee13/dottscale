@@ -17,12 +17,30 @@ DottScale helps businesses move forward with enterprise software, web & mobile a
 @endsection
 
 @section('content')
-@verbatim
+@php
+    $homeImg = function ($path, $fallback) {
+        if (empty($path)) {
+            return $fallback;
+        }
+        if (str_starts_with($path, 'http') || str_starts_with($path, '/')) {
+            return $path;
+        }
+        return '/storage/' . ltrim($path, '/');
+    };
+    $heroHeading = $home?->heading_1 ?? 'We Build Digital Systems That Grow Businesses';
+    $heroParagraph = $home?->heading_2 ?? "From FMCG to PropTech to eCommerce. Outcomes, not buzzwords.\nOur work replaces inefficiency with clarity. Complexity with control. Ideas with working systems.";
+    $aboutHeading = $home?->large_heading ?? 'Driven by Real Business Impact';
+    $aboutParagraph = $home?->paragraph ?? 'We are not here to sell code. We are here to solve problems that matter. Since 2017, we have built systems that fuel growth, improve efficiency, and redefine how businesses operate across FMCG, PropTech, eCommerce, and law.';
+    $aboutCta = $home?->award_heading ?? 'Learn More About Us';
+    $desktopImg = $homeImg($home?->desktop_img, '/storage/media/Allomate-Cover-image02_1755588868.webp?v=3');
+    $mobileImg = $homeImg($home?->mobile_img, '/storage/media/new-banner-image-mobile02_1755588914.webp?v=3');
+    $aboutImg = $homeImg($home?->award_img, '/images/testimonials-img.png');
+@endphp
 <div class="IDL70G23RUJ9HEB4"></div>
-                    <section class="z-[1] min-h-screen flex items-center relative IDMEJHT2SVHL8J813 IDMEJIKW527FZEE0">
+<section class="z-[1] min-h-screen flex items-center relative IDMEJHT2SVHL8J813 IDMEJIKW527FZEE0">
     <div class="relative w-full">
-        <figure class="overflow-hidden hidden sm:block"><img width="1504" height="579" src="/storage/media/Allomate-Cover-image02_1755588868.webp?v=3" alt="new banner Image" title="new banner Image" class="w-full h-screen object-cover"></figure>
-        <figure class="overflow-hidden block sm:hidden"><img width="480" height="768" src="/storage/media/new-banner-image-mobile02_1755588914.webp?v=3" alt="new banner Image" title="new banner Image" class="w-full h-screen object-cover"></figure>
+        <figure class="overflow-hidden hidden sm:block"><img width="1504" height="579" src="{{ $desktopImg }}" alt="{{ $heroHeading }}" title="{{ $heroHeading }}" class="w-full h-screen object-cover"></figure>
+        <figure class="overflow-hidden block sm:hidden"><img width="480" height="768" src="{{ $mobileImg }}" alt="{{ $heroHeading }}" title="{{ $heroHeading }}" class="w-full h-screen object-cover"></figure>
         <div class="container mx-auto px-3 sm:px-4">
             <div class="absolute top-0 bottom-0 right-auto m-auto flex items-center justify-center">
                 <div class="mr-3">
@@ -30,21 +48,21 @@ DottScale helps businesses move forward with enterprise software, web & mobile a
                             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4">
                             </path>
                         </svg>
-                        <h1 data-raw-content="true" class="leading-none text-[26px] sm:text-[30px] md:text-[34px] lg:text-[40px] xl:text-[46px] font-primary font-bold text-white uppercase mb-3 md:mb-5">We Build Digital Systems That Grow Businesses<br></h1>
-                        <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg mb-2 md:mb-4 opacity-70">From FMCG to PropTech to eCommerce. Outcomes, not buzzwords.<br>Our work replaces inefficiency with clarity. Complexity with control. Ideas with working systems.​​​​​​​</p><a href="/contact-us" title="Get Started" class="red-arrow-btn group bg-bodybg text-primary rounded-[6px] h-[40px] w-max px-4 flex items-center justify-center hover:px-6 focus:px-7 transition-all duration-300 ease-in-out IDMEJHT2TC8SMUO15 IDMEJIKW5BV7LFG2">Start the Conversation</a>
+                        <h1 data-raw-content="true" class="leading-none text-[26px] sm:text-[30px] md:text-[34px] lg:text-[40px] xl:text-[46px] font-primary font-bold text-white uppercase mb-3 md:mb-5">{!! nl2br(e($heroHeading)) !!}</h1>
+                        <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg mb-2 md:mb-4 opacity-70">{!! nl2br(e($heroParagraph)) !!}</p><a href="/contact-us" title="Get Started" class="red-arrow-btn group bg-bodybg text-primary rounded-[6px] h-[40px] w-max px-4 flex items-center justify-center hover:px-6 focus:px-7 transition-all duration-300 ease-in-out IDMEJHT2TC8SMUO15 IDMEJIKW5BV7LFG2">Start the Conversation</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-                    <section class="py-5 md:py-10 IDMELHLKGP4KI8K1">
+<section class="py-5 md:py-10 IDMELHLKGP4KI8K1">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="relative"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon1 z-[10]">
                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4">
                 </path>
             </svg>
-            <figure> <img width="1000" height="1000" src="/images/testimonials-img.png" class="w-full h-[380px] sm:h-[450px] md:h-[600px] lg:h-[800px] object-cover rounded-[6px]"></figure>
+            <figure> <img width="1000" height="1000" src="{{ $aboutImg }}" alt="{{ $aboutHeading }}" class="w-full h-[380px] sm:h-[450px] md:h-[600px] lg:h-[800px] object-cover rounded-[6px]"></figure>
             <div class="absolute bottom-[30px] right-0 sm:right-[10px] md:right-[30px] w-full sm:w-[50%] lg:w-[35%] p-3 md:p-6 bg-bodybg/5 sm:bg-bodybg/10 backdrop-blur-[15px] sm:backdrop-blur-[40px] rounded-[6px] IDMELHLKGT9FEAJ2">
                 <div class="min-h-[250px] md:min-h-[300px] flex flex-col justify-between items-start">
                     <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px] IDMELHLKGTZ46X23">
@@ -53,13 +71,14 @@ DottScale helps businesses move forward with enterprise software, web & mobile a
                                 </path>
                             </svg> About Us</p>
                     </div>
-                    <h2 data-raw-content="true" class="leading-none capitalize text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-bodybg font-primary mb-3 sm:mb-5 flex">Driven by Real Business Impact</h2>
-                    <p data-raw-content="true" class="font-secondary font-normal text-sm md:text-base text-bodybg/70 capitalize mb-3 md:mb-6">We are not here to sell code. We are here to solve problems that matter. Since 2017, we have built systems that fuel growth, improve efficiency, and redefine how businesses operate across FMCG, PropTech, eCommerce, and law.</p><a href="about-us" title="Explore the Framework" class="red-arrow-btn group mt-4 pr-10 bg-bodybg text-primary rounded-[6px] h-[40px] w-max px-4 flex items-center justify-center hover:px-6 focus:px-7 transition-all duration-300 ease-in-out IDMELHLKH0Z6SKJ4">Learn More About Us</a>
+                    <h2 data-raw-content="true" class="leading-none capitalize text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-bodybg font-primary mb-3 sm:mb-5 flex">{{ $aboutHeading }}</h2>
+                    <p data-raw-content="true" class="font-secondary font-normal text-sm md:text-base text-bodybg/70 capitalize mb-3 md:mb-6">{{ $aboutParagraph }}</p><a href="about-us" title="Explore the Framework" class="red-arrow-btn group mt-4 pr-10 bg-bodybg text-primary rounded-[6px] h-[40px] w-max px-4 flex items-center justify-center hover:px-6 focus:px-7 transition-all duration-300 ease-in-out IDMELHLKH0Z6SKJ4">{{ $aboutCta }}</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+@verbatim
                     <section class="py-5 md:py-10 IDMEH5PS2RJVLE01">
     <div class="container mx-auto px-3 sm:px-4">
         <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-primary mb-3 md:mb-5 lg:mb-7">

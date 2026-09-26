@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Home;
+
 class FrontendController extends Controller
 {
     public function page(string $page = 'home')
@@ -12,6 +14,11 @@ class FrontendController extends Controller
             abort(404);
         }
 
-        return view($view);
+        $data = [];
+        if ($page === 'home') {
+            $data['home'] = Home::first();
+        }
+
+        return view($view, $data);
     }
 }

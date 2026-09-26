@@ -120,7 +120,7 @@
         <ul>
             <li><a href="javascript:void(0);"><img src="{{ url('/admin/images/create-page-icon.svg') }}" alt="" />Create
                     Page </a></li>
-            <li><a href="{{ route('admin.index') }}"><img src="{{ url('/admin/images/activity-icon.svg') }}"
+            <li><a href="{{ route('admin.home') }}"><img src="{{ url('/admin/images/activity-icon.svg') }}"
                         alt="" />Home Page</a></li>
             <li><a href="{{ route('admin.aboutus') }}"><img src="{{ url('/admin/images/activity-icon.svg') }}"
                         alt="" />About Us</a></li>
