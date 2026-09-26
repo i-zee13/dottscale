@@ -73,6 +73,7 @@ class Admin extends AccessRightsAuth
 
         $cl->parent_module          =   $request->parent;
         $cl->sub_module_priority    =   $request->priority;
+        $cl->parent_module_for      =   $parentMod->parent_module_for ?? 1;
         $cl->parent_module_priority =   $parentMod->parent_module_priority ?? 1;
         $cl->save();
         return ['code' => 200];
@@ -140,9 +141,9 @@ class Admin extends AccessRightsAuth
         $cl = new CL;
         if ($request->parent_module_name_update) {
             if ($parent_icon) {
-                CL::where('parent_module', $request->parent_module_name_update)->update(['parent_module' => $request->parent_module_name, 'logo' => $parent_icon, 'show_in_sidebar' => $request->show_in_sidebar]);
+                CL::where('parent_module', $request->parent_module_name_update)->update(['parent_module' => $request->parent_module_name, 'logo' => $parent_icon, 'show_in_sidebar' => $request->show_in_sidebar, 'parent_module_for' => $request->parent_module_for]);
             } else {
-                CL::where('parent_module', $request->parent_module_name_update)->update(['parent_module' => $request->parent_module_name, 'show_in_sidebar' => $request->show_in_sidebar]);
+                CL::where('parent_module', $request->parent_module_name_update)->update(['parent_module' => $request->parent_module_name, 'show_in_sidebar' => $request->show_in_sidebar, 'parent_module_for' => $request->parent_module_for]);
             }
             return ['code' => 200];
         }
@@ -151,6 +152,7 @@ class Admin extends AccessRightsAuth
         $cl->made_up_name           =   $request->made_up_name;
         $cl->sub_module             =   $request->module_name;
         $cl->show_in_sidebar        =   $request->show_in_sidebar;
+        $cl->parent_module_for      =   $request->parent_module_for;
         $cl->sub_menu_icon          =   $icon;
         $cl->logo                   =   $parent_icon;
         $cl->parent_module          =   $request->parent_module_name;
