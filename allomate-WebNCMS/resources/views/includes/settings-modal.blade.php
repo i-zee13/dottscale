@@ -29,16 +29,6 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label mb-10">Parent Module For*</label>
-                                        <select class="form-control" name="parent_module_for">
-                                            <option value="1" selected>Admin</option>
-                                            <option value="2">Investor</option>
-                                            <option value="3">Both</option>
-                                        </select>
-                                    </div>
-                                </div>
                                 <div class="col-md-12">
                                     <div class="PB-10">
                                         <label class="font12">Parent Icon*</label>
@@ -71,16 +61,6 @@
                                         <select class="form-control" name="show_in_sub_menu">
                                             <option value="1" selected>Yes</option>
                                             <option value="0">No</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label mb-10">Sub Module For*</label>
-                                        <select class="form-control" name="sub_module_for">
-                                            <option value="1" selected>Admin</option>
-                                            <option value="2">Investor</option>
-                                            <option value="3">Both</option>
                                         </select>
                                     </div>
                                 </div>
@@ -123,16 +103,6 @@
                                         <select class="form-control" name="show_in_sub_menu">
                                             <option value="1" selected>Yes</option>
                                             <option value="0">No</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="control-label mb-10">Sub Module For*</label>
-                                        <select class="form-control" name="sub_module_for">
-                                            <option value="1" selected>Admin</option>
-                                            <option value="2">Investor</option>
-                                            <option value="3">Both</option>
                                         </select>
                                     </div>
                                 </div>

@@ -451,7 +451,6 @@ function actionListeners() {
         $('[name="parent_module_name_update"]').val(itemFnd.parent_module);
         $('[name="parent_module_name"]').val(itemFnd.parent_module);
         $('[name="show_in_sidebar"]').val(itemFnd.show_in_sidebar);
-        $('[name="parent_module_for"]').val(itemFnd.parent_module_for);
         setTimeout(() => {
             $('[name="parent_module_name"]').focus();
         }, 500);
@@ -561,7 +560,6 @@ function actionListeners() {
         $("[name='route']").val(editSubNavItem.controller);
         $("[name='made_up_name']").val(editSubNavItem.made_up_name);
         $("[name='show_in_sub_menu']").val(editSubNavItem.show_in_sub_menu);
-        $("[name='sub_module_for']").val(editSubNavItem.sub_module_for);
 
         setTimeout(() => {
             $("[name='module_name']").focus();

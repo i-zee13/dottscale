@@ -22,13 +22,7 @@ class AccessRights extends AccessRightsAuth
      */
     public function index()
     {
-        $access_rights              =   CL::whereRaw("
-                                            admin_right = 0 
-                                            AND 
-                                            parent_module_for IN (2,3) 
-                                            AND 
-                                            sub_module_for IN (2,3)
-                                        ")->get()->toArray();
+        $access_rights              =   CL::whereRaw("admin_right = 0")->get()->toArray();
 
         $headings                   =   array_unique(array_column($access_rights, 'parent_module'));
         $controllers                =   array();
