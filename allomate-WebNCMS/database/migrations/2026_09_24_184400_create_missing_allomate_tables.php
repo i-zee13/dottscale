@@ -39,21 +39,6 @@ class CreateMissingAllomateTables extends Migration
             });
         }
 
-        if (!Schema::hasTable('application_forms')) {
-            Schema::create('application_forms', function (Blueprint $table) {
-                $table->increments('id');
-                $table->unsignedInteger('application_for')->nullable();
-                $table->string('first_name')->nullable();
-                $table->string('last_name')->nullable();
-                $table->string('email')->nullable();
-                $table->string('phone_number')->nullable();
-                $table->text('message')->nullable();
-                $table->string('linked_in')->nullable();
-                $table->string('resume')->nullable();
-                $table->timestamps();
-            });
-        }
-
         if (!Schema::hasTable('contact_us_forms')) {
             Schema::create('contact_us_forms', function (Blueprint $table) {
                 $table->increments('id');

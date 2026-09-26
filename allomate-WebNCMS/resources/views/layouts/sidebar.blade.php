@@ -22,8 +22,6 @@
                             alt="" /> Leads</a></li>
                 <li><a id="open-side-webpages"><img src="{{ url('/admin/images/dashboard-icon.svg') }}"
                             alt="" /> Website Pages</a></li>
-                <li><a id="open-side-career"><img src="{{ url('/admin/images/mth-setting-icon.svg') }}"
-                            alt="" />Careers</a></li>
                 <li><a href="{{ route('admin.testimonial-list') }}"><img src="{{ url('/admin/images/emp-icon.svg') }}"
                     alt="" /> Testimonials</a></li>
 
@@ -98,17 +96,6 @@
                         alt="" />Demo Requests </a></li>
             <li><a href="{{ route('admin.subscriptions') }}"><img src="{{ url('/admin/images/activity-icon.svg') }}"
                         alt="" />Subscriptions</a></li>
-        </ul>
-    </div>
-</div>
-<div id="_subNav-id" class="open-side-career hide-career-menu">
-    <div class="_subNav"> <a id="SN-close" class="SN-close-btn"><i class="fa fa-arrow-left"></i></a>
-        <h2>Career</h2>
-        <ul>
-            <li> <a href="{{ route('admin.careers') }}"><img src="{{ url('/admin/images/activity-icon.svg') }}"
-                        alt="" />Career List</a></li>
-            <li><a href="{{ route('admin.applications') }}"><img src="{{ url('/admin/images/activity-icon.svg') }}"
-                        alt="" />Applications </a></li>
         </ul>
     </div>
 </div>

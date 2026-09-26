@@ -34,14 +34,11 @@ class HomeController extends Controller
             } else {
                 $message = 'Good Evening';
             }
-            $todayApplicants = Schema::hasTable('application_forms')
-                ? DB::table('application_forms')->whereDate('created_at', Carbon::today())->count()
-                : 0;
             $todayInquiries = Schema::hasTable('contact_us_forms')
                 ? DB::table('contact_us_forms')->whereDate('created_at', Carbon::today())->count()
                 : 0;
             $todaySFRForms = 0;
-            return view('admin.index', compact('message', 'todayInquiries', 'todayApplicants', 'todaySFRForms'));
+            return view('admin.index', compact('message', 'todayInquiries', 'todaySFRForms'));
         }
 
         $categories = Schema::hasTable('reports_types')

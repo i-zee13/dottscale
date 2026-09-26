@@ -22,8 +22,6 @@ class SeedDottscaleAdminMenu extends Migration
             ['controller' => 'blogs', 'made_up_name' => 'Blogs', 'parent_module' => 'Blogs', 'sub_module' => 'List', 'sub_module_priority' => 3, 'parent_module_priority' => 4],
             ['controller' => 'leads', 'made_up_name' => 'Leads', 'parent_module' => 'Leads', 'sub_module' => 'Leads', 'sub_module_priority' => 1, 'parent_module_priority' => 5],
             ['controller' => 'subscriptions', 'made_up_name' => 'Subscriptions', 'parent_module' => 'Leads', 'sub_module' => 'Subscriptions', 'sub_module_priority' => 2, 'parent_module_priority' => 5],
-            ['controller' => 'jobs', 'made_up_name' => 'Careers', 'parent_module' => 'Careers', 'sub_module' => 'Career List', 'sub_module_priority' => 1, 'parent_module_priority' => 6],
-            ['controller' => 'applications', 'made_up_name' => 'Applications', 'parent_module' => 'Careers', 'sub_module' => 'Applications', 'sub_module_priority' => 2, 'parent_module_priority' => 6],
             ['controller' => 'contact-us', 'made_up_name' => 'Contact Us', 'parent_module' => 'Website Pages', 'sub_module' => 'Contact Us', 'sub_module_priority' => 1, 'parent_module_priority' => 7],
             ['controller' => 'faqs', 'made_up_name' => 'FAQs', 'parent_module' => 'Website Pages', 'sub_module' => 'FAQs', 'sub_module_priority' => 2, 'parent_module_priority' => 7],
             ['controller' => 'privacy-policy', 'made_up_name' => 'Privacy Policy', 'parent_module' => 'Website Pages', 'sub_module' => 'Privacy Policy', 'sub_module_priority' => 3, 'parent_module_priority' => 7],

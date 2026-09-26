@@ -161,26 +161,5 @@
     </div>
 </div>
 <button style="display:none" class="openSubModModal" data-toggle="modal" data-target=".newSubModModal"></button>
-<div class="modal fade" id="docsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Documents</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" style="font-size: 12px; font-weight: normal"
-                    data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" style="font-size: 12px; font-weight: normal">Save
-                    changes</button>
-            </div>
-        </div>
-    </div>
-</div>
 <button style="display:none" class="open_confirmation_modal" data-toggle="modal"
     data-target=".db-confirmation-modal"></button>

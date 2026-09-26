@@ -514,45 +514,6 @@
                 });
             }
 
-            if ($(this).find('.all-open-positions-div').length > 0) {
-                $.ajax({
-                    url: '/get-careers-positions',
-                    success: function(response) {
-                        if (response.positions.length > 0) {
-                            $('.all-open-positions-div').empty();
-                            response.positions.forEach(work => {
-                                $('.all-open-positions-div').append(`
-                                <div class="group col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3">
-                                    <div class="h-[150px] md:h-[200px] p-[15px] md:p-[20px] bg-bodybg/20 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] flex flex-col justify-between rounded-[6px] relative">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="inline-flex plus-icon2" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
-                                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4">
-                                            </path>
-                                        </svg>
-                                        <h3 class="font-primary text-lg md:text-xl font-semibold text-bodybg uppercase">${work.title ?? ''}</h3>
-                                        <div class="flex flex-row items-center justify-between">
-                                            <p class="font-normal text-xs sm:text-sm text-white/70">${work.location ?? ''}</p>
-                                            <div>
-                                                <a href="/career/${work.slug ?? 'javascript:void(0);'}" title="Read More" class="group bg-bodybg rounded-[6px] w-[40px] h-[40px] flex items-center justify-center hover:w-[70px] focus:w-[70px] transition-all duration-300 ease-in-out"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-right-short text-[#212529]">
-                                                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8">
-                                                    </path>
-                                                </svg></a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            `);
-                            });
-                        } else {
-                            $('.all-open-positions-div').remove();
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.log('AJAX error:', status, error);
-                    }
-                });
-            }
-
             if ($(this).find('.all-client-logos').length > 0) {
                 $.ajax({
                     url: '/get-client-logos',

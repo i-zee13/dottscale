@@ -79,8 +79,6 @@ Route::get('/welcome', function () {
 require __DIR__ . '/frontend.php';
 
 // Route::get('/home', [App\Http\Controllers\WebPagesController::class, 'getFrontEndIndexPage'])->name('home');
-// Route::get('/career', [App\Http\Controllers\HomeController::class, 'careerPage'])->name('career');
-Route::get('/career/{slug}', [App\Http\Controllers\HomeController::class, 'careerDetail'])->name('career-detail');
 Route::get('/field-traner', [App\Http\Controllers\HomeController::class, 'fieldTranerPage'])->name('field-traner');
 Route::get('/ios-developer', [App\Http\Controllers\HomeController::class, 'iosDeveloperPage'])->name('ios-developer');
 Route::get('/learn-more', [App\Http\Controllers\HomeController::class, 'productPage'])->name('learn-more');
@@ -91,7 +89,6 @@ Route::get('/business-development', [App\Http\Controllers\HomeController::class,
 
 Route::post('/store-demo-form', [App\Http\Controllers\FormController::class, 'demoForm'])->name('store-demo-form');
 Route::post('/store-contact-form', [App\Http\Controllers\FormController::class, 'contactForm'])->name('store-contact-form');
-Route::post('/store-application-form', [App\Http\Controllers\FormController::class, 'applicationForm'])->name('store-application-form');
 
 // Route::get('/', [App\Http\Controllers\WebPagesController::class, 'getFrontEndIndexPage'])->name('home');
 // Route::get('/about-us', [App\Http\Controllers\WebPagesController::class, 'getFrontEndAboutusPage'])->name('about-us');
@@ -107,9 +104,7 @@ Route::get('/get-clients-review', [App\Http\Controllers\WebPagesController::clas
 Route::post('/save-customer-subscription', [App\Http\Controllers\WebPagesController::class, 'saveSubscriberForm'])->name('save-customer-subscription');
 Route::get('/get-all-blogs', [App\Http\Controllers\WebPagesController::class, 'getFrontEndBlogsPage'])->name('get-all-blogs');
 Route::get('/get-portfolios/{isLimit?}', [App\Http\Controllers\WebPagesController::class, 'getFrontEndPortfolios'])->name('get-portfolios');
- Route::get('/all-jobs', [App\Http\Controllers\WebPagesController::class, 'getAllCareerJobs'])->name('get-all-jobs');
 Route::post('/get-all-faqs', [App\Http\Controllers\WebPagesController::class, 'getFrontEndFaqs'])->name('get-all-faqs');
-Route::post('/submit-job-application', [App\Http\Controllers\WebPagesController::class, 'saveJobApplication'])->name('submit-job-application');
 Route::post('/save-contact', [App\Http\Controllers\WebPagesController::class, 'save_contact_form'])->name('save-contact');
 Route::post('/save-pr-contact', [App\Http\Controllers\WebPagesController::class, 'save_pr_contact_form'])->name('save-pr-contact');
 //End-Web Routes
@@ -153,18 +148,6 @@ Route::group(['prefix' => 'admin',  'middleware' => ['custom.auth', 'is_route_as
 
   Route::get('/site_settings', [App\Http\Controllers\Core\Admin::class, 'index'])->name('admin.site_settings');
   Route::get('/', [App\Http\Controllers\admin\HomeController::class, 'index'])->name('admin.index');
-
-  /**careers  Routes */
-  Route::get('/applications', [App\Http\Controllers\admin\ApplicationController::class, 'index'])->name('admin.applications');
-  Route::get('/all-applications-list', [App\Http\Controllers\admin\ApplicationController::class, 'all_applications_list'])->name('admin.all-applications-list');
-  Route::post('/delete-application', [App\Http\Controllers\admin\ApplicationController::class, 'delete_application'])->name('admin.application');
-  //Crud For careers
-  Route::get('/jobs', [App\Http\Controllers\admin\CareerController::class, 'index'])->name('admin.careers');
-  Route::get('/job-create', [App\Http\Controllers\admin\CareerController::class, 'create'])->name('admin.create-career');
-  Route::post('/job-store', [App\Http\Controllers\admin\CareerController::class, 'store'])->name('admin.career-store');
-  Route::get('/job-edit/{id}', [App\Http\Controllers\admin\CareerController::class, 'edit'])->name('admin.edit-career');
-  Route::POST('/job-delete/{id}', [App\Http\Controllers\admin\CareerController::class, 'destroy'])->name('admin.delete.career');
-  Route::get('/change-job-status', [App\Http\Controllers\admin\CareerController::class, 'changeStatus'])->name('admin.change-career-status');
 
   Route::get('/home', [App\Http\Controllers\admin\HomeController::class, 'GetHomePage'])->name('admin.home');
   Route::post('/home-store', [App\Http\Controllers\admin\HomeController::class, 'store'])->name('admin.home-store');
@@ -329,8 +312,6 @@ Route::post('/update_user_password_first', [App\Http\Controllers\admin\HomeContr
 
 Route::get('/get-latest-blogs', [App\Http\Controllers\WebPagesController::class, 'getLatestBlogs'])->name('get-latest-blogs');
 Route::get('/blogs/blog-details/{page_slug}', [App\Http\Controllers\WebPagesController::class, 'blog_details'])->name('blog-details');
-Route::get('/get-careers-positions', [App\Http\Controllers\WebPagesController::class, 'getCareersPositions'])->name('get-careers-positions');
-Route::get('/career/{slug}', [App\Http\Controllers\WebPagesController::class, 'getCareerDetail'])->name('career-details');
 Route::get('/get-client-reviews', [App\Http\Controllers\WebPagesController::class, 'getTestimonials'])->name('get-client-reviews');
 Route::get('/get-client-logos', [App\Http\Controllers\WebPagesController::class, 'getClientsLogo'])->name('get-client-logos');
 Route::get('/get-services/{limit?}', [App\Http\Controllers\WebPagesController::class, 'getServices'])->name('get-services');

@@ -28,21 +28,6 @@ CREATE TABLE IF NOT EXISTS `reports` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE IF NOT EXISTS `application_forms` (
-  `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
-  `application_for` int UNSIGNED DEFAULT NULL,
-  `first_name` varchar(191) DEFAULT NULL,
-  `last_name` varchar(191) DEFAULT NULL,
-  `email` varchar(191) DEFAULT NULL,
-  `phone_number` varchar(50) DEFAULT NULL,
-  `message` text,
-  `linked_in` varchar(255) DEFAULT NULL,
-  `resume` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 CREATE TABLE IF NOT EXISTS `contact_us_forms` (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(191) DEFAULT NULL,

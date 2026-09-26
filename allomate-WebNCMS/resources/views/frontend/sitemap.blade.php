@@ -79,11 +79,6 @@ DottScale helps businesses move forward with enterprise software, web & mobile a
 
                                             </li>
                                                                                                                                                                 <li>
-                                                <a href="career"
-                                                    title="Career">Career</a>
-
-                                            </li>
-                                                                                                                                                                <li>
                                                 <a href="about-us"
                                                     title="About Us">About Us</a>
 

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Career;
 use Illuminate\Support\Facades\Artisan;
 
 class HomeController extends Controller
@@ -22,16 +21,6 @@ class HomeController extends Controller
     public function getDemoPage()
     {
         return view('getdemo');
-    }
-    public function careerPage()
-    {
-        $careers = Career::select('id', 'title', 'slug', 'location')->where('status', 1)->get();
-        return view('career', compact('careers'));
-    }
-    public function careerDetail($slug)
-    {
-        $career = Career::where('slug', $slug)->first();
-        return view('career-detail', compact('career'));
     }
     public function iosDeveloperPage()
     {

@@ -45,15 +45,8 @@
                                     <ul>
                                                                             </ul>
                                 </li>
-                                                            <li class="mil-has-children">
-                                    <a href="/career"
-                                        >
-                                        Careers</a>
-                                    <ul>
-                                                                            </ul>
-                                </li>
                                                     </ul>
-                    </nav>
+                                    </nav>
                 </div>
 
                 <div class="mil-menu-right-frame">

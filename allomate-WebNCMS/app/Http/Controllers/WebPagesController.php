@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\JobApplicationValidate;
 use App\Models\AboutUs;
-use App\Models\ApplicationForm;
 use App\Models\BlogCategory;
 use App\Models\Staff;
 use App\Models\Blogs;
-use App\Models\Career;
 use App\Models\City;
 use App\Models\ClientReviews;
 use App\Models\ContactForm;
@@ -60,14 +57,6 @@ class WebPagesController extends Controller
             'status'     =>  'success',
         ]);
     }
-    public function getAllCareerJobs()
-    {
-        $allJobs = Career::where('status', 1)->Select('id', 'slug', 'location', 'title')->get();
-        return response()->JSON([
-            'allJobs'    =>  $allJobs,
-            'status'     =>  'success',
-        ]);
-    }
     public function getFrontEndBlogsPage()
     {
         $services = BlogCategory::where('publish', '1')
@@ -94,33 +83,6 @@ class WebPagesController extends Controller
         return response()->JSON([
             'categories'    =>  $services,
             'all_blogs'     =>  $all_blogs,
-        ]);
-    }
-    public function saveJobApplication(JobApplicationValidate $request)
-    {
-        $resume         =   null;
-        $validatedData  = $request->sanitizedAndValidated();
-        if ($request->hasFile('resume')) {
-            $completeFileName         =   $request->file('resume')->getClientOriginalName();
-            $fileNameOnly             =   pathinfo($completeFileName, PATHINFO_FILENAME);
-            $extension                =   $request->file('resume')->getClientOriginalExtension();
-            $file                     =   str_replace(' ', '_', $fileNameOnly) . '_' . time() . '.' . $extension;
-            $path                     =   $request->file('resume')->storeAs('public/jobApplications/', $file);
-            $resume                   =   '/storage/jobApplications/' . $file;
-        }
-        $jobApplication                     =   new ApplicationForm();
-        $jobApplication->application_for    =   $validatedData['career_id'];
-        $jobApplication->first_name         =   $validatedData['first_name'];
-        $jobApplication->last_name          =   $validatedData['last_name'];
-        $jobApplication->email              =   $validatedData['email'];
-        $jobApplication->phone_number       =   $validatedData['phone_number'];
-        $jobApplication->message            =   $validatedData['introduction'];
-        $jobApplication->linked_in          =   $validatedData['linkedInUrl'];
-        $jobApplication->resume             =   $resume;
-        $jobApplication->save();
-        return response()->JSON([
-            'status'                    =>  'success',
-            'msg'                       =>  'form_submit'
         ]);
     }
     public function getFrontEndPrivacyPage()
@@ -485,23 +447,12 @@ class WebPagesController extends Controller
     {
         return response()->json(['status' => 'success', 'services' => []]);
     }
-    public function getCareersPositions()
-    {
-        $positions = Career::where('status', 1)->select('title', 'slug', 'location')->get();
-        return response()->json(['status' => 'success', 'positions' => $positions]);
-    }
     public function blogs_list()
     {
         $services = BlogCategory::where('publish', '1')->select('id', 'service_name')->get();
         $blogs      = Blogs::where('published', '1')->leftJoin('blog_categories', 'blog_categories.id', '=', 'blogs.blog_category_id')->select('blogs.*', 'blog_categories.service_name')->orderBy("created_at", "desc")->get();
 
         return view("blogs-list", compact("services", "blogs"));
-    }
-    public function getCareerDetail($slug)
-    {
-        $latest_blogs = Blogs::latest()->take(3)->get();
-        $career = Career::where('status', 1)->where('slug', '' . $slug . '')->first();
-        return view('career-detail', compact('career', 'latest_blogs'));
     }
     public function getFrontEndPortfolios($isLimit = null){
     return response()->json(["status"=> "success","data"=> []]);

@@ -57,17 +57,6 @@
                                 </a>
                             </li>
                                                     <li>
-                                <a href="/career"
-                                   title="Career"
-                                   class="relative text-sm sm:text-base text-bodybg transition-all duration-300 ease-[cubic-bezier(0,0,0.3642,1)]
-                                   hover:pl-[30px] after:absolute after:left-0 after:top-0 after:bottom-0 after:my-auto
-                                   after:w-[20px] after:h-[20px] after:rounded-[6px] after:bg-secondary after:bg-[url('../images/menu-arrow.svg')]
-                                   after:bg-no-repeat after:bg-cover after:scale-0 hover:after:scale-100 after:origin-bottom-left
-                                   after:transition-transform after:duration-400">
-                                    Career
-                                </a>
-                            </li>
-                                                    <li>
                                 <a href="/about-us"
                                    title="About Us"
                                    class="relative text-sm sm:text-base text-bodybg transition-all duration-300 ease-[cubic-bezier(0,0,0.3642,1)]

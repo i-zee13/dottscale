@@ -56,7 +56,6 @@ class GenerateSitemap extends Command
             }
         });
         $blogs          =   DB::table('blogs')->where('published',1)->whereRaw("JSON_EXTRACT(page_meta_tags, '$.is_indexable') = '1'")->pluck("slug")->toArray();
-        $careers        =   DB::table('careers')->where('status',1)->whereRaw("JSON_EXTRACT(page_meta_tags, '$.is_indexable') = '1'")->pluck("slug")->toArray();
         $pages          =   [];
     
         if (count($pages) > 0) {
@@ -67,11 +66,6 @@ class GenerateSitemap extends Command
         if (count($blogs) > 0) {
             foreach ($blogs as $key => $blog) {
                 $route_names[]  =   'blogs/blog-details/'.str_replace( '/', '', $blog);
-            }
-        }
-        if (count($careers) > 0) {
-            foreach ($careers as $key => $career) {
-                $route_names[]  =   'career/'.str_replace( '/', '', $career);
             }
         }
         if (file_exists(public_path('sitemap.xml'))) {

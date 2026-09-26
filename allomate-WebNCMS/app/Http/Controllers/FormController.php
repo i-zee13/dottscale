@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ApplicationForm;
 use App\Models\ContactForm;
 use App\Models\DemoForm;
 use Validator;
@@ -89,49 +88,6 @@ class FormController extends Controller
                     'status'  =>   'failed',
                 ]);
             }
-        }
-    }
-    public function applicationForm(Request $request)
-    {
-       
-        $validator = Validator::make($request->all(), [
-            'firstName'   =>  'required',
-            'lastName'    =>  'required',
-            'cv'       =>  'required',
-            'email'        =>  'required',
-        ]);
-        if ($validator->fails()) {
-            return response()->json([
-                'msg'     =>  'Invalid Data',
-                'status'  =>  'validation_error',
-            ]);
-        }
-        $form                   =   new ApplicationForm();
-        $form->first_name       =   $request->firstName;
-        $form->last_name        =   $request->lastName;
-        $form->phone_number     =   $request->phone;
-        $form->email            =   $request->email;
-        $form->linked_in        =   $request->linkedIn;
-        $form->message          =   $request->description;
-        $form->application_for  =   $request->application_for;
-        if ($request->hasFile('cv')) {
-            $form->resume   =   $request->cv->store('resume', 'public');
-        } else {
-            return response()->json([
-                'msg'     =>  'resume missing',
-                'status'  =>  'resume_missing',
-            ]);
-        }
-        if ($form->save()) {
-            return response()->json([
-                'msg'     =>  'Form successfully added',
-                'status'  =>   'success',
-            ]);
-        } else {
-            return response()->json([
-                'msg'     =>  'Form failed',
-                'status'  =>   'failed',
-            ]);
         }
     }
 }

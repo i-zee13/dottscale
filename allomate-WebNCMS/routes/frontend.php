@@ -21,9 +21,6 @@ Route::get('/privacy-policy', [FrontendController::class, 'page'])->defaults('pa
 Route::get('/terms-of-use', [FrontendController::class, 'page'])->defaults('page', 'terms-of-use')->name('terms-of-use');
 Route::get('/sitemap', [FrontendController::class, 'page'])->defaults('page', 'sitemap')->name('sitemap');
 
-Route::get('/career', [FrontendController::class, 'page'])->defaults('page', 'career.index')->name('career');
-Route::get('/career/full-stack-developer', [FrontendController::class, 'page'])->defaults('page', 'career.full-stack-developer');
-
 Route::get('/our-work', [FrontendController::class, 'page'])->defaults('page', 'our-work.index')->name('our-work');
 Route::get('/our-work/bni-inks', [FrontendController::class, 'page'])->defaults('page', 'our-work.bni-inks');
 Route::get('/our-work/green-earth-recyling', [FrontendController::class, 'page'])->defaults('page', 'our-work.green-earth-recyling');

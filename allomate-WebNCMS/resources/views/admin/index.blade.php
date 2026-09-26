@@ -296,13 +296,6 @@
 
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card mt-0">
-                    <!-- <img class="cardicon" src="images/target-monthly-icon.svg" alt=""> -->
-                    <h4>New <span> Applicants</span></h4>
-                    <h2 class="digit">{{ @$todayApplicants }}<small></small> </h2>
-                </div>
-            </div>
         </div>
     </div>
     <div class="col-12 h_dash">
@@ -310,14 +303,6 @@
             <div class="col-4"><a href="{{ route('admin.add-blog') }}"><img src="{{ asset('images/add-course.svg') }}"
                         alt="" />
                     <h2 class="HD-title">Add <span class="f-light">Blog</span></h2>
-                </a> </div>
-            <div class="col-4"><a href="{{ route('admin.create-career') }}"><img
-                        src="{{ asset('images/add-teacher.svg') }}" alt="" />
-                    <h2 class="HD-title">Add <span class="f-light">Job</span></h2>
-                </a> </div>
-            <div class="col-4"><a href="{{ route('admin.applications') }}"><img
-                        src="{{ asset('images/campaign-list.svg') }}" alt="" />
-                    <h2 class="HD-title">Applicants <span class="f-light"> list </span></h2>
                 </a> </div>
             <div class="col-4"><a href="{{ route('admin.inquiries') }}"><img
                         src="{{ asset('images/campaign-list.svg') }}" alt="" />

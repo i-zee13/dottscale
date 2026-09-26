@@ -165,12 +165,6 @@
                 $('#content-wrapper').addClass('blur-div');
                 $('body').addClass('no-scroll')
             });
-            $('#open-side-career').on('click', function() {
-                $('.overlay-blure').click();
-                $('.open-side-career').addClass('active');
-                $('#content-wrapper').addClass('blur-div');
-                $('body').addClass('no-scroll')
-            });
         });
         $('.form-control').on('focus blur', function(e) {
                 $(this).parents('.form-group').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
