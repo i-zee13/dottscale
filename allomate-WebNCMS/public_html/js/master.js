@@ -637,12 +637,7 @@ function navItemsScript() {
         child: []
     });
 
-    subNavItems.push({
-        parent: "Create New",
-        child: [
-            '<li> <a href="/client-create"><img src="/images/customer-icon.svg" alt="" />Client</a> </li>'
-        ]
-    });
+    // Create New (law CRM client create) removed for DottScale CMS
 
     // $("#parentModulesUl").append(
     //     `<li> <a href="/dashboard"><img src="/images/dashboard-icon.svg" alt="" /> Dashboard</a> </li><hr>`
