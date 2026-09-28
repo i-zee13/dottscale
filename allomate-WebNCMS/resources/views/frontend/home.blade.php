@@ -27,10 +27,10 @@ Your technology success partner for local SEO, paid ads, web design, and digital
         }
         return '/storage/' . ltrim($path, '/');
     };
-    $heroHeading = $home?->heading_1 ?? 'We Build Digital Systems That Grow Businesses';
-    $heroParagraph = $home?->heading_2 ?? "From FMCG to PropTech to eCommerce. Outcomes, not buzzwords.\nOur work replaces inefficiency with clarity. Complexity with control. Ideas with working systems.";
+    $heroHeading = $home?->heading_1 ?? 'We Help Local Businesses Get Found & Grow';
+    $heroParagraph = $home?->heading_2 ?? "SEO, Google Ads, websites, and reputation—built to turn searches into calls.\nClear strategy. Measurable leads. No buzzword theater.";
     $aboutHeading = $home?->large_heading ?? 'Driven by Real Business Impact';
-    $aboutParagraph = $home?->paragraph ?? 'We are not here to sell code. We are here to solve problems that matter. Since 2017, we have built systems that fuel growth, improve efficiency, and redefine how businesses operate across FMCG, PropTech, eCommerce, and law.';
+    $aboutParagraph = $home?->paragraph ?? 'We are not here to sell tools for the sake of tools. We help service businesses show up on Google, win trust, and book more work—with digital systems that actually move the needle.';
     $aboutCta = $home?->award_heading ?? 'Learn More About Us';
     $desktopImg = $homeImg($home?->desktop_img, '/images/hero-img01.webp?v=4');
     $mobileImg = $homeImg($home?->mobile_img, '/images/main-bg-mobile.webp?v=4');
@@ -44,12 +44,12 @@ Your technology success partner for local SEO, paid ads, web design, and digital
         <div class="container mx-auto px-3 sm:px-4">
             <div class="absolute top-0 bottom-0 right-auto m-auto flex items-center justify-center">
                 <div class="mr-3">
-                    <div class="text-bodybg bg-primary/10 border border-white/15 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] rounded-[6px] backdrop-blur-[30px] p-[20px] sm:p-10 w-full md:w-[790px] IDMEJHT2T0ABEI714 IDMEJIKW56QW3HA1"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon2">
+                    <div class="text-bodybg bg-primary/15 border border-secondary/40 border-l-4 border-l-secondary shadow-[inset_0_0_40px_rgba(255,178,55,0.08)] rounded-2xl backdrop-blur-[30px] p-[20px] sm:p-10 w-full md:w-[790px] IDMEJHT2T0ABEI714 IDMEJIKW56QW3HA1"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex plus-icon2">
                             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4">
                             </path>
                         </svg>
                         <h1 data-raw-content="true" class="leading-none text-[26px] sm:text-[30px] md:text-[34px] lg:text-[40px] xl:text-[46px] font-primary font-bold text-white uppercase mb-3 md:mb-5">{!! nl2br(e($heroHeading)) !!}</h1>
-                        <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg mb-2 md:mb-4 opacity-70">{!! nl2br(e($heroParagraph)) !!}</p><a href="/contact-us" title="Get Started" class="red-arrow-btn group bg-bodybg text-primary rounded-[6px] h-[40px] w-max px-4 flex items-center justify-center hover:px-6 focus:px-7 transition-all duration-300 ease-in-out IDMEJHT2TC8SMUO15 IDMEJIKW5BV7LFG2">Start the Conversation</a>
+                        <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg mb-2 md:mb-4 opacity-70">{!! nl2br(e($heroParagraph)) !!}</p><a href="/contact-us" title="Get Started" class="red-arrow-btn group bg-secondary text-primary rounded-full h-[40px] w-max px-5 flex items-center justify-center hover:px-7 focus:px-8 transition-all duration-300 ease-in-out IDMEJHT2TC8SMUO15 IDMEJIKW5BV7LFG2">Start the Conversation</a>
                     </div>
                 </div>
             </div>
@@ -63,164 +63,118 @@ Your technology success partner for local SEO, paid ads, web design, and digital
                 </path>
             </svg>
             <figure> <img width="1000" height="1000" src="{{ $aboutImg }}" alt="{{ $aboutHeading }}" class="w-full h-[380px] sm:h-[450px] md:h-[600px] lg:h-[800px] object-cover rounded-[6px]"></figure>
-            <div class="absolute bottom-[30px] right-0 sm:right-[10px] md:right-[30px] w-full sm:w-[50%] lg:w-[35%] p-3 md:p-6 bg-bodybg/5 sm:bg-bodybg/10 backdrop-blur-[15px] sm:backdrop-blur-[40px] rounded-[6px] IDMELHLKGT9FEAJ2">
+            <div class="absolute bottom-[30px] right-0 sm:right-[10px] md:right-[30px] w-full sm:w-[50%] lg:w-[35%] p-3 md:p-6 bg-bodybg/10 sm:bg-bodybg/15 border border-white/10 border-l-4 border-l-secondary backdrop-blur-[15px] sm:backdrop-blur-[40px] rounded-2xl IDMELHLKGT9FEAJ2">
                 <div class="min-h-[250px] md:min-h-[300px] flex flex-col justify-between items-start">
-                    <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px] IDMELHLKGTZ46X23">
+                    <div class="font-primary inline-block bg-secondary/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-full pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px] IDMELHLKGTZ46X23">
                         <p data-raw-content="true"> <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex">
                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4">
                                 </path>
                             </svg> About Us</p>
                     </div>
                     <h2 data-raw-content="true" class="leading-none capitalize text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-bodybg font-primary mb-3 sm:mb-5 flex">{{ $aboutHeading }}</h2>
-                    <p data-raw-content="true" class="font-secondary font-normal text-sm md:text-base text-bodybg/70 capitalize mb-3 md:mb-6">{{ $aboutParagraph }}</p><a href="about-us" title="Explore the Framework" class="red-arrow-btn group mt-4 pr-10 bg-bodybg text-primary rounded-[6px] h-[40px] w-max px-4 flex items-center justify-center hover:px-6 focus:px-7 transition-all duration-300 ease-in-out IDMELHLKH0Z6SKJ4">{{ $aboutCta }}</a>
+                    <p data-raw-content="true" class="font-secondary font-normal text-sm md:text-base text-bodybg/70 capitalize mb-3 md:mb-6">{{ $aboutParagraph }}</p><a href="about-us" title="Explore the Framework" class="red-arrow-btn group mt-4 pr-10 bg-secondary text-primary rounded-full h-[40px] w-max px-5 flex items-center justify-center hover:px-7 focus:px-8 transition-all duration-300 ease-in-out IDMELHLKH0Z6SKJ4">{{ $aboutCta }}</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 @verbatim
-                    <section class="py-5 md:py-10 IDMEH5PS2RJVLE01">
+                    <section class="py-5 md:py-10 home-our-services IDMEH5PS2RJVLE01">
     <div class="container mx-auto px-3 sm:px-4">
-        <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-primary mb-3 md:mb-5 lg:mb-7">
-            Our Services
-        </h2>
-        <div class="grid grid-cols-12 gap-4 sm:gap-6">
-            <div class="group col-span-12 xl:col-span-3">
-                <div class="bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] text-bodybg flex flex-wrap justify-start content-between text-sm h-full p-[15px] md:p-6 rounded-[6px] space-y-4 IDMEH5PS3UBBKFW2">
-                    <div class="w-full">
-                        <div class="flex justify-between items-start">
-                            <!-- Left Column -->
-                            <div>
-                                <h3 data-raw-content="true" class="font-primary text-lg md:text-xl font-semibold text-bodybg capitalize mr-3">Enterprise Solutions</h3>
-                            </div><!-- Right Column (Icon) -->
-                            <div class="pl-0">
-                                <div class="shrink-0"><img src="/cms-uploads/chart.svg" alt="img" width="100" height="100" class="w-[26px] md:w-[30px] h-[26px] md:h-[30px] object-contain filter invert brightness-0 opacity-50"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg/70">Systems that run entire businesses. CRMs, SaaS, and workflows designed around how your business actually operates. From operations to reporting, we replace scattered tools with one clear engine. Built for growth. Built to last.<br></p>
-                    <div><a href="services/enterprise-solutions" title="Learn More" class="group bg-bodybg rounded-[6px] w-[40px] h-[40px] flex items-center justify-center hover:w-[70px] focus:w-[70px] transition-all duration-300 ease-in-out IDMEH5PS453P54H3"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-right-short text-[#212529]">
-                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path>
-                            </svg></a></div>
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-4 md:mb-8">
+            <div>
+                <div class="font-primary inline-flex items-center gap-1 bg-secondary/20 text-bodybg text-[11px] rounded-full pr-4 pl-2 py-1 mb-3 uppercase tracking-[2px]">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg>
+                    What we do
                 </div>
+                <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-primary">
+                    Growth services built for local businesses
+                </h2>
             </div>
-            <div class="group col-span-12 xl:col-span-9">
-                <div class="grid grid-cols-12 gap-4 sm:gap-6 mb-4 md:mb-6">
-                    <div class="group col-span-12 md:col-span-4">
-                        <div class="min-h-[150px] md:min-h-[200px] p-[15px] md:p-[20px] bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] flex flex-col justify-between content-baseline rounded-[6px] IDMEH5PS47LYZ0S4">
-                            <div class="flex flex-row items-start justify-between">
-                                <h3 data-raw-content="true" class="font-primary text-lg md:text-xl font-semibold text-bodybg capitalize mr-3">Web &amp; Mobile Development</h3>
-                                <div class="shrink-0"><img src="/cms-uploads/mobile-app.svg" alt="img" width="100" height="100" class="w-[26px] md:w-[30px] h-[26px] md:h-[30px] object-contain filter invert brightness-0 opacity-50"></div>
-                            </div>
-                            <div class="flex flex-row items-end justify-between">
-                                <p data-raw-content="true" class="font-secondary font-normal text-xs sm:text-sm text-bodybg/70 mr-3">Websites and apps that don’t just launch. They perform, scale, and deliver value every day.<br></p>
-                                <div>
-                                    <div class="w-[100px]"><a href="services/web-and-mobile-development" title="Learn More" class="float-right group bg-bodybg rounded-[6px] w-[40px] h-[40px] flex items-center justify-center hover:w-[70px] focus:w-[70px] transition-all duration-300 ease-in-out IDMEH5PS4JYR6EO5"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-right-short text-[#212529]">
-                                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8">
-                                                </path>
-                                            </svg></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="group col-span-12 md:col-span-4">
-                        <div class="min-h-[150px] md:min-h-[200px] p-[15px] md:p-[20px] bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] flex flex-col justify-between content-baseline rounded-[6px] IDMEH5PS4KTVPR56">
-                            <div class="flex flex-row items-start justify-between">
-                                <h3 data-raw-content="true" class="font-primary text-lg md:text-xl font-semibold text-bodybg capitalize mr-3">MVP Design &amp; Development</h3>
-                                <div class="shrink-0"><img src="/cms-uploads/cube.svg" alt="img" width="100" height="100" class="w-[26px] md:w-[30px] h-[26px] md:h-[30px] object-contain filter invert brightness-0 opacity-50"></div>
-                            </div>
-                            <div class="flex flex-row items-end justify-between">
-                                <p data-raw-content="true" class="font-secondary font-normal text-xs sm:text-sm text-bodybg/70 mr-3">Ideas are cheap. MVPs are real. We help startups test, learn, and win fast.</p>
-                                <div>
-                                    <div class="w-[100px]"><a href="services/mvp-design-and-development" title="Learn More" class="float-right group bg-bodybg rounded-[6px] w-[40px] h-[40px] flex items-center justify-center hover:w-[70px] focus:w-[70px] transition-all duration-300 ease-in-out IDMEH5PS4V0I2ME7"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-right-short text-[#212529]">
-                                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8">
-                                                </path>
-                                            </svg></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="group col-span-12 md:col-span-4">
-                        <div class="min-h-[150px] md:min-h-[200px] p-[15px] md:p-[20px] bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] flex flex-col justify-between content-baseline rounded-[6px] IDMEH5PS4WIZHS78">
-                            <div class="flex flex-row items-start justify-between">
-                                <h3 data-raw-content="true" class="font-primary text-lg md:text-xl font-semibold text-bodybg capitalize mr-3">Quality Assurance</h3>
-                                <div class="shrink-0"><img src="/cms-uploads/warranty.svg" alt="img" width="100" height="100" class="w-[26px] md:w-[30px] h-[26px] md:h-[30px] object-contain filter invert brightness-0 opacity-50"></div>
-                            </div>
-                            <div class="flex flex-row items-end justify-between">
-                                <p data-raw-content="true" class="font-secondary font-normal text-xs sm:text-sm text-bodybg/70 mr-3">Software that breaks is expensive. We test until it doesn’t.</p>
-                                <div>
-                                    <div class="w-[100px]"><a href="services/quality-assurance" title="Learn More" class="float-right group bg-bodybg rounded-[6px] w-[40px] h-[40px] flex items-center justify-center hover:w-[70px] focus:w-[70px] transition-all duration-300 ease-in-out IDMEH5PS58CRQEE9"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-right-short text-[#212529]">
-                                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8">
-                                                </path>
-                                            </svg></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <p class="font-secondary text-sm sm:text-base text-bodybg/70 max-w-md sm:text-right">SEO, ads, websites, and reputation—packaged to get you found, chosen, and booked.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+            <a href="services/enterprise-solutions" title="Local SEO" class="group relative flex flex-col justify-between min-h-[200px] p-5 md:p-6 rounded-2xl bg-bodybg/10 border border-white/10 border-t-2 border-t-secondary hover:bg-bodybg/15 hover:-translate-y-1 transition-all duration-300 ease-in-out">
+                <div>
+                    <span class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-secondary/20 mb-4">
+                        <img src="/cms-uploads/chart.svg" alt="" width="24" height="24" class="w-6 h-6 object-contain filter invert brightness-0 opacity-90">
+                    </span>
+                    <h3 data-raw-content="true" class="font-primary text-lg md:text-xl font-semibold text-bodybg mb-2">Local SEO</h3>
+                    <p data-raw-content="true" class="font-secondary font-normal text-sm text-bodybg/70">Rank in the Map Pack, own “near me” searches, and turn local intent into steady calls.</p>
                 </div>
-                <div class="grid grid-cols-12 gap-4 sm:gap-6">
-                    <div class="group col-span-12 sm:col-span-6 md:col-span-8">
-                        <div class="min-h-[150px]sm: min-h-full md:min-h-[200px] p-[15px] md:p-[20px] bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] flex flex-col justify-between content-baseline rounded-[6px] IDMEH5PS59H875310 IDMEH5TUFT8XXKN0">
-                            <div class="flex flex-row items-start justify-between">
-                                <div>
-                                    <h3 data-raw-content="true" class="font-primary text-lg md:text-xl font-semibold text-bodybg capitalize mr-3">AI and Automation</h3>
-                                </div>
-                                <div class="shrink-0"><img src="/cms-uploads/artificial-intelligence.svg" alt="img" width="100" height="100" class="w-[26px] md:w-[30px] h-[26px] md:h-[30px] object-contain filter invert brightness-0 opacity-50"></div>
-                            </div>
-                            <div class="flex flex-row items-end justify-between">
-                                <p data-raw-content="true" class="font-secondary font-normal text-xs sm:text-sm text-bodybg/70 mr-3">Machines should handle the repetitive. People should handle the creative. From chatbots to workflows to predictive analytics, we embed intelligence where it saves the most time and creates the most value. Always practical. Always business first.</p>
-                                <div>
-                                    <div class="w-[100px]"><a href="services/ai-and-automation" title="Learn More" class="float-right group bg-bodybg rounded-[6px] w-[40px] h-[40px] flex items-center justify-center hover:w-[70px] focus:w-[70px] transition-all duration-300 ease-in-out IDMEH5PS5NM2TDN11 IDMEH5TUFUPMJXZ1"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-right-short text-[#212529]">
-                                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8">
-                                                </path>
-                                            </svg></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="group col-span-12 sm:col-span-6 md:col-span-4">
-                        <div class="min-h-[150px] md:min-h-[200px] p-[15px] md:p-[20px] bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] flex flex-col justify-between content-baseline rounded-[6px] IDMEH5PS5ORHS9I12 IDMEH5TUFWLRY1X2">
-                            <div class="flex flex-row items-start justify-between">
-                                <h3 data-raw-content="true" class="font-primary text-lg md:text-xl font-semibold text-bodybg capitalize mr-3">Dedicated Teams</h3>
-                                <div class="shrink-0"><img src="/cms-uploads/teamwork.svg" alt="img" width="100" height="100" class="w-[26px] md:w-[30px] h-[26px] md:h-[30px] object-contain filter invert brightness-0 opacity-50"></div>
-                            </div>
-                            <div class="flex flex-row items-end justify-between">
-                                <p data-raw-content="true" class="font-secondary font-normal text-xs sm:text-sm text-bodybg/70 mr-3">Your team, our people. Engineers who work like they’re in-house, without the overhead.</p>
-                                <div>
-                                    <div class="w-[100px]"><a href="services/dedicated-teams" title="/dedicated-teams-w" class="float-right group bg-bodybg rounded-[6px] w-[40px] h-[40px] flex items-center justify-center hover:w-[70px] focus:w-[70px] transition-all duration-300 ease-in-out IDMEH5PS63KAZNU13 IDMEH5TUG0BPBMV3"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-right-short text-[#212529]">
-                                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8">
-                                                </path>
-                                            </svg></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <span class="mt-5 inline-flex items-center gap-2 text-secondary text-sm font-medium">Explore <span class="group-hover:translate-x-1 transition-transform">→</span></span>
+            </a>
+            <a href="services/web-and-mobile-development" title="Website Design" class="group relative flex flex-col justify-between min-h-[200px] p-5 md:p-6 rounded-2xl bg-bodybg/10 border border-white/10 border-t-2 border-t-secondary hover:bg-bodybg/15 hover:-translate-y-1 transition-all duration-300 ease-in-out">
+                <div>
+                    <span class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-secondary/20 mb-4">
+                        <img src="/cms-uploads/mobile-app.svg" alt="" width="24" height="24" class="w-6 h-6 object-contain filter invert brightness-0 opacity-90">
+                    </span>
+                    <h3 data-raw-content="true" class="font-primary text-lg md:text-xl font-semibold text-bodybg mb-2">Website Design</h3>
+                    <p data-raw-content="true" class="font-secondary font-normal text-sm text-bodybg/70">Fast, mobile-first sites built to convert visitors into booked jobs—not just look pretty.</p>
                 </div>
-            </div>
+                <span class="mt-5 inline-flex items-center gap-2 text-secondary text-sm font-medium">Explore <span class="group-hover:translate-x-1 transition-transform">→</span></span>
+            </a>
+            <a href="services/mvp-design-and-development" title="Google Ads" class="group relative flex flex-col justify-between min-h-[200px] p-5 md:p-6 rounded-2xl bg-bodybg/10 border border-white/10 border-t-2 border-t-secondary hover:bg-bodybg/15 hover:-translate-y-1 transition-all duration-300 ease-in-out">
+                <div>
+                    <span class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-secondary/20 mb-4">
+                        <img src="/cms-uploads/cube.svg" alt="" width="24" height="24" class="w-6 h-6 object-contain filter invert brightness-0 opacity-90">
+                    </span>
+                    <h3 data-raw-content="true" class="font-primary text-lg md:text-xl font-semibold text-bodybg mb-2">Google Ads</h3>
+                    <p data-raw-content="true" class="font-secondary font-normal text-sm text-bodybg/70">Campaigns aimed at buyers ready to call—tight keywords, clear offers, tracked ROI.</p>
+                </div>
+                <span class="mt-5 inline-flex items-center gap-2 text-secondary text-sm font-medium">Explore <span class="group-hover:translate-x-1 transition-transform">→</span></span>
+            </a>
+            <a href="services/quality-assurance" title="Reputation Management" class="group relative flex flex-col justify-between min-h-[200px] p-5 md:p-6 rounded-2xl bg-bodybg/10 border border-white/10 border-t-2 border-t-secondary hover:bg-bodybg/15 hover:-translate-y-1 transition-all duration-300 ease-in-out">
+                <div>
+                    <span class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-secondary/20 mb-4">
+                        <img src="/cms-uploads/warranty.svg" alt="" width="24" height="24" class="w-6 h-6 object-contain filter invert brightness-0 opacity-90">
+                    </span>
+                    <h3 data-raw-content="true" class="font-primary text-lg md:text-xl font-semibold text-bodybg mb-2">Reputation Management</h3>
+                    <p data-raw-content="true" class="font-secondary font-normal text-sm text-bodybg/70">More 5-star reviews and smart replies so customers choose you before the first call.</p>
+                </div>
+                <span class="mt-5 inline-flex items-center gap-2 text-secondary text-sm font-medium">Explore <span class="group-hover:translate-x-1 transition-transform">→</span></span>
+            </a>
+            <a href="services/ai-and-automation" title="Social Media Marketing" class="group relative flex flex-col justify-between min-h-[200px] p-5 md:p-6 rounded-2xl bg-bodybg/10 border border-white/10 border-t-2 border-t-secondary hover:bg-bodybg/15 hover:-translate-y-1 transition-all duration-300 ease-in-out">
+                <div>
+                    <span class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-secondary/20 mb-4">
+                        <img src="/cms-uploads/artificial-intelligence.svg" alt="" width="24" height="24" class="w-6 h-6 object-contain filter invert brightness-0 opacity-90">
+                    </span>
+                    <h3 data-raw-content="true" class="font-primary text-lg md:text-xl font-semibold text-bodybg mb-2">Social Media Marketing</h3>
+                    <p data-raw-content="true" class="font-secondary font-normal text-sm text-bodybg/70">Consistent presence that supports SEO and keeps your brand visible between searches.</p>
+                </div>
+                <span class="mt-5 inline-flex items-center gap-2 text-secondary text-sm font-medium">Explore <span class="group-hover:translate-x-1 transition-transform">→</span></span>
+            </a>
+            <a href="services/dedicated-teams" title="CRM & IT Solutions" class="group relative flex flex-col justify-between min-h-[200px] p-5 md:p-6 rounded-2xl bg-bodybg/10 border border-white/10 border-t-2 border-t-secondary hover:bg-bodybg/15 hover:-translate-y-1 transition-all duration-300 ease-in-out">
+                <div>
+                    <span class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-secondary/20 mb-4">
+                        <img src="/cms-uploads/teamwork.svg" alt="" width="24" height="24" class="w-6 h-6 object-contain filter invert brightness-0 opacity-90">
+                    </span>
+                    <h3 data-raw-content="true" class="font-primary text-lg md:text-xl font-semibold text-bodybg mb-2">CRM &amp; IT Solutions</h3>
+                    <p data-raw-content="true" class="font-secondary font-normal text-sm text-bodybg/70">Tools and workflows that keep leads, jobs, and follow-ups organized as you scale.</p>
+                </div>
+                <span class="mt-5 inline-flex items-center gap-2 text-secondary text-sm font-medium">Explore <span class="group-hover:translate-x-1 transition-transform">→</span></span>
+            </a>
         </div>
     </div>
 </section>
                     <section class="py-5 md:py-10 home-video-3-section IDMFF04WUVAD9RR1">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="w-full md:w-[70%] lg:w-[60%] m-auto text-center mb-4 md:mb-8 flex items-center justify-center flex-col">
-            <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-2 lg:mb-4 uppercase tracking-[2px] IDMFF04WUYT3M972">
+            <div class="font-primary inline-block bg-secondary/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-full pr-4 pl-2 py-1 mb-2 lg:mb-4 uppercase tracking-[2px] IDMFF04WUYT3M972">
                 <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex">
                         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"> </path>
-                    </svg><a target="_blank" data-stringify-link="javascript:void(0)" data-sk="tooltip_parent" data-cke-saved-href="javascript:void(0)" href="javascript:void(0)" rel="noopener noreferrer"></a> Tangible Results​​​​​​​<a target="_blank" data-stringify-link="javascript:void(0)" data-sk="tooltip_parent" data-cke-saved-href="javascript:void(0)" href="javascript:void(0)" rel="noopener noreferrer"></a></p>
+                    </svg> Tangible Results</p>
             </div>
             <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-primary mb-1.5 md:mb-3">Proof across industries, not pitches</h2>
-            <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg/70 mb-3 md:mb-5">From FMCG growth to SaaS adoption to service efficiency, our work shows up in the numbers. Every result here is earned, measured, and real.</p>
+            <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg/70 mb-3 md:mb-5">From local service growth to SaaS adoption, our work shows up in the numbers. Every result here is earned, measured, and real.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 m-auto">
             <div class="h-auto md:h-[500px] order-2 md:order-1">
-                <div class="h-auto md:h-[200px] mb-3 justify-between bg-bodybg/10 backdrop-blur-[40px] rounded-[6px] sm:rounded-[6px] p-[12px] md:p-[20px] flex flex-col content-baseline relative IDMFF04WVB4NU2K3"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon2">
-                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4">
-                        </path>
-                    </svg>
-                    <h2 data-raw-content="true" class="uppercase text-[20px] md:text-[24px] font-semibold text-bodybg mb-1">40% Productivity</h2>
-                    <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg/70">The average lift when manual processes are replaced with our custom enterprise systems.</p>
+                <div class="h-auto md:h-[200px] mb-3 justify-between bg-bodybg/10 border border-white/10 border-t-2 border-t-secondary backdrop-blur-[40px] rounded-2xl p-[12px] md:p-[20px] flex flex-col content-baseline relative IDMFF04WVB4NU2K3">
+                    <h2 data-raw-content="true" class="uppercase text-[20px] md:text-[24px] font-semibold text-secondary mb-1">40% Productivity</h2>
+                    <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg/70">The average lift when manual processes are replaced with clearer digital systems.</p>
                 </div>
-                <div class="relative w-full h-[288px] overflow-hidden rounded-lg"><video allowfullscreen="allowfullscreen" title="" autoplay="" loading="eager" loop="" playsinline="" preload="metadata" muted="" poster="/storage/media/productivity-video-poster_1755848078.jpg" src="/storage/media/productivity-video01_1755848078.webm" controls="controls" class="w-full h-full object-cover"></video>
+                <div class="relative w-full h-[288px] overflow-hidden rounded-2xl"><video allowfullscreen="allowfullscreen" title="" autoplay="" loading="eager" loop="" playsinline="" preload="metadata" muted="" poster="/storage/media/productivity-video-poster_1755848078.jpg" src="/storage/media/productivity-video01_1755848078.webm" controls="controls" class="w-full h-full object-cover"></video>
                     <source src="/storage/media/productivity-video01_1755848078.webm" type="video/webm">
                     Your browser does not support the video tag.
 
@@ -228,26 +182,20 @@ Your technology success partner for local SEO, paid ads, web design, and digital
                 </div>
             </div>
             <div class="h-auto sm:h-[230px] md:h-[500px] order-1 md:order-2">
-                <div class="relative flex flex-col justify-between h-full rounded-[6px] p-3 md:p-6 bg-bodybg/10 backdrop-blur-[40px] transition duration-300 IDMFF04WVNC5X5I4">
-                    <h3 data-raw-content="true" class="text-lg sm:text-xl md:text-2xl text-white font-semibold">Building, Launching, and Scaling SaaS Is in Our DNA</h3>
+                <div class="relative flex flex-col justify-between h-full rounded-2xl p-3 md:p-6 bg-secondary/15 border border-secondary/30 backdrop-blur-[40px] transition duration-300 IDMFF04WVNC5X5I4">
+                    <h3 data-raw-content="true" class="text-lg sm:text-xl md:text-2xl text-white font-semibold">Digital growth systems that scale with you</h3>
                     <div>
-                        <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg/70 mb-3">Our in-house platforms power thousands of sales reps, connect a quarter million retailers, and drive over 30 percent year on year growth. We know SaaS because we live it. That experience shapes every solution we deliver for clients.</p><a href="#" title="Read More" class="float-right group bg-bodybg rounded-[6px] w-[40px] h-[40px] flex items-center justify-center hover:w-[70px] focus:w-[70px] transition-all duration-300 ease-in-out IDMFF04WVTDWG2T5"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" class="bi bi-arrow-right-short text-[#212529]">
-                                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8">
-                                </path>
-                            </svg></a>
+                        <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg/70 mb-3">We connect SEO, ads, websites, and reputation into one playbook—so every channel supports the next booked job.</p><a href="/contact-us" title="Talk to us" class="inline-flex items-center gap-2 text-secondary text-sm font-medium hover:gap-3 transition-all">Talk to us <span>→</span></a>
                     </div>
                 </div>
             </div>
             <div class="h-auto md:h-[500px] order-3 md:order-3">
-                <div class="relative w-full h-auto md:h-[288px] overflow-hidden rounded-lg mb-3">
-                    <figure> <img width="300" height="300" src="/images/about-001.jpg" alt="DottScale digital growth" class="w-full h-full object-cover object-top rounded-[6px]"></figure>
+                <div class="relative w-full h-auto md:h-[288px] overflow-hidden rounded-2xl mb-3">
+                    <figure> <img width="300" height="300" src="/images/about-001.jpg" alt="DottScale digital growth" class="w-full h-full object-cover object-top rounded-2xl"></figure>
                 </div>
-                <div class="h-auto md:h-[200px] justify-between bg-bodybg/10 backdrop-blur-[40px] rounded-[6px] sm:rounded-[6px] p-[12px] md:p-[20px] flex flex-col content-baseline relative IDMFF04WVWR4UMR6"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon2">
-                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4">
-                        </path>
-                    </svg>
-                    <h2 data-raw-content="true" class="uppercase text-[20px] md:text-[24px] font-semibold text-bodybg mb-1">75% faster</h2>
-                    <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg/70">The improvement service businesses see when automation and CRMs replace outdated tools.</p>
+                <div class="h-auto md:h-[200px] justify-between bg-bodybg/10 border border-white/10 border-t-2 border-t-secondary backdrop-blur-[40px] rounded-2xl p-[12px] md:p-[20px] flex flex-col content-baseline relative IDMFF04WVWR4UMR6">
+                    <h2 data-raw-content="true" class="uppercase text-[20px] md:text-[24px] font-semibold text-secondary mb-1">75% faster</h2>
+                    <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg/70">The improvement service businesses see when automation and clearer funnels replace outdated tools.</p>
                 </div>
             </div>
         </div>
