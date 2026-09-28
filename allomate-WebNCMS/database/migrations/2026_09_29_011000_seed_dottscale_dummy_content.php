@@ -263,6 +263,7 @@ class SeedDottscaleDummyContent extends Migration
                 'short_description' => $blog['short_description'],
                 'blog_details' => $blog['details'],
                 'after_header_image' => $blog['after_header_image'],
+                'image' => $blog['after_header_image'],
                 'page_meta_tags' => $this->seo($title, $blog['short_description'], $blog['keywords']),
                 'blog_category_id' => $categoryId,
                 'blog_type' => 2,

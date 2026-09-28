@@ -25,13 +25,6 @@
                                                                             </ul>
                                 </li>
                                                             <li class="mil-has-children">
-                                    <a href="/sell360-sales-platform"
-                                        >
-                                        SELL360 Sales Platform</a>
-                                    <ul>
-                                                                            </ul>
-                                </li>
-                                                            <li class="mil-has-children">
                                     <a href="/the-next-horizon"
                                         >
                                         The Next Horizon</a>

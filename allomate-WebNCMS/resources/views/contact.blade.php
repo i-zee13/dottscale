@@ -80,7 +80,7 @@
 
 						<div class="offc-info PS">
 							<p class="phone wow fadeInUp" data-wow-delay="1.4s">+92 318 1664007<br>+92 345 8224007</p>
-							<a class="wow fadeInUp" data-wow-delay="1.5s" href="mailto:connect@sell360.app">connect@sell360.app</a>
+							<a class="wow fadeInUp" data-wow-delay="1.5s" href="mailto:contact@dottscale.com">contact@dottscale.com</a>
 						</div>
 						<a class="join-btn wow fadeInUp" data-wow-delay="1.6s" href="{{route('career')}}">Join Our Team</a>
 

@@ -13,7 +13,6 @@ Route::get('/home', [FrontendController::class, 'page'])->defaults('page', 'home
 
 Route::get('/about-us', [FrontendController::class, 'page'])->defaults('page', 'about-us')->name('about-us');
 Route::get('/our-team', [FrontendController::class, 'page'])->defaults('page', 'our-team')->name('our-team');
-Route::get('/sell360-sales-platform', [FrontendController::class, 'page'])->defaults('page', 'sell360-sales-platform');
 Route::get('/the-next-horizon', [FrontendController::class, 'page'])->defaults('page', 'the-next-horizon');
 Route::get('/blogs', [FrontendController::class, 'page'])->defaults('page', 'blogs')->name('blogs');
 Route::get('/contact-us', [FrontendController::class, 'page'])->defaults('page', 'contact-us')->name('contact-us');
