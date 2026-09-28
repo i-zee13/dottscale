@@ -244,16 +244,16 @@ Your technology success partner for local SEO, paid ads, web design, and digital
                                                                     </h2>
                                 <ul>
                                                                                                                                                                                                     <li>
-                                                <a href="blogs/blog-details/ai-voice-agents-the-475-billion-revolution-in-customer-experience"
-                                                    title="Ai voice agents: the $47.5 billion revolution in customer experience">Ai voice agents: the $47.5 billion revolution in customer experience</a>
+                                                <a href="blogs/blog-details/local-seo-checklist-for-service-businesses-2026"
+                                                    title="Local SEO Checklist for Service Businesses in 2026">Local SEO Checklist for Service Businesses in 2026</a>
                                             </li>
                                                                                                                                                                 <li>
-                                                <a href="blogs/blog-details/ai-voice-agents-in-retail-hospitality-the-conversational-concierge"
-                                                    title="Ai voice agents in retail &amp; hospitality: the conversational concierge">Ai voice agents in retail &amp; hospitality: the conversational concierge</a>
+                                                <a href="blogs/blog-details/google-ads-that-bring-buyers-not-just-clicks"
+                                                    title="Google Ads That Bring Buyers, Not Just Clicks">Google Ads That Bring Buyers, Not Just Clicks</a>
                                             </li>
                                                                                                                                                                 <li>
-                                                <a href="blogs/blog-details/ai-voice-agents-for-smbs"
-                                                    title="Ai voice agents for smbs: the 24/7 virtual receptionist">Ai voice agents for smbs: the 24/7 virtual receptionist</a>
+                                                <a href="blogs/blog-details/website-design-that-turns-visitors-into-leads"
+                                                    title="Website Design That Turns Visitors Into Leads">Website Design That Turns Visitors Into Leads</a>
                                             </li>
                                                                                                             </ul>
                                                                         </div>

@@ -40,9 +40,9 @@
     @stack('head')
 </head>
 <body class="relative font-secondary bg-primary">
-<img src="/images/hero-img01.webp?v=2" width="1680" sizes="100vw" alt="bg-image" class="pointer-events-none fixed inset-0 -z-10 hidden min-[1441px]:block h-screen w-screen object-cover">
-    <img src="/images/hero-img1440.webp?v=2" width="1440" sizes="100vw" alt="bg-image" class="pointer-events-none fixed inset-0 -z-10 hidden md:block min-[1441px]:hidden h-screen w-screen object-cover">
-    <img src="/images/main-bg-mobile.webp?v=2" width="425" sizes="100vw" alt="bg image" class="pointer-events-none fixed inset-0 -z-10 block md:hidden h-screen w-screen object-cover">
+<img src="/images/hero-img01.webp?v=2" width="1680" sizes="100vw" alt="DottScale background" class="pointer-events-none fixed inset-0 -z-10 hidden min-[1441px]:block h-screen w-screen object-cover">
+    <img src="/images/hero-img1440.webp?v=2" width="1440" sizes="100vw" alt="DottScale background" class="pointer-events-none fixed inset-0 -z-10 hidden md:block min-[1441px]:hidden h-screen w-screen object-cover">
+    <img src="/images/main-bg-mobile.webp?v=2" width="425" sizes="100vw" alt="DottScale background" class="pointer-events-none fixed inset-0 -z-10 block md:hidden h-screen w-screen object-cover">
 
     
     <div id="notifDiv"></div>

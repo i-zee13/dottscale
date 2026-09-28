@@ -32,8 +32,8 @@ Your technology success partner for local SEO, paid ads, web design, and digital
     $aboutHeading = $home?->large_heading ?? 'Driven by Real Business Impact';
     $aboutParagraph = $home?->paragraph ?? 'We are not here to sell code. We are here to solve problems that matter. Since 2017, we have built systems that fuel growth, improve efficiency, and redefine how businesses operate across FMCG, PropTech, eCommerce, and law.';
     $aboutCta = $home?->award_heading ?? 'Learn More About Us';
-    $desktopImg = $homeImg($home?->desktop_img, '/storage/media/Allomate-Cover-image02_1755588868.webp?v=3');
-    $mobileImg = $homeImg($home?->mobile_img, '/storage/media/new-banner-image-mobile02_1755588914.webp?v=3');
+    $desktopImg = $homeImg($home?->desktop_img, '/images/hero-img01.webp?v=4');
+    $mobileImg = $homeImg($home?->mobile_img, '/images/main-bg-mobile.webp?v=4');
     $aboutImg = $homeImg($home?->award_img, '/images/testimonials-img.png');
 @endphp
 <div class="IDL70G23RUJ9HEB4"></div>
@@ -240,7 +240,7 @@ Your technology success partner for local SEO, paid ads, web design, and digital
             </div>
             <div class="h-auto md:h-[500px] order-3 md:order-3">
                 <div class="relative w-full h-auto md:h-[288px] overflow-hidden rounded-lg mb-3">
-                    <figure> <img width="300" height="300" src="/cms-uploads/Allomate---Home---Page.webp" alt="Modern Banking" class="w-full h-full object-cover object-top rounded-[6px]"></figure>
+                    <figure> <img width="300" height="300" src="/images/about-001.jpg" alt="DottScale digital growth" class="w-full h-full object-cover object-top rounded-[6px]"></figure>
                 </div>
                 <div class="h-auto md:h-[200px] justify-between bg-bodybg/10 backdrop-blur-[40px] rounded-[6px] sm:rounded-[6px] p-[12px] md:p-[20px] flex flex-col content-baseline relative IDMFF04WVWR4UMR6"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon2">
                         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4">

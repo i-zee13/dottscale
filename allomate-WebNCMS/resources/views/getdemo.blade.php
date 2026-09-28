@@ -17,8 +17,8 @@
 
       <div class="col-lg-6 col-md-12 order-lg-1 order-2 DemoRight">
 
-        <h2 class="wow fadeInUp" data-wow-delay="0.5s">Why Allomate Solutions</h2>
-        <p class="topText wow fadeInUp" data-wow-delay="0.6s">Save your time by managing all your sales and marketing activities at ease with Allomate Solutions. Switch to Smart Sales and see your revenue reach higher numbers.</p>
+        <h2 class="wow fadeInUp" data-wow-delay="0.5s">Why DottScale</h2>
+        <p class="topText wow fadeInUp" data-wow-delay="0.6s">Save your time by managing SEO, ads, and digital marketing at ease with DottScale. Grow visibility, leads, and revenue with strategies built for local businesses.</p>
 
         <ul>
           <li class="wow fadeInUp" data-wow-delay="0.7s">Smart Suggestion Tools</li>

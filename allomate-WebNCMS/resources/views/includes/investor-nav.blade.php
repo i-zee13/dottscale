@@ -1,6 +1,6 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-15 px-md-4 mb-3 shadow-sm topbar">
     <div class="my-0 mr-md-auto"><a href="/investor/index"><img class="logo-admin"
-          src="/images/allomate-logo-w.svg" alt=""></a></div>
+          src="/images/dottscale-logo-alt.png" alt=""></a></div>
 
     <ul class="navbar-nav">
       <li class="nav-item dropdown">

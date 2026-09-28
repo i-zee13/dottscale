@@ -1,19 +1,19 @@
 @extends('layouts.Frontend.app')
 
 @section('title')
-Blogs
+DottScale Blog | SEO, Ads & Digital Growth Insights
 @endsection
 
 @section('meta_description')
-DottScale helps local businesses get found on Google and grow with SEO, Google Ads, websites, and social media marketing.
+Practical guides from DottScale on local SEO, Google Ads, websites, and digital marketing for growing service businesses.
 @endsection
 
 @section('meta_keywords')
-
+DottScale blog, local SEO tips, Google Ads guide, digital marketing insights
 @endsection
 
 @section('og_description')
-Your technology success partner for local SEO, paid ads, web design, and digital marketing that drives real leads.
+Read DottScale insights on ranking locally, running ads that convert, and building websites that turn visitors into leads.
 @endsection
 
 @section('content')
@@ -26,8 +26,8 @@ Your technology success partner for local SEO, paid ads, web design, and digital
                         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"> </path>
                     </svg> Latest Blog</p>
             </div>
-            <h1 data-raw-content="true" class="!leading-[1.2] text-[26px] sm:text-[30px] md:text-[34px] lg:text-[40px] xl:text-[46px] font-primary font-bold text-bodybg mb-2">AI Case Studies &amp; Insights</h1>
-            <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg/70">Explore real-world applications of artificial intelligence, from business automation<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; to creative innovations, shaping the future across industries.</p>
+            <h1 data-raw-content="true" class="!leading-[1.2] text-[26px] sm:text-[30px] md:text-[34px] lg:text-[40px] xl:text-[46px] font-primary font-bold text-bodybg mb-2">SEO, Ads &amp; Growth Insights</h1>
+            <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg/70 px-2">Practical playbooks from DottScale on local SEO, paid search, websites, and reputation—built for service businesses that want more calls.</p>
         </div>
     </div>
 </section>

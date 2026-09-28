@@ -45,9 +45,9 @@ class SeedHomePage extends Command
         return [
             'heading_1' => 'We Build Digital Systems That Grow Businesses',
             'heading_2' => "From FMCG to PropTech to eCommerce. Outcomes, not buzzwords.\nOur work replaces inefficiency with clarity. Complexity with control. Ideas with working systems.",
-            'desktop_img' => 'media/Allomate-Cover-image02_1755588868.webp',
-            'tab_img' => 'media/Allomate-Cover-image02_1755588868.webp',
-            'mobile_img' => 'media/new-banner-image-mobile02_1755588914.webp',
+            'desktop_img' => '/images/hero-img01.webp',
+            'tab_img' => '/images/hero-img1440.webp',
+            'mobile_img' => '/images/main-bg-mobile.webp',
             'large_heading' => 'Driven by Real Business Impact',
             'paragraph' => 'We are not here to sell code. We are here to solve problems that matter. Since 2017, we have built systems that fuel growth, improve efficiency, and redefine how businesses operate across FMCG, PropTech, eCommerce, and law.',
             'award_heading' => 'Learn More About Us',

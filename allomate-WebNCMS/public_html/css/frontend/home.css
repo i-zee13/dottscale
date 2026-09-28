@@ -840,7 +840,7 @@
 }
 
 .newsletter-202405 .subscribe {
-    width: 450px;
+    width: min(450px, 100%);
     margin-bottom: 0.9375rem;
     position: relative;
     display: block;

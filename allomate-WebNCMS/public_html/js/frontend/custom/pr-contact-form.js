@@ -80,7 +80,7 @@ $(document).on('click', '.pr-form-submit', function () {
                 $('.form-group').removeClass('focused');
                 $('#notifDiv').fadeIn();
                 $('#notifDiv').css('background', 'green');
-                $('#notifDiv').text('Your request has been successfully submitted! A member of our team will be in touch with you shortly. Thank you for choosing Allomate Solutions!');
+                $('#notifDiv').text('Your request has been successfully submitted! A member of our team will be in touch with you shortly. Thank you for choosing DottScale!');
                 setTimeout(() => {
                     $('#notifDiv').fadeOut();
                 }, 3000);

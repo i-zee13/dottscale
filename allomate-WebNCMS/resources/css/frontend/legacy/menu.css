@@ -630,7 +630,7 @@ header {
 .mil-active header {
 	background-color: transparent !important;
 	transition: none;
-	top: 100;
+	top: 100px;
 }
 header .mil-frame-top .mil-logo svg,
 .mil-menu-frame .mil-logo svg {

@@ -116,7 +116,7 @@ header img {
     opacity: 0.7;
 }
 
-/* Mobile/tablet: normal stack. Sticky overlap breaks on small viewports (e.g. iPhone 8). */
+/* Mobile/tablet: normal stack. Sticky only on large screens to avoid overlap. */
 .stick-tab {
     position: relative;
     top: auto;
@@ -434,7 +434,8 @@ header img {
 
 .scroll-tab .r-b-card {
     float: left;
-    width: 360px;
+    width: min(360px, 85vw);
+    max-width: 100%;
 }
 
 .scroll-tab .r-b-list .plus-icon4 {
@@ -734,7 +735,7 @@ header img {
 
 .rel-blog .r-b-card {
     float: left;
-    width: 360px;
+    width: min(360px, 85vw);
 }
 
 .scroll-tab .r-b-list {
@@ -797,7 +798,7 @@ display: flex;
 
 .scroll-tab .r-b-card {
 float: left;
-width: 360px;
+width: min(360px, 85vw);
 }
 
 @media screen and (max-width: 1440px) {
@@ -1282,48 +1283,38 @@ img.w-\[16px\].md\:w-\[18px\].h-\[16px\].md\:h-\[18px\].opacity-50.mr-2 {
     position: relative;
     top: auto;
 }
-
 @media (min-width: 1024px) {
-    .featured-project-stick-tab {
-        position: sticky;
-        top: 150px;
-    }
-
-    .featured-project-stick-tab:nth-child(2) {
-        top: 180px;
-    }
-
-    .featured-project-stick-tab:nth-child(3) {
-        top: 210px;
-    }
-
-    .featured-project-stick-tab:nth-child(4) {
-        top: 240px;
-    }
-
-    .featured-project-stick-tab:nth-child(5) {
-        top: 270px;
-    }
-
-    .featured-project-stick-tab:nth-child(6) {
-        top: 300px;
-    }
-
-    .featured-project-stick-tab:nth-child(7) {
-        top: 330px;
-    }
-
-    .featured-project-stick-tab:nth-child(8) {
-        top: 360px;
-    }
-
-    .featured-project-stick-tab:nth-child(9) {
-        top: 390px;
-    }
-
-    .featured-project-stick-tab:nth-child(10) {
-        top: 420px;
-    }
+.featured-project-stick-tab {
+    position: sticky;
+    top: 150px;
+}
+.featured-project-stick-tab:nth-child(2) {
+    top: 180px;
+}
+.featured-project-stick-tab:nth-child(3) {
+    top: 210px;
+}
+.featured-project-stick-tab:nth-child(4) {
+    top: 240px;
+}
+.featured-project-stick-tab:nth-child(5) {
+    top: 270px;
+}
+.featured-project-stick-tab:nth-child(6) {
+    top: 300px;
+}
+.featured-project-stick-tab:nth-child(7) {
+    top: 330px;
+}
+.featured-project-stick-tab:nth-child(8) {
+    top: 360px;
+}
+.featured-project-stick-tab:nth-child(9) {
+    top: 390px;
+}
+.featured-project-stick-tab:nth-child(10) {
+    top: 420px;
+}
 }
 .about-section-div img {
     opacity: 1 !important;
@@ -1335,18 +1326,27 @@ img.w-\[16px\].md\:w-\[18px\].h-\[16px\].md\:h-\[18px\].opacity-50.mr-2 {
     line-height: 26px;
 }
 .youtube-video iframe {
-    height:420px;
-    border-radius: 6px;;
+    height: min(420px, 56.25vw);
+    width: 100%;
+    max-width: 100%;
+    border-radius: 6px;
 }
+.hasClientReviews.all-reviews-section-list .r-b-card {
+    height: auto;
+    min-height: 280px;
+}
+@media screen and (min-width: 992px) {
 .hasClientReviews.all-reviews-section-list .r-b-card {
     height: 500px;
 }
+}
 @media screen and (max-width: 991px) {
 .youtube-video iframe {
-  height: 350px;
+  height: min(350px, 56.25vw);
 }
 .hasClientReviews.all-reviews-section-list .r-b-card {
-    height: 400px;
+    height: auto;
+    min-height: 260px;
 }
 }
 @media screen and (max-width:767px) {
@@ -1354,7 +1354,8 @@ img.w-\[16px\].md\:w-\[18px\].h-\[16px\].md\:h-\[18px\].opacity-50.mr-2 {
     font-size:18px;
 }
 .hasClientReviews.all-reviews-section-list .r-b-card {
-    height: 400px;
+    height: auto;
+    min-height: 240px;
 }
 }
 @media screen and (max-width: 480px) {

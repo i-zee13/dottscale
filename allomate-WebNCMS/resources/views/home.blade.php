@@ -9,7 +9,7 @@
                     <source media="(min-width: 1025px)" srcset="/images/header-lg.jpg" data-src="/images/header-lg.jpg">
                     <img src="/images/header-lg.jpg" data-src-base="/images/"
                         data-src="{xs:/images/header-xsm.jpg,md:/images/header-md.jpg,xl:/images/header-lg.jpg}"
-                        title="Allomate Solutions" alt="Allomate Solutions">
+                        title="DottScale" alt="DottScale">
                 </picture>
             </figure>
         </a>
@@ -29,7 +29,7 @@
                     <h2>With Over 50 Years of Combined Experience in Real Estate Investment</h2>
                 </div>
                 <div class="col-lg-6 col-md-12">
-                    <p>Allomate Solutions stands at the forefront of real estate investment, offering tailored
+                    <p>DottScale helps local businesses grow online with SEO, ads, and web solutions tailored
                         solutions that meet
                         the unique needs of institutional investors, portfolio owners, and individual homeowners.
                         Our expertise spans

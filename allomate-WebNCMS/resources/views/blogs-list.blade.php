@@ -151,7 +151,7 @@
                 return `<div class="col-lg-4 col-md-6 col-sm-6 col-12">
                         <article class="card-our-blogs" itemscope itemtype="http://schema.org/BlogPosting">
                             <figure itemscope itemtype="http://schema.org/ImageObject">
-                                <img width="100" height="100" src="/storage/${blog.image}" onerror="this.onerror=null;this.src='/images/blog-01.jpg';" alt="Allomate Blog Image" title="${blog.title}" itemprop="image">
+                                <img width="100" height="100" src="/storage/${blog.image}" onerror="this.onerror=null;this.src='/images/blog-01.jpg';" alt="DottScale Blog Image" title="${blog.title}" itemprop="image">
                                 <figcaption>
                                     <div class="row m-0">
                                         <div class="col">

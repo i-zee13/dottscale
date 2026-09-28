@@ -106,7 +106,7 @@
 
 	<div class="col-12">
 	<h1 class="wow fadeInUp" data-wow-delay="0.1s"><span><b>.</b>04</span> Management</h1>
-    <p class="wow fadeInUp" data-wow-delay="0.2s">Digitized data input, funneled through smart data analytics results in superior overall output for any business. Quickly weed out the micro level KPIs that are in contradiction with your macro level targets and holding you back due to lack of oversight.With Allomate Solutions you can partner, fuel, plan and implement your growth and expansion strategy to conquer your market efﬁciently.</p>
+    <p class="wow fadeInUp" data-wow-delay="0.2s">Digitized data input, funneled through smart data analytics results in superior overall output for any business. Quickly weed out the micro level KPIs that are in contradiction with your macro level targets and holding you back due to lack of oversight.With DottScale you can partner, fuel, plan and implement your growth and expansion strategy to conquer your market efficiently.</p>
 	</div>
 
     <div class="col-lg-6 col-md-12 order-lg-1 order-2">

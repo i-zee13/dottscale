@@ -24,9 +24,9 @@ INSERT INTO `home` (
 ) VALUES (
     'We Build Digital Systems That Grow Businesses',
     'From FMCG to PropTech to eCommerce. Outcomes, not buzzwords.\nOur work replaces inefficiency with clarity. Complexity with control. Ideas with working systems.',
-    'media/Allomate-Cover-image02_1755588868.webp',
-    'media/Allomate-Cover-image02_1755588868.webp',
-    'media/new-banner-image-mobile02_1755588914.webp',
+    '/images/hero-img01.webp',
+    '/images/hero-img01.webp',
+    '/images/main-bg-mobile.webp',
     'Driven by Real Business Impact',
     'We are not here to sell code. We are here to solve problems that matter. Since 2017, we have built systems that fuel growth, improve efficiency, and redefine how businesses operate across FMCG, PropTech, eCommerce, and law.',
     'Learn More About Us',

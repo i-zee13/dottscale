@@ -127,7 +127,7 @@
 										<tbody>
 											<tr>
 												<td>
-													<img src="{{asset('images/allomate-logo-w.svg')}}" alt="" width="110">
+													<img src="{{asset('images/dottscale-logo-alt.png')}}" alt="" width="110">
 												</td>
 
 												<td mc:edit="text1203" width="50%" align="right" style="color: #000; font-size:14px;font-weight:normal; font-family:'Open Sans', sans-serif; mso-line-height-rule: exactly;">
@@ -253,7 +253,7 @@
 									<table align="center" border="0" cellspacing="5" cellpadding="5" style="width: 100%; max-width:100px; margin: 0 auto;">
 										<tbody>
 											<tr>
-												<td align="right"><a href="https://demo.allomate.solutions/" target="_blank" style="color: #2E2E3B; font-size: 14px; font-weight: 600; font-family: 'Lato', sans-serif;">www.demo.allomate.solutions</a>
+												<td align="right"><a href="https://www.dottscale.com/" target="_blank" style="color: #2E2E3B; font-size: 14px; font-weight: 600; font-family: 'Lato', sans-serif;">www.dottscale.com</a>
 												</td>
 												<td align="left"><a href="#" style="color: #2E2E3B; font-size: 14px; font-weight: 600; font-family: 'Lato', sans-serif;">Unsubsribe</a>
 												</td>
@@ -279,7 +279,7 @@
 												<td mc:edit="text1201" align="left" style="color: #fff;  font-size: 13px; font-family:'Open Sans', sans-serif; mso-line-height-rule: exactly;
 										padding-left:20px; padding-right: 20px;">
 													<div class="editable-text" align="center" style="color:white">Copyright © {{date('Y')}}
-														demo.allomate.solutions all rights reserved.</div>
+														www.dottscale.com all rights reserved.</div>
 												</td>
 											</tr>
 											<tr>

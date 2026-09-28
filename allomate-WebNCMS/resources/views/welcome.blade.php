@@ -66,7 +66,7 @@
 
     <!-- Header Section -->
     <header class="header omni-page H_img">
-        <div class="logo"> <a href="index.html"><img src="images/allomate-logo-w.svg" alt="Allomate" title="Allomate"></a> </div>
+        <div class="logo"> <a href="index.html"><img src="images/dottscale-logo-alt.png" alt="DottScale" title="DottScale"></a> </div>
         <div class="header-content">
             <h2>THINK<br>FORWARD<span class="red">.</span></h2>
             <h1>GO DIGITAL<span class="red">.</span></h1>
@@ -96,7 +96,7 @@
 
     <!-- Footer -->
     <div class="footer">
-        <p>© 2024 Allomate Solutions. All Rights Reserved.</p>
+        <p>© 2026 DottScale. All Rights Reserved.</p>
     </div>
 
     <script>

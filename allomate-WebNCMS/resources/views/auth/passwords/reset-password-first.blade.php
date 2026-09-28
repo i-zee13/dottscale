@@ -22,7 +22,7 @@
         <div class="log_con">
 
             <div class="container">
-                <img class="Loging-Logo" src="admin/images/allomate-logo-w.svg" alt="" />
+                <img class="Loging-Logo" src="images/dottscale-logo-alt.png" alt="" />
                 <!-- Row -->
                 <div class="table-struct full-width">
                     <div class="table-cell vertical-align-middle auth-form-wrap">
@@ -106,7 +106,7 @@
 
                 </div>
                 <div class="Log_footer">Copyright © {{ date('Y') }} {{ config('app.name') }} All rights reserved.
-                    <br> Design &amp; Developed by <a href="https://allomate.com" target="_blank">Allomate Solutions</a>
+                    <br> Design &amp; Developed by <a href="https://www.dottscale.com" target="_blank">DottScale</a>
                 </div>
             </div>
 
