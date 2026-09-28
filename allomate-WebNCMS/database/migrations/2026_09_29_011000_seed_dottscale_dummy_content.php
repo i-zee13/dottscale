@@ -13,6 +13,7 @@ class SeedDottscaleDummyContent extends Migration
 {
     public function up()
     {
+        $this->ensureBlogsSchema();
         $this->ensureClientLogoFiles();
         $this->seedBlogCategories();
         $this->seedBlogs();
@@ -26,6 +27,66 @@ class SeedDottscaleDummyContent extends Migration
     public function down()
     {
         // Keep seeded content; do not wipe production-edited data.
+    }
+
+    private function ensureBlogsSchema(): void
+    {
+        if (!Schema::hasTable('blogs')) {
+            return;
+        }
+
+        if (!Schema::hasColumn('blogs', 'short_description')) {
+            Schema::table('blogs', function ($table) {
+                $table->text('short_description')->nullable();
+            });
+        }
+        if (!Schema::hasColumn('blogs', 'tags')) {
+            Schema::table('blogs', function ($table) {
+                $table->string('tags', 500)->nullable();
+            });
+        }
+        if (!Schema::hasColumn('blogs', 'after_header_image')) {
+            Schema::table('blogs', function ($table) {
+                $table->string('after_header_image', 500)->nullable();
+            });
+        }
+        if (!Schema::hasColumn('blogs', 'page_meta_tags')) {
+            Schema::table('blogs', function ($table) {
+                $table->longText('page_meta_tags')->nullable();
+            });
+        }
+        if (!Schema::hasColumn('blogs', 'meta_og_image')) {
+            Schema::table('blogs', function ($table) {
+                $table->string('meta_og_image', 500)->nullable();
+            });
+        }
+        if (!Schema::hasColumn('blogs', 'blog_type')) {
+            Schema::table('blogs', function ($table) {
+                $table->unsignedTinyInteger('blog_type')->nullable()->default(2);
+            });
+        }
+        if (!Schema::hasColumn('blogs', 'published')) {
+            Schema::table('blogs', function ($table) {
+                $table->string('published', 10)->nullable()->default('1');
+            });
+        }
+        if (!Schema::hasColumn('blogs', 'blog_category_id')) {
+            Schema::table('blogs', function ($table) {
+                $table->unsignedBigInteger('blog_category_id')->nullable();
+            });
+        }
+    }
+
+    private function onlyExisting(string $table, array $payload): array
+    {
+        $filtered = [];
+        foreach ($payload as $column => $value) {
+            if (Schema::hasColumn($table, $column)) {
+                $filtered[$column] = $value;
+            }
+        }
+
+        return $filtered;
     }
 
     private function seo(string $title, string $description, string $keywords): string
@@ -194,7 +255,7 @@ class SeedDottscaleDummyContent extends Migration
         foreach ($blogs as $blog) {
             $categoryId = $this->categoryId($blog['category']);
             $title = 'DottScale | ' . $blog['title'];
-            $payload = [
+            $payload = $this->onlyExisting('blogs', [
                 'title' => $blog['title'],
                 'slug' => $blog['slug'],
                 'tags' => $blog['tags'],
@@ -206,24 +267,19 @@ class SeedDottscaleDummyContent extends Migration
                 'blog_category_id' => $categoryId,
                 'blog_type' => 2,
                 'published' => '1',
+                'meta_og_image' => null,
+                'user_id' => 1,
+                'created_by' => 1,
                 'updated_at' => now(),
-            ];
-
-            if (Schema::hasColumn('blogs', 'meta_og_image')) {
-                $payload['meta_og_image'] = null;
-            }
-            if (Schema::hasColumn('blogs', 'user_id')) {
-                $payload['user_id'] = 1;
-            }
-            if (Schema::hasColumn('blogs', 'created_by')) {
-                $payload['created_by'] = 1;
-            }
+            ]);
 
             $existing = DB::table('blogs')->where('slug', $blog['slug'])->first();
             if ($existing) {
                 DB::table('blogs')->where('id', $existing->id)->update($payload);
             } else {
-                $payload['created_at'] = now();
+                if (Schema::hasColumn('blogs', 'created_at')) {
+                    $payload['created_at'] = now();
+                }
                 DB::table('blogs')->insert($payload);
             }
         }
@@ -264,21 +320,21 @@ class SeedDottscaleDummyContent extends Migration
 
         foreach ($faqs as $faq) {
             $exists = DB::table('faqs')->where('question', $faq['question'])->exists();
-            $row = [
+            $row = $this->onlyExisting('faqs', [
                 'faq_type' => 1,
                 'page_id' => null,
                 'question' => $faq['question'],
                 'answer' => $faq['answer'],
                 'status' => 1,
+                'created_by' => 1,
                 'updated_at' => now(),
-            ];
-            if (Schema::hasColumn('faqs', 'created_by')) {
-                $row['created_by'] = 1;
-            }
+            ]);
             if ($exists) {
                 DB::table('faqs')->where('question', $faq['question'])->update($row);
             } else {
-                $row['created_at'] = now();
+                if (Schema::hasColumn('faqs', 'created_at')) {
+                    $row['created_at'] = now();
+                }
                 DB::table('faqs')->insert($row);
             }
         }
@@ -319,18 +375,18 @@ class SeedDottscaleDummyContent extends Migration
 
         foreach ($items as $item) {
             $exists = DB::table('testimonials')->where('author_name', $item['author_name'])->exists();
-            $row = $item + [
+            $row = $this->onlyExisting('testimonials', $item + [
                 'review_type' => 1,
                 'status' => 1,
+                'created_by' => 1,
                 'updated_at' => now(),
-            ];
-            if (Schema::hasColumn('testimonials', 'created_by')) {
-                $row['created_by'] = 1;
-            }
+            ]);
             if ($exists) {
                 DB::table('testimonials')->where('author_name', $item['author_name'])->update($row);
             } else {
-                $row['created_at'] = now();
+                if (Schema::hasColumn('testimonials', 'created_at')) {
+                    $row['created_at'] = now();
+                }
                 DB::table('testimonials')->insert($row);
             }
         }
@@ -355,20 +411,20 @@ class SeedDottscaleDummyContent extends Migration
             ],
         ]);
 
-        $payload = [
+        $payload = $this->onlyExisting('contact_us', [
             'heading_one' => 'Let’s Grow Your Local Visibility',
             'heading_two' => 'Tell us about your business. We’ll map the fastest path to more calls, bookings, and revenue.',
             'page_meta_tags' => $meta,
+            'created_by' => 1,
             'updated_at' => now(),
-        ];
+        ]);
 
         if (DB::table('contact_us')->count() > 0) {
             DB::table('contact_us')->orderBy('id')->limit(1)->update($payload);
         } else {
-            if (Schema::hasColumn('contact_us', 'created_by')) {
-                $payload['created_by'] = 1;
+            if (Schema::hasColumn('contact_us', 'created_at')) {
+                $payload['created_at'] = now();
             }
-            $payload['created_at'] = now();
             DB::table('contact_us')->insert($payload);
         }
     }
@@ -390,14 +446,13 @@ class SeedDottscaleDummyContent extends Migration
 
         foreach ($logos as $logo) {
             $exists = DB::table('client_logos')->where('name', $logo['name'])->exists();
-            $row = $logo + ['updated_at' => now()];
-            if (Schema::hasColumn('client_logos', 'created_by')) {
-                $row['created_by'] = 1;
-            }
-            if (Schema::hasColumn('client_logos', 'created_at') && !$exists) {
-                $row['created_at'] = now();
-            }
+            $row = $this->onlyExisting('client_logos', $logo + [
+                'created_by' => 1,
+                'updated_at' => now(),
+                'created_at' => now(),
+            ]);
             if ($exists) {
+                unset($row['created_at']);
                 DB::table('client_logos')->where('name', $logo['name'])->update($row);
             } else {
                 DB::table('client_logos')->insert($row);
