@@ -23,11 +23,12 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/menu.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/datepicker.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/fSelect.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/dottscale-theme.css') }}?v=1">
     @yield('page-style')
     <style>
         #notifDiv {
             display: none;
-            background: red;
+            background: #212529;
             color: white;
             font-weight: 400;
             font-size: 15px;
@@ -39,8 +40,8 @@
             padding: 10px 20px
         }
         .dt-buttons .dt-button, .dt-buttons .dt-button:hover {
-            background: linear-gradient(90deg, #2f4a70 0%, #3c5980 100%);
-            border: 1px solid #2f4a70 !important;
+            background: linear-gradient(90deg, #212529 0%, #16191d 100%);
+            border: 1px solid #212529 !important;
             color: #fff !important;
             outline: none !important;
             padding: 5px 10px !important;

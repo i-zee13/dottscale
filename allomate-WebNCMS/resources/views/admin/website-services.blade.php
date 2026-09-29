@@ -35,9 +35,18 @@
                                                     </div>
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label class="control-label mb-10">Icon path (or upload)</label>
-                                                            <input type="text" name="icon" class="form-control" placeholder="/cms-uploads/chart.svg">
-                                                            <input type="file" name="icon_file" class="form-control mt-2" accept="image/*,.svg">
+                                                            <label class="control-label mb-10">Icon path (optional text)</label>
+                                                            <input type="text" name="icon_path" class="form-control" placeholder="/cms-uploads/chart.svg">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 PB-10">
+                                                        <div class="form-wrap p-0">
+                                                            <label class="font13 mb-5">Upload Icon *</label>
+                                                            <input type="hidden" name="hidden_icon" value="">
+                                                            <input type="file" name="icon_file" class="dropify"
+                                                                data-old_input="hidden_icon"
+                                                                accept="image/*,.svg"
+                                                                data-allowed-file-extensions="jpg png jpeg jpeg svg SVG webp">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12">

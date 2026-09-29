@@ -49,35 +49,35 @@ Your technology success partner for local SEO, paid ads, web design, and digital
                             <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[10px] rounded-[6px] pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px] IDMEMW0IMJQJY1K3">
                                 <p data-raw-content="true"> <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex">
                                         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path>
-                                    </svg> Our story</p>
+                                    </svg> {{ $a->story_eyebrow ?? 'Our story' }}</p>
                             </div><br>
                             <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-bodybg font-primary mb-3 sm:mb-6 lg:mb-10">{{ $a->story_heading ?? 'How DottScale Came to Life' }}</h2>
                             <div class="mb-3 md:mb-8 lg:mb-16">
-                                <p data-raw-content="true" class="font-secondary font-normal text-sm md:text-base text-bodybg/70 capitalize mb-3 md:mb-6">DottScale was born from a simple idea. Technology should make business simpler, not more complicated. In 2017 we saw companies struggling with heavy systems, scattered processes, and missed opportunities. We knew there was a better path forward. One where digital transformation meant real impact, not just talk.​​​​​​​</p>
-                                <p data-raw-content="true" class="font-secondary font-normal text-sm md:text-base text-bodybg/70 capitalize mb-3 md:mb-6">From the start our focus has been on building platforms that remove friction, unlock growth, and give businesses clarity. Every product we deliver is shaped by that belief and backed by the promise that we will stay to support, improve, and scale. That is how we continue to help businesses move forward with confidence.</p>
+                                <p data-raw-content="true" class="font-secondary font-normal text-sm md:text-base text-bodybg/70 capitalize mb-3 md:mb-6">{{ $a->story_p1 ?? 'DottScale was born from a simple idea. Technology should make business simpler, not more complicated. In 2017 we saw companies struggling with heavy systems, scattered processes, and missed opportunities. We knew there was a better path forward. One where digital transformation meant real impact, not just talk.' }}</p>
+                                <p data-raw-content="true" class="font-secondary font-normal text-sm md:text-base text-bodybg/70 capitalize mb-3 md:mb-6">{{ $a->story_p2 ?? 'From the start our focus has been on building platforms that remove friction, unlock growth, and give businesses clarity. Every product we deliver is shaped by that belief and backed by the promise that we will stay to support, improve, and scale. That is how we continue to help businesses move forward with confidence.' }}</p>
                             </div>
                         </div>
                         <div class="grid grid-cols-12 gap-6 md:gap-10 mt-5">
                             <div class="group col-span-12 sm:col-span-6 lg:col-span-4">
                                 <div class="flex items-center mb-2 md:mb-3">
                                     <figure><img src="/cms-uploads/47e76bcc3794138640d885728c34990e5d06b69e/great-idea.svg" width="20" height="20" alt="client Image" class="w-[16px] md:w-[18px] h-[16px] md:h-[18px] opacity-50 mr-2"></figure>
-                                    <h3 data-raw-content="true" class="uppercase text-base md:text-lg text-bodybg">Belief</h3>
+                                    <h3 data-raw-content="true" class="uppercase text-base md:text-lg text-bodybg">{{ $a->belief_title ?? 'Belief' }}</h3>
                                 </div>
-                                <p data-raw-content="true" class="font-secondary font-normal text-sm md:text-base text-bodybg/70 capitalize">We believe technology should serve people and make work feel effortless.</p>
+                                <p data-raw-content="true" class="font-secondary font-normal text-sm md:text-base text-bodybg/70 capitalize">{{ $a->belief_text ?? 'We believe technology should serve people and make work feel effortless.' }}</p>
                             </div>
                             <div class="group col-span-12 sm:col-span-6 lg:col-span-4">
                                 <div class="flex items-center mb-2 md:mb-3">
                                     <figure><img src="/cms-uploads/728e88d2465535e42d25468615e83e399cf050e2/target-(1).svg" width="20" height="20" alt="client Image" class="w-[16px] md:w-[18px] h-[16px] md:h-[18px] opacity-50 mr-2"></figure>
-                                    <h3 data-raw-content="true" class="uppercase text-base md:text-lg text-bodybg">Direction</h3>
+                                    <h3 data-raw-content="true" class="uppercase text-base md:text-lg text-bodybg">{{ $a->direction_title ?? 'Direction' }}</h3>
                                 </div>
-                                <p data-raw-content="true" class="font-secondary font-normal text-sm md:text-base text-bodybg/70 capitalize">We design and build systems that deliver measurable results in growth, efficiency, and decision making.</p>
+                                <p data-raw-content="true" class="font-secondary font-normal text-sm md:text-base text-bodybg/70 capitalize">{{ $a->direction_text ?? 'We design and build systems that deliver measurable results in growth, efficiency, and decision making.' }}</p>
                             </div>
                             <div class="group col-span-12 sm:col-span-6 lg:col-span-4">
                                 <div class="flex items-center mb-2 md:mb-3">
                                     <figure><img src="/cms-uploads/451a241562ce0583acbc6961737d280265a27e1e/partnership-handshake.svg" width="20" height="20" alt="client Image" class="w-[16px] md:w-[18px] h-[16px] md:h-[18px] opacity-50 mr-2"></figure>
-                                    <h3 data-raw-content="true" class="uppercase text-base md:text-lg text-bodybg">Promise</h3>
+                                    <h3 data-raw-content="true" class="uppercase text-base md:text-lg text-bodybg">{{ $a->promise_title ?? 'Promise' }}</h3>
                                 </div>
-                                <p data-raw-content="true" class="font-secondary font-normal text-sm md:text-base text-bodybg/70 capitalize">We remain partners long after launch, ensuring your technology keeps creating value as your business evolves.</p>
+                                <p data-raw-content="true" class="font-secondary font-normal text-sm md:text-base text-bodybg/70 capitalize">{{ $a->promise_text ?? 'We remain partners long after launch, ensuring your technology keeps creating value as your business evolves.' }}</p>
                             </div>
                         </div>
                     </div>
@@ -104,50 +104,31 @@ Your technology success partner for local SEO, paid ads, web design, and digital
                 </div>
             </div>
             <div class="group col-span-12 sm:col-span-6 lg:col-span-4">
-                <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg/80">What guides us isn’t just code. It’s the principles that shape how we work, how we build, and how we partner with every client.</p>
+                <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg/80">{{ $a->values_intro ?? 'What guides us isn’t just code. It’s the principles that shape how we work, how we build, and how we partner with every client.' }}</p>
             </div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-5">
-            <div class="bg-white rounded-[6px] p-4 md:p-6 transition-all duration-400 flex flex-col flex-wrap content-baseline h-full relative IDMEMW0RH7NMEHX6"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon2">
+            @php
+                $defaultValues = [
+                    ['title' => 'Clarity', 'text' => 'We cut through complexity. Every solution is built to make work easier, not harder.', 'icon' => '/cms-uploads/60530ab46fdb6959ecf07aa8778a1201579f7a6e/magic.svg'],
+                    ['title' => 'Trust', 'text' => 'Partnerships last when they are grounded in honesty, transparency, and reliability.', 'icon' => '/cms-uploads/43a92a814547fb60b29fe301bd94c1e8f7302757/protection-(1).svg'],
+                    ['title' => 'Impact', 'text' => 'Technology is only as good as the results it delivers. We measure success in growth, efficiency, and lasting change.', 'icon' => '/cms-uploads/ebf906a4a27643ae60e03cf3bf8cb86200fbfd59/line-chart.svg'],
+                    ['title' => 'Evolution', 'text' => 'We never stand still. We learn, adapt, and scale alongside our clients so their systems stay future ready.', 'icon' => '/cms-uploads/25198f4fc413e36379b256627c34aeca15f998b1/sync.svg'],
+                ];
+                $valueCards = count($values) ? $values : $defaultValues;
+            @endphp
+            @foreach($valueCards as $val)
+            <div class="bg-white rounded-[6px] p-4 md:p-6 transition-all duration-400 flex flex-col flex-wrap content-baseline h-full relative"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon2">
                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4">
                     </path>
                 </svg>
                 <div class="flex mb-3">
-                    <figure><img src="/cms-uploads/60530ab46fdb6959ecf07aa8778a1201579f7a6e/magic.svg" width="50" height="50" alt="Layers Icon" class="w-[28px] h-[28px] mr-2.5"></figure>
-                    <h3 data-raw-content="true" class="text-lg sm:text-xl md:text-[22px] text-primary font-semibold">Clarity</h3>
+                    <figure><img src="{{ $val['icon'] ?? '/cms-uploads/60530ab46fdb6959ecf07aa8778a1201579f7a6e/magic.svg' }}" width="50" height="50" alt="Layers Icon" class="w-[28px] h-[28px] mr-2.5"></figure>
+                    <h3 data-raw-content="true" class="text-lg sm:text-xl md:text-[22px] text-primary font-semibold">{{ $val['title'] ?? '' }}</h3>
                 </div>
-                <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-primary/80">We cut through complexity. Every solution is built to make work easier, not harder.</p>
+                <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-primary/80">{{ $val['text'] ?? '' }}</p>
             </div>
-            <div class="bg-white rounded-[6px] p-4 md:p-6 transition-all duration-400 flex flex-col flex-wrap content-baseline h-full relative IDMEMW0RH8DWFQ47"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon2">
-                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4">
-                    </path>
-                </svg>
-                <div class="flex mb-3">
-                    <figure><img src="/cms-uploads/43a92a814547fb60b29fe301bd94c1e8f7302757/protection-(1).svg" width="50" height="50" alt="Layers Icon" class="w-[28px] h-[28px] mr-2.5"></figure>
-                    <h3 data-raw-content="true" class="text-lg sm:text-xl md:text-[22px] text-primary font-semibold">Trust</h3>
-                </div>
-                <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-primary/80">Partnerships last when they are grounded in honesty, transparency, and reliability.</p>
-            </div>
-            <div class="bg-white rounded-[6px] p-4 md:p-6 transition-all duration-400 flex flex-col flex-wrap content-baseline h-full relative IDMEMW0RHAQGCXI8"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon2">
-                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4">
-                    </path>
-                </svg>
-                <div class="flex mb-3">
-                    <figure><img src="/cms-uploads/ebf906a4a27643ae60e03cf3bf8cb86200fbfd59/line-chart.svg" width="50" height="50" alt="Layers Icon" class="w-[28px] h-[28px] mr-2.5"></figure>
-                    <h3 data-raw-content="true" class="text-lg sm:text-xl md:text-[22px] text-primary font-semibold">Impact</h3>
-                </div>
-                <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-primary/80">Technology is only as good as the results it delivers. We measure success in growth, efficiency, and lasting change.</p>
-            </div>
-            <div class="bg-white rounded-[6px] p-4 md:p-6 transition-all duration-400 flex flex-col flex-wrap content-baseline h-full relative IDMEMW0RHBGLCX49"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon2">
-                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4">
-                    </path>
-                </svg>
-                <div class="flex mb-3">
-                    <figure><img src="/cms-uploads/25198f4fc413e36379b256627c34aeca15f998b1/sync.svg" width="50" height="50" alt="Layers Icon" class="w-[28px] h-[28px] mr-2.5"></figure>
-                    <h3 data-raw-content="true" class="text-lg sm:text-xl md:text-[22px] text-primary font-semibold">Evolution</h3>
-                </div>
-                <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-primary/80">We never stand still. We learn, adapt, and scale alongside our clients so their systems stay future ready.</p>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

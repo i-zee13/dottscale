@@ -1,0 +1,164 @@
+/**
+ * DottScale admin theme overrides
+ * Brand: black #212529 + gold/yellow #FFB237 (matches frontend --bs-primary / --bs-secondary)
+ */
+:root {
+  --ds-black: #212529;
+  --ds-black-2: #0d0f12;
+  --ds-black-3: #16191d;
+  --ds-gold: #FFB237;
+  --ds-gold-dark: #e09a1f;
+  --ds-white: #ffffff;
+  --ds-muted: #6c757d;
+  --ds-font: "Poppins", "Geist", "Montserrat", sans-serif;
+}
+
+html, body,
+.SP-font,
+.MT-font,
+._inv-status,
+.btn, h1, h2, h3, h4, h5, h6,
+.modal-order-detail .modal-title,
+.nam-title, .con_info, .text-muted, .cp-stats-value, .cp-stats,
+.nav-tabs .nav-link, .tab-style .tab-pane, .alert-color, .modal-title,
+.login-right, .login-right h3, .login-left h4, .Log_footer, .viewAssign,
+.top_nav .nav-link, .top_nav .dropdown-item {
+  font-family: var(--ds-font) !important;
+}
+
+/* Map old navy blues → black */
+.navbar { border-top-color: var(--ds-black) !important; }
+.hamburger, .hamburger:hover,
+._logo, ._logo:hover { color: var(--ds-black) !important; }
+
+.bg_main,
+#sidebar-wrapper,
+.sidebar,
+.left-side-menu,
+._sideNav,
+.side-bar,
+.side_nav,
+.open-side-service ._subNav,
+.open-side-blog ._subNav,
+.open-side-webpages ._subNav,
+.open-side-leads ._subNav,
+.hide-leads-menu ._subNav,
+.pro-header-text,
+#product-cl-sec .pro-header-text,
+.pc-header,
+.sidebar-dark {
+  background: var(--ds-black) !important;
+  background-color: var(--ds-black) !important;
+  background-image: none !important;
+}
+
+/* Buttons */
+.btn-primary,
+.lgray-btn,
+.btn-outline,
+.dt-buttons .dt-button,
+.dt-buttons .dt-button:hover {
+  border-color: var(--ds-black) !important;
+  background: linear-gradient(90deg, var(--ds-black) 0%, var(--ds-black-3) 100%) !important;
+  color: var(--ds-white) !important;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.lgray-btn:hover,
+.btn-outline:hover {
+  border-color: var(--ds-gold) !important;
+  background: linear-gradient(90deg, var(--ds-gold) 0%, var(--ds-gold-dark) 100%) !important;
+  color: var(--ds-black) !important;
+}
+.btn-cancel {
+  border: solid 1px var(--ds-black) !important;
+  color: var(--ds-black) !important;
+  background: transparent !important;
+}
+
+/* Accents / active states */
+.custom-control-input:checked ~ .custom-control-label::before,
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: var(--ds-gold) !important;
+  border-color: var(--ds-gold) !important;
+}
+a { color: var(--ds-black); }
+a:hover { color: var(--ds-gold-dark); }
+
+.top_border,
+.card .header,
+._head01 span,
+._head03 span,
+.breadcrumb a span {
+  color: var(--ds-gold) !important;
+}
+._head01, ._head03 { color: var(--ds-black) !important; }
+
+/* Sidebar menu accents */
+.hide-leads-menu ._subNav h2,
+.open-side-service ._subNav h2,
+.open-side-blog ._subNav h2,
+.open-side-webpages ._subNav h2 {
+  color: var(--ds-gold) !important;
+}
+.hide-leads-menu ._subNav ul li a:hover,
+.open-side-service ._subNav ul li a:hover {
+  color: var(--ds-gold) !important;
+}
+
+/* Dashboard cards accent bars */
+.action-btns .btn-primary,
+.action-btns .btn-primary:hover,
+.action-btns .btn-primary:focus {
+  background: linear-gradient(90deg, var(--ds-black) 0%, var(--ds-black-3) 100%) !important;
+}
+.action-btns .btn-primary { border-left: 3px solid var(--ds-gold) !important; }
+
+/* Forms focus */
+.form-control:focus,
+.select2-container--default.select2-container--focus .select2-selection--multiple,
+.select2-container--default .select2-selection--single:focus {
+  border-color: var(--ds-gold) !important;
+  box-shadow: 0 0 0 0.15rem rgba(255, 178, 55, 0.25) !important;
+}
+
+/* Dropify themed */
+.dropify-wrapper {
+  border: 2px dashed var(--ds-black) !important;
+  border-radius: 6px !important;
+  font-family: var(--ds-font) !important;
+}
+.dropify-wrapper:hover {
+  background-image: linear-gradient(-45deg, #f6f6f6 25%, transparent 25%, transparent 50%, #f6f6f6 50%, #f6f6f6 75%, transparent 75%, transparent) !important;
+  border-color: var(--ds-gold) !important;
+}
+.dropify-wrapper .dropify-message span.file-icon { color: var(--ds-gold) !important; }
+.dropify-wrapper .dropify-message p { color: var(--ds-black) !important; font-family: var(--ds-font) !important; }
+
+/* Login page polish */
+.Log_footer,
+.login-left h4 span,
+.topheading h2 { color: var(--ds-gold) !important; }
+.login-btn,
+button.login-btn,
+.btn-login {
+  background: var(--ds-gold) !important;
+  border-color: var(--ds-gold) !important;
+  color: var(--ds-black) !important;
+}
+.login-btn:hover { background: var(--ds-gold-dark) !important; }
+
+/* Footer */
+.sticky-footer,
+.copyright { color: var(--ds-muted) !important; }
+
+/* Pagination / tabs */
+.page-item.active .page-link,
+.nav-pills .nav-link.active,
+.nav-tabs .nav-link.active {
+  background-color: var(--ds-black) !important;
+  border-color: var(--ds-black) !important;
+  color: var(--ds-white) !important;
+}
+.page-link { color: var(--ds-black) !important; }
+.page-link:hover { color: var(--ds-gold-dark) !important; }

@@ -154,7 +154,7 @@
 
         .action-btns .btn-primary:hover,
         .action-btns .btn-primary:focus {
-            background: linear-gradient(90deg, #031a50 0%, #06205e 100%);
+            background: linear-gradient(90deg, #212529 0%, #16191d 100%);
             color: #fff;
         }
 
@@ -187,7 +187,7 @@
 
         .label-percent {
             font-size: 22px;
-            fill: #06205e;
+            fill: #16191d;
             padding-top: 25px;
             font-family: 'Rationale', sans-serif !important;
         }
@@ -276,7 +276,7 @@
         }
 
         .h_dash a:hover .HD-title {
-            color: #06205e;
+            color: #16191d;
         }
     </style>
     <div class="row _user-TS">

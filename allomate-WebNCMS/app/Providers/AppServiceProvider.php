@@ -52,6 +52,14 @@ class AppServiceProvider extends ServiceProvider
             return;
         }
 
+        $navServices = Schema::hasTable('services')
+            ? \App\Models\Service::where('status', 1)->orderBy('sort_order')->orderBy('id')->get()
+            : collect();
+        $navPortfolios = Schema::hasTable('portfolios')
+            ? \App\Models\Portfolio::where('status', 1)->orderBy('id')->get()
+            : collect();
+        View::share(compact('navServices', 'navPortfolios'));
+
         $general_pages = collect();
 
         $organization = Organization::first();

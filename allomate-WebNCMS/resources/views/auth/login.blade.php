@@ -14,6 +14,8 @@
     <!-- Custom fonts for this template-->
     <link href="admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="admin/css/style.css" rel="stylesheet">
+    <link href="admin/css/login-style.css" rel="stylesheet">
+    <link href="admin/css/dottscale-theme.css?v=1" rel="stylesheet">
 </head>
 
 <body class="bg_main">

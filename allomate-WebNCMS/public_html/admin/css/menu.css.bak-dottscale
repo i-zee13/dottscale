@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6, ._head01, ._head02, .dataTable.nowrap th, .btn, .modal-o
 	height: 100%;
 	width: 175px;
 	transition: width 0.5s;
-	background: linear-gradient(90deg, #212529 0%, #16191d 100%);
+	background: linear-gradient(90deg, #001e35 0%, #02233d 100%);
 }
 .qlinks {
 	margin-bottom: 15px;
@@ -303,7 +303,7 @@ h1, h2, h3, h4, h5, h6, ._head01, ._head02, .dataTable.nowrap th, .btn, .modal-o
 }
 .add_button {
 	font-size: 13px;
-	background-color: #16191d;
+	background-color: #02233d;
 	border: none;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
@@ -345,7 +345,7 @@ h1, h2, h3, h4, h5, h6, ._head01, ._head02, .dataTable.nowrap th, .btn, .modal-o
 }
 ._QL-creat .dropdown-item:HOVER {
 	background-color: #f0f4fe;
-	color: #16191d
+	color: #02233d
 }
 .container {
 	max-width: 1170px
@@ -434,7 +434,7 @@ h1, h2, h3, h4, h5, h6, ._head01, ._head02, .dataTable.nowrap th, .btn, .modal-o
 	margin: auto;
 	margin-top: 15px;
 	padding: 2px;
-	border: solid 1px #16191d
+	border: solid 1px #02233d
 }
 ._profile-card h2 {
 	font-size: 18px;
@@ -503,7 +503,7 @@ h1, h2, h3, h4, h5, h6, ._head01, ._head02, .dataTable.nowrap th, .btn, .modal-o
 	color: #949496
 }
 ._BC-btn:HOVER {
-	background-color: #16191d;
+	background-color: #02233d;
 	color: #fff
 }
 ._BC-btn:HOVER i {
@@ -529,7 +529,7 @@ button {
 }
 .profile-left .dropdown-item:HOVER {
 	color: #fff;
-	background-color: #16191d
+	background-color: #02233d
 }
 .profile-left .dropdown-menu::before, ._report-Head ._more-action .dropdown-menu::before {
 	content: '';
@@ -564,9 +564,9 @@ button {
 	margin-top: 5px
 }
 .profile-center .nav-pills .nav-link.active, ._report-Head .nav-pills .nav-link.active {
-	color: #16191d;
+	color: #02233d;
 	border: none;
-	border-bottom: solid 3px #16191d;
+	border-bottom: solid 3px #02233d;
 }
 .profile-center .nav-pills .nav-link, ._report-Head .nav-pills .nav-link {
 	font-size: 14px;
@@ -638,7 +638,7 @@ button {
 	font-size: 16px;
 	padding: 0 20px;
 	margin: 0;
-	background: linear-gradient(90deg, #212529 0%, #16191d 100%);
+	background: linear-gradient(90deg, #2f4a70 0%, #02233d 100%);
 	width: inherit;
 }
 ._MW-content {
@@ -786,7 +786,7 @@ button {
 	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 	position: relative;
 	margin-bottom: 30px;
-	border-bottom: solid 1px #16191d
+	border-bottom: solid 1px #02233d
 }
 .CL-Search {
 	width: 380px;
@@ -904,13 +904,13 @@ button {
 .Up-DocList a:HOVER {
 	margin-right: 25px;
 	font-size: 13px;
-	color: #16191d
+	color: #02233d
 }
 .Up-DocList a .fa {
 	margin-right: 7px
 }
 .dropzone:HOVER {
-	border-color: #16191d
+	border-color: #02233d
 }
 ._invNDV {
 	font-size: 13px
@@ -954,7 +954,7 @@ button {
 	background: linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
 	border: none;
 	box-shadow: none;
-	color: #16191d!important;
+	color: #02233d!important;
 	padding: 0
 }
 ._more-action .dropdown-toggle {
@@ -1003,7 +1003,7 @@ button {
 	position: absolute;
 	right: 22px;
 	top: 22px;
-	color: #16191d
+	color: #02233d
 }
 .Activity-bottom {
 	position: relative;
@@ -1018,7 +1018,7 @@ button {
 	border-radius: 50%;
 	overflow: hidden;
 	padding: 2px;
-	border: solid 1px #16191d;
+	border: solid 1px #02233d;
 }
 .text-gray {
 	color: #797979
@@ -1036,7 +1036,7 @@ button {
 	border-radius: 50%;
 	overflow: hidden;
 	padding: 1px;
-	border: solid 1px #16191d;
+	border: solid 1px #02233d;
 	margin-right: 8px
 }
 .assigned-to .l-height {
@@ -1106,7 +1106,7 @@ button {
 }
 .Activity-card:HOVER .taskDetailL-B{
     color: #fff!important;
-    background-color: #16191d;
+    background-color: #02233d;
 }
 .taskDetail-div {
 	margin-top: 30px;
@@ -1146,7 +1146,7 @@ button {
 	box-shadow: 2px 2px 10px 0 rgba(79, 79, 79, .2)!important;
 	padding: 7px 35px 5px 20px!important;
 	border: solid 1px #003db6!important;
-	background: linear-gradient(90deg, #212529 0%, #16191d 100%)!important;
+	background: linear-gradient(90deg, #2f4a70 0%, #02233d 100%)!important;
 	margin: 0;
 }
 ._more-actionBlue .dropdown-toggle::after {
@@ -1250,14 +1250,14 @@ button {
  50% {
  width: 2em;
  height: 2em;
- background: linear-gradient(90deg, #212529 0%, #16191d 100%);
+ background: linear-gradient(90deg, #2f4a70 0%, #02233d 100%);
  border: 0;
  opacity: 0.6;
 }
  100% {
  width: 2em;
  height: 2em;
- background: linear-gradient(90deg, #212529 0%, #16191d 100%);
+ background: linear-gradient(90deg, #2f4a70 0%, #02233d 100%);
  border: 0;
  opacity: 1;
 }
@@ -1290,8 +1290,8 @@ button {
 	margin: 0;
 }
 ._profile-card .dropdown-item:HOVER {
-	background-color: #16191d;
-	border-bottom: solid 1px #16191d;
+	background-color: #02233d;
+	border-bottom: solid 1px #02233d;
 	color: #fff!important
 }
 ._profile-card .dropdown-menu::before {
@@ -1356,7 +1356,7 @@ button {
 	position: absolute;
 	right: 15px;
 	top: 15px;
-	color: #16191d;
+	color: #02233d;
 	width: 20px;
 	height: auto;
 	filter: invert(60%);
@@ -1465,7 +1465,7 @@ button {
 	transition: all 0.3s
 }
 .SearchList ul li a:HOVER {
-	color: #16191d;
+	color: #02233d;
 	margin-left: 8px;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
@@ -1509,7 +1509,7 @@ button {
 }
 .TaskText:focus {
 	background-image: none;
-	border: solid 1px #16191d;
+	border: solid 1px #02233d;
 	margin-bottom: 10px
 }
 .DivTextarea .btn-primary {
@@ -1547,7 +1547,7 @@ button {
 	right: -10px;
 	top: -10px;
 	border: solid 1px #003db6;
-	background: linear-gradient(90deg, #212529 0%, #16191d 100%);
+	background: linear-gradient(90deg, #2f4a70 0%, #02233d 100%);
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
@@ -1609,8 +1609,8 @@ button {
 }
 .Tdone {
 	color: #fff !important;
-	background: linear-gradient(90deg, #212529 0%, #16191d 100%);
-	border-color: #16191d;
+	background: linear-gradient(90deg, #2f4a70 0%, #02233d 100%);
+	border-color: #02233d;
 	font-size: 11px;
 	line-height: 1;
 	display: inline-block;
@@ -1635,7 +1635,7 @@ button {
 	border-radius: 50%;
 	overflow: hidden;
 	padding: 1px;
-	border: solid 1px #16191d;
+	border: solid 1px #02233d;
 	margin-right: 8px;
 }
 ._Tinfo span {
@@ -1672,8 +1672,8 @@ button {
 	transition: all 0.2s ease-in-out;
 }
 .box-sec:HOVER {
-	background: linear-gradient(90deg, #212529 0%, #16191d 100%);
-	/*	border-top: 3px solid #16191d;*/
+	background: linear-gradient(90deg, #2f4a70 0%, #02233d 100%);
+	/*	border-top: 3px solid #02233d;*/
 	color: #fff;
 	text-decoration: none;
 	-webkit-transition: all 0.3s ease-in-out;
@@ -1709,7 +1709,7 @@ button {
 	margin-top: 0
 }
 ._dashTOP span {
-	color: #16191d
+	color: #02233d
 }
 ._dashTOP p {
 	margin: 0;
@@ -1722,7 +1722,7 @@ footer.sticky-footer {
 ._user_Pimage {
 	width: 38px;
 	height: 38px;
-	border: solid 1px #16191d;
+	border: solid 1px #02233d;
 	background-color: #FFF;
 	padding: 1px;
 	border-radius: 50%;
@@ -1745,7 +1745,7 @@ footer.sticky-footer {
 	width: 40px;
 	height: 40px;
 	padding-top: 11px;
-	background-color: #16191d;
+	background-color: #02233d;
 	border-radius: 50%;
 	float: left;
 	text-align: center;
@@ -1760,7 +1760,7 @@ footer.sticky-footer {
 }
 ._user-CS ul li div {
 	font-weight: normal;
-	color: #16191d;
+	color: #02233d;
 	font-family: 'Rationale', sans-serif;
 	font-size: 25px;
 	padding-bottom: 3px
@@ -1784,7 +1784,7 @@ footer.sticky-footer {
 	text-decoration: none
 }
 ._act-TL .header a:HOVER {
-	background-color: #16191d;
+	background-color: #02233d;
 	color: #fff;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
@@ -1929,7 +1929,7 @@ footer.sticky-footer {
 .Order-Cust-detail {
 	padding: 8px 15px;
 	background-color: #f8f8f8;
-	border-top: solid 2px #16191d;
+	border-top: solid 2px #02233d;
 	font-size: 13px;
 	line-height: 22px;
 	letter-spacing: normal
@@ -1962,7 +1962,7 @@ footer.sticky-footer {
 	padding: 0
 }
 .Order-PL .progress-bar {
-	background-color: #16191d
+	background-color: #02233d
 }
 .progress {
 	height: 11px;
@@ -1995,13 +1995,13 @@ footer.sticky-footer {
 }
 .AssSupplier:HOVER {
 	text-decoration: none;
-	color: #16191d;
+	color: #02233d;
 	background-color: #fff;
 	box-shadow: 2px 2px 45px 11px rgba(45,62,80,.12)
 }
 .AssSupplier .fa {
 	font-size: 14px;
-	color: #16191d
+	color: #02233d
 }
 .OtherAction {
 	height: 220px;
@@ -2103,7 +2103,7 @@ footer.sticky-footer {
 	border-radius: 50%;
 	overflow: hidden;
 	padding: 1px;
-	border: solid 1px #212529;
+	border: solid 1px #2f4a70;
 	opacity: 1
 }
 .FU-history .Act-timeline {
@@ -2156,7 +2156,7 @@ footer.sticky-footer {
 }
 .AddSupp {
 	font-size: 13px;
-	background-color: #16191d;
+	background-color: #02233d;
 	padding: 6px 10px;
 	color: #fff!important;
 	margin: 10px 0
@@ -2164,14 +2164,14 @@ footer.sticky-footer {
 ._blueBTN {
 	padding: 4px 8px 2px 8px;
 	margin-right: 10px;
-	color: #16191d;
+	color: #02233d;
 	font-size: 12px;
 	letter-spacing: 1px;
 	background: linear-gradient(90deg, #fff 0%, #fff 100%);
 	box-shadow: none;
 }
 ._blueBTN:HOVER {
-	background: linear-gradient(90deg, #212529 0%, #16191d 100%)
+	background: linear-gradient(90deg, #2f4a70 0%, #02233d 100%)
 }
 .ProductStatus {
 	background-color: #dc1e3b;
@@ -2184,7 +2184,7 @@ footer.sticky-footer {
 	line-height: 1
 }
 ._PartiallyBG {
-	background-color: #FFB237
+	background-color: #ff851b
 }
 ._InProductionBG {
 	background-color: #1ca345
@@ -2214,8 +2214,8 @@ footer.sticky-footer {
 	float: left
 }
 .follow_action:HOVER {
-	background: linear-gradient(90deg, #212529 0%, #16191d 100%);
-	border-top: 3px solid #16191d;
+	background: linear-gradient(90deg, #2f4a70 0%, #02233d 100%);
+	border-top: 3px solid #02233d;
 	color: #fff;
 	text-decoration: none;
 	-webkit-transition: all 0.3s ease-in-out;
@@ -2263,7 +2263,7 @@ footer.sticky-footer {
 	display: block
 }
 .blue-text {
-	color: #16191d
+	color: #02233d
 }
 .activityTime {
 	padding-left: 35px
@@ -2361,7 +2361,7 @@ footer.sticky-footer {
 }
 .card-report .digit {
 	font-size: 30px;
-	color: #16191d;
+	color: #02233d;
 	font-family: 'Rationale', sans-serif;
 	position: absolute;
 	bottom: 10px;
@@ -2381,13 +2381,13 @@ footer.sticky-footer {
 	border-bottom: solid 2px #1ca345
 }
 .bottomBB {
-	border-bottom: solid 2px #16191d
+	border-bottom: solid 2px #02233d
 }
 .bottomBGR {
 	border-bottom: solid 2px #282828
 }
 .bottomBO {
-	border-bottom: solid 2px #FFB237
+	border-bottom: solid 2px #ff851b
 }
 .rav-bg {
 	background-image: url(../images/rav-bg-01.jpg);
@@ -2470,11 +2470,11 @@ body {
 	float: right;
 	padding: 0px 0px 0px 25px;
 	font-family: 'Rationale', sans-serif;
-	color: #16191d;
+	color: #02233d;
 	line-height: normal
 }
 .TopProductList .progress-bar {
-	background-color: #16191d
+	background-color: #02233d
 }
 .TopProductList .progress {
 	height: 8px;
@@ -2528,7 +2528,7 @@ body {
 	margin: 0;
 	margin-top: 4px;
 	padding: 5px 0px 15px 0px;
-	border-top: solid 1px #16191d;
+	border-top: solid 1px #02233d;
 }
 .CoInvTotal .form-control, .CoInvTotal .form-control:focus {
 	background-color: #f6f6f6;
@@ -2539,11 +2539,11 @@ body {
 	float: right
 }
 ._pillsTabs .nav-pills .nav-link.active, ._pillsTabs .nav-pills .nav-link:HOVER {
-	background: linear-gradient(90deg, #212529 0%, #16191d 100%)!important;
+	background: linear-gradient(90deg, #2f4a70 0%, #02233d 100%)!important;
 	color: #fff;
 }
 ._pillsTabs .nav-pills .nav-link:HOVER {
-	color: #212529;
+	color: #2f4a70;
 	background: linear-gradient(90deg, #e5ebf8 0%, #e5ebf8 100%)!important;
 }
 ._pillsTabs .nav-pills .nav-link {
@@ -2574,7 +2574,7 @@ body {
 	line-height: 1;
 }
 .FEMP-lab {
-	background-color: #16191d;
+	background-color: #02233d;
 	font-size: 11px;
 	top: -5px;
 	right: 5px;
@@ -2646,7 +2646,7 @@ body {
 	width: inherit;
 	margin-top: 0px;
 	padding-bottom: 0px;
-	border-bottom: solid 2px #16191d;
+	border-bottom: solid 2px #02233d;
 	margin-bottom: 15px
 }
 ._activityEmp-timeline {
@@ -2750,7 +2750,7 @@ body {
 	font-size: 13px
 }
 .notificationList li:HOVER {
-	background: linear-gradient(90deg, #212529 0%, #16191d 100%);
+	background: linear-gradient(90deg, #2f4a70 0%, #02233d 100%);
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 	color: #b3c4ea
 }
@@ -2854,7 +2854,7 @@ body {
 	margin-top: -3px
 }
 ._amState .text-primary {
-	color: #16191d!important
+	color: #02233d!important
 }
 ._RVperDay {
 	box-shadow: none
@@ -2880,7 +2880,7 @@ body {
 	border-left: solid 1px #e9e9e9
 }
 .B_border {
-	border-bottom: solid 2px #16191d
+	border-bottom: solid 2px #02233d
 }
 ._dash-table {
 	font-size: 13px
@@ -2906,7 +2906,7 @@ body {
 	text-align: right;
 	line-height: 20px;
 	font-size: 20px;
-	color: #16191d;
+	color: #02233d;
 	font-family: 'Rationale', sans-serif
 }
 ._dash-prog .progress-w-percent {
@@ -2933,7 +2933,7 @@ body {
 	color: #fff;
 	text-align: center;
 	white-space: nowrap;
-	background-color: #16191d;
+	background-color: #02233d;
 	-webkit-transition: width .6s ease;
 	transition: width .6s ease;
 }
@@ -2969,7 +2969,7 @@ body {
 	box-shadow: none
 }
 .progress-bar {
-	background: linear-gradient(90deg, #212529 0%, #16191d 100%)!important
+	background: linear-gradient(90deg, #2f4a70 0%, #02233d 100%)!important
 }
 .cus-ass-list {
 	border-radius: 0;
@@ -2980,7 +2980,7 @@ body {
 	border-radius: 0;
 	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
 	color: #fff;
-	background: linear-gradient(90deg, #212529 0%, #16191d 100%)
+	background: linear-gradient(90deg, #2f4a70 0%, #02233d 100%)
 }
 .cus-ass-list:HOVER .close, .cus-ass-list:HOVER .close:HOVER {
 	color: #fff;
@@ -3009,7 +3009,7 @@ body {
 	color: #dc1e3b!important
 }
 .TaskHigh {
-	color: #FFB237!important
+	color: #ff851b!important
 }
 .TaskMedium {
 	color: #1ca345!important
@@ -3023,13 +3023,13 @@ body {
 	color: #fff
 }
 .TS-InProgress {
-	background: #212529;
-	border-color: #212529;
+	background: #2f4a70;
+	border-color: #2f4a70;
 	color: #fff
 }
 .TS-InReview {
-	background-color: #FFB237;
-	border-color: #FFB237;
+	background-color: #faa948;
+	border-color: #faa948;
 	color: #fff
 }
 .TS-Completed {
@@ -3080,17 +3080,17 @@ body {
 	letter-spacing: 1px;
 	border: none;
 	border-radius: 0;
-	background-color: #FFB237;
+	background-color: #faa948;
 	color: #fff
 }
 .BNotStarted span {
 	background-color: #bebebe!important
 }
 .BInProgress span {
-	background-color: #212529!important
+	background-color: #2f4a70!important
 }
 .BInReview span {
-	background-color: #FFB237!important
+	background-color: #faa948!important
 }
 .BCompleted span {
 	background-color: #1ca345!important
@@ -3189,7 +3189,7 @@ body {
 	padding-top: 0;
 	margin-bottom: 5px;
 	font-size: 15px;
-	color: #16191d
+	color: #02233d
 }
 .TaskCommentSec .FU-history .Act-timeline .LS-Comments {
 	padding-left: 50px
@@ -3234,7 +3234,7 @@ body {
 	color: #dc1e3b
 }
 .C-High {
-	color: #FFB237
+	color: #ff851b
 }
 .C-Medium {
 	color: #1ca345
@@ -3282,7 +3282,7 @@ a.report-Card {
 }
 a.report-Card:HOVER {
 	text-decoration: none;
-	border: solid 1PX #16191d;
+	border: solid 1PX #02233d;
 	-webkit-box-shadow: 2px 2px 10px 0 rgba(79,79,79,.4);
 	-moz-box-shadow: 2px 2px 10px 0 rgba(79,79,79,.4);
 	box-shadow: 2px 2px 10px 0 rgba(79,79,79,.4);
@@ -3322,7 +3322,7 @@ a.report-Card:HOVER {
 	color: #a8bae3
 }
 .fav-icon:HOVER, .addFav {
-	color: #16191d
+	color: #02233d
 }
 .reportCard .addFav {
 	top: 10px;
@@ -3347,7 +3347,7 @@ a.report-Card:HOVER {
 }
 .SupplierCard {
 	border: solid 1px #dbdbdb;
-	border-bottom: solid 1px #16191d;
+	border-bottom: solid 1px #02233d;
 	padding: 10px;
 	margin: 10px;
 	font-size: 13px;
@@ -3364,8 +3364,8 @@ a.report-Card:HOVER {
 	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
 	text-decoration: none;
 	color: #fff;
-	background-color: #16191d;
-	border: solid 1px #16191d;
+	background-color: #02233d;
+	border: solid 1px #02233d;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
@@ -3511,9 +3511,9 @@ a.report-Card:HOVER {
 	border: none;
 }
 .header-tabs .nav-pills .nav-link.active {
-	color: #16191d;
+	color: #02233d;
 	border: none;
-	border-bottom: solid 2px #16191d;
+	border-bottom: solid 2px #02233d;
 	background: none
 }
 .header-tabs .nav-pills .nav-link span {
@@ -3534,7 +3534,7 @@ a.report-Card:HOVER {
 }
 .header-tabs .nav-pills .nav-link.active ._cus-val {
 	color: #fff;
-	background-color: #16191d
+	background-color: #02233d
 }
 .header-tabs {/*border: solid 1px #e2e9fb;  */
 	box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.2);
@@ -3626,8 +3626,8 @@ a.report-Card:HOVER {
 	border-radius: 0
 }
 .header-tabs .nav-tabs .nav-item.show, .header-tabs .nav-tabs .nav-link.active {
-	border-bottom: solid 2px #16191d;
-	color: #16191d;
+	border-bottom: solid 2px #02233d;
+	color: #02233d;
 }
 .header-tabs .nav-tabs {
 	border: none
@@ -3647,7 +3647,7 @@ a.report-Card:HOVER {
 }
 .header-tabs .nav-pills .nav-link.active ._cus-val, .header-tabs .nav-tabs .nav-link.active ._cus-val {
 	color: #fff;
-	background-color: #16191d
+	background-color: #02233d
 }
 .modal-Task{max-width: 1170px}
 .BL-border{border-bottom: solid 1px #e4e4e4;
@@ -3680,7 +3680,7 @@ a.report-Card:HOVER {
     background: linear-gradient(90deg, #f1f1f1 0%, #f1f1f1 100%);
 }
  
-.AllDownload-btn .fa{color: #16191d}
+.AllDownload-btn .fa{color: #02233d}
 .AllDownload-btn:HOVER .fa, .AllDownload-btn:focus .fa{color: #fff}
 .DownloadList .AllDownload-btn{padding-top:6px!important; padding-bottom: 6px!important}
 .DownloadList{border: solid 1px #e4e4e4; background-color: #fff; padding:5px;  width: 100%; margin-bottom: 10px; opacity: 0.4; 	-webkit-transition: all 0.3s;
@@ -3717,13 +3717,13 @@ a.report-Card:HOVER {
 	 font-family: "FontAwesome";
 	 background-color: #f1f1f1;
 	 border: none;
-	 color: #16191d;
+	 color: #02233d;
 	 font-size: 13px; line-height: 1;
 	 padding-left: 0px; margin-right: 25px!important;
 	 transition: 0.25s ease background-color:3c5980; height: 26px!important; width: 26px!important; padding-left: 8px;  
 } 
  .ac-play-container .ac-play:HOVER {
-	 color: #fff; background-color: #16191d
+	 color: #fff; background-color: #02233d
 } 
  .ac-play-container .ac-play:before {
 	 content: "\f04b";
@@ -3804,7 +3804,7 @@ a.report-Card:HOVER {
 .AttachFilesDiv .alert button {position: absolute; top: -1px; right: 5px}
 .attchFiles-act{ font-size: 14px; color: #797979; padding-right: 15px; font-family: proximanova-semibold; margin-bottom: 3px}
 .attchFiles-act img{width: 18px; height: auto; margin-right:5px; margin-top: -3px}
-.attchFiles-act:HOVER{color: #16191d; text-decoration: none}
+.attchFiles-act:HOVER{color: #02233d; text-decoration: none}
 
 
 
@@ -3822,7 +3822,7 @@ a.report-Card:HOVER {
 	border: solid 1px #e4e4e4
 }
 .ExpTop{font-size: 13px; padding-bottom: 30px}
-.Expense-form .ExpenseTextarea:focus{border: solid 1px #212529}
+.Expense-form .ExpenseTextarea:focus{border: solid 1px #2f4a70}
 .Expense-form input {box-shadow: none; border: solid 1px #e4e4e4}
 .Expense-form .col-form-label{font-size: 13px; color: #797979}
 .Expense-form .form-control{ height: 35px!important}
@@ -3852,7 +3852,7 @@ a.report-Card:HOVER {
 	border-bottom: solid 1px #e5e5e5;
 	background: linear-gradient(0deg, #f8f8f8 0%, #ffffff 50%) 
 }
-.borderB2{border-bottom: solid 2px #212529}
+.borderB2{border-bottom: solid 2px #2f4a70}
 .ExpTaxes .dropdown-toggle::after{display: none}
 .ExpTaxes h3 {
     font-size: 14px;
@@ -3864,7 +3864,7 @@ a.report-Card:HOVER {
 box-shadow: 0 2px 20px rgba(0, 0, 0, .2)}
 
 .ExpTaxes input{width: 100%; font-size: 13px; height: 30px; padding-left: 10px}
-.ExpTaxes input:focus{border-color:#212529 }
+.ExpTaxes input:focus{border-color:#2f4a70 }
 .ExpTaxes label{margin: 0; font-size: 13px}
 .ExpTaxes .custom-control{padding:0 0 0 10px ; margin: 0; margin-top: -10px; line-height: 1}
 .TaxeRow{padding-bottom: 5px; margin:0 }
@@ -3879,7 +3879,7 @@ box-shadow: 0 2px 20px rgba(0, 0, 0, .2)}
 	letter-spacing: 1px; border: none!important; padding: 6px
 }
 .add-NewTaxBTN:HOVER,.add-NewTaxBTN:focus {
-	background:#212529!important;
+	background:#2f4a70!important;
 	color: #fff !important; 
 	border: none!important
 }
@@ -3888,7 +3888,7 @@ box-shadow: 0 2px 20px rgba(0, 0, 0, .2)}
 .Col-Taxname{float: left; width: 140px; margin-right: 15px;padding-bottom: 10px}
 .Col-TaxNo{float: left; width: 222px; margin-right: 0px;padding-bottom: 10px}
 .add-NewTaxAppy{	
-    background:#212529!important; width: auto!important; color: #fff !important; border: none!important; padding: 6px 15px;float: right; margin-left: 15px!important
+    background:#2f4a70!important; width: auto!important; color: #fff !important; border: none!important; padding: 6px 15px;float: right; margin-left: 15px!important
 }
 .add-NewTaxCancel{width: auto!important; float: right; padding: 6px 15px}
 .ExpCate{
@@ -3941,7 +3941,7 @@ box-shadow: 0 2px 20px rgba(0, 0, 0, .2)}
     background: linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
     border: none;
     box-shadow: none;
-    color: #212529!important;
+    color: #2f4a70!important;
     padding: 0;
 }
 /*------------ Expense-Leftinfo CSS -------------*/
@@ -4046,7 +4046,7 @@ box-shadow: 0 2px 20px rgba(0, 0, 0, .2)}
 	height: 100vh;
 	overflow-y: auto;
 	flex-direction: column;
-	background: linear-gradient(90deg, #212529 0%, #16191d 100%);
+	background: linear-gradient(90deg, #2f4a70 0%, #02233d 100%);
 	display: none
 }
 .sidebarblue .aside-primary {
@@ -4140,7 +4140,7 @@ footer.sticky-footer {
 	margin-top: 11px
 }
 .mobile__toggler span {
-	background: #16191d;
+	background: #02233d;
 	display: block;
 	position: absolute;
 	top: 12px;
@@ -4164,7 +4164,7 @@ footer.sticky-footer {
 	-webkit-transition: all 0.4s ease;
 	top: 8px;
 	transition: all 0.4s ease;
-	background-color: #16191d
+	background-color: #02233d
 }
 .mobile__toggler span::before {
 	-webkit-transition: all 0.4s ease;

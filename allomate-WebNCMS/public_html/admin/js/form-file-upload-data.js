@@ -43,3 +43,14 @@ $(document).ready(function() {
 	});
 
 });
+/* DottScale: ensure every image file input uses Dropify */
+$(document).ready(function () {
+  $('input[type="file"]').each(function () {
+    var $el = $(this);
+    var accept = ($el.attr('accept') || '').toLowerCase();
+    if ($el.hasClass('dropify') || $el.hasClass('dz-hidden-input')) return;
+    if (accept.indexOf('image') === -1 && accept.indexOf('svg') === -1 && accept.indexOf('.pdf') === -1 && accept.indexOf('.doc') === -1) return;
+    $el.addClass('dropify');
+    try { $el.dropify(); } catch (e) {}
+  });
+});

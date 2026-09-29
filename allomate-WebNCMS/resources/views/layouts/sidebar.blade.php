@@ -61,7 +61,7 @@
         <h2>Service Areas</h2>
         <ul>
             <li><a href="{{ route('admin.primary-services') }}"><img src="images/create-page-icon.svg"
-                        alt="" />Primary Service </a></li>
+                        alt="" />Our Work (Portfolios)</a></li>
 
             <li><a href="{{ route('admin.secondary-services') }}"><img src="images/activity-icon.svg"
                         alt="" />Secondary Service</a></li>

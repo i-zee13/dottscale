@@ -68,6 +68,8 @@ class WebsiteServicesController extends Controller
 
         if ($request->hasFile('icon_file')) {
             $service->icon = '/storage/' . $request->file('icon_file')->store('services', 'public');
+        } elseif ($request->filled('icon_path')) {
+            $service->icon = $request->icon_path;
         } elseif ($request->filled('icon')) {
             $service->icon = $request->icon;
         } elseif ($request->filled('hidden_icon')) {

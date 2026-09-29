@@ -111,14 +111,14 @@ class HomeController extends Controller
             'values_heading', 'values_intro', 'process_eyebrow', 'process_heading', 'process_intro', 'process_cta', 'why_heading',
         ];
         foreach ($fields as $field) {
-            if ($request->has($field)) {
+            if ($request->has($field) && Schema::hasColumn('abouts', $field)) {
                 $about->{$field} = $request->{$field};
             }
         }
 
-        if ($request->has('values')) {
+        if ($request->has('values') && Schema::hasColumn('abouts', 'values_json')) {
             $about->values_json = json_encode(array_values($request->input('values', [])));
-        } elseif ($request->filled('values_json')) {
+        } elseif ($request->filled('values_json') && Schema::hasColumn('abouts', 'values_json')) {
             $about->values_json = is_array($request->values_json) ? json_encode($request->values_json) : $request->values_json;
         }
 
