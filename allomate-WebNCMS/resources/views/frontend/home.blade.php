@@ -27,7 +27,7 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
         }
         return '/storage/' . ltrim($path, '/');
     };
-    // Content from Dott Scale homepage brief; Allomate theme/layout kept.
+    // Content from Dott Scale homepage brief; theme/layout kept.
     $heroHeading = $home?->heading_1 ?? 'Digital Marketing Agency in Austin, TX';
     $heroParagraph = $home?->heading_2 ?? 'We help businesses grow through SEO, web development, paid advertising, social media, reputation management, branding, and AI automation.';
     $aboutHeading = $home?->large_heading ?? 'Digital marketing for businesses in Austin, TX';
