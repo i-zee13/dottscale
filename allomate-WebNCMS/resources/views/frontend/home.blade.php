@@ -39,7 +39,6 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
 @endphp
 <div class="IDL70G23RUJ9HEB4"></div>
 
-{{-- Hero: Allomate glass overlay on full-bleed image --}}
 <section class="z-[1] min-h-screen flex items-center relative IDMEJHT2SVHL8J813 IDMEJIKW527FZEE0">
     <div class="relative w-full">
         <figure class="overflow-hidden hidden sm:block"><img width="1504" height="579" src="{{ $desktopImg }}" alt="{{ $heroHeading }}" title="{{ $heroHeading }}" class="w-full h-screen object-cover"></figure>
@@ -64,8 +63,6 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-@verbatim
-{{-- Trust bar — Allomate glass cards --}}
 <section class="py-5 md:py-8">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
@@ -89,7 +86,6 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-{{-- Services — Allomate glass cards, HTML service list --}}
 <section id="services" class="py-5 md:py-10 home-our-services IDMEH5PS2RJVLE01">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px]">
@@ -97,91 +93,26 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
         </div>
         <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-primary mb-3 md:mb-5 lg:mb-7">Digital marketing services for Austin businesses</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+            @forelse(($services ?? collect()) as $service)
             <div class="group bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-[15px] md:p-5 flex flex-col justify-between min-h-[180px]">
                 <div>
                     <div class="flex justify-between items-start mb-3">
-                        <h3 data-raw-content="true" class="font-primary text-lg font-semibold text-bodybg mr-2">Website Design &amp; Development</h3>
-                        <img src="/cms-uploads/mobile-app.svg" alt="" width="26" height="26" class="w-[26px] h-[26px] object-contain filter invert brightness-0 opacity-50 shrink-0">
+                        <h3 data-raw-content="true" class="font-primary text-lg font-semibold text-bodybg mr-2">{{ $service->service_name }}</h3>
+                        @if(!empty($service->icon))
+                        <img src="{{ $service->icon }}" alt="" width="26" height="26" class="w-[26px] h-[26px] object-contain filter invert brightness-0 opacity-50 shrink-0">
+                        @endif
                     </div>
-                    <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70">Fast, conversion-focused websites built to turn visitors into calls.</p>
+                    <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70">{{ $service->description }}</p>
                 </div>
-                <a href="services/web-and-mobile-development" title="Learn more" class="mt-4 group bg-bodybg rounded-[6px] w-[40px] h-[40px] flex items-center justify-center hover:w-[70px] transition-all duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" class="text-[#212529]"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path></svg></a>
+                <a href="{{ ltrim($service->route ?? '#', '/') }}" title="Learn more" class="mt-4 group bg-bodybg rounded-[6px] w-[40px] h-[40px] flex items-center justify-center hover:w-[70px] transition-all duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" class="text-[#212529]"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path></svg></a>
             </div>
-            <div class="group bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-[15px] md:p-5 flex flex-col justify-between min-h-[180px]">
-                <div>
-                    <div class="flex justify-between items-start mb-3">
-                        <h3 data-raw-content="true" class="font-primary text-lg font-semibold text-bodybg mr-2">Local SEO</h3>
-                        <img src="/cms-uploads/chart.svg" alt="" width="26" height="26" class="w-[26px] h-[26px] object-contain filter invert brightness-0 opacity-50 shrink-0">
-                    </div>
-                    <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70">Rank higher in Google Search and Maps for the terms your customers use.</p>
-                </div>
-                <a href="services/enterprise-solutions" title="Learn more" class="mt-4 group bg-bodybg rounded-[6px] w-[40px] h-[40px] flex items-center justify-center hover:w-[70px] transition-all duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" class="text-[#212529]"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path></svg></a>
-            </div>
-            <div class="group bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-[15px] md:p-5 flex flex-col justify-between min-h-[180px]">
-                <div>
-                    <div class="flex justify-between items-start mb-3">
-                        <h3 data-raw-content="true" class="font-primary text-lg font-semibold text-bodybg mr-2">PPC Advertising</h3>
-                        <img src="/cms-uploads/cube.svg" alt="" width="26" height="26" class="w-[26px] h-[26px] object-contain filter invert brightness-0 opacity-50 shrink-0">
-                    </div>
-                    <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70">Google and Meta Ads managed for cost-per-lead, not just clicks.</p>
-                </div>
-                <a href="services/mvp-design-and-development" title="Learn more" class="mt-4 group bg-bodybg rounded-[6px] w-[40px] h-[40px] flex items-center justify-center hover:w-[70px] transition-all duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" class="text-[#212529]"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path></svg></a>
-            </div>
-            <div class="group bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-[15px] md:p-5 flex flex-col justify-between min-h-[180px]">
-                <div>
-                    <div class="flex justify-between items-start mb-3">
-                        <h3 data-raw-content="true" class="font-primary text-lg font-semibold text-bodybg mr-2">Social Media Marketing</h3>
-                        <img src="/cms-uploads/teamwork.svg" alt="" width="26" height="26" class="w-[26px] h-[26px] object-contain filter invert brightness-0 opacity-50 shrink-0">
-                    </div>
-                    <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70">Consistent content and management that builds trust before the call.</p>
-                </div>
-                <a href="services/dedicated-teams" title="Learn more" class="mt-4 group bg-bodybg rounded-[6px] w-[40px] h-[40px] flex items-center justify-center hover:w-[70px] transition-all duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" class="text-[#212529]"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path></svg></a>
-            </div>
-            <div class="group bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-[15px] md:p-5 flex flex-col justify-between min-h-[180px]">
-                <div>
-                    <div class="flex justify-between items-start mb-3">
-                        <h3 data-raw-content="true" class="font-primary text-lg font-semibold text-bodybg mr-2">Graphic Design &amp; Branding</h3>
-                        <img src="/cms-uploads/warranty.svg" alt="" width="26" height="26" class="w-[26px] h-[26px] object-contain filter invert brightness-0 opacity-50 shrink-0">
-                    </div>
-                    <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70">A visual identity that looks credible the moment someone lands on it.</p>
-                </div>
-                <a href="services/quality-assurance" title="Learn more" class="mt-4 group bg-bodybg rounded-[6px] w-[40px] h-[40px] flex items-center justify-center hover:w-[70px] transition-all duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" class="text-[#212529]"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path></svg></a>
-            </div>
-            <div class="group bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-[15px] md:p-5 flex flex-col justify-between min-h-[180px]">
-                <div>
-                    <div class="flex justify-between items-start mb-3">
-                        <h3 data-raw-content="true" class="font-primary text-lg font-semibold text-bodybg mr-2">Google Business Profile</h3>
-                        <img src="/cms-uploads/chart.svg" alt="" width="26" height="26" class="w-[26px] h-[26px] object-contain filter invert brightness-0 opacity-50 shrink-0">
-                    </div>
-                    <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70">Optimization, ranking, and ongoing management of your GBP listing.</p>
-                </div>
-                <a href="services/enterprise-solutions" title="Learn more" class="mt-4 group bg-bodybg rounded-[6px] w-[40px] h-[40px] flex items-center justify-center hover:w-[70px] transition-all duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" class="text-[#212529]"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path></svg></a>
-            </div>
-            <div class="group bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-[15px] md:p-5 flex flex-col justify-between min-h-[180px]">
-                <div>
-                    <div class="flex justify-between items-start mb-3">
-                        <h3 data-raw-content="true" class="font-primary text-lg font-semibold text-bodybg mr-2">Reputation Management</h3>
-                        <img src="/cms-uploads/warranty.svg" alt="" width="26" height="26" class="w-[26px] h-[26px] object-contain filter invert brightness-0 opacity-50 shrink-0">
-                    </div>
-                    <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70">More reviews, better ratings, and a cleaner presence across platforms.</p>
-                </div>
-                <a href="services/quality-assurance" title="Learn more" class="mt-4 group bg-bodybg rounded-[6px] w-[40px] h-[40px] flex items-center justify-center hover:w-[70px] transition-all duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" class="text-[#212529]"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path></svg></a>
-            </div>
-            <div class="group bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-[15px] md:p-5 flex flex-col justify-between min-h-[180px]">
-                <div>
-                    <div class="flex justify-between items-start mb-3">
-                        <h3 data-raw-content="true" class="font-primary text-lg font-semibold text-bodybg mr-2">AI Automation</h3>
-                        <img src="/cms-uploads/artificial-intelligence.svg" alt="" width="26" height="26" class="w-[26px] h-[26px] object-contain filter invert brightness-0 opacity-50 shrink-0">
-                    </div>
-                    <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70">Automated lead follow-up, customer service, and workflow systems.</p>
-                </div>
-                <a href="services/ai-and-automation" title="Learn more" class="mt-4 group bg-bodybg rounded-[6px] w-[40px] h-[40px] flex items-center justify-center hover:w-[70px] transition-all duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 16 16" fill="currentColor" class="text-[#212529]"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"></path></svg></a>
-            </div>
+            @empty
+            <p class="font-secondary text-sm text-bodybg/70 col-span-full">Services coming soon.</p>
+            @endforelse
         </div>
     </div>
 </section>
 
-{{-- Why Dott Scale --}}
 <section class="py-5 md:py-10">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px]">
@@ -216,9 +147,7 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
         </div>
     </div>
 </section>
-@endverbatim
 
-{{-- Local to Austin — Allomate image + overlay panel --}}
 <section class="py-5 md:py-10 IDMELHLKGP4KI8K1">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="relative"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon1 z-[10]">
@@ -251,8 +180,6 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-@verbatim
-{{-- Process --}}
 <section class="py-5 md:py-10">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px]">
@@ -288,7 +215,6 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-{{-- Proof / results --}}
 <section class="py-5 md:py-10 home-video-3-section">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="w-full md:w-[70%] lg:w-[60%] m-auto text-center mb-4 md:mb-8 flex items-center justify-center flex-col">
@@ -320,7 +246,6 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-{{-- Industries --}}
 <section class="py-5 md:py-10">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px]">
@@ -339,7 +264,6 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-{{-- Local visibility — Allomate two-column panel --}}
 <section class="py-5 md:py-10">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="relative flex flex-col md:flex-row justify-between gap-4 md:gap-8 rounded-[6px] p-3 md:p-6 bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px]">
@@ -368,7 +292,6 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-{{-- Clients logos (Allomate dynamic slot) --}}
 <section class="py-5 md:py-10 IDMFDSYSGNP32GC1">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="flex items-center justify-center text-center w-full md:w-[70%] xl:w-[50%] m-auto">
@@ -396,7 +319,6 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-{{-- Testimonials (Allomate reviews slot) --}}
 <section class="py-5 md:py-10 mainReviewsClient IDMETKFAGPVDDW31">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="mb-4 sm:mb-6 lg:mb-8">
@@ -410,7 +332,6 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-{{-- FAQ — Allomate faq-item pattern (toggle via layouts/Frontend scripts) --}}
 <section class="py-5 md:py-10">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px]">
@@ -450,7 +371,6 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-{{-- Final CTA — Allomate glass panel --}}
 <section id="contact" class="py-5 md:py-10">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="relative rounded-[6px] p-5 md:p-10 bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px]">
@@ -465,7 +385,6 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-{{-- Blogs slot kept --}}
 <section class="py-5 md:py-10 IDMEQRUU5ALEO671">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-2 lg:mb-4 uppercase tracking-[2px]">
@@ -482,5 +401,4 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
         </div>
     </div>
 </section>
-@endverbatim
 @endsection

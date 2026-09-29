@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutUs;
 use App\Models\Home;
+use App\Models\Service;
+use Illuminate\Support\Facades\Schema;
 
 class FrontendController extends Controller
 {
@@ -16,7 +19,13 @@ class FrontendController extends Controller
 
         $data = [];
         if ($page === 'home') {
-            $data['home'] = Home::first();
+            $data['home'] = Schema::hasTable('home') ? Home::first() : null;
+            $data['services'] = Schema::hasTable('services')
+                ? Service::where('status', 1)->orderBy('sort_order')->orderBy('id')->get()
+                : collect();
+        }
+        if ($page === 'about-us') {
+            $data['about'] = Schema::hasTable('abouts') ? AboutUs::first() : null;
         }
 
         return view($view, $data);

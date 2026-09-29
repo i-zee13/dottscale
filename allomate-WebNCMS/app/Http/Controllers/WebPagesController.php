@@ -445,7 +445,12 @@ class WebPagesController extends Controller
     }
     public function getServices($limit = null)
     {
-        return response()->json(['status' => 'success', 'services' => []]);
+        $query = \App\Models\Service::where('status', 1)->orderBy('sort_order')->orderBy('id');
+        if ($limit !== null && $limit !== '' && is_numeric($limit)) {
+            $query->limit((int) $limit);
+        }
+        $services = \Illuminate\Support\Facades\Schema::hasTable('services') ? $query->get() : collect();
+        return response()->json(['status' => 'success', 'services' => $services]);
     }
     public function blogs_list()
     {
@@ -454,8 +459,30 @@ class WebPagesController extends Controller
 
         return view("blogs-list", compact("services", "blogs"));
     }
-    public function getFrontEndPortfolios($isLimit = null){
-    return response()->json(["status"=> "success","data"=> []]);
+    public function getFrontEndPortfolios($isLimit = null)
+    {
+        if (!\Illuminate\Support\Facades\Schema::hasTable('portfolios')) {
+            return response()->json(['status' => 'success', 'data' => []]);
+        }
+        $query = \App\Models\Portfolio::where('status', 1)->orderBy('id');
+        if ($isLimit !== null && $isLimit !== '' && is_numeric($isLimit)) {
+            $query->limit((int) $isLimit);
+        }
+        $rows = $query->get()->map(function ($p) {
+            $thumb = $p->thumbnail ?: '';
+            return [
+                'id' => $p->id,
+                'portfolio_name' => $p->portfolio_name,
+                'page_route' => $p->page_route,
+                'route' => '/' . ltrim($p->page_route ?: 'our-work', '/'),
+                'thumbnail' => $thumb,
+                'logo' => $thumb,
+                'category_names' => $p->page_title ?: 'Case Study',
+                'status' => $p->status,
+            ];
+        })->values();
+
+        return response()->json(['status' => 'success', 'data' => $rows]);
     }
 
 }

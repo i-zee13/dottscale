@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\AboutUs;
 use App\Models\Home;
 use App\Models\Investors;
 use App\Models\User;
@@ -70,7 +71,73 @@ class HomeController extends Controller
 
     public function GetAboutUsPage()
     {
-        return view('admin.about');
+        $data = Schema::hasTable('abouts') ? \App\Models\AboutUs::first() : null;
+        $meta_content_author = '';
+        $meta_content_keywords = '';
+        $meta_content_description = '';
+        $meta_og_title = '';
+        $meta_og_description = '';
+        if ($data && !empty($data->page_meta_tags)) {
+            $page_meta = is_string($data->page_meta_tags) ? json_decode($data->page_meta_tags) : $data->page_meta_tags;
+            foreach ((array) $page_meta as $meta) {
+                $meta = (object) $meta;
+                $meta_content_author = $meta->meta_content_author ?? '';
+                $meta_content_keywords = $meta->meta_content_keywords ?? '';
+                $meta_content_description = $meta->meta_content_description ?? '';
+                $meta_og_title = $meta->meta_og_title ?? '';
+                $meta_og_description = $meta->meta_og_description ?? '';
+            }
+        }
+        return view('admin.about', compact(
+            'data',
+            'meta_content_author',
+            'meta_content_keywords',
+            'meta_content_description',
+            'meta_og_title',
+            'meta_og_description'
+        ));
+    }
+
+    public function storeAbout(Request $request)
+    {
+        $about = $request->id ? \App\Models\AboutUs::find($request->id) : \App\Models\AboutUs::first();
+        if (!$about) {
+            $about = new \App\Models\AboutUs();
+        }
+
+        $fields = [
+            'heading_1', 'heading_2', 'cta_text', 'story_eyebrow', 'story_heading', 'story_p1', 'story_p2',
+            'belief_title', 'belief_text', 'direction_title', 'direction_text', 'promise_title', 'promise_text',
+            'values_heading', 'values_intro', 'process_eyebrow', 'process_heading', 'process_intro', 'process_cta', 'why_heading',
+        ];
+        foreach ($fields as $field) {
+            if ($request->has($field)) {
+                $about->{$field} = $request->{$field};
+            }
+        }
+
+        if ($request->has('values')) {
+            $about->values_json = json_encode(array_values($request->input('values', [])));
+        } elseif ($request->filled('values_json')) {
+            $about->values_json = is_array($request->values_json) ? json_encode($request->values_json) : $request->values_json;
+        }
+
+        if ($request->hasFile('meta_og_image')) {
+            $about->meta_og_image = $request->meta_og_image->store('og-images', 'public');
+        } elseif ($request->filled('hidden_og_image')) {
+            $about->meta_og_image = $request->hidden_og_image;
+        }
+
+        $metaArray = $request->meta_array;
+        if (is_array($metaArray)) {
+            $about->page_meta_tags = json_encode($metaArray);
+        }
+
+        $about->created_by = $about->created_by ?: Auth::id();
+        $about->updated_by = Auth::id();
+        $about->save();
+
+        return response()->json(['status' => 'success', 'msg' => 'Data Has been Added']);
     }
     public function GetHomePage()
     {

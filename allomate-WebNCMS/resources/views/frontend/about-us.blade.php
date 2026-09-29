@@ -17,7 +17,12 @@ Your technology success partner for local SEO, paid ads, web design, and digital
 @endsection
 
 @section('content')
-@verbatim
+@php
+    $a = $about ?? null;
+    $values = $a && $a->values_json ? (json_decode($a->values_json, true) ?: []) : [];
+    $process = $a && $a->process_json ? (json_decode($a->process_json, true) ?: []) : [];
+    $why = $a && $a->why_json ? (json_decode($a->why_json, true) ?: []) : [];
+@endphp
 <section class="py-5 md:py-10 IDMEQRXQQKUF9KR1">
     <div class="container mx-auto px-3 sm:px-4 mt-20 sm:mt-24">
         <div class="w-full md:w-[80%] lg:w-[60%] m-auto text-center flex items-center justify-center flex-col">
@@ -26,8 +31,8 @@ Your technology success partner for local SEO, paid ads, web design, and digital
                         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"> </path>
                     </svg> ABOUT US</p>
             </div>
-            <h1 data-raw-content="true" class="!leading-[1.2] text-[26px] sm:text-[30px] md:text-[34px] lg:text-[40px] xl:text-[46px] font-primary font-bold text-bodybg mb-2">We Build What Moves Business Forward</h1>
-            <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg/70 mb-3 sm:mb-5 md:mb-7">Since 2017, we’ve partnered with businesses to build platforms that unlock growth, improve efficiency, and reshape the way they work.</p><a href="contact-us" title="Read More" class="red-arrow-btn group bg-bodybg text-primary rounded-[6px] h-[40px] px-6 inline-flex items-center justify-center hover:px-8 focus:px-8 transition-all duration-300 ease-in-out IDMEQRXQQR2U5GO2">Start Your Transformation</a>
+            <h1 data-raw-content="true" class="!leading-[1.2] text-[26px] sm:text-[30px] md:text-[34px] lg:text-[40px] xl:text-[46px] font-primary font-bold text-bodybg mb-2">{{ $a->heading_1 ?? 'We Build What Moves Business Forward' }}</h1>
+            <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg/70 mb-3 sm:mb-5 md:mb-7">{{ $a->heading_2 ?? 'Since 2017, we\'ve partnered with businesses to build platforms that unlock growth, improve efficiency, and reshape the way they work.' }}</p><a href="contact-us" title="Read More" class="red-arrow-btn group bg-bodybg text-primary rounded-[6px] h-[40px] px-6 inline-flex items-center justify-center hover:px-8 focus:px-8 transition-all duration-300 ease-in-out IDMEQRXQQR2U5GO2">{{ $a->cta_text ?? 'Start Your Transformation' }}</a>
         </div>
     </div>
 </section>
@@ -46,7 +51,7 @@ Your technology success partner for local SEO, paid ads, web design, and digital
                                         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path>
                                     </svg> Our story</p>
                             </div><br>
-                            <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-bodybg font-primary mb-3 sm:mb-6 lg:mb-10">How DottScale Came to Life</h2>
+                            <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-bodybg font-primary mb-3 sm:mb-6 lg:mb-10">{{ $a->story_heading ?? 'How DottScale Came to Life' }}</h2>
                             <div class="mb-3 md:mb-8 lg:mb-16">
                                 <p data-raw-content="true" class="font-secondary font-normal text-sm md:text-base text-bodybg/70 capitalize mb-3 md:mb-6">DottScale was born from a simple idea. Technology should make business simpler, not more complicated. In 2017 we saw companies struggling with heavy systems, scattered processes, and missed opportunities. We knew there was a better path forward. One where digital transformation meant real impact, not just talk.​​​​​​​</p>
                                 <p data-raw-content="true" class="font-secondary font-normal text-sm md:text-base text-bodybg/70 capitalize mb-3 md:mb-6">From the start our focus has been on building platforms that remove friction, unlock growth, and give businesses clarity. Every product we deliver is shaped by that belief and backed by the promise that we will stay to support, improve, and scale. That is how we continue to help businesses move forward with confidence.</p>
@@ -287,5 +292,4 @@ Your technology success partner for local SEO, paid ads, web design, and digital
         </div>
     </div>
 </section>
-@endverbatim
 @endsection

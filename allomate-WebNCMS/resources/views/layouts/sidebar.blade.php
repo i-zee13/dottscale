@@ -111,6 +111,8 @@
                         alt="" />Home Page</a></li>
             <li><a href="{{ route('admin.aboutus') }}"><img src="{{ url('/admin/images/activity-icon.svg') }}"
                         alt="" />About Us</a></li>
+            <li><a href="{{ route('admin.website-services') }}"><img src="{{ url('/admin/images/activity-icon.svg') }}"
+                        alt="" />Services</a></li>
             <li><a href="{{ route('admin.contactus') }}"><img src="{{ url('/admin/images/activity-icon.svg') }}"
                         alt="" />Contact Us</a></li>
             <li><a href="javascript:void(0);"><img src="{{ url('/admin/images/activity-icon.svg') }}"

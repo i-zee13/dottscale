@@ -154,6 +154,15 @@ Route::group(['prefix' => 'admin',  'middleware' => ['custom.auth', 'is_route_as
   Route::get('/home', [App\Http\Controllers\admin\HomeController::class, 'GetHomePage'])->name('admin.home');
   Route::post('/home-store', [App\Http\Controllers\admin\HomeController::class, 'store'])->name('admin.home-store');
 
+  Route::get('/about-us', [App\Http\Controllers\admin\HomeController::class, 'GetAboutUsPage'])->name('admin.aboutus');
+  Route::post('/about-us/store', [App\Http\Controllers\admin\HomeController::class, 'storeAbout'])->name('admin.aboutus-store');
+
+  Route::get('/website-services', [App\Http\Controllers\admin\WebsiteServicesController::class, 'index'])->name('admin.website-services');
+  Route::get('/get-website-services', [App\Http\Controllers\admin\WebsiteServicesController::class, 'list'])->name('admin.get-website-services');
+  Route::get('/get-website-service/{id}', [App\Http\Controllers\admin\WebsiteServicesController::class, 'get'])->name('admin.get-website-service');
+  Route::post('/save-website-service', [App\Http\Controllers\admin\WebsiteServicesController::class, 'save'])->name('admin.save-website-service');
+  Route::post('/delete-website-service/{id}', [App\Http\Controllers\admin\WebsiteServicesController::class, 'delete'])->name('admin.delete-website-service');
+
   /**organization-CRUD Routes */
   Route::get('/organization', [App\Http\Controllers\admin\OrganizationController::class, 'index'])->name('admin.organization');
   Route::post('/organization/store', [App\Http\Controllers\admin\OrganizationController::class, 'store'])->name('admin.organization.store');

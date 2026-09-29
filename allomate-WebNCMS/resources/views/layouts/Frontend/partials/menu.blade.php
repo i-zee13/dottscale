@@ -1,4 +1,11 @@
-@verbatim
+@php
+    $navServices = $navServices ?? (\Illuminate\Support\Facades\Schema::hasTable('services')
+        ? \App\Models\Service::where('status', 1)->orderBy('sort_order')->orderBy('id')->get()
+        : collect());
+    $navPortfolios = $navPortfolios ?? (\Illuminate\Support\Facades\Schema::hasTable('portfolios')
+        ? \App\Models\Portfolio::where('status', 1)->orderBy('id')->get()
+        : collect());
+@endphp
 <div class="mil-menu-frame fixed inset-0 z-[-1] h-screen w-full cursor-default select-none bg-primary/30 opacity-0 pointer-events-none shadow-[inset_0_0_50px_rgba(0,0,0,0.4)] backdrop-blur-[45px] transition duration-300 ease-mil [&.mil-active]:z-[999] [&.mil-active]:opacity-100 [&.mil-active]:pointer-events-auto">
     <a href="/home" title="DottScale" class="mil-logo">
         <img src="/images/dottscale-logo-alt.png" alt="DottScale" width="200" height="58">
@@ -49,47 +56,22 @@
                                                             <div>
                                     <div class="title-menu mb-2.5 font-primary text-base font-normal tracking-[2.5px]">Our Services</div>
                                     <ul class="mil-menu-list">
-                                                                                    <li><a href="/services/enterprise-solutions"
-                                                    >Enterprise Solutions</a>
-                                            </li>
-                                                                                    <li><a href="/services/ai-and-automation"
-                                                    >AI and Automation</a>
-                                            </li>
-                                                                                    <li><a href="/services/mvp-design-and-development"
-                                                    >MVP Design &amp; Development</a>
-                                            </li>
-                                                                                    <li><a href="/services/web-and-mobile-development"
-                                                    >Web and Mobile App Development</a>
-                                            </li>
-                                                                                    <li><a href="/services/quality-assurance"
-                                                    >Quality Assurance</a>
-                                            </li>
-                                                                                    <li><a href="/services/dedicated-teams"
-                                                    >Dedicated Teams</a>
-                                            </li>
+                                        @forelse($navServices as $svc)
+                                            <li><a href="/{{ ltrim($svc->route ?? '#', '/') }}">{{ $svc->service_name }}</a></li>
+                                        @empty
+                                            <li><a href="#services">Services</a></li>
+                                        @endforelse
                                                                             </ul>
                                 </div>
                                                             <div>
                                     <div class="title-menu mb-2.5 font-primary text-base font-normal tracking-[2.5px]">Our Work</div>
                                     <ul class="mil-menu-list">
-                                                                                    <li><a href="/our-work/khan-law"
-                                                    >Khan Law</a>
-                                            </li>
-                                                                                    <li><a href="/our-work/vape-suite"
-                                                    >Vape Suite</a>
-                                            </li>
-                                                                                    <li><a href="/our-work/bni-inks"
-                                                    >Bni Inks</a>
-                                            </li>
-                                                                                    <li><a href="/our-work/source-code-academia"
-                                                    >Source Code Academia</a>
-                                            </li>
-                                                                                    <li><a href="/our-work/green-earth-recyling"
-                                                    >Green Earth Recyling</a>
-                                            </li>
-                                                                                    <li><a href="/our-work"
-                                                    >View All -&gt;</a>
-                                            </li>
+                                        @forelse($navPortfolios as $work)
+                                            <li><a href="/{{ ltrim($work->page_route ?? '#', '/') }}">{{ $work->portfolio_name }}</a></li>
+                                        @empty
+                                            <li><a href="/our-work">Our Work</a></li>
+                                        @endforelse
+                                                                                    <li><a href="/our-work">View All -&gt;</a></li>
                                                                             </ul>
                                 </div>
                             
@@ -201,4 +183,3 @@
         </div>
     </div>
 </div>
-@endverbatim
