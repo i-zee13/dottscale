@@ -3,7 +3,7 @@
     <div id="product-cl-sec">
         <a href="javascript:void(0);" id="pl-close" class="close-btn-pl"></a>
         <div class="pro-header-text">Service <span>Details</span></div>
-        <div style="min-height: 400px" id="dataSidebarLoader" style="display: none">
+        <div id="dataSidebarLoader" style="display:none; min-height:400px; position:relative;">
             <img src="/images/loader.gif" width="30px" height="auto" style="position: absolute; left: 50%; top: 45%;">
         </div>
         <div class="pc-cartlist">
@@ -41,8 +41,7 @@
                                                     </div>
                                                     <div class="col-md-12 PB-10">
                                                         <div class="form-wrap p-0">
-                                                            <label class="font13 mb-5">Upload Icon *</label>
-                                                            <input type="hidden" name="hidden_icon" value="">
+                                                            <label class="font13 mb-5">Upload Icon</label>
                                                             <input type="file" name="icon_file" class="dropify"
                                                                 data-old_input="hidden_icon"
                                                                 accept="image/*,.svg"
@@ -111,14 +110,12 @@
                     <a class="btn add_button add-service"><i class="fa fa-plus"></i> New Service</a>
                     <h2>Services List</h2>
                 </div>
-                <div style="min-height: 400px" id="tblLoader">
+                <div style="min-height: 400px; position:relative;" id="tblLoader">
                     <img src="/images/loader.gif" width="30px" height="auto" style="position: absolute; left: 50%; top: 45%;">
                 </div>
-                <div class="body" style="display: none"></div>
+                <div class="body services-body" style="display: none"></div>
             </div>
         </div>
     </div>
+<script src="{{ asset('js/custom/website-services.js') }}?v=2"></script>
 @endsection
-@push('js')
-    <script src="{{ asset('js/custom/website-services.js') }}"></script>
-@endpush
