@@ -42,10 +42,10 @@ Get more local visibility with Local SEO services in Austin, TX. Dott Scale help
         ['title' => 'Competitive Opportunities', 'text' => 'We look beyond your own website to understand which businesses are competing for the same local customers, where they are stronger, and where realistic opportunities exist for your business to compete.', 'icon' => 'chart'],
     ];
     $outcomes = [
-        ['title' => 'Reach Customers With Local Intent', 'text' => 'Focus on searches from people who are actively looking for the services or solutions your business provides.', 'icon' => 'signal'],
-        ['title' => 'Give Visitors a Reason to Choose You', 'text' => 'Once customers find your business, clear services, useful information, trust signals, and strong messaging can help them decide whether to take the next step.', 'icon' => 'gauge'],
-        ['title' => 'Create Clear Paths to Contact', 'text' => 'Your website and local presence should make it easy for potential customers to call, request a quote, book a service, visit your location, or get in touch.', 'icon' => 'path'],
-        ['title' => 'Measure What Matters', 'text' => 'We look beyond rankings alone and consider the broader picture — including visibility, relevant traffic, inquiries, and other meaningful actions connected to your business goals.', 'icon' => 'growth'],
+        ['title' => 'Reach Customers With Local Intent', 'text' => 'Focus on searches from people who are actively looking for the services or solutions your business provides.', 'image' => '/images/local-seo/local-seo-ai-local-intent.jpg', 'alt' => 'AI local search targeting map'],
+        ['title' => 'Give Visitors a Reason to Choose You', 'text' => 'Once customers find your business, clear services, useful information, trust signals, and strong messaging can help them decide whether to take the next step.', 'image' => '/images/local-seo/local-seo-ai-choose-you.jpg', 'alt' => 'AI trust and customer choice'],
+        ['title' => 'Create Clear Paths to Contact', 'text' => 'Your website and local presence should make it easy for potential customers to call, request a quote, book a service, visit your location, or get in touch.', 'image' => '/images/local-seo/local-seo-ai-contact-paths.jpg', 'alt' => 'AI contact and conversion paths'],
+        ['title' => 'Measure What Matters', 'text' => 'We look beyond rankings alone and consider the broader picture — including visibility, relevant traffic, inquiries, and other meaningful actions connected to your business goals.', 'image' => '/images/local-seo/local-seo-ai-measure.jpg', 'alt' => 'AI analytics and performance measurement'],
     ];
     $seoIcons = [
         'search' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14z"/>',
@@ -175,10 +175,10 @@ Get more local visibility with Local SEO services in Austin, TX. Dott Scale help
 </section>
 
 {{-- 4. Strategy — reference: icon grid / executive view --}}
-<section class="py-8 md:py-14 relative z-[1]" style="background-color:#ffffff;">
-    <div class="container mx-auto px-3 sm:px-4">
+<section class="relative z-[1] mx-3 sm:mx-4 md:mx-6 lg:mx-auto lg:max-w-[1200px] xl:max-w-[1280px]" style="background-color:#ffffff;border-radius:16px;padding:48px 20px 56px;">
+    <div class="container mx-auto px-3 sm:px-4 md:px-6">
         <div class="w-full lg:w-[70%] mb-8 md:mb-12">
-            <div class="inline-flex items-center gap-2 text-white text-[11px] font-primary uppercase tracking-[2px] rounded-full px-3 py-1.5 mb-4 md:mb-5" style="background-color:#0B1B33;">
+            <div class="inline-flex items-center gap-2 text-white text-[11px] font-primary uppercase tracking-[2px] rounded-full px-3 py-1.5 mb-5 md:mb-6" style="background-color:#0B1B33;">
                 <span class="font-bold text-sm leading-none" style="color:#E31B23;">+</span>
                 <span>Local Strategy</span>
             </div>
@@ -202,11 +202,11 @@ Get more local visibility with Local SEO services in Austin, TX. Dott Scale help
 {{-- 5. Visibility to opportunities — reference: growth engine card --}}
 <section class="py-5 md:py-10">
     <div class="container mx-auto px-3 sm:px-4">
-        <div class="relative overflow-hidden rounded-[12px] md:rounded-[16px] border border-white/10 bg-[#12151C]/90] backdrop-blur-[30px] p-5 sm:p-8 md:p-12 shadow-[inset_0_0_60px_rgba(255,255,255,0.04)]">
+        <div class="relative overflow-hidden border border-white/10 bg-[#12151C]/90] backdrop-blur-[30px] shadow-[inset_0_0_60px_rgba(255,255,255,0.04)] sm:!p-10 md:!p-14" style="border-radius:20px;padding:40px 24px 48px;">
             <div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[80%] h-48 bg-gradient-to-b from-[#E31B23]/35 via-[#FF6A00]/15 to-transparent blur-3xl"></div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="absolute top-5 right-5 md:top-8 md:right-8 text-white/80"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="absolute top-8 right-6 md:top-10 md:right-10 text-white/80"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg>
             <div class="relative z-[1]">
-                <div class="inline-flex items-center gap-2 bg-white/10 border border-white/10 text-white text-[11px] font-primary uppercase tracking-[2px] rounded-full px-3 py-1.5 mb-4 md:mb-6">
+                <div class="inline-flex items-center gap-2 bg-white/10 border border-white/10 text-white text-[11px] font-primary uppercase tracking-[2px] rounded-full px-3 py-1.5 mb-5 md:mb-7">
                     <span class="w-1.5 h-1.5 rounded-full bg-[#E31B23]"></span>
                     <span>Growth Engine</span>
                 </div>
@@ -215,7 +215,9 @@ Get more local visibility with Local SEO services in Austin, TX. Dott Scale help
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 pt-2 md:pt-4 border-t border-white/10">
                     @foreach($outcomes as $item)
                     <div class="flex flex-col items-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" class="w-7 h-7 mb-3 md:mb-4 opacity-90">{!! $seoIcons[$item['icon']] ?? $seoIcons['growth'] !!}</svg>
+                        <figure class="mb-3 md:mb-4 w-full max-w-[120px]">
+                            <img src="{{ $item['image'] }}" alt="{{ $item['alt'] }}" width="120" height="120" class="w-[88px] h-[88px] md:w-[112px] md:h-[112px] object-cover rounded-[10px] border border-white/10">
+                        </figure>
                         <h3 data-raw-content="true" class="font-primary text-base md:text-lg font-semibold text-white mb-2">{{ $item['title'] }}</h3>
                         <p data-raw-content="true" class="font-secondary text-sm text-white/60 m-0 leading-relaxed">{{ $item['text'] }}</p>
                     </div>
