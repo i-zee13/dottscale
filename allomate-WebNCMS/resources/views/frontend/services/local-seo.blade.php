@@ -136,6 +136,15 @@ Get more local visibility with Local SEO services in Austin, TX. Dott Scale help
     </div>
 </section>
 
+{{-- Hero visual --}}
+<section class="pt-2 pb-6 md:pt-4 md:pb-10">
+    <div class="container mx-auto px-3 sm:px-4">
+        <figure class="relative overflow-hidden" style="border-radius:16px;">
+            <img src="/images/local-seo/local-seo-hero-austin.jpg" alt="Austin local businesses getting found on Google Search and Maps" width="1600" height="900" class="w-full h-[220px] sm:h-[320px] md:h-[420px] lg:h-[520px] object-cover" style="border-radius:16px;">
+        </figure>
+    </div>
+</section>
+
 {{-- 2. Why visibility fails --}}
 <section class="py-5 md:py-10">
     <div class="container mx-auto px-3 sm:px-4">
