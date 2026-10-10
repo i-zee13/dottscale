@@ -34,18 +34,30 @@ Get more local visibility with Local SEO services in Austin, TX. Dott Scale help
         ['title' => 'Performance Informs the Next Opportunity', 'text' => 'Local SEO should be evaluated against actual search visibility, relevant traffic, inquiries, and competitive changes so future priorities are based on what is happening in the market.'],
     ];
     $strategyPillars = [
-        ['title' => 'Local Search & Keyword Strategy', 'text' => 'We identify the searches that matter to your business, including the services, locations, and search intent behind them. This helps prioritize opportunities instead of targeting keywords simply because they have search volume.'],
-        ['title' => 'Website & On-Page SEO', 'text' => 'Your important service and location information needs to be clear, useful, and properly structured. We improve the pages that support your local search opportunities while keeping the website focused on what customers actually need.'],
-        ['title' => 'Google Maps & Local Search Visibility', 'text' => 'We work to strengthen your presence across local search results and Google Maps so your business has a stronger opportunity to reach customers looking for nearby services.'],
-        ['title' => 'Business Information & Local Listings', 'text' => 'Accurate business information matters across the places where customers and search engines encounter your business. We identify inconsistencies, outdated information, and relevant listing opportunities that may affect your local presence.'],
-        ['title' => 'Local Authority & Trust', 'text' => 'Local relevance is supported by more than your own website. Relevant references, genuine customer feedback, local mentions, and other trust signals can help establish your business within its market.'],
-        ['title' => 'Competitive Opportunities', 'text' => 'We look beyond your own website to understand which businesses are competing for the same local customers, where they are stronger, and where realistic opportunities exist for your business to compete.'],
+        ['title' => 'Local Search & Keyword Strategy', 'text' => 'We identify the searches that matter to your business, including the services, locations, and search intent behind them. This helps prioritize opportunities instead of targeting keywords simply because they have search volume.', 'icon' => 'search'],
+        ['title' => 'Website & On-Page SEO', 'text' => 'Your important service and location information needs to be clear, useful, and properly structured. We improve the pages that support your local search opportunities while keeping the website focused on what customers actually need.', 'icon' => 'layout'],
+        ['title' => 'Google Maps & Local Search Visibility', 'text' => 'We work to strengthen your presence across local search results and Google Maps so your business has a stronger opportunity to reach customers looking for nearby services.', 'icon' => 'map'],
+        ['title' => 'Business Information & Local Listings', 'text' => 'Accurate business information matters across the places where customers and search engines encounter your business. We identify inconsistencies, outdated information, and relevant listing opportunities that may affect your local presence.', 'icon' => 'list'],
+        ['title' => 'Local Authority & Trust', 'text' => 'Local relevance is supported by more than your own website. Relevant references, genuine customer feedback, local mentions, and other trust signals can help establish your business within its market.', 'icon' => 'shield'],
+        ['title' => 'Competitive Opportunities', 'text' => 'We look beyond your own website to understand which businesses are competing for the same local customers, where they are stronger, and where realistic opportunities exist for your business to compete.', 'icon' => 'chart'],
     ];
     $outcomes = [
-        ['title' => 'Reach Customers With Local Intent', 'text' => 'Focus on searches from people who are actively looking for the services or solutions your business provides.'],
-        ['title' => 'Give Visitors a Reason to Choose You', 'text' => 'Once customers find your business, clear services, useful information, trust signals, and strong messaging can help them decide whether to take the next step.'],
-        ['title' => 'Create Clear Paths to Contact', 'text' => 'Your website and local presence should make it easy for potential customers to call, request a quote, book a service, visit your location, or get in touch.'],
-        ['title' => 'Measure What Matters', 'text' => 'We look beyond rankings alone and consider the broader picture — including visibility, relevant traffic, inquiries, and other meaningful actions connected to your business goals.'],
+        ['title' => 'Reach Customers With Local Intent', 'text' => 'Focus on searches from people who are actively looking for the services or solutions your business provides.', 'icon' => 'signal'],
+        ['title' => 'Give Visitors a Reason to Choose You', 'text' => 'Once customers find your business, clear services, useful information, trust signals, and strong messaging can help them decide whether to take the next step.', 'icon' => 'gauge'],
+        ['title' => 'Create Clear Paths to Contact', 'text' => 'Your website and local presence should make it easy for potential customers to call, request a quote, book a service, visit your location, or get in touch.', 'icon' => 'path'],
+        ['title' => 'Measure What Matters', 'text' => 'We look beyond rankings alone and consider the broader picture — including visibility, relevant traffic, inquiries, and other meaningful actions connected to your business goals.', 'icon' => 'growth'],
+    ];
+    $seoIcons = [
+        'search' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14z"/>',
+        'layout' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5h16M4 12h10M4 19h7"/><rect x="16" y="10" width="4" height="9" rx="1" stroke-width="1.5"/>',
+        'map' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5-2V6l5 2 6-2 5 2v12l-5-2-6 2zM9 8v12M15 6v12"/>',
+        'list' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/>',
+        'shield' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6l8-3z"/>',
+        'chart' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 19V5M4 19h16M8 15v-4M12 15V8M16 15v-6"/>',
+        'signal' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14a2 2 0 100-4 2 2 0 000 4zM8.5 9.5a5 5 0 000 5M15.5 9.5a5 5 0 010 5M6 7a8 8 0 000 10M18 7a8 8 0 010 10"/>',
+        'gauge' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 16V9l4 2M5.5 17.5A8 8 0 1118.5 17.5"/>',
+        'path' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h10M11 8l4 4-4 4M5 19h6"/>',
+        'growth' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"/>',
     ];
     $processSteps = [
         ['n' => '01', 'title' => 'Assess', 'text' => 'We review your current local search presence, website, competitors, and key opportunities to understand where visibility may be limited.'],
@@ -162,38 +174,54 @@ Get more local visibility with Local SEO services in Austin, TX. Dott Scale help
     </div>
 </section>
 
-{{-- 4. Strategy --}}
-<section class="py-5 md:py-10">
+{{-- 4. Strategy — reference: icon grid / executive view --}}
+<section class="py-8 md:py-14 bg-[#F3F5F7]">
     <div class="container mx-auto px-3 sm:px-4">
-        <div class="w-full md:w-[80%] lg:w-[65%] mb-5 md:mb-8">
-            <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-primary mb-3 md:mb-4">Your Local SEO Strategy</h2>
-            <p data-raw-content="true" class="font-secondary text-sm sm:text-base text-bodybg/70">There is no single change that makes a business visible for every local search. Effective Local SEO brings together the areas that influence how your business is discovered, understood, evaluated, and chosen.</p>
+        <div class="w-full lg:w-[70%] mb-8 md:mb-12">
+            <div class="inline-flex items-center gap-2 bg-[#0B1B33] text-white text-[11px] font-primary uppercase tracking-[2px] rounded-full px-3 py-1.5 mb-4 md:mb-5">
+                <span class="text-[#E31B23] font-bold text-sm leading-none">+</span>
+                <span>Local Strategy</span>
+            </div>
+            <h2 data-raw-content="true" class="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-bold text-[#0B1B33] font-primary mb-3 md:mb-4 leading-tight">Your Local SEO Strategy</h2>
+            <p data-raw-content="true" class="font-secondary text-sm sm:text-base text-[#5A6578] max-w-3xl">There is no single change that makes a business visible for every local search. Effective Local SEO brings together the areas that influence how your business is discovered, understood, evaluated, and chosen.</p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 md:gap-x-8 md:gap-y-10">
             @foreach($strategyPillars as $item)
-            <div class="bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-4 md:p-6">
-                <h3 data-raw-content="true" class="font-primary text-lg font-semibold text-bodybg mb-2">{{ $item['title'] }}</h3>
-                <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70 m-0">{{ $item['text'] }}</p>
+            <div class="flex flex-col items-start">
+                <div class="w-11 h-11 rounded-[6px] bg-[#0B1B33] flex items-center justify-center mb-3 md:mb-4 shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" class="w-5 h-5">{!! $seoIcons[$item['icon']] ?? $seoIcons['search'] !!}</svg>
+                </div>
+                <h3 data-raw-content="true" class="font-primary text-base md:text-lg font-semibold text-[#0B1B33] mb-2">{{ $item['title'] }}</h3>
+                <p data-raw-content="true" class="font-secondary text-sm text-[#5A6578] m-0 leading-relaxed">{{ $item['text'] }}</p>
             </div>
             @endforeach
         </div>
     </div>
 </section>
 
-{{-- 5. Visibility to opportunities --}}
+{{-- 5. Visibility to opportunities — reference: growth engine card --}}
 <section class="py-5 md:py-10">
     <div class="container mx-auto px-3 sm:px-4">
-        <div class="w-full md:w-[80%] lg:w-[65%] mb-5 md:mb-8">
-            <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-primary mb-3 md:mb-4">From Local Visibility to Real Business Opportunities</h2>
-            <p data-raw-content="true" class="font-secondary text-sm sm:text-base text-bodybg/70">Getting discovered is only the beginning. A successful local search strategy should help move the right people from a Google search to a meaningful business action.</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
-            @foreach($outcomes as $item)
-            <div class="bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-4 md:p-6">
-                <h3 data-raw-content="true" class="font-primary text-lg font-semibold text-bodybg mb-2">{{ $item['title'] }}</h3>
-                <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70 m-0">{{ $item['text'] }}</p>
+        <div class="relative overflow-hidden rounded-[12px] md:rounded-[16px] border border-white/10 bg-[#12151C]/90] backdrop-blur-[30px] p-5 sm:p-8 md:p-12 shadow-[inset_0_0_60px_rgba(255,255,255,0.04)]">
+            <div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[80%] h-48 bg-gradient-to-b from-[#E31B23]/35 via-[#FF6A00]/15 to-transparent blur-3xl"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="absolute top-5 right-5 md:top-8 md:right-8 text-white/80"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg>
+            <div class="relative z-[1]">
+                <div class="inline-flex items-center gap-2 bg-white/10 border border-white/10 text-white text-[11px] font-primary uppercase tracking-[2px] rounded-full px-3 py-1.5 mb-4 md:mb-6">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#E31B23]"></span>
+                    <span>Growth Engine</span>
+                </div>
+                <h2 data-raw-content="true" class="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-bold text-white font-primary mb-4 md:mb-5 leading-tight max-w-3xl">From Local Visibility to Real Business Opportunities</h2>
+                <p data-raw-content="true" class="font-secondary text-sm sm:text-base text-white/70 mb-8 md:mb-12 max-w-3xl">Getting discovered is only the beginning. A successful local search strategy should help move the right people from a Google search to a meaningful business action.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 pt-2 md:pt-4 border-t border-white/10">
+                    @foreach($outcomes as $item)
+                    <div class="flex flex-col items-start">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" class="w-7 h-7 mb-3 md:mb-4 opacity-90">{!! $seoIcons[$item['icon']] ?? $seoIcons['growth'] !!}</svg>
+                        <h3 data-raw-content="true" class="font-primary text-base md:text-lg font-semibold text-white mb-2">{{ $item['title'] }}</h3>
+                        <p data-raw-content="true" class="font-secondary text-sm text-white/60 m-0 leading-relaxed">{{ $item['text'] }}</p>
+                    </div>
+                    @endforeach
+                </div>
             </div>
-            @endforeach
         </div>
     </div>
 </section>
