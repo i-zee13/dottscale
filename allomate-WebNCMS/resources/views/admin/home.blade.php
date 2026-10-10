@@ -63,8 +63,9 @@
         @csrf
         <input type="hidden" value="{{ $hasData ? $data->id : '' }}" name="id">
 
+        <div class="home-admin-sections" style="display:flex;flex-direction:column;width:100%;">
         {{-- Hero Section --}}
-        <div class="col-12 mb-30">
+        <div class="col-12 mb-30" style="order:{{ $prio('hero') }}">
             <div class="card">
                 <div class="header d-flex justify-content-between align-items-center flex-wrap">
                     <h2 class="mb-0">Hero <span>Section</span></h2>
@@ -159,7 +160,7 @@
         </div>
 
         {{-- About Section --}}
-        <div class="col-12 mb-30">
+        <div class="col-12 mb-30" style="order:{{ $prio('about') }}">
             <div class="card">
                 <div class="header d-flex justify-content-between align-items-center flex-wrap">
                     <h2 class="mb-0">About <span>Section</span></h2>
@@ -232,7 +233,7 @@
         </div>
 
         {{-- Stats --}}
-        <div class="col-12 mb-30">
+        <div class="col-12 mb-30" style="order:{{ $prio('stats') }}">
             <div class="card">
                 <div class="header d-flex justify-content-between align-items-center flex-wrap">
                     <h2 class="mb-0">Stats <span>Section</span></h2>
@@ -261,7 +262,7 @@
         </div>
 
         {{-- Services intro --}}
-        <div class="col-12 mb-30">
+        <div class="col-12 mb-30" style="order:{{ $prio('services') }}">
             <div class="card">
                 <div class="header d-flex justify-content-between align-items-center flex-wrap">
                     <h2 class="mb-0">Services <span>Section Intro</span></h2>
@@ -291,7 +292,7 @@
         </div>
 
         {{-- Why --}}
-        <div class="col-12 mb-30">
+        <div class="col-12 mb-30" style="order:{{ $prio('why') }}">
             <div class="card">
                 <div class="header d-flex justify-content-between align-items-center flex-wrap">
                     <h2 class="mb-0">Why <span>Dott Scale</span></h2>
@@ -332,7 +333,7 @@
         </div>
 
         {{-- Process --}}
-        <div class="col-12 mb-30">
+        <div class="col-12 mb-30" style="order:{{ $prio('process') }}">
             <div class="card">
                 <div class="header d-flex justify-content-between align-items-center flex-wrap">
                     <h2 class="mb-0">Process <span>Section</span></h2>
@@ -377,7 +378,7 @@
         </div>
 
         {{-- Proof --}}
-        <div class="col-12 mb-30">
+        <div class="col-12 mb-30" style="order:{{ $prio('proof') }}">
             <div class="card">
                 <div class="header d-flex justify-content-between align-items-center flex-wrap">
                     <h2 class="mb-0">Proof <span>Section</span></h2>
@@ -433,7 +434,7 @@
         </div>
 
         {{-- Industries --}}
-        <div class="col-12 mb-30">
+        <div class="col-12 mb-30" style="order:{{ $prio('industries') }}">
             <div class="card">
                 <div class="header d-flex justify-content-between align-items-center flex-wrap">
                     <h2 class="mb-0">Industries <span>Section</span></h2>
@@ -467,7 +468,7 @@
         </div>
 
         {{-- Local visibility --}}
-        <div class="col-12 mb-30">
+        <div class="col-12 mb-30" style="order:{{ $prio('visibility') }}">
             <div class="card">
                 <div class="header d-flex justify-content-between align-items-center flex-wrap">
                     <h2 class="mb-0">Local <span>Visibility</span></h2>
@@ -531,7 +532,7 @@
         </div>
 
         {{-- Bottom CTA --}}
-        <div class="col-12 mb-30">
+        <div class="col-12 mb-30" style="order:{{ $prio('cta') }}">
             <div class="card">
                 <div class="header d-flex justify-content-between align-items-center flex-wrap">
                     <h2 class="mb-0">Bottom <span>CTA</span></h2>
@@ -570,6 +571,8 @@
                 </div>
             </div>
         </div>
+
+        </div>{{-- /.home-admin-sections --}}
 
         {{-- Meta Content --}}
         <div class="col-12 mb-30">

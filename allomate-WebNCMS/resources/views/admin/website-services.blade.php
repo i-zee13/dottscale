@@ -117,5 +117,7 @@
             </div>
         </div>
     </div>
-<script src="{{ asset('js/custom/website-services.js') }}?v=2"></script>
 @endsection
+@push('js')
+<script src="{{ asset('js/custom/website-services.js') }}?v=3"></script>
+@endpush
