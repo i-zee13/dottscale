@@ -103,7 +103,7 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
         'Local citations and listings', 'Local landing pages built to convert',
     ]);
     $visibilityCtaText = $home?->visibility_cta_text ?? 'See our Local SEO service';
-    $visibilityCtaLink = $home?->visibility_cta_link ?? 'services/enterprise-solutions';
+    $visibilityCtaLink = $home?->visibility_cta_link ?? 'services/local-seo';
     $visibilityCardTitle = $home?->visibility_card_title ?? 'Dott Scale';
     $visibilityCardSubtitle = $home?->visibility_card_subtitle ?? 'Austin, Texas';
     $visibilityCardRating = $home?->visibility_card_rating ?? '★★★★★ 4.9 on Google · 40+ reviews';

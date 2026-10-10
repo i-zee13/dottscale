@@ -150,7 +150,7 @@ class AddHomePageSectionCmsFields extends Migration
                 'Local landing pages built to convert',
             ]),
             'visibility_cta_text' => 'See our Local SEO service',
-            'visibility_cta_link' => 'services/enterprise-solutions',
+            'visibility_cta_link' => 'services/local-seo',
             'visibility_card_title' => 'Dott Scale',
             'visibility_card_subtitle' => 'Austin, Texas',
             'visibility_card_rating' => '★★★★★ 4.9 on Google · 40+ reviews',

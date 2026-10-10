@@ -29,6 +29,7 @@ Route::get('/our-work/source-code-academia', [FrontendController::class, 'page']
 Route::get('/our-work/vape-suite', [FrontendController::class, 'page'])->defaults('page', 'our-work.vape-suite');
 
 Route::get('/services/enterprise-solutions', [FrontendController::class, 'page'])->defaults('page', 'services.enterprise-solutions');
+Route::get('/services/local-seo', [FrontendController::class, 'page'])->defaults('page', 'services.local-seo');
 Route::get('/services/ai-and-automation', [FrontendController::class, 'page'])->defaults('page', 'services.ai-and-automation');
 Route::get('/services/mvp-design-and-development', [FrontendController::class, 'page'])->defaults('page', 'services.mvp-design-and-development');
 Route::get('/services/web-and-mobile-development', [FrontendController::class, 'page'])->defaults('page', 'services.web-and-mobile-development');

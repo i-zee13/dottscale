@@ -99,7 +99,7 @@ class DottscaleCmsSeeder
                 'slug' => 'local-seo',
                 'description' => 'Rank higher in Google Search and Maps for the terms your customers use.',
                 'icon' => '/cms-uploads/chart.svg',
-                'route' => 'services/enterprise-solutions',
+                'route' => 'services/local-seo',
                 'sort_order' => 2,
             ],
             [
