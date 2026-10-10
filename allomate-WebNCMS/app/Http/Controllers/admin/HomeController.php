@@ -162,13 +162,42 @@ class HomeController extends Controller
                 }
             }
         }
+
+        $decode = function ($raw, $fallback = []) {
+            if (empty($raw)) {
+                return $fallback;
+            }
+            $decoded = is_string($raw) ? json_decode($raw, true) : $raw;
+            return is_array($decoded) ? $decoded : $fallback;
+        };
+
+        $stats = $decode($data->stats_json ?? null, [
+            ['value' => '40+', 'label' => 'Businesses helped'],
+            ['value' => '5+', 'label' => 'Years of experience'],
+            ['value' => '120+', 'label' => 'Projects completed'],
+            ['value' => '4.9★', 'label' => 'Average client rating'],
+        ]);
+        $whyItems = $decode($data->why_json ?? null, []);
+        $aboutList = $decode($data->about_list_json ?? null, []);
+        $processItems = $decode($data->process_json ?? null, []);
+        $proofItems = $decode($data->proof_json ?? null, []);
+        $industries = $decode($data->industries_json ?? null, []);
+        $visibilityList = $decode($data->visibility_list_json ?? null, []);
+
         return view('admin.home', compact(
             'data',
             'meta_content_author',
             'meta_content_keywords',
             'meta_content_description',
             'meta_og_title',
-            'meta_og_description'
+            'meta_og_description',
+            'stats',
+            'whyItems',
+            'aboutList',
+            'processItems',
+            'proofItems',
+            'industries',
+            'visibilityList'
         ));
     }
     public function store(Request $request)
@@ -220,6 +249,59 @@ class HomeController extends Controller
         $about->paragraph      = $request->paragraph;
         $about->page_meta_tags = $metaArray;
         $about->meta_og_image  = $meta_og_image;
+
+        $stringFields = [
+            'services_eyebrow', 'services_heading',
+            'why_eyebrow', 'why_heading',
+            'about_eyebrow',
+            'process_eyebrow', 'process_heading',
+            'proof_eyebrow', 'proof_heading',
+            'industries_eyebrow', 'industries_heading',
+            'visibility_eyebrow', 'visibility_heading',
+            'visibility_cta_text', 'visibility_cta_link',
+            'visibility_card_title', 'visibility_card_subtitle', 'visibility_card_rating',
+            'cta_heading', 'cta_paragraph', 'cta_primary_text', 'cta_secondary_text',
+            'hero_cta_primary', 'hero_cta_secondary',
+        ];
+        foreach ($stringFields as $field) {
+            if ($request->has($field) && Schema::hasColumn('home', $field)) {
+                $about->{$field} = $request->{$field};
+            }
+        }
+
+        $jsonMap = [
+            'stats' => 'stats_json',
+            'why' => 'why_json',
+            'about_list' => 'about_list_json',
+            'process' => 'process_json',
+            'proof' => 'proof_json',
+            'industries' => 'industries_json',
+            'visibility_list' => 'visibility_list_json',
+        ];
+        foreach ($jsonMap as $input => $column) {
+            if (!Schema::hasColumn('home', $column)) {
+                continue;
+            }
+            if ($request->has($input)) {
+                $items = array_values(array_filter((array) $request->input($input, []), function ($row) {
+                    if (is_array($row)) {
+                        return collect($row)->filter(fn ($v) => filled($v))->isNotEmpty();
+                    }
+                    return filled($row);
+                }));
+                // industries / about_list / visibility_list may be flat strings
+                if (in_array($column, ['industries_json', 'about_list_json', 'visibility_list_json'], true)) {
+                    $items = array_values(array_filter(array_map(function ($row) {
+                        return is_array($row) ? ($row['label'] ?? $row['text'] ?? reset($row) ?: null) : $row;
+                    }, $items)));
+                }
+                $about->{$column} = json_encode($items);
+            } elseif ($request->filled($column)) {
+                $raw = $request->{$column};
+                $about->{$column} = is_array($raw) ? json_encode($raw) : $raw;
+            }
+        }
+
         $about->created_by     = $about->created_by ?: Auth::user()->id;
         $about->updated_by     = Auth::user()->id;
         $about->save();

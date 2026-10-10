@@ -12,6 +12,20 @@
         }
         return '/storage/' . ltrim($path, '/');
     };
+    $stats = $stats ?? [];
+    $whyItems = $whyItems ?? [];
+    $aboutList = $aboutList ?? [];
+    $processItems = $processItems ?? [];
+    $proofItems = $proofItems ?? [];
+    $industries = $industries ?? [];
+    $visibilityList = $visibilityList ?? [];
+    while (count($stats) < 4) { $stats[] = ['value' => '', 'label' => '']; }
+    while (count($whyItems) < 6) { $whyItems[] = ['title' => '', 'text' => '']; }
+    while (count($aboutList) < 8) { $aboutList[] = ''; }
+    while (count($processItems) < 4) { $processItems[] = ['n' => '', 'title' => '', 'text' => '']; }
+    while (count($proofItems) < 2) { $proofItems[] = ['client' => '', 'title' => '', 'text' => '', 'stats' => [['value' => '', 'label' => ''], ['value' => '', 'label' => '']]]; }
+    while (count($industries) < 7) { $industries[] = ''; }
+    while (count($visibilityList) < 5) { $visibilityList[] = ''; }
 @endphp
 
 <div class="row mt-2 mb-3">
@@ -54,6 +68,20 @@
                                         <label class="control-label mb-10">Hero Paragraph *</label>
                                         <textarea class="proTextarea req" rows="4" name="heading_2"
                                             placeholder="From FMCG to PropTech to eCommerce...">{{ $hasData ? $data->heading_2 : '' }}</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 PB-10">
+                                    <div class="form-group">
+                                        <label class="control-label mb-10">Primary CTA Text</label>
+                                        <input type="text" class="form-control" name="hero_cta_primary"
+                                            value="{{ $hasData ? ($data->hero_cta_primary ?? 'Get a Free Strategy Call') : 'Get a Free Strategy Call' }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 PB-10">
+                                    <div class="form-group">
+                                        <label class="control-label mb-10">Secondary CTA Text</label>
+                                        <input type="text" class="form-control" name="hero_cta_secondary"
+                                            value="{{ $hasData ? ($data->hero_cta_secondary ?? 'Get Started') : 'Get Started' }}">
                                     </div>
                                 </div>
 
@@ -118,7 +146,14 @@
                     <div id="floating-label">
                         <div class="form-wrap p-0">
                             <div class="row">
-                                <div class="col-md-12 PB-10">
+                                <div class="col-md-6 PB-10">
+                                    <div class="form-group">
+                                        <label class="control-label mb-10">Eyebrow</label>
+                                        <input type="text" class="form-control" name="about_eyebrow"
+                                            value="{{ $hasData ? ($data->about_eyebrow ?? 'Local to Austin') : 'Local to Austin' }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 PB-10">
                                     <div class="form-group">
                                         <label class="control-label mb-10">About Heading *</label>
                                         <input type="text" class="form-control req" name="large_heading"
@@ -130,6 +165,16 @@
                                     <label class="font12">About Paragraph *</label>
                                     <textarea class="proTextarea req" rows="5" name="paragraph"
                                         placeholder="We are not here to sell code...">{{ $hasData ? $data->paragraph : '' }}</textarea>
+                                </div>
+                                <div class="col-md-12 PB-10">
+                                    <label class="font12">About List Items</label>
+                                    <div class="row">
+                                        @foreach($aboutList as $i => $item)
+                                        <div class="col-md-6 PB-10">
+                                            <input type="text" class="form-control" name="about_list[{{ $i }}]" value="{{ is_array($item) ? ($item['label'] ?? '') : $item }}">
+                                        </div>
+                                        @endforeach
+                                    </div>
                                 </div>
                                 <div class="col-md-6 PB-10">
                                     <div class="form-group">
@@ -153,6 +198,298 @@
                                             data-min-height="999" data-max-height="1001" />
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Stats --}}
+        <div class="col-12 mb-30">
+            <div class="card">
+                <div class="header"><h2>Stats <span>Section</span></h2></div>
+                <div class="body">
+                    <div class="row">
+                        @foreach($stats as $i => $stat)
+                        <div class="col-md-3 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Stat {{ $i + 1 }} Value</label>
+                                <input type="text" class="form-control" name="stats[{{ $i }}][value]" value="{{ $stat['value'] ?? '' }}">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label mb-10">Stat {{ $i + 1 }} Label</label>
+                                <input type="text" class="form-control" name="stats[{{ $i }}][label]" value="{{ $stat['label'] ?? '' }}">
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Services intro --}}
+        <div class="col-12 mb-30">
+            <div class="card">
+                <div class="header"><h2>Services <span>Section Intro</span></h2></div>
+                <div class="body">
+                    <div class="row">
+                        <div class="col-md-4 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Eyebrow</label>
+                                <input type="text" class="form-control" name="services_eyebrow" value="{{ $hasData ? ($data->services_eyebrow ?? 'What we do') : 'What we do' }}">
+                            </div>
+                        </div>
+                        <div class="col-md-8 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Heading</label>
+                                <input type="text" class="form-control" name="services_heading" value="{{ $hasData ? ($data->services_heading ?? '') : '' }}">
+                            </div>
+                        </div>
+                        <div class="col-md-12"><p class="text-muted mb-0">Service cards are managed under <strong>Website Services</strong>.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Why --}}
+        <div class="col-12 mb-30">
+            <div class="card">
+                <div class="header"><h2>Why <span>Dott Scale</span></h2></div>
+                <div class="body">
+                    <div class="row">
+                        <div class="col-md-4 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Eyebrow</label>
+                                <input type="text" class="form-control" name="why_eyebrow" value="{{ $hasData ? ($data->why_eyebrow ?? '') : '' }}">
+                            </div>
+                        </div>
+                        <div class="col-md-8 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Heading</label>
+                                <input type="text" class="form-control" name="why_heading" value="{{ $hasData ? ($data->why_heading ?? '') : '' }}">
+                            </div>
+                        </div>
+                        @foreach($whyItems as $i => $item)
+                        <div class="col-md-6 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Card {{ $i + 1 }} Title</label>
+                                <input type="text" class="form-control" name="why[{{ $i }}][title]" value="{{ $item['title'] ?? '' }}">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label mb-10">Card {{ $i + 1 }} Text</label>
+                                <textarea class="form-control" rows="2" name="why[{{ $i }}][text]">{{ $item['text'] ?? '' }}</textarea>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Process --}}
+        <div class="col-12 mb-30">
+            <div class="card">
+                <div class="header"><h2>Process <span>Section</span></h2></div>
+                <div class="body">
+                    <div class="row">
+                        <div class="col-md-4 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Eyebrow</label>
+                                <input type="text" class="form-control" name="process_eyebrow" value="{{ $hasData ? ($data->process_eyebrow ?? '') : '' }}">
+                            </div>
+                        </div>
+                        <div class="col-md-8 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Heading</label>
+                                <input type="text" class="form-control" name="process_heading" value="{{ $hasData ? ($data->process_heading ?? '') : '' }}">
+                            </div>
+                        </div>
+                        @foreach($processItems as $i => $item)
+                        <div class="col-md-6 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Step {{ $i + 1 }} Number</label>
+                                <input type="text" class="form-control" name="process[{{ $i }}][n]" value="{{ $item['n'] ?? str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label mb-10">Step {{ $i + 1 }} Title</label>
+                                <input type="text" class="form-control" name="process[{{ $i }}][title]" value="{{ $item['title'] ?? '' }}">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label mb-10">Step {{ $i + 1 }} Text</label>
+                                <textarea class="form-control" rows="2" name="process[{{ $i }}][text]">{{ $item['text'] ?? '' }}</textarea>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Proof --}}
+        <div class="col-12 mb-30">
+            <div class="card">
+                <div class="header"><h2>Proof <span>Section</span></h2></div>
+                <div class="body">
+                    <div class="row">
+                        <div class="col-md-4 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Eyebrow</label>
+                                <input type="text" class="form-control" name="proof_eyebrow" value="{{ $hasData ? ($data->proof_eyebrow ?? '') : '' }}">
+                            </div>
+                        </div>
+                        <div class="col-md-8 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Heading</label>
+                                <input type="text" class="form-control" name="proof_heading" value="{{ $hasData ? ($data->proof_heading ?? '') : '' }}">
+                            </div>
+                        </div>
+                        @foreach($proofItems as $i => $item)
+                        <div class="col-md-6 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Case {{ $i + 1 }} Client</label>
+                                <input type="text" class="form-control" name="proof[{{ $i }}][client]" value="{{ $item['client'] ?? '' }}">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label mb-10">Case {{ $i + 1 }} Title</label>
+                                <input type="text" class="form-control" name="proof[{{ $i }}][title]" value="{{ $item['title'] ?? '' }}">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label mb-10">Case {{ $i + 1 }} Text</label>
+                                <textarea class="form-control" rows="3" name="proof[{{ $i }}][text]">{{ $item['text'] ?? '' }}</textarea>
+                            </div>
+                            @php $pStats = $item['stats'] ?? [['value'=>'','label'=>''],['value'=>'','label'=>'']]; @endphp
+                            @foreach(array_slice(array_pad($pStats, 2, ['value'=>'','label'=>'']), 0, 2) as $si => $ps)
+                            <div class="row">
+                                <div class="col-md-6 PB-10">
+                                    <input type="text" class="form-control" name="proof[{{ $i }}][stats][{{ $si }}][value]" placeholder="Stat value" value="{{ $ps['value'] ?? '' }}">
+                                </div>
+                                <div class="col-md-6 PB-10">
+                                    <input type="text" class="form-control" name="proof[{{ $i }}][stats][{{ $si }}][label]" placeholder="Stat label" value="{{ $ps['label'] ?? '' }}">
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Industries --}}
+        <div class="col-12 mb-30">
+            <div class="card">
+                <div class="header"><h2>Industries <span>Section</span></h2></div>
+                <div class="body">
+                    <div class="row">
+                        <div class="col-md-4 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Eyebrow</label>
+                                <input type="text" class="form-control" name="industries_eyebrow" value="{{ $hasData ? ($data->industries_eyebrow ?? '') : '' }}">
+                            </div>
+                        </div>
+                        <div class="col-md-8 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Heading</label>
+                                <input type="text" class="form-control" name="industries_heading" value="{{ $hasData ? ($data->industries_heading ?? '') : '' }}">
+                            </div>
+                        </div>
+                        @foreach($industries as $i => $label)
+                        <div class="col-md-4 PB-10">
+                            <input type="text" class="form-control" name="industries[{{ $i }}]" value="{{ is_array($label) ? ($label['label'] ?? '') : $label }}" placeholder="Industry {{ $i + 1 }}">
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Local visibility --}}
+        <div class="col-12 mb-30">
+            <div class="card">
+                <div class="header"><h2>Local <span>Visibility</span></h2></div>
+                <div class="body">
+                    <div class="row">
+                        <div class="col-md-4 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Eyebrow</label>
+                                <input type="text" class="form-control" name="visibility_eyebrow" value="{{ $hasData ? ($data->visibility_eyebrow ?? '') : '' }}">
+                            </div>
+                        </div>
+                        <div class="col-md-8 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Heading</label>
+                                <input type="text" class="form-control" name="visibility_heading" value="{{ $hasData ? ($data->visibility_heading ?? '') : '' }}">
+                            </div>
+                        </div>
+                        @foreach($visibilityList as $i => $item)
+                        <div class="col-md-6 PB-10">
+                            <input type="text" class="form-control" name="visibility_list[{{ $i }}]" value="{{ is_array($item) ? ($item['label'] ?? '') : $item }}" placeholder="List item {{ $i + 1 }}">
+                        </div>
+                        @endforeach
+                        <div class="col-md-6 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">CTA Text</label>
+                                <input type="text" class="form-control" name="visibility_cta_text" value="{{ $hasData ? ($data->visibility_cta_text ?? '') : '' }}">
+                            </div>
+                        </div>
+                        <div class="col-md-6 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">CTA Link</label>
+                                <input type="text" class="form-control" name="visibility_cta_link" value="{{ $hasData ? ($data->visibility_cta_link ?? '') : '' }}">
+                            </div>
+                        </div>
+                        <div class="col-md-4 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Card Title</label>
+                                <input type="text" class="form-control" name="visibility_card_title" value="{{ $hasData ? ($data->visibility_card_title ?? '') : '' }}">
+                            </div>
+                        </div>
+                        <div class="col-md-4 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Card Subtitle</label>
+                                <input type="text" class="form-control" name="visibility_card_subtitle" value="{{ $hasData ? ($data->visibility_card_subtitle ?? '') : '' }}">
+                            </div>
+                        </div>
+                        <div class="col-md-4 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Card Rating Text</label>
+                                <input type="text" class="form-control" name="visibility_card_rating" value="{{ $hasData ? ($data->visibility_card_rating ?? '') : '' }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Bottom CTA --}}
+        <div class="col-12 mb-30">
+            <div class="card">
+                <div class="header"><h2>Bottom <span>CTA</span></h2></div>
+                <div class="body">
+                    <div class="row">
+                        <div class="col-md-12 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Heading</label>
+                                <input type="text" class="form-control" name="cta_heading" value="{{ $hasData ? ($data->cta_heading ?? '') : '' }}">
+                            </div>
+                        </div>
+                        <div class="col-md-12 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Paragraph</label>
+                                <textarea class="proTextarea" rows="3" name="cta_paragraph">{{ $hasData ? ($data->cta_paragraph ?? '') : '' }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Primary Button</label>
+                                <input type="text" class="form-control" name="cta_primary_text" value="{{ $hasData ? ($data->cta_primary_text ?? '') : '' }}">
+                            </div>
+                        </div>
+                        <div class="col-md-6 PB-10">
+                            <div class="form-group">
+                                <label class="control-label mb-10">Secondary Button</label>
+                                <input type="text" class="form-control" name="cta_secondary_text" value="{{ $hasData ? ($data->cta_secondary_text ?? '') : '' }}">
                             </div>
                         </div>
                     </div>

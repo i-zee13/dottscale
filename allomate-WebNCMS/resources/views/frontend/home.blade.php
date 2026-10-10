@@ -27,15 +27,90 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
         }
         return '/storage/' . ltrim($path, '/');
     };
-    // Content from Dott Scale homepage brief; theme/layout kept.
+    $homeJson = function ($raw, $fallback = []) {
+        if (empty($raw)) {
+            return $fallback;
+        }
+        $decoded = is_string($raw) ? json_decode($raw, true) : $raw;
+        return is_array($decoded) && count($decoded) ? $decoded : $fallback;
+    };
     $heroHeading = $home?->heading_1 ?? 'Digital Marketing Agency in Austin, TX';
     $heroParagraph = $home?->heading_2 ?? 'We help businesses grow through SEO, web development, paid advertising, social media, reputation management, branding, and AI automation.';
+    $heroCtaPrimary = $home?->hero_cta_primary ?? 'Get a Free Strategy Call';
+    $heroCtaSecondary = $home?->hero_cta_secondary ?? 'Get Started';
     $aboutHeading = $home?->large_heading ?? 'Digital marketing for businesses in Austin, TX';
     $aboutParagraph = $home?->paragraph ?? "Austin's business market is crowded and search-driven — customers decide who to call largely based on who shows up first in Google Search and Maps. We build that visibility from the ground up: a Google Business Profile that ranks, a website that converts once someone clicks, and a reputation that holds up under scrutiny. Local SEO and paid advertising work together so you're found in the moment someone's ready to hire, and every channel feeds a website built to close the deal, not just collect a visit.";
     $aboutCta = $home?->award_heading ?? 'Learn More About Us';
+    $aboutEyebrow = $home?->about_eyebrow ?? 'Local to Austin';
     $desktopImg = $homeImg($home?->desktop_img, '/images/hero-img01.webp?v=4');
     $mobileImg = $homeImg($home?->mobile_img, '/images/main-bg-mobile.webp?v=4');
     $aboutImg = $homeImg($home?->award_img, '/images/testimonials-img.png');
+    $stats = $homeJson($home?->stats_json ?? null, [
+        ['value' => '40+', 'label' => 'Businesses helped'],
+        ['value' => '5+', 'label' => 'Years of experience'],
+        ['value' => '120+', 'label' => 'Projects completed'],
+        ['value' => '4.9★', 'label' => 'Average client rating'],
+    ]);
+    $servicesEyebrow = $home?->services_eyebrow ?? 'What we do';
+    $servicesHeading = $home?->services_heading ?? 'Digital marketing services for Austin businesses';
+    $whyEyebrow = $home?->why_eyebrow ?? 'Why Dott Scale';
+    $whyHeading = $home?->why_heading ?? 'A growth partner, not just another marketing agency';
+    $whyItems = $homeJson($home?->why_json ?? null, [
+        ['title' => 'Strategy before execution', 'text' => 'We map the plan before we touch a single ad or page.'],
+        ['title' => 'Data-driven decisions', 'text' => 'Every move is backed by numbers, not guesswork.'],
+        ['title' => 'SEO, paid, and web working together', 'text' => 'Channels are built to reinforce each other, not compete.'],
+        ['title' => 'Transparent reporting', 'text' => "You'll always know what's working and what isn't."],
+        ['title' => 'Conversion-focused approach', 'text' => "Traffic that doesn't turn into calls isn't the goal."],
+        ['title' => 'Scalable systems', 'text' => 'Built to grow with you, from one market to many.'],
+    ]);
+    $aboutList = $homeJson($home?->about_list_json ?? null, [
+        'Austin market positioning', 'Local search visibility', 'Google Business Profile', 'Search engine optimization',
+        'Paid advertising', 'Website conversion', 'Reputation management', 'Local customer acquisition',
+    ]);
+    $processEyebrow = $home?->process_eyebrow ?? 'Process';
+    $processHeading = $home?->process_heading ?? 'How we grow your business';
+    $processItems = $homeJson($home?->process_json ?? null, [
+        ['n' => '01', 'title' => 'Discover', 'text' => 'Understand your business, market, competitors, and goals.'],
+        ['n' => '02', 'title' => 'Build', 'text' => 'Website, SEO foundations, campaigns, branding, and systems.'],
+        ['n' => '03', 'title' => 'Optimize', 'text' => 'Use data to improve rankings, traffic, leads, and conversions.'],
+        ['n' => '04', 'title' => 'Scale', 'text' => 'Expand the strategies and channels that are proving out.'],
+    ]);
+    $proofEyebrow = $home?->proof_eyebrow ?? 'Proof';
+    $proofHeading = $home?->proof_heading ?? 'Results that speak for themselves';
+    $proofItems = $homeJson($home?->proof_json ?? null, [
+        [
+            'client' => 'V-Fix Phone Repair — Berkeley, CA',
+            'title' => 'From invisible on Maps to booked walk-ins',
+            'text' => 'A local SEO and GBP overhaul rebuilt visibility for a phone repair shop competing against national chains.',
+            'stats' => [['value' => '↑', 'label' => 'Local rankings'], ['value' => '↑', 'label' => 'GBP calls']],
+        ],
+        [
+            'client' => 'Client name — Industry, City',
+            'title' => 'Result headline goes here',
+            'text' => 'One or two lines on the problem and the strategy used to solve it.',
+            'stats' => [['value' => '—', 'label' => 'Organic traffic'], ['value' => '—', 'label' => 'Leads']],
+        ],
+    ]);
+    $industriesEyebrow = $home?->industries_eyebrow ?? 'Who we work with';
+    $industriesHeading = $home?->industries_heading ?? 'Industries we serve';
+    $industries = $homeJson($home?->industries_json ?? null, [
+        'Home Services', 'Professional Services', 'Local Businesses', 'E-commerce', 'Healthcare', 'Real Estate', 'B2B',
+    ]);
+    $visibilityEyebrow = $home?->visibility_eyebrow ?? 'Local visibility';
+    $visibilityHeading = $home?->visibility_heading ?? 'Get found where Austin customers are searching';
+    $visibilityList = $homeJson($home?->visibility_list_json ?? null, [
+        'Google Search & Maps rankings', 'Google Business Profile optimization', 'Reviews and reputation signals',
+        'Local citations and listings', 'Local landing pages built to convert',
+    ]);
+    $visibilityCtaText = $home?->visibility_cta_text ?? 'See our Local SEO service';
+    $visibilityCtaLink = $home?->visibility_cta_link ?? 'services/enterprise-solutions';
+    $visibilityCardTitle = $home?->visibility_card_title ?? 'Dott Scale';
+    $visibilityCardSubtitle = $home?->visibility_card_subtitle ?? 'Austin, Texas';
+    $visibilityCardRating = $home?->visibility_card_rating ?? '★★★★★ 4.9 on Google · 40+ reviews';
+    $ctaHeading = $home?->cta_heading ?? 'Ready to grow your business?';
+    $ctaParagraph = $home?->cta_paragraph ?? "Tell us about your business and we'll map out where the fastest wins are.";
+    $ctaPrimary = $home?->cta_primary_text ?? 'Book Your Free Strategy Call';
+    $ctaSecondary = $home?->cta_secondary_text ?? 'Explore Our Services';
 @endphp
 <div class="IDL70G23RUJ9HEB4"></div>
 
@@ -53,8 +128,8 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
                         <h1 data-raw-content="true" class="leading-none text-[26px] sm:text-[30px] md:text-[34px] lg:text-[40px] xl:text-[46px] font-primary font-bold text-white uppercase mb-3 md:mb-5">{!! nl2br(e($heroHeading)) !!}</h1>
                         <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg mb-2 md:mb-4 opacity-70">{!! nl2br(e($heroParagraph)) !!}</p>
                         <div class="flex flex-wrap gap-3">
-                            <a href="/contact-us" title="Get a Free Strategy Call" class="red-arrow-btn group bg-bodybg text-primary rounded-[6px] h-[40px] w-max px-4 flex items-center justify-center hover:px-6 focus:px-7 transition-all duration-300 ease-in-out IDMEJHT2TC8SMUO15 IDMEJIKW5BV7LFG2">Get a Free Strategy Call</a>
-                            <a href="#services" title="Get Started" class="group border border-white/20 text-bodybg rounded-[6px] h-[40px] w-max px-4 flex items-center justify-center hover:bg-bodybg/10 transition-all duration-300 ease-in-out">Get Started</a>
+                            <a href="/contact-us" title="{{ $heroCtaPrimary }}" class="red-arrow-btn group bg-bodybg text-primary rounded-[6px] h-[40px] w-max px-4 flex items-center justify-center hover:px-6 focus:px-7 transition-all duration-300 ease-in-out IDMEJHT2TC8SMUO15 IDMEJIKW5BV7LFG2">{{ $heroCtaPrimary }}</a>
+                            <a href="#services" title="{{ $heroCtaSecondary }}" class="group border border-white/20 text-bodybg rounded-[6px] h-[40px] w-max px-4 flex items-center justify-center hover:bg-bodybg/10 transition-all duration-300 ease-in-out">{{ $heroCtaSecondary }}</a>
                         </div>
                     </div>
                 </div>
@@ -66,22 +141,12 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
 <section class="py-5 md:py-8">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+            @foreach($stats as $stat)
             <div class="bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-4 md:p-6 text-center">
-                <div class="font-primary text-2xl md:text-4xl font-bold text-bodybg mb-1">40+</div>
-                <p class="font-secondary text-xs sm:text-sm text-bodybg/70 m-0">Businesses helped</p>
+                <div class="font-primary text-2xl md:text-4xl font-bold text-bodybg mb-1">{{ $stat['value'] ?? '' }}</div>
+                <p class="font-secondary text-xs sm:text-sm text-bodybg/70 m-0">{{ $stat['label'] ?? '' }}</p>
             </div>
-            <div class="bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-4 md:p-6 text-center">
-                <div class="font-primary text-2xl md:text-4xl font-bold text-bodybg mb-1">5+</div>
-                <p class="font-secondary text-xs sm:text-sm text-bodybg/70 m-0">Years of experience</p>
-            </div>
-            <div class="bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-4 md:p-6 text-center">
-                <div class="font-primary text-2xl md:text-4xl font-bold text-bodybg mb-1">120+</div>
-                <p class="font-secondary text-xs sm:text-sm text-bodybg/70 m-0">Projects completed</p>
-            </div>
-            <div class="bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-4 md:p-6 text-center">
-                <div class="font-primary text-2xl md:text-4xl font-bold text-bodybg mb-1">4.9★</div>
-                <p class="font-secondary text-xs sm:text-sm text-bodybg/70 m-0">Average client rating</p>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -89,9 +154,9 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
 <section id="services" class="py-5 md:py-10 home-our-services IDMEH5PS2RJVLE01">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px]">
-            <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg> What we do</p>
+            <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg> {{ $servicesEyebrow }}</p>
         </div>
-        <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-primary mb-3 md:mb-5 lg:mb-7">Digital marketing services for Austin businesses</h2>
+        <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-primary mb-3 md:mb-5 lg:mb-7">{{ $servicesHeading }}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
             @forelse(($services ?? collect()) as $service)
             <div class="group bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-[15px] md:p-5 flex flex-col justify-between min-h-[180px]">
@@ -116,34 +181,16 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
 <section class="py-5 md:py-10">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px]">
-            <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg> Why Dott Scale</p>
+            <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg> {{ $whyEyebrow }}</p>
         </div>
-        <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-primary mb-4 md:mb-7">A growth partner, not just another marketing agency</h2>
+        <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-primary mb-4 md:mb-7">{{ $whyHeading }}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+            @foreach($whyItems as $item)
             <div class="bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-4 md:p-6 pl-4 border-l-2 border-l-secondary">
-                <h3 data-raw-content="true" class="font-primary text-base md:text-lg font-semibold text-bodybg mb-2">Strategy before execution</h3>
-                <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70 m-0">We map the plan before we touch a single ad or page.</p>
+                <h3 data-raw-content="true" class="font-primary text-base md:text-lg font-semibold text-bodybg mb-2">{{ $item['title'] ?? '' }}</h3>
+                <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70 m-0">{{ $item['text'] ?? '' }}</p>
             </div>
-            <div class="bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-4 md:p-6 pl-4 border-l-2 border-l-secondary">
-                <h3 data-raw-content="true" class="font-primary text-base md:text-lg font-semibold text-bodybg mb-2">Data-driven decisions</h3>
-                <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70 m-0">Every move is backed by numbers, not guesswork.</p>
-            </div>
-            <div class="bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-4 md:p-6 pl-4 border-l-2 border-l-secondary">
-                <h3 data-raw-content="true" class="font-primary text-base md:text-lg font-semibold text-bodybg mb-2">SEO, paid, and web working together</h3>
-                <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70 m-0">Channels are built to reinforce each other, not compete.</p>
-            </div>
-            <div class="bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-4 md:p-6 pl-4 border-l-2 border-l-secondary">
-                <h3 data-raw-content="true" class="font-primary text-base md:text-lg font-semibold text-bodybg mb-2">Transparent reporting</h3>
-                <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70 m-0">You'll always know what's working and what isn't.</p>
-            </div>
-            <div class="bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-4 md:p-6 pl-4 border-l-2 border-l-secondary">
-                <h3 data-raw-content="true" class="font-primary text-base md:text-lg font-semibold text-bodybg mb-2">Conversion-focused approach</h3>
-                <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70 m-0">Traffic that doesn't turn into calls isn't the goal.</p>
-            </div>
-            <div class="bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-4 md:p-6 pl-4 border-l-2 border-l-secondary">
-                <h3 data-raw-content="true" class="font-primary text-base md:text-lg font-semibold text-bodybg mb-2">Scalable systems</h3>
-                <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70 m-0">Built to grow with you, from one market to many.</p>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -159,19 +206,14 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
                     <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px] IDMELHLKGTZ46X23">
                         <p data-raw-content="true"> <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex">
                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path>
-                            </svg> Local to Austin</p>
+                            </svg> {{ $aboutEyebrow }}</p>
                     </div>
                     <h2 data-raw-content="true" class="leading-none capitalize text-2xl md:text-3xl lg:text-4xl font-bold text-bodybg font-primary mb-3 sm:mb-5 flex">{{ $aboutHeading }}</h2>
                     <p data-raw-content="true" class="font-secondary font-normal text-sm md:text-base text-bodybg/70 mb-3 md:mb-4">{{ $aboutParagraph }}</p>
                     <ul class="font-secondary text-xs sm:text-sm text-bodybg/70 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 mb-3 md:mb-5 list-disc pl-5 w-full">
-                        <li>Austin market positioning</li>
-                        <li>Local search visibility</li>
-                        <li>Google Business Profile</li>
-                        <li>Search engine optimization</li>
-                        <li>Paid advertising</li>
-                        <li>Website conversion</li>
-                        <li>Reputation management</li>
-                        <li>Local customer acquisition</li>
+                        @foreach($aboutList as $item)
+                        <li>{{ is_array($item) ? ($item['label'] ?? '') : $item }}</li>
+                        @endforeach
                     </ul>
                     <a href="about-us" title="{{ $aboutCta }}" class="red-arrow-btn group mt-2 pr-10 bg-bodybg text-primary rounded-[6px] h-[40px] w-max px-4 flex items-center justify-center hover:px-6 focus:px-7 transition-all duration-300 ease-in-out IDMELHLKH0Z6SKJ4">{{ $aboutCta }}</a>
                 </div>
@@ -183,34 +225,18 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
 <section class="py-5 md:py-10">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px]">
-            <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg> Process</p>
+            <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg> {{ $processEyebrow }}</p>
         </div>
-        <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-primary mb-4 md:mb-7">How we grow your business</h2>
+        <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-primary mb-4 md:mb-7">{{ $processHeading }}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+            @foreach($processItems as $item)
             <div class="relative bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-4 md:p-6">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon2"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg>
-                <div class="text-secondary font-primary text-sm mb-2">01</div>
-                <h3 data-raw-content="true" class="font-primary text-lg font-semibold text-bodybg mb-2">Discover</h3>
-                <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70 m-0">Understand your business, market, competitors, and goals.</p>
+                <div class="text-secondary font-primary text-sm mb-2">{{ $item['n'] ?? '' }}</div>
+                <h3 data-raw-content="true" class="font-primary text-lg font-semibold text-bodybg mb-2">{{ $item['title'] ?? '' }}</h3>
+                <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70 m-0">{{ $item['text'] ?? '' }}</p>
             </div>
-            <div class="relative bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-4 md:p-6">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon2"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg>
-                <div class="text-secondary font-primary text-sm mb-2">02</div>
-                <h3 data-raw-content="true" class="font-primary text-lg font-semibold text-bodybg mb-2">Build</h3>
-                <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70 m-0">Website, SEO foundations, campaigns, branding, and systems.</p>
-            </div>
-            <div class="relative bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-4 md:p-6">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon2"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg>
-                <div class="text-secondary font-primary text-sm mb-2">03</div>
-                <h3 data-raw-content="true" class="font-primary text-lg font-semibold text-bodybg mb-2">Optimize</h3>
-                <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70 m-0">Use data to improve rankings, traffic, leads, and conversions.</p>
-            </div>
-            <div class="relative bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-4 md:p-6">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon2"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg>
-                <div class="text-secondary font-primary text-sm mb-2">04</div>
-                <h3 data-raw-content="true" class="font-primary text-lg font-semibold text-bodybg mb-2">Scale</h3>
-                <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70 m-0">Expand the strategies and channels that are proving out.</p>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -219,29 +245,23 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     <div class="container mx-auto px-3 sm:px-4">
         <div class="w-full md:w-[70%] lg:w-[60%] m-auto text-center mb-4 md:mb-8 flex items-center justify-center flex-col">
             <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-2 lg:mb-4 uppercase tracking-[2px]">
-                <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg> Proof</p>
+                <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg> {{ $proofEyebrow }}</p>
             </div>
-            <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-primary mb-1.5 md:mb-3">Results that speak for themselves</h2>
+            <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-primary mb-1.5 md:mb-3">{{ $proofHeading }}</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
+            @foreach($proofItems as $item)
             <div class="bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-4 md:p-6">
-                <div class="text-secondary text-xs font-semibold uppercase tracking-wide mb-2">V-Fix Phone Repair — Berkeley, CA</div>
-                <h3 data-raw-content="true" class="font-primary text-lg md:text-xl font-semibold text-bodybg mb-2">From invisible on Maps to booked walk-ins</h3>
-                <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70 mb-4">A local SEO and GBP overhaul rebuilt visibility for a phone repair shop competing against national chains.</p>
+                <div class="text-secondary text-xs font-semibold uppercase tracking-wide mb-2">{{ $item['client'] ?? '' }}</div>
+                <h3 data-raw-content="true" class="font-primary text-lg md:text-xl font-semibold text-bodybg mb-2">{{ $item['title'] ?? '' }}</h3>
+                <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70 mb-4">{{ $item['text'] ?? '' }}</p>
                 <div class="flex gap-6">
-                    <div><div class="font-primary text-xl text-bodybg">↑</div><div class="text-xs text-bodybg/70">Local rankings</div></div>
-                    <div><div class="font-primary text-xl text-bodybg">↑</div><div class="text-xs text-bodybg/70">GBP calls</div></div>
+                    @foreach(($item['stats'] ?? []) as $ps)
+                    <div><div class="font-primary text-xl text-bodybg">{{ $ps['value'] ?? '' }}</div><div class="text-xs text-bodybg/70">{{ $ps['label'] ?? '' }}</div></div>
+                    @endforeach
                 </div>
             </div>
-            <div class="bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px] rounded-[6px] p-4 md:p-6">
-                <div class="text-secondary text-xs font-semibold uppercase tracking-wide mb-2">Client name — Industry, City</div>
-                <h3 data-raw-content="true" class="font-primary text-lg md:text-xl font-semibold text-bodybg mb-2">Result headline goes here</h3>
-                <p data-raw-content="true" class="font-secondary text-sm text-bodybg/70 mb-4">One or two lines on the problem and the strategy used to solve it.</p>
-                <div class="flex gap-6">
-                    <div><div class="font-primary text-xl text-bodybg">—</div><div class="text-xs text-bodybg/70">Organic traffic</div></div>
-                    <div><div class="font-primary text-xl text-bodybg">—</div><div class="text-xs text-bodybg/70">Leads</div></div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -249,17 +269,13 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
 <section class="py-5 md:py-10">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px]">
-            <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg> Who we work with</p>
+            <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg> {{ $industriesEyebrow }}</p>
         </div>
-        <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-primary mb-4 md:mb-6">Industries we serve</h2>
+        <h2 data-raw-content="true" class="capitalize text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-primary mb-4 md:mb-6">{{ $industriesHeading }}</h2>
         <div class="flex flex-wrap gap-2 md:gap-3">
-            <span class="border border-white/15 bg-bodybg/10 text-bodybg text-sm rounded-[6px] px-4 py-2">Home Services</span>
-            <span class="border border-white/15 bg-bodybg/10 text-bodybg text-sm rounded-[6px] px-4 py-2">Professional Services</span>
-            <span class="border border-white/15 bg-bodybg/10 text-bodybg text-sm rounded-[6px] px-4 py-2">Local Businesses</span>
-            <span class="border border-white/15 bg-bodybg/10 text-bodybg text-sm rounded-[6px] px-4 py-2">E-commerce</span>
-            <span class="border border-white/15 bg-bodybg/10 text-bodybg text-sm rounded-[6px] px-4 py-2">Healthcare</span>
-            <span class="border border-white/15 bg-bodybg/10 text-bodybg text-sm rounded-[6px] px-4 py-2">Real Estate</span>
-            <span class="border border-white/15 bg-bodybg/10 text-bodybg text-sm rounded-[6px] px-4 py-2">B2B</span>
+            @foreach($industries as $label)
+            <span class="border border-white/15 bg-bodybg/10 text-bodybg text-sm rounded-[6px] px-4 py-2">{{ is_array($label) ? ($label['label'] ?? '') : $label }}</span>
+            @endforeach
         </div>
     </div>
 </section>
@@ -270,23 +286,21 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon2"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg>
             <div class="w-full md:w-7/12">
                 <div class="font-primary inline-block bg-bodybg/20 text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-4 uppercase tracking-[2px]">
-                    <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg> Local visibility</p>
+                    <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg> {{ $visibilityEyebrow }}</p>
                 </div>
-                <h2 data-raw-content="true" class="leading-none capitalize text-2xl md:text-3xl lg:text-4xl font-bold text-bodybg font-primary mb-3 md:mb-5">Get found where Austin customers are searching</h2>
+                <h2 data-raw-content="true" class="leading-none capitalize text-2xl md:text-3xl lg:text-4xl font-bold text-bodybg font-primary mb-3 md:mb-5">{{ $visibilityHeading }}</h2>
                 <ul class="font-secondary text-sm md:text-base text-bodybg/70 space-y-2 mb-5 list-disc pl-5">
-                    <li>Google Search &amp; Maps rankings</li>
-                    <li>Google Business Profile optimization</li>
-                    <li>Reviews and reputation signals</li>
-                    <li>Local citations and listings</li>
-                    <li>Local landing pages built to convert</li>
+                    @foreach($visibilityList as $item)
+                    <li>{{ is_array($item) ? ($item['label'] ?? '') : $item }}</li>
+                    @endforeach
                 </ul>
-                <a href="services/enterprise-solutions" title="See our Local SEO service" class="red-arrow-btn group bg-bodybg text-primary rounded-[6px] h-[40px] w-max px-4 flex items-center justify-center hover:px-6 transition-all duration-300">See our Local SEO service</a>
+                <a href="{{ ltrim($visibilityCtaLink, '/') }}" title="{{ $visibilityCtaText }}" class="red-arrow-btn group bg-bodybg text-primary rounded-[6px] h-[40px] w-max px-4 flex items-center justify-center hover:px-6 transition-all duration-300">{{ $visibilityCtaText }}</a>
             </div>
             <div class="w-full md:w-5/12 bg-bodybg/10 border border-white/10 rounded-[6px] p-5 md:p-8 flex flex-col justify-center">
                 <div class="w-10 h-10 rounded-full bg-secondary text-primary flex items-center justify-center font-bold mb-4">◎</div>
-                <div class="font-primary text-xl text-bodybg mb-1">Dott Scale</div>
-                <div class="font-secondary text-sm text-bodybg/70">Austin, Texas</div>
-                <div class="font-secondary text-sm text-bodybg/70 mt-4">★★★★★ 4.9 on Google · 40+ reviews</div>
+                <div class="font-primary text-xl text-bodybg mb-1">{{ $visibilityCardTitle }}</div>
+                <div class="font-secondary text-sm text-bodybg/70">{{ $visibilityCardSubtitle }}</div>
+                <div class="font-secondary text-sm text-bodybg/70 mt-4">{{ $visibilityCardRating }}</div>
             </div>
         </div>
     </div>
@@ -375,11 +389,11 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     <div class="container mx-auto px-3 sm:px-4">
         <div class="relative rounded-[6px] p-5 md:p-10 bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px]">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon2"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg>
-            <h2 data-raw-content="true" class="capitalize text-2xl md:text-3xl lg:text-4xl font-bold text-bodybg font-primary mb-3">Ready to grow your business?</h2>
-            <p data-raw-content="true" class="font-secondary text-sm md:text-base text-bodybg/70 mb-5 max-w-2xl">Tell us about your business and we'll map out where the fastest wins are.</p>
+            <h2 data-raw-content="true" class="capitalize text-2xl md:text-3xl lg:text-4xl font-bold text-bodybg font-primary mb-3">{{ $ctaHeading }}</h2>
+            <p data-raw-content="true" class="font-secondary text-sm md:text-base text-bodybg/70 mb-5 max-w-2xl">{{ $ctaParagraph }}</p>
             <div class="flex flex-wrap gap-3">
-                <a href="/contact-us" title="Book Your Free Strategy Call" class="red-arrow-btn group bg-bodybg text-primary rounded-[6px] h-[40px] w-max px-4 flex items-center justify-center hover:px-6 transition-all duration-300">Book Your Free Strategy Call</a>
-                <a href="#services" title="Explore Our Services" class="group border border-white/20 text-bodybg rounded-[6px] h-[40px] w-max px-4 flex items-center justify-center hover:bg-bodybg/10 transition-all duration-300">Explore Our Services</a>
+                <a href="/contact-us" title="{{ $ctaPrimary }}" class="red-arrow-btn group bg-bodybg text-primary rounded-[6px] h-[40px] w-max px-4 flex items-center justify-center hover:px-6 transition-all duration-300">{{ $ctaPrimary }}</a>
+                <a href="#services" title="{{ $ctaSecondary }}" class="group border border-white/20 text-bodybg rounded-[6px] h-[40px] w-max px-4 flex items-center justify-center hover:bg-bodybg/10 transition-all duration-300">{{ $ctaSecondary }}</a>
             </div>
         </div>
     </div>
