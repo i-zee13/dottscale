@@ -158,6 +158,8 @@ Route::group(['prefix' => 'admin',  'middleware' => ['custom.auth', 'is_route_as
   Route::post('/about-us/store', [App\Http\Controllers\admin\HomeController::class, 'storeAbout'])->name('admin.aboutus-store');
 
   Route::get('/website-services', [App\Http\Controllers\admin\WebsiteServicesController::class, 'index'])->name('admin.website-services');
+  // Alias: controllers table often has controller="Services" → /admin/Services (was 404)
+  Route::get('/Services', [App\Http\Controllers\admin\WebsiteServicesController::class, 'index'])->name('admin.Services');
   Route::get('/get-website-services', [App\Http\Controllers\admin\WebsiteServicesController::class, 'list'])->name('admin.get-website-services');
   Route::get('/get-website-service/{id}', [App\Http\Controllers\admin\WebsiteServicesController::class, 'get'])->name('admin.get-website-service');
   Route::post('/save-website-service', [App\Http\Controllers\admin\WebsiteServicesController::class, 'save'])->name('admin.save-website-service');

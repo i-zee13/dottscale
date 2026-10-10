@@ -30,6 +30,10 @@ class WebsiteServicesController extends Controller
 
     public function get($id)
     {
+        if (!Schema::hasTable('services')) {
+            return response()->json(['status' => 'error', 'msg' => 'services table missing', 'service' => null], 500);
+        }
+
         $service = Service::find($id);
 
         return response()->json([
@@ -40,6 +44,10 @@ class WebsiteServicesController extends Controller
 
     public function save(Request $request)
     {
+        if (!Schema::hasTable('services')) {
+            return response()->json(['status' => 'error', 'msg' => 'services table missing'], 500);
+        }
+
         $request->validate([
             'service_name' => 'required',
         ]);
@@ -87,6 +95,10 @@ class WebsiteServicesController extends Controller
 
     public function delete($id)
     {
+        if (!Schema::hasTable('services')) {
+            return response()->json(['status' => 'error', 'msg' => 'services table missing'], 500);
+        }
+
         Service::destroy($id);
 
         return response()->json([

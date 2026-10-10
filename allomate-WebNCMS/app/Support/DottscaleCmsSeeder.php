@@ -512,10 +512,27 @@ class DottscaleCmsSeeder
             ],
         ];
 
+        // Fix legacy slug that links to /admin/Services (404)
+        DB::table('controllers')
+            ->whereIn('controller', ['Services', 'services', 'Service'])
+            ->update(['controller' => 'website-services']);
+
         $nextId = ((int) DB::table('controllers')->max('id')) + 1;
         foreach ($items as $item) {
             $exists = DB::table('controllers')->where('controller', $item['controller'])->exists();
-            if ($exists) {
+            if (!$exists && $item['controller'] === 'website-services') {
+                $exists = DB::table('controllers')
+                    ->where('sub_module', 'Services')
+                    ->where('parent_module', 'Website Pages')
+                    ->exists();
+                if ($exists) {
+                    DB::table('controllers')
+                        ->where('sub_module', 'Services')
+                        ->where('parent_module', 'Website Pages')
+                        ->update(['controller' => 'website-services']);
+                }
+            }
+            if ($exists || DB::table('controllers')->where('controller', $item['controller'])->exists()) {
                 DB::table('controllers')->where('controller', $item['controller'])->update([
                     'made_up_name' => $item['made_up_name'],
                     'parent_module' => $item['parent_module'],
