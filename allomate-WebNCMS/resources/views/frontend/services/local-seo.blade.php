@@ -175,24 +175,24 @@ Get more local visibility with Local SEO services in Austin, TX. Dott Scale help
 </section>
 
 {{-- 4. Strategy — reference: icon grid / executive view --}}
-<section class="py-8 md:py-14 bg-[#F3F5F7]">
+<section class="py-8 md:py-14 relative z-[1]" style="background-color:#ffffff;">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="w-full lg:w-[70%] mb-8 md:mb-12">
-            <div class="inline-flex items-center gap-2 bg-[#0B1B33] text-white text-[11px] font-primary uppercase tracking-[2px] rounded-full px-3 py-1.5 mb-4 md:mb-5">
-                <span class="text-[#E31B23] font-bold text-sm leading-none">+</span>
+            <div class="inline-flex items-center gap-2 text-white text-[11px] font-primary uppercase tracking-[2px] rounded-full px-3 py-1.5 mb-4 md:mb-5" style="background-color:#0B1B33;">
+                <span class="font-bold text-sm leading-none" style="color:#E31B23;">+</span>
                 <span>Local Strategy</span>
             </div>
-            <h2 data-raw-content="true" class="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-bold text-[#0B1B33] font-primary mb-3 md:mb-4 leading-tight">Your Local SEO Strategy</h2>
-            <p data-raw-content="true" class="font-secondary text-sm sm:text-base text-[#5A6578] max-w-3xl">There is no single change that makes a business visible for every local search. Effective Local SEO brings together the areas that influence how your business is discovered, understood, evaluated, and chosen.</p>
+            <h2 data-raw-content="true" class="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-bold font-primary mb-3 md:mb-4 leading-tight" style="color:#0B1B33;">Your Local SEO Strategy</h2>
+            <p data-raw-content="true" class="font-secondary text-sm sm:text-base max-w-3xl" style="color:#5A6578;">There is no single change that makes a business visible for every local search. Effective Local SEO brings together the areas that influence how your business is discovered, understood, evaluated, and chosen.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 md:gap-x-8 md:gap-y-10">
             @foreach($strategyPillars as $item)
             <div class="flex flex-col items-start">
-                <div class="w-11 h-11 rounded-[6px] bg-[#0B1B33] flex items-center justify-center mb-3 md:mb-4 shrink-0">
+                <div class="w-11 h-11 rounded-[6px] flex items-center justify-center mb-3 md:mb-4 shrink-0" style="background-color:#0B1B33;">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white" class="w-5 h-5">{!! $seoIcons[$item['icon']] ?? $seoIcons['search'] !!}</svg>
                 </div>
-                <h3 data-raw-content="true" class="font-primary text-base md:text-lg font-semibold text-[#0B1B33] mb-2">{{ $item['title'] }}</h3>
-                <p data-raw-content="true" class="font-secondary text-sm text-[#5A6578] m-0 leading-relaxed">{{ $item['text'] }}</p>
+                <h3 data-raw-content="true" class="font-primary text-base md:text-lg font-semibold mb-2" style="color:#0B1B33;">{{ $item['title'] }}</h3>
+                <p data-raw-content="true" class="font-secondary text-sm m-0 leading-relaxed" style="color:#5A6578;">{{ $item['text'] }}</p>
             </div>
             @endforeach
         </div>
