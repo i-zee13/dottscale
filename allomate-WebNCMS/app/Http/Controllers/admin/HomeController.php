@@ -146,6 +146,7 @@ class HomeController extends Controller
         $meta_content_description   = '';
         $meta_og_title              = '';
         $meta_og_description        = '';
+        $meta_structure_tags        = '';
         $data = Home::first();
         if ($data && !empty($data->page_meta_tags)) {
             $page_meta = is_string($data->page_meta_tags)
@@ -159,6 +160,7 @@ class HomeController extends Controller
                     $meta_content_description = $meta->meta_content_description ?? '';
                     $meta_og_title            = $meta->meta_og_title ?? '';
                     $meta_og_description      = $meta->meta_og_description ?? '';
+                    $meta_structure_tags      = $meta->meta_structure_tags ?? '';
                 }
             }
         }
@@ -170,6 +172,27 @@ class HomeController extends Controller
             $decoded = is_string($raw) ? json_decode($raw, true) : $raw;
             return is_array($decoded) ? $decoded : $fallback;
         };
+
+        $defaultSectionOrder = [
+            'hero' => 1,
+            'stats' => 2,
+            'services' => 3,
+            'why' => 4,
+            'about' => 5,
+            'process' => 6,
+            'proof' => 7,
+            'industries' => 8,
+            'visibility' => 9,
+            'cta' => 10,
+        ];
+        $sectionOrder = $decode($data->sections_order_json ?? null, $defaultSectionOrder);
+        foreach ($defaultSectionOrder as $key => $priority) {
+            if (!isset($sectionOrder[$key]) || !is_numeric($sectionOrder[$key])) {
+                $sectionOrder[$key] = $priority;
+            } else {
+                $sectionOrder[$key] = (int) $sectionOrder[$key];
+            }
+        }
 
         $stats = $decode($data->stats_json ?? null, [
             ['value' => '40+', 'label' => 'Businesses helped'],
@@ -191,6 +214,8 @@ class HomeController extends Controller
             'meta_content_description',
             'meta_og_title',
             'meta_og_description',
+            'meta_structure_tags',
+            'sectionOrder',
             'stats',
             'whyItems',
             'aboutList',
@@ -299,6 +324,16 @@ class HomeController extends Controller
             } elseif ($request->filled($column)) {
                 $raw = $request->{$column};
                 $about->{$column} = is_array($raw) ? json_encode($raw) : $raw;
+            }
+        }
+
+        if ($request->has('section_priority') && Schema::hasColumn('home', 'sections_order_json')) {
+            $order = [];
+            foreach ((array) $request->input('section_priority', []) as $key => $priority) {
+                $order[$key] = max(1, (int) $priority);
+            }
+            if (!empty($order)) {
+                $about->sections_order_json = json_encode($order);
             }
         }
 

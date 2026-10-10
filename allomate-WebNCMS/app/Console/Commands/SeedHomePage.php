@@ -126,6 +126,10 @@ class SeedHomePage extends Command
             'cta_paragraph' => "Tell us about your business and we'll map out where the fastest wins are.",
             'cta_primary_text' => 'Book Your Free Strategy Call',
             'cta_secondary_text' => 'Explore Our Services',
+            'sections_order_json' => json_encode([
+                'hero' => 1, 'stats' => 2, 'services' => 3, 'why' => 4, 'about' => 5,
+                'process' => 6, 'proof' => 7, 'industries' => 8, 'visibility' => 9, 'cta' => 10,
+            ]),
             'page_meta_tags' => json_encode([
                 [
                     'meta_name_author' => 'author',
@@ -136,6 +140,16 @@ class SeedHomePage extends Command
                     'meta_content_description' => 'We help businesses grow through SEO, web development, paid advertising, social media, reputation management, branding, and AI automation.',
                     'meta_og_title' => 'Dott Scale — Digital Marketing Agency in Austin, TX',
                     'meta_og_description' => 'Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation built to grow local businesses.',
+                    'meta_structure_tags' => json_encode([
+                        '@context' => 'https://schema.org',
+                        '@type' => 'ProfessionalService',
+                        'name' => 'Dott Scale',
+                        'url' => 'https://staging.dottscale.com',
+                        'description' => 'Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation built to grow local businesses.',
+                        'areaServed' => 'Austin, TX',
+                        'telephone' => '+1 (512) 564-8959',
+                        'email' => 'contact@dottscale.com',
+                    ], JSON_UNESCAPED_SLASHES),
                 ],
             ]),
             'meta_og_image' => null,

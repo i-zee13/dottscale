@@ -26,6 +26,7 @@ $(document).ready(function () {
             'meta_content_description': $('#meta_content_description').val(),
             'meta_og_title': $('#meta_og_title').val(),
             'meta_og_description': $('#meta_og_description').val(),
+            'meta_structure_tags': $('#meta_structure_tags').val(),
         }];
 
         $('#form').ajaxSubmit({

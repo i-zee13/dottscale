@@ -19,6 +19,24 @@
     $proofItems = $proofItems ?? [];
     $industries = $industries ?? [];
     $visibilityList = $visibilityList ?? [];
+    $sectionOrder = $sectionOrder ?? [
+        'hero' => 1, 'stats' => 2, 'services' => 3, 'why' => 4, 'about' => 5,
+        'process' => 6, 'proof' => 7, 'industries' => 8, 'visibility' => 9, 'cta' => 10,
+    ];
+    $prio = function ($key) use ($sectionOrder) {
+        return (int) ($sectionOrder[$key] ?? 1);
+    };
+    $defaultSchema = json_encode([
+        '@context' => 'https://schema.org',
+        '@type' => 'ProfessionalService',
+        'name' => 'Dott Scale',
+        'url' => 'https://staging.dottscale.com',
+        'description' => 'Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation built to grow local businesses.',
+        'areaServed' => 'Austin, TX',
+        'telephone' => '+1 (512) 564-8959',
+        'email' => 'contact@dottscale.com',
+    ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+    $meta_structure_tags = !empty($meta_structure_tags) ? $meta_structure_tags : $defaultSchema;
     while (count($stats) < 4) { $stats[] = ['value' => '', 'label' => '']; }
     while (count($whyItems) < 6) { $whyItems[] = ['title' => '', 'text' => '']; }
     while (count($aboutList) < 8) { $aboutList[] = ''; }
@@ -48,8 +66,12 @@
         {{-- Hero Section --}}
         <div class="col-12 mb-30">
             <div class="card">
-                <div class="header">
-                    <h2>Hero <span>Section</span></h2>
+                <div class="header d-flex justify-content-between align-items-center flex-wrap">
+                    <h2 class="mb-0">Hero <span>Section</span></h2>
+                    <div class="form-inline mt-2 mt-md-0">
+                        <label class="mr-2 mb-0 font12">Priority</label>
+                        <input type="number" min="1" class="form-control" style="width:90px" name="section_priority[hero]" value="{{ $prio('hero') }}">
+                    </div>
                 </div>
                 <div class="body">
                     <div id="floating-label">
@@ -139,8 +161,12 @@
         {{-- About Section --}}
         <div class="col-12 mb-30">
             <div class="card">
-                <div class="header">
-                    <h2>About <span>Section</span></h2>
+                <div class="header d-flex justify-content-between align-items-center flex-wrap">
+                    <h2 class="mb-0">About <span>Section</span></h2>
+                    <div class="form-inline mt-2 mt-md-0">
+                        <label class="mr-2 mb-0 font12">Priority</label>
+                        <input type="number" min="1" class="form-control" style="width:90px" name="section_priority[about]" value="{{ $prio('about') }}">
+                    </div>
                 </div>
                 <div class="body">
                     <div id="floating-label">
@@ -208,7 +234,13 @@
         {{-- Stats --}}
         <div class="col-12 mb-30">
             <div class="card">
-                <div class="header"><h2>Stats <span>Section</span></h2></div>
+                <div class="header d-flex justify-content-between align-items-center flex-wrap">
+                    <h2 class="mb-0">Stats <span>Section</span></h2>
+                    <div class="form-inline mt-2 mt-md-0">
+                        <label class="mr-2 mb-0 font12">Priority</label>
+                        <input type="number" min="1" class="form-control" style="width:90px" name="section_priority[stats]" value="{{ $prio('stats') }}">
+                    </div>
+                </div>
                 <div class="body">
                     <div class="row">
                         @foreach($stats as $i => $stat)
@@ -231,7 +263,13 @@
         {{-- Services intro --}}
         <div class="col-12 mb-30">
             <div class="card">
-                <div class="header"><h2>Services <span>Section Intro</span></h2></div>
+                <div class="header d-flex justify-content-between align-items-center flex-wrap">
+                    <h2 class="mb-0">Services <span>Section Intro</span></h2>
+                    <div class="form-inline mt-2 mt-md-0">
+                        <label class="mr-2 mb-0 font12">Priority</label>
+                        <input type="number" min="1" class="form-control" style="width:90px" name="section_priority[services]" value="{{ $prio('services') }}">
+                    </div>
+                </div>
                 <div class="body">
                     <div class="row">
                         <div class="col-md-4 PB-10">
@@ -255,7 +293,13 @@
         {{-- Why --}}
         <div class="col-12 mb-30">
             <div class="card">
-                <div class="header"><h2>Why <span>Dott Scale</span></h2></div>
+                <div class="header d-flex justify-content-between align-items-center flex-wrap">
+                    <h2 class="mb-0">Why <span>Dott Scale</span></h2>
+                    <div class="form-inline mt-2 mt-md-0">
+                        <label class="mr-2 mb-0 font12">Priority</label>
+                        <input type="number" min="1" class="form-control" style="width:90px" name="section_priority[why]" value="{{ $prio('why') }}">
+                    </div>
+                </div>
                 <div class="body">
                     <div class="row">
                         <div class="col-md-4 PB-10">
@@ -290,7 +334,13 @@
         {{-- Process --}}
         <div class="col-12 mb-30">
             <div class="card">
-                <div class="header"><h2>Process <span>Section</span></h2></div>
+                <div class="header d-flex justify-content-between align-items-center flex-wrap">
+                    <h2 class="mb-0">Process <span>Section</span></h2>
+                    <div class="form-inline mt-2 mt-md-0">
+                        <label class="mr-2 mb-0 font12">Priority</label>
+                        <input type="number" min="1" class="form-control" style="width:90px" name="section_priority[process]" value="{{ $prio('process') }}">
+                    </div>
+                </div>
                 <div class="body">
                     <div class="row">
                         <div class="col-md-4 PB-10">
@@ -329,7 +379,13 @@
         {{-- Proof --}}
         <div class="col-12 mb-30">
             <div class="card">
-                <div class="header"><h2>Proof <span>Section</span></h2></div>
+                <div class="header d-flex justify-content-between align-items-center flex-wrap">
+                    <h2 class="mb-0">Proof <span>Section</span></h2>
+                    <div class="form-inline mt-2 mt-md-0">
+                        <label class="mr-2 mb-0 font12">Priority</label>
+                        <input type="number" min="1" class="form-control" style="width:90px" name="section_priority[proof]" value="{{ $prio('proof') }}">
+                    </div>
+                </div>
                 <div class="body">
                     <div class="row">
                         <div class="col-md-4 PB-10">
@@ -379,7 +435,13 @@
         {{-- Industries --}}
         <div class="col-12 mb-30">
             <div class="card">
-                <div class="header"><h2>Industries <span>Section</span></h2></div>
+                <div class="header d-flex justify-content-between align-items-center flex-wrap">
+                    <h2 class="mb-0">Industries <span>Section</span></h2>
+                    <div class="form-inline mt-2 mt-md-0">
+                        <label class="mr-2 mb-0 font12">Priority</label>
+                        <input type="number" min="1" class="form-control" style="width:90px" name="section_priority[industries]" value="{{ $prio('industries') }}">
+                    </div>
+                </div>
                 <div class="body">
                     <div class="row">
                         <div class="col-md-4 PB-10">
@@ -407,7 +469,13 @@
         {{-- Local visibility --}}
         <div class="col-12 mb-30">
             <div class="card">
-                <div class="header"><h2>Local <span>Visibility</span></h2></div>
+                <div class="header d-flex justify-content-between align-items-center flex-wrap">
+                    <h2 class="mb-0">Local <span>Visibility</span></h2>
+                    <div class="form-inline mt-2 mt-md-0">
+                        <label class="mr-2 mb-0 font12">Priority</label>
+                        <input type="number" min="1" class="form-control" style="width:90px" name="section_priority[visibility]" value="{{ $prio('visibility') }}">
+                    </div>
+                </div>
                 <div class="body">
                     <div class="row">
                         <div class="col-md-4 PB-10">
@@ -465,7 +533,13 @@
         {{-- Bottom CTA --}}
         <div class="col-12 mb-30">
             <div class="card">
-                <div class="header"><h2>Bottom <span>CTA</span></h2></div>
+                <div class="header d-flex justify-content-between align-items-center flex-wrap">
+                    <h2 class="mb-0">Bottom <span>CTA</span></h2>
+                    <div class="form-inline mt-2 mt-md-0">
+                        <label class="mr-2 mb-0 font12">Priority</label>
+                        <input type="number" min="1" class="form-control" style="width:90px" name="section_priority[cta]" value="{{ $prio('cta') }}">
+                    </div>
+                </div>
                 <div class="body">
                     <div class="row">
                         <div class="col-md-12 PB-10">
@@ -542,6 +616,11 @@
                                             data-min-width="1199" data-max-width="1201"
                                             data-min-height="629" data-max-height="631" />
                                     </div>
+                                </div>
+                                <div class="col-md-12 PB-10">
+                                    <label class="font12">Schema / Structured Data (JSON-LD)</label>
+                                    <textarea class="form-control" rows="10" id="meta_structure_tags" name="meta_structure_tags" placeholder='{"@context":"https://schema.org","@type":"ProfessionalService",...}'>{{ $meta_structure_tags }}</textarea>
+                                    <small class="text-muted">Paste valid JSON-LD. Shown in page &lt;head&gt; as application/ld+json.</small>
                                 </div>
                             </div>
                         </div>

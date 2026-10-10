@@ -111,10 +111,37 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     $ctaParagraph = $home?->cta_paragraph ?? "Tell us about your business and we'll map out where the fastest wins are.";
     $ctaPrimary = $home?->cta_primary_text ?? 'Book Your Free Strategy Call';
     $ctaSecondary = $home?->cta_secondary_text ?? 'Explore Our Services';
+    $defaultSectionOrder = [
+        'hero' => 1, 'stats' => 2, 'services' => 3, 'why' => 4, 'about' => 5,
+        'process' => 6, 'proof' => 7, 'industries' => 8, 'visibility' => 9, 'cta' => 10,
+    ];
+    $sectionOrder = $homeJson($home?->sections_order_json ?? null, $defaultSectionOrder);
+    foreach ($defaultSectionOrder as $key => $priority) {
+        $sectionOrder[$key] = isset($sectionOrder[$key]) && is_numeric($sectionOrder[$key])
+            ? (int) $sectionOrder[$key]
+            : $priority;
+    }
+    $so = fn ($key) => (int) ($sectionOrder[$key] ?? $defaultSectionOrder[$key] ?? 99);
+    $homeSchema = '';
+    if (!empty($home?->page_meta_tags)) {
+        $metaDecoded = is_string($home->page_meta_tags) ? json_decode($home->page_meta_tags) : $home->page_meta_tags;
+        if (is_array($metaDecoded) || is_object($metaDecoded)) {
+            foreach ($metaDecoded as $meta) {
+                $meta = (object) $meta;
+                if (!empty($meta->meta_structure_tags)) {
+                    $homeSchema = trim($meta->meta_structure_tags);
+                }
+            }
+        }
+    }
 @endphp
 <div class="IDL70G23RUJ9HEB4"></div>
+@if(!empty($homeSchema))
+<script type="application/ld+json">{!! $homeSchema !!}</script>
+@endif
 
-<section class="z-[1] min-h-screen flex items-center relative IDMEJHT2SVHL8J813 IDMEJIKW527FZEE0">
+<div class="home-sections-stack" style="display:flex;flex-direction:column;">
+<section class="z-[1] min-h-screen flex items-center relative IDMEJHT2SVHL8J813 IDMEJIKW527FZEE0" style="order:{{ $so('hero') }}">
     <div class="relative w-full">
         <figure class="overflow-hidden hidden sm:block"><img width="1504" height="579" src="{{ $desktopImg }}" alt="{{ $heroHeading }}" title="{{ $heroHeading }}" class="w-full h-screen object-cover"></figure>
         <figure class="overflow-hidden block sm:hidden"><img width="480" height="768" src="{{ $mobileImg }}" alt="{{ $heroHeading }}" title="{{ $heroHeading }}" class="w-full h-screen object-cover"></figure>
@@ -138,7 +165,7 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-<section class="py-5 md:py-8">
+<section class="py-5 md:py-8" style="order:{{ $so('stats') }}">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
             @foreach($stats as $stat)
@@ -151,7 +178,7 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-<section id="services" class="py-5 md:py-10 home-our-services IDMEH5PS2RJVLE01">
+<section id="services" class="py-5 md:py-10 home-our-services IDMEH5PS2RJVLE01" style="order:{{ $so('services') }}">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px]">
             <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg> {{ $servicesEyebrow }}</p>
@@ -178,7 +205,7 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-<section class="py-5 md:py-10">
+<section class="py-5 md:py-10" style="order:{{ $so('why') }}">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px]">
             <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg> {{ $whyEyebrow }}</p>
@@ -195,7 +222,7 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-<section class="py-5 md:py-10 IDMELHLKGP4KI8K1">
+<section class="py-5 md:py-10 IDMELHLKGP4KI8K1" style="order:{{ $so('about') }}">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="relative"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon1 z-[10]">
                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path>
@@ -222,7 +249,7 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-<section class="py-5 md:py-10">
+<section class="py-5 md:py-10" style="order:{{ $so('process') }}">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px]">
             <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg> {{ $processEyebrow }}</p>
@@ -241,7 +268,7 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-<section class="py-5 md:py-10 home-video-3-section">
+<section class="py-5 md:py-10 home-video-3-section" style="order:{{ $so('proof') }}">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="w-full md:w-[70%] lg:w-[60%] m-auto text-center mb-4 md:mb-8 flex items-center justify-center flex-col">
             <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-2 lg:mb-4 uppercase tracking-[2px]">
@@ -266,7 +293,7 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-<section class="py-5 md:py-10">
+<section class="py-5 md:py-10" style="order:{{ $so('industries') }}">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px]">
             <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg> {{ $industriesEyebrow }}</p>
@@ -280,7 +307,7 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-<section class="py-5 md:py-10">
+<section class="py-5 md:py-10" style="order:{{ $so('visibility') }}">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="relative flex flex-col md:flex-row justify-between gap-4 md:gap-8 rounded-[6px] p-3 md:p-6 bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px]">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon2"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg>
@@ -306,7 +333,7 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-<section class="py-5 md:py-10 IDMFDSYSGNP32GC1">
+<section class="py-5 md:py-10 IDMFDSYSGNP32GC1" style="order:100">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="flex items-center justify-center text-center w-full md:w-[70%] xl:w-[50%] m-auto">
             <div>
@@ -319,7 +346,7 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
         </div>
     </div>
 </section>
-<section class="py-5 md:py-8 all-client-logos-main IDMF2JUVE4BU38N1">
+<section class="py-5 md:py-8 all-client-logos-main IDMF2JUVE4BU38N1" style="order:101">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="grid place-content-center">
             <div class="overflow-hidden relative [mask-image:linear-gradient(to_right,hsl(0_0%_0%/0),hsl(0_0%_0%/1)_10%,hsl(0_0%_0%/1)_90%,hsl(0_0%_0%/0))]">
@@ -333,7 +360,7 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-<section class="py-5 md:py-10 mainReviewsClient IDMETKFAGPVDDW31">
+<section class="py-5 md:py-10 mainReviewsClient IDMETKFAGPVDDW31" style="order:102">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="mb-4 sm:mb-6 lg:mb-8">
             <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-2 lg:mb-4 uppercase tracking-[2px]">
@@ -346,8 +373,8 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-<section class="py-5 md:py-10">
-    <div class="container mx-auto px-3 sm:px-4">
+<section class="py-5 md:py-10" style="order:103">
+        <div class="container mx-auto px-3 sm:px-4">
         <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-3 md:mb-5 uppercase tracking-[2px]">
             <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg> FAQ</p>
         </div>
@@ -385,7 +412,7 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-<section id="contact" class="py-5 md:py-10">
+<section id="contact" class="py-5 md:py-10" style="order:{{ $so('cta') }}">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="relative rounded-[6px] p-5 md:p-10 bg-bodybg/10 border border-white/10 shadow-[inset_0_0_50px_rgba(255,255,255,0.1)] backdrop-blur-[30px]">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" class="inline-flex plus-icon2"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg>
@@ -399,7 +426,7 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
     </div>
 </section>
 
-<section class="py-5 md:py-10 IDMEQRUU5ALEO671">
+<section class="py-5 md:py-10 IDMEQRUU5ALEO671" style="order:104">
     <div class="container mx-auto px-3 sm:px-4">
         <div class="font-primary inline-block bg-bodybg/20 backdrop-blur-[40px] text-bodybg text-[11px] rounded-[6px] pr-4 pl-2 py-1 mb-2 lg:mb-4 uppercase tracking-[2px]">
             <p data-raw-content="true"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FFB237" viewBox="0 0 16 16" class="inline-flex"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path></svg> Insights</p>
@@ -408,11 +435,12 @@ Digital marketing agency in Austin, TX — SEO, ads, websites, and reputation bu
         <p data-raw-content="true" class="font-secondary font-normal text-sm sm:text-base text-bodybg/70">Practical guides on SEO, ads, and digital growth for local businesses.</p>
     </div>
 </section>
-<section class="py-5 md:py-10 has-latest-blogs-main IDMEQRTEKNJ4WTN4">
+<section class="py-5 md:py-10 has-latest-blogs-main IDMEQRTEKNJ4WTN4" style="order:105">
     <div class="container mx-auto px-3 sm:px-4 has-latest-blogs">
         <div class="grid grid-cols-12 gap-3 sm:gap-4 latest-blogs-list">
             <p data-raw-content="true" class="text-white">Latest Blogs here...</p>
         </div>
     </div>
 </section>
+</div>
 @endsection
